@@ -44,6 +44,8 @@ and recomputed server-side in `/api/orders`.
 - `codCharge = paymentMethod === 'cod' ? 29 : 0`
 - `total = max(0, subtotal + deliveryCharge + codCharge − couponDiscount)`
 - Razorpay amount = `round(total × 100)` paise; must equal DB-saved total.
+- **No global Minimum Order Value (MOV).** Orders are never blocked by a price floor.
+  Coupons enforce only their OWN `minPurchase` (optional, per-coupon); absent → no restriction.
 
 ## 5. Checkout / Order Flow
 1. Cart applies coupon → persisted in cart store (`appliedCoupon`).
@@ -79,6 +81,18 @@ See `next-app/.env.example`. Required:
   - Server-side total recompute (anti-tamper).
   - Razorpay SDK loaded via `next/script`; env var standardized to `NEXT_PUBLIC_RAZORPAY_KEY_ID`.
   - Added `.env.example`; removed committed secret `Database_Supabase.txt` + `.gitignore` entry.
+  - Added automated testing to !1: Vitest unit tests for `pricing.ts`, Playwright route
+    smoke tests (`e2e/routes.smoke.spec.ts`), and `.gitlab-ci.yml`
+    (lint→typecheck→build→unit→e2e).
+- **MR !2** (`feat/page-builder-engine`) — DIY Page Builder engine (Admin Module #1, backend):
+  - `supabase/migrations/20260612_page_blocks.sql`: `page_blocks` table + indexes +
+    `updated_at` trigger + RLS (public reads published; service-role writes).
+  - `src/lib/blocks/schema.ts`: Zod discriminated union (hero/banner/product_grid/richtext/faq).
+  - `src/components/blocks/*` + `BlockRegistry` + `BlockRenderer` (invalid blocks skipped).
+  - `src/lib/blocks/getPageBlocks.ts`: published, position-ordered fetch.
+  - `/preview/[slug]` ISR page (`revalidate = 60`).
+  - `/api/admin/cms/blocks` route: GET/POST/DELETE + `revalidatePath()` on write.
+  - No existing page modified. RichText = plain text (no XSS); FaqBlock emits FAQPage JSON-LD.
 
 ## 9. Known Resolved Issues (history)
 - `navigate is not a function` → use `router.push()` (App Router).
@@ -88,10 +102,13 @@ See `next-app/.env.example`. Required:
 ## 10. Pending / Next Steps
 - [ ] **USER ACTION:** Rotate exposed Supabase key + DB password (was in git history).
 - [ ] **USER ACTION:** Create/verify Supabase `orders` table (columns in §6).
+- [ ] **USER ACTION:** Run the `page_blocks` migration (`supabase/migrations/20260612_page_blocks.sql`).
 - [ ] **USER ACTION:** Set all env vars locally + on AWS Amplify (§7).
-- [ ] Merge MR !1 after review.
-- [ ] Add automated testing + CI: Vitest (unit, esp. `pricing.ts`), Playwright (E2E
-      critical path + route smoke tests), `.gitlab-ci.yml` (install→lint→typecheck→build→test→e2e).
+- [ ] Merge MR !1, then MR !2 (in that order) after review.
+- [x] Added automated testing + CI in !1 (Vitest unit + Playwright smoke + `.gitlab-ci.yml`).
+- [ ] Build Admin Module #1 frontend: page-builder editor UI (drag-drop ordering + per-block forms)
+      driving the `/api/admin/cms/blocks` endpoints.
+- [ ] Wire `ProductGridBlock` to the products API.
 - [ ] Verify auth flow (login/signup/logout) + `account` page data.
 - [ ] Verify order placement end-to-end against real Supabase.
 - [ ] AWS Amplify deployment (build settings, env vars, domain migration).
