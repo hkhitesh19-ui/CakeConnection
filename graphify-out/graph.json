@@ -1,0 +1,5139 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "next-app\\eslint.config.mjs",
+      "source_location": "L1",
+      "id": "next_app_eslint_config_mjs",
+      "community": 54,
+      "norm_label": "eslint.config.mjs"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-app\\next-env.d.ts",
+      "source_location": "L1",
+      "id": "next_app_next_env_d_ts",
+      "community": 55,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next-app\\next.config.ts",
+      "source_location": "L1",
+      "id": "next_app_next_config_ts",
+      "community": 56,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "label": "postcss.config.mjs",
+      "file_type": "code",
+      "source_file": "next-app\\postcss.config.mjs",
+      "source_location": "L1",
+      "id": "next_app_postcss_config_mjs",
+      "community": 57,
+      "norm_label": "postcss.config.mjs"
+    },
+    {
+      "label": "seed.js",
+      "file_type": "code",
+      "source_file": "next-app\\scripts\\seed.js",
+      "source_location": "L1",
+      "id": "next_app_scripts_seed_js",
+      "community": 31,
+      "norm_label": "seed.js"
+    },
+    {
+      "label": "seed()",
+      "file_type": "code",
+      "source_file": "next-app\\scripts\\seed.js",
+      "source_location": "L165",
+      "id": "scripts_seed_seed",
+      "community": 31,
+      "norm_label": "seed()"
+    },
+    {
+      "label": "middleware.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\middleware.ts",
+      "source_location": "L1",
+      "id": "next_app_src_middleware_ts",
+      "community": 32,
+      "norm_label": "middleware.ts"
+    },
+    {
+      "label": "middleware()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\middleware.ts",
+      "source_location": "L5",
+      "id": "src_middleware_middleware",
+      "community": 32,
+      "norm_label": "middleware()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\layout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_layout_tsx",
+      "community": 8,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\layout.tsx",
+      "source_location": "L71",
+      "id": "app_layout_rootlayout",
+      "community": 8,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\not-found.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_not_found_tsx",
+      "community": 58,
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_page_tsx",
+      "community": 33,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\page.tsx",
+      "source_location": "L26",
+      "id": "app_page_homepage",
+      "community": 33,
+      "norm_label": "homepage()"
+    },
+    {
+      "label": "robots.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\robots.ts",
+      "source_location": "L1",
+      "id": "next_app_src_app_robots_ts",
+      "community": 34,
+      "norm_label": "robots.ts"
+    },
+    {
+      "label": "robots()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\robots.ts",
+      "source_location": "L3",
+      "id": "app_robots_robots",
+      "community": 34,
+      "norm_label": "robots()"
+    },
+    {
+      "label": "sitemap.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\sitemap.ts",
+      "source_location": "L1",
+      "id": "next_app_src_app_sitemap_ts",
+      "community": 35,
+      "norm_label": "sitemap.ts"
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\sitemap.ts",
+      "source_location": "L3",
+      "id": "app_sitemap_sitemap",
+      "community": 35,
+      "norm_label": "sitemap()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\about\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_about_page_tsx",
+      "community": 59,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\account\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_account_page_tsx",
+      "community": 60,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\layout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_layout_tsx",
+      "community": 23,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "handleLogout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\layout.tsx",
+      "source_location": "L35",
+      "id": "admin_layout_handlelogout",
+      "community": 23,
+      "norm_label": "handlelogout()"
+    },
+    {
+      "label": "SidebarContent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\layout.tsx",
+      "source_location": "L39",
+      "id": "admin_layout_sidebarcontent",
+      "community": 23,
+      "norm_label": "sidebarcontent()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_page_tsx",
+      "community": 18,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "loadDashboardData()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L71",
+      "id": "admin_page_loaddashboarddata",
+      "community": 18,
+      "norm_label": "loaddashboarddata()"
+    },
+    {
+      "label": "getStatusColor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L141",
+      "id": "admin_page_getstatuscolor",
+      "community": 18,
+      "norm_label": "getstatuscolor()"
+    },
+    {
+      "label": "getStatusLabel()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L154",
+      "id": "admin_page_getstatuslabel",
+      "community": 18,
+      "norm_label": "getstatuslabel()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\cms\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_cms_page_tsx",
+      "community": 24,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "fetchCMSContent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\cms\\page.tsx",
+      "source_location": "L25",
+      "id": "cms_page_fetchcmscontent",
+      "community": 24,
+      "norm_label": "fetchcmscontent()"
+    },
+    {
+      "label": "handleSaveHero()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\cms\\page.tsx",
+      "source_location": "L43",
+      "id": "cms_page_handlesavehero",
+      "community": 24,
+      "norm_label": "handlesavehero()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_coupons_page_tsx",
+      "community": 9,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "openCreateModal()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L52",
+      "id": "coupons_page_opencreatemodal",
+      "community": 9,
+      "norm_label": "opencreatemodal()"
+    },
+    {
+      "label": "openEditModal()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L66",
+      "id": "coupons_page_openeditmodal",
+      "community": 9,
+      "norm_label": "openeditmodal()"
+    },
+    {
+      "label": "handleDeleteCoupon()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L80",
+      "id": "coupons_page_handledeletecoupon",
+      "community": 9,
+      "norm_label": "handledeletecoupon()"
+    },
+    {
+      "label": "handleSaveCoupon()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L92",
+      "id": "coupons_page_handlesavecoupon",
+      "community": 9,
+      "norm_label": "handlesavecoupon()"
+    },
+    {
+      "label": "getStatusColor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L143",
+      "id": "coupons_page_getstatuscolor",
+      "community": 9,
+      "norm_label": "getstatuscolor()"
+    },
+    {
+      "label": "getStatusLabel()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L150",
+      "id": "coupons_page_getstatuslabel",
+      "community": 9,
+      "norm_label": "getstatuslabel()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_customers_page_tsx",
+      "community": 19,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "loadData()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L65",
+      "id": "customers_page_loaddata",
+      "community": 19,
+      "norm_label": "loaddata()"
+    },
+    {
+      "label": "handleVerifyReview()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L141",
+      "id": "customers_page_handleverifyreview",
+      "community": 19,
+      "norm_label": "handleverifyreview()"
+    },
+    {
+      "label": "handleDeleteReview()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L166",
+      "id": "customers_page_handledeletereview",
+      "community": 19,
+      "norm_label": "handledeletereview()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_orders_page_tsx",
+      "community": 10,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "loadOrders()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L33",
+      "id": "orders_page_loadorders",
+      "community": 10,
+      "norm_label": "loadorders()"
+    },
+    {
+      "label": "handleUpdateStatus()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L51",
+      "id": "orders_page_handleupdatestatus",
+      "community": 10,
+      "norm_label": "handleupdatestatus()"
+    },
+    {
+      "label": "getStatusColor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L79",
+      "id": "orders_page_getstatuscolor",
+      "community": 10,
+      "norm_label": "getstatuscolor()"
+    },
+    {
+      "label": "getPaymentStatusColor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L92",
+      "id": "orders_page_getpaymentstatuscolor",
+      "community": 10,
+      "norm_label": "getpaymentstatuscolor()"
+    },
+    {
+      "label": "getStatusLabel()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L102",
+      "id": "orders_page_getstatuslabel",
+      "community": 10,
+      "norm_label": "getstatuslabel()"
+    },
+    {
+      "label": "printDocument()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L124",
+      "id": "orders_page_printdocument",
+      "community": 10,
+      "norm_label": "printdocument()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\products\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_products_page_tsx",
+      "community": 25,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "fetchProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\products\\page.tsx",
+      "source_location": "L14",
+      "id": "products_page_fetchproducts",
+      "community": 25,
+      "norm_label": "fetchproducts()"
+    },
+    {
+      "label": "getStatusColor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\products\\page.tsx",
+      "source_location": "L29",
+      "id": "products_page_getstatuscolor",
+      "community": 25,
+      "norm_label": "getstatuscolor()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_admin_settings_page_tsx",
+      "community": 4,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "Instagram()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L22",
+      "id": "settings_page_instagram",
+      "community": 4,
+      "norm_label": "instagram()"
+    },
+    {
+      "label": "Facebook()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L30",
+      "id": "settings_page_facebook",
+      "community": 4,
+      "norm_label": "facebook()"
+    },
+    {
+      "label": "handleSaveGeneral()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L105",
+      "id": "settings_page_handlesavegeneral",
+      "community": 4,
+      "norm_label": "handlesavegeneral()"
+    },
+    {
+      "label": "handleAddPincode()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L140",
+      "id": "settings_page_handleaddpincode",
+      "community": 4,
+      "norm_label": "handleaddpincode()"
+    },
+    {
+      "label": "handleDeletePincode()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L167",
+      "id": "settings_page_handledeletepincode",
+      "community": 4,
+      "norm_label": "handledeletepincode()"
+    },
+    {
+      "label": "handleAddSlot()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L182",
+      "id": "settings_page_handleaddslot",
+      "community": 4,
+      "norm_label": "handleaddslot()"
+    },
+    {
+      "label": "handleDeleteSlot()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L205",
+      "id": "settings_page_handledeleteslot",
+      "community": 4,
+      "norm_label": "handledeleteslot()"
+    },
+    {
+      "label": "handleAddClosedDate()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L220",
+      "id": "settings_page_handleaddcloseddate",
+      "community": 4,
+      "norm_label": "handleaddcloseddate()"
+    },
+    {
+      "label": "handleDeleteClosedDate()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L243",
+      "id": "settings_page_handledeletecloseddate",
+      "community": 4,
+      "norm_label": "handledeletecloseddate()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\api\\admin\\cms\\route.ts",
+      "source_location": "L1",
+      "id": "next_app_src_app_api_admin_cms_route_ts",
+      "community": 26,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\api\\admin\\cms\\route.ts",
+      "source_location": "L5",
+      "id": "cms_route_get",
+      "community": 26,
+      "norm_label": "get()"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\api\\admin\\cms\\route.ts",
+      "source_location": "L37",
+      "id": "cms_route_post",
+      "community": 26,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\api\\admin\\products\\route.ts",
+      "source_location": "L1",
+      "id": "next_app_src_app_api_admin_products_route_ts",
+      "community": 36,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\api\\admin\\products\\route.ts",
+      "source_location": "L5",
+      "id": "products_route_get",
+      "community": 36,
+      "norm_label": "get()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\birthday-cake-vadodara\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_birthday_cake_vadodara_page_tsx",
+      "community": 37,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "BirthdayCakeVadodara()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\birthday-cake-vadodara\\page.tsx",
+      "source_location": "L40",
+      "id": "birthday_cake_vadodara_page_birthdaycakevadodara",
+      "community": 37,
+      "norm_label": "birthdaycakevadodara()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\layout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_cakes_layout_tsx",
+      "community": 38,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "CakesLayout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\layout.tsx",
+      "source_location": "L15",
+      "id": "cakes_layout_cakeslayout",
+      "community": 38,
+      "norm_label": "cakeslayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_cakes_page_tsx",
+      "community": 7,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getSubcategories()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L57",
+      "id": "cakes_page_getsubcategories",
+      "community": 7,
+      "norm_label": "getsubcategories()"
+    },
+    {
+      "label": "ProductCard()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L106",
+      "id": "cakes_page_productcard",
+      "community": 7,
+      "norm_label": "productcard()"
+    },
+    {
+      "label": "onToggleFlavour()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L491",
+      "id": "cakes_page_ontoggleflavour",
+      "community": 7,
+      "norm_label": "ontoggleflavour()"
+    },
+    {
+      "label": "onTogglePriceRange()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L492",
+      "id": "cakes_page_ontogglepricerange",
+      "community": 7,
+      "norm_label": "ontogglepricerange()"
+    },
+    {
+      "label": "onToggleSubcategory()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L493",
+      "id": "cakes_page_ontogglesubcategory",
+      "community": 7,
+      "norm_label": "ontogglesubcategory()"
+    },
+    {
+      "label": "onSetSort()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L495",
+      "id": "cakes_page_onsetsort",
+      "community": 7,
+      "norm_label": "onsetsort()"
+    },
+    {
+      "label": "onClearAll()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L503",
+      "id": "cakes_page_onclearall",
+      "community": 7,
+      "norm_label": "onclearall()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\cart\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_cart_page_tsx",
+      "community": 61,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_checkout_page_tsx",
+      "community": 16,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getTomorrowString()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L313",
+      "id": "checkout_page_gettomorrowstring",
+      "community": 16,
+      "norm_label": "gettomorrowstring()"
+    },
+    {
+      "label": "updateField()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L384",
+      "id": "checkout_page_updatefield",
+      "community": 16,
+      "norm_label": "updatefield()"
+    },
+    {
+      "label": "validateStep1()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L389",
+      "id": "checkout_page_validatestep1",
+      "community": 16,
+      "norm_label": "validatestep1()"
+    },
+    {
+      "label": "handleNextStep()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L425",
+      "id": "checkout_page_handlenextstep",
+      "community": 16,
+      "norm_label": "handlenextstep()"
+    },
+    {
+      "label": "handlePlaceOrder()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L436",
+      "id": "checkout_page_handleplaceorder",
+      "community": 16,
+      "norm_label": "handleplaceorder()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_combos_page_tsx",
+      "community": 11,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getSubcategories()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L47",
+      "id": "combos_page_getsubcategories",
+      "community": 11,
+      "norm_label": "getsubcategories()"
+    },
+    {
+      "label": "ProductCard()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L96",
+      "id": "combos_page_productcard",
+      "community": 11,
+      "norm_label": "productcard()"
+    },
+    {
+      "label": "onTogglePriceRange()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L457",
+      "id": "combos_page_ontogglepricerange",
+      "community": 11,
+      "norm_label": "ontogglepricerange()"
+    },
+    {
+      "label": "onToggleSubcategory()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L458",
+      "id": "combos_page_ontogglesubcategory",
+      "community": 11,
+      "norm_label": "ontogglesubcategory()"
+    },
+    {
+      "label": "onSetSort()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L460",
+      "id": "combos_page_onsetsort",
+      "community": 11,
+      "norm_label": "onsetsort()"
+    },
+    {
+      "label": "onClearAll()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L468",
+      "id": "combos_page_onclearall",
+      "community": 11,
+      "norm_label": "onclearall()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\delivery\\[city]\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_delivery_city_page_tsx",
+      "community": 12,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\eggless-cake-vadodara\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_eggless_cake_vadodara_page_tsx",
+      "community": 39,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "EgglessCakeVadodara()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\eggless-cake-vadodara\\page.tsx",
+      "source_location": "L44",
+      "id": "eggless_cake_vadodara_page_egglesscakevadodara",
+      "community": 39,
+      "norm_label": "egglesscakevadodara()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\faq\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_faq_page_tsx",
+      "community": 62,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\layout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_flowers_layout_tsx",
+      "community": 40,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "FlowersLayout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\layout.tsx",
+      "source_location": "L15",
+      "id": "flowers_layout_flowerslayout",
+      "community": 40,
+      "norm_label": "flowerslayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_flowers_page_tsx",
+      "community": 13,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getSubcategories()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L47",
+      "id": "flowers_page_getsubcategories",
+      "community": 13,
+      "norm_label": "getsubcategories()"
+    },
+    {
+      "label": "ProductCard()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L96",
+      "id": "flowers_page_productcard",
+      "community": 13,
+      "norm_label": "productcard()"
+    },
+    {
+      "label": "onTogglePriceRange()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L457",
+      "id": "flowers_page_ontogglepricerange",
+      "community": 13,
+      "norm_label": "ontogglepricerange()"
+    },
+    {
+      "label": "onToggleSubcategory()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L458",
+      "id": "flowers_page_ontogglesubcategory",
+      "community": 13,
+      "norm_label": "ontogglesubcategory()"
+    },
+    {
+      "label": "onSetSort()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L460",
+      "id": "flowers_page_onsetsort",
+      "community": 13,
+      "norm_label": "onsetsort()"
+    },
+    {
+      "label": "onClearAll()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L468",
+      "id": "flowers_page_onclearall",
+      "community": 13,
+      "norm_label": "onclearall()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_homepage2_page_tsx",
+      "community": 14,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "playBeep()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L11",
+      "id": "homepage2_page_playbeep",
+      "community": 14,
+      "norm_label": "playbeep()"
+    },
+    {
+      "label": "handleMouseMove()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L45",
+      "id": "homepage2_page_handlemousemove",
+      "community": 14,
+      "norm_label": "handlemousemove()"
+    },
+    {
+      "label": "handleMouseEnter()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L58",
+      "id": "homepage2_page_handlemouseenter",
+      "community": 14,
+      "norm_label": "handlemouseenter()"
+    },
+    {
+      "label": "handleMouseLeave()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L63",
+      "id": "homepage2_page_handlemouseleave",
+      "community": 14,
+      "norm_label": "handlemouseleave()"
+    },
+    {
+      "label": "handleToppingToggle()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L70",
+      "id": "homepage2_page_handletoppingtoggle",
+      "community": 14,
+      "norm_label": "handletoppingtoggle()"
+    },
+    {
+      "label": "selectFlavor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L77",
+      "id": "homepage2_page_selectflavor",
+      "community": 14,
+      "norm_label": "selectflavor()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\online-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_online_cake_delivery_vadodara_page_tsx",
+      "community": 41,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "OnlineCakeDeliveryVadodara()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\online-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L36",
+      "id": "online_cake_delivery_vadodara_page_onlinecakedeliveryvadodara",
+      "community": 41,
+      "norm_label": "onlinecakedeliveryvadodara()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\orders\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_orders_page_tsx",
+      "community": 27,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getStepIndex()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\orders\\page.tsx",
+      "source_location": "L119",
+      "id": "orders_page_getstepindex",
+      "community": 27,
+      "norm_label": "getstepindex()"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\orders\\page.tsx",
+      "source_location": "L162",
+      "id": "orders_page_cn",
+      "community": 27,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_product_slug_page_tsx",
+      "community": 0,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getDeliveryIcon()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L87",
+      "id": "slug_page_getdeliveryicon",
+      "community": 0,
+      "norm_label": "getdeliveryicon()"
+    },
+    {
+      "label": "getNext7Days()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L98",
+      "id": "slug_page_getnext7days",
+      "community": 0,
+      "norm_label": "getnext7days()"
+    },
+    {
+      "label": "getCategoryLabel()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L121",
+      "id": "slug_page_getcategorylabel",
+      "community": 0,
+      "norm_label": "getcategorylabel()"
+    },
+    {
+      "label": "loadProductData()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L345",
+      "id": "slug_page_loadproductdata",
+      "community": 0,
+      "norm_label": "loadproductdata()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\same-day-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_same_day_cake_delivery_vadodara_page_tsx",
+      "community": 42,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "SameDayCakeDeliveryVadodara()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\same-day-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L44",
+      "id": "same_day_cake_delivery_vadodara_page_samedaycakedeliveryvadodara",
+      "community": 42,
+      "norm_label": "samedaycakedeliveryvadodara()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\wishlist\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_wishlist_page_tsx",
+      "community": 3,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "WishlistCard()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\wishlist\\page.tsx",
+      "source_location": "L44",
+      "id": "wishlist_page_wishlistcard",
+      "community": 3,
+      "norm_label": "wishlistcard()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_app_category_slug_page_tsx",
+      "community": 3,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L11",
+      "id": "slug_page_generatemetadata",
+      "community": 3,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "ProductPage()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L58",
+      "id": "slug_page_productpage",
+      "community": 3,
+      "norm_label": "productpage()"
+    },
+    {
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\conversion\\index.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_conversion_index_tsx",
+      "community": 28,
+      "norm_label": "index.tsx"
+    },
+    {
+      "label": "DeliveryCountdown()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\conversion\\index.tsx",
+      "source_location": "L5",
+      "id": "conversion_index_deliverycountdown",
+      "community": 28,
+      "norm_label": "deliverycountdown()"
+    },
+    {
+      "label": "TrustBadges()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\conversion\\index.tsx",
+      "source_location": "L39",
+      "id": "conversion_index_trustbadges",
+      "community": 28,
+      "norm_label": "trustbadges()"
+    },
+    {
+      "label": "BestsellerCarousel.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_bestsellercarousel_tsx",
+      "community": 1,
+      "norm_label": "bestsellercarousel.tsx"
+    },
+    {
+      "label": "scroll()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L28",
+      "id": "home_bestsellercarousel_scroll",
+      "community": 1,
+      "norm_label": "scroll()"
+    },
+    {
+      "label": "handleAddToCart()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L37",
+      "id": "home_bestsellercarousel_handleaddtocart",
+      "community": 1,
+      "norm_label": "handleaddtocart()"
+    },
+    {
+      "label": "BestsellersSection.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_bestsellerssection_tsx",
+      "community": 0,
+      "norm_label": "bestsellerssection.tsx"
+    },
+    {
+      "label": "loadData()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L23",
+      "id": "home_bestsellerssection_loaddata",
+      "community": 0,
+      "norm_label": "loaddata()"
+    },
+    {
+      "label": "handleAddToCart()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L70",
+      "id": "home_bestsellerssection_handleaddtocart",
+      "community": 0,
+      "norm_label": "handleaddtocart()"
+    },
+    {
+      "label": "CategoriesSection.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\CategoriesSection.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_categoriessection_tsx",
+      "community": 43,
+      "norm_label": "categoriessection.tsx"
+    },
+    {
+      "label": "CategoriesSection()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\CategoriesSection.tsx",
+      "source_location": "L17",
+      "id": "home_categoriessection_categoriessection",
+      "community": 43,
+      "norm_label": "categoriessection()"
+    },
+    {
+      "label": "ComboGifts.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\ComboGifts.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_combogifts_tsx",
+      "community": 1,
+      "norm_label": "combogifts.tsx"
+    },
+    {
+      "label": "handleAddToCart()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\ComboGifts.tsx",
+      "source_location": "L17",
+      "id": "home_combogifts_handleaddtocart",
+      "community": 1,
+      "norm_label": "handleaddtocart()"
+    },
+    {
+      "label": "DeliveryBanner.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\DeliveryBanner.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_deliverybanner_tsx",
+      "community": 44,
+      "norm_label": "deliverybanner.tsx"
+    },
+    {
+      "label": "DeliveryBanner()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\DeliveryBanner.tsx",
+      "source_location": "L56",
+      "id": "home_deliverybanner_deliverybanner",
+      "community": 44,
+      "norm_label": "deliverybanner()"
+    },
+    {
+      "label": "DeliverySection.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\DeliverySection.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_deliverysection_tsx",
+      "community": 63,
+      "norm_label": "deliverysection.tsx"
+    },
+    {
+      "label": "FAQ.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FAQ.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_faq_tsx",
+      "community": 64,
+      "norm_label": "faq.tsx"
+    },
+    {
+      "label": "FeaturedBouquets.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_featuredbouquets_tsx",
+      "community": 1,
+      "norm_label": "featuredbouquets.tsx"
+    },
+    {
+      "label": "getDiscountPercent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L24",
+      "id": "home_featuredbouquets_getdiscountpercent",
+      "community": 1,
+      "norm_label": "getdiscountpercent()"
+    },
+    {
+      "label": "formatPrice()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L28",
+      "id": "home_featuredbouquets_formatprice",
+      "community": 1,
+      "norm_label": "formatprice()"
+    },
+    {
+      "label": "handleAddToCart()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L66",
+      "id": "home_featuredbouquets_handleaddtocart",
+      "community": 1,
+      "norm_label": "handleaddtocart()"
+    },
+    {
+      "label": "handleWishlistToggle()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L85",
+      "id": "home_featuredbouquets_handlewishlisttoggle",
+      "community": 1,
+      "norm_label": "handlewishlisttoggle()"
+    },
+    {
+      "label": "FeaturedCakes.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_featuredcakes_tsx",
+      "community": 1,
+      "norm_label": "featuredcakes.tsx"
+    },
+    {
+      "label": "getDiscountPercent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L24",
+      "id": "home_featuredcakes_getdiscountpercent",
+      "community": 1,
+      "norm_label": "getdiscountpercent()"
+    },
+    {
+      "label": "formatPrice()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L28",
+      "id": "home_featuredcakes_formatprice",
+      "community": 1,
+      "norm_label": "formatprice()"
+    },
+    {
+      "label": "handleAddToCart()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L66",
+      "id": "home_featuredcakes_handleaddtocart",
+      "community": 1,
+      "norm_label": "handleaddtocart()"
+    },
+    {
+      "label": "handleWishlistToggle()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L85",
+      "id": "home_featuredcakes_handlewishlisttoggle",
+      "community": 1,
+      "norm_label": "handlewishlisttoggle()"
+    },
+    {
+      "label": "FooterCTA.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\FooterCTA.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_footercta_tsx",
+      "community": 65,
+      "norm_label": "footercta.tsx"
+    },
+    {
+      "label": "HeroSection.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_herosection_tsx",
+      "community": 17,
+      "norm_label": "herosection.tsx"
+    },
+    {
+      "label": "startTimer()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L54",
+      "id": "home_herosection_starttimer",
+      "community": 17,
+      "norm_label": "starttimer()"
+    },
+    {
+      "label": "stopTimer()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L62",
+      "id": "home_herosection_stoptimer",
+      "community": 17,
+      "norm_label": "stoptimer()"
+    },
+    {
+      "label": "handleNext()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L78",
+      "id": "home_herosection_handlenext",
+      "community": 17,
+      "norm_label": "handlenext()"
+    },
+    {
+      "label": "handlePrev()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L83",
+      "id": "home_herosection_handleprev",
+      "community": 17,
+      "norm_label": "handleprev()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_index_ts",
+      "community": 66,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "InstagramGallery.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\InstagramGallery.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_instagramgallery_tsx",
+      "community": 67,
+      "norm_label": "instagramgallery.tsx"
+    },
+    {
+      "label": "LoadingScreen.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\LoadingScreen.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_loadingscreen_tsx",
+      "community": 68,
+      "norm_label": "loadingscreen.tsx"
+    },
+    {
+      "label": "MustHaveSection.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\MustHaveSection.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_musthavesection_tsx",
+      "community": 69,
+      "norm_label": "musthavesection.tsx"
+    },
+    {
+      "label": "ShopByOccasion.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\ShopByOccasion.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_shopbyoccasion_tsx",
+      "community": 70,
+      "norm_label": "shopbyoccasion.tsx"
+    },
+    {
+      "label": "Testimonials.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\Testimonials.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_testimonials_tsx",
+      "community": 71,
+      "norm_label": "testimonials.tsx"
+    },
+    {
+      "label": "TrustBadges.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\TrustBadges.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_home_trustbadges_tsx",
+      "community": 45,
+      "norm_label": "trustbadges.tsx"
+    },
+    {
+      "label": "TrustBadges()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\home\\TrustBadges.tsx",
+      "source_location": "L13",
+      "id": "home_trustbadges_trustbadges",
+      "community": 45,
+      "norm_label": "trustbadges()"
+    },
+    {
+      "label": "Footer.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\Footer.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_footer_tsx",
+      "community": 72,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_index_ts",
+      "community": 73,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "MegaMenu.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\MegaMenu.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_megamenu_tsx",
+      "community": 20,
+      "norm_label": "megamenu.tsx"
+    },
+    {
+      "label": "MegaMenu()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\MegaMenu.tsx",
+      "source_location": "L18",
+      "id": "layout_megamenu_megamenu",
+      "community": 20,
+      "norm_label": "megamenu()"
+    },
+    {
+      "label": "MobileMenu.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\MobileMenu.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_mobilemenu_tsx",
+      "community": 74,
+      "norm_label": "mobilemenu.tsx"
+    },
+    {
+      "label": "Navbar.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\Navbar.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_navbar_tsx",
+      "community": 20,
+      "norm_label": "navbar.tsx"
+    },
+    {
+      "label": "fetchCategories()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\Navbar.tsx",
+      "source_location": "L60",
+      "id": "layout_navbar_fetchcategories",
+      "community": 20,
+      "norm_label": "fetchcategories()"
+    },
+    {
+      "label": "RootLayout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\RootLayout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_rootlayout_tsx",
+      "community": 8,
+      "norm_label": "rootlayout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\RootLayout.tsx",
+      "source_location": "L12",
+      "id": "layout_rootlayout_rootlayout",
+      "community": 8,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "SearchOverlay.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_searchoverlay_tsx",
+      "community": 2,
+      "norm_label": "searchoverlay.tsx"
+    },
+    {
+      "label": "handleEsc()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L344",
+      "id": "layout_searchoverlay_handleesc",
+      "community": 2,
+      "norm_label": "handleesc()"
+    },
+    {
+      "label": "handleInputChange()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L360",
+      "id": "layout_searchoverlay_handleinputchange",
+      "community": 2,
+      "norm_label": "handleinputchange()"
+    },
+    {
+      "label": "handleSearch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L371",
+      "id": "layout_searchoverlay_handlesearch",
+      "community": 2,
+      "norm_label": "handlesearch()"
+    },
+    {
+      "label": "handleSuggestionClick()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L383",
+      "id": "layout_searchoverlay_handlesuggestionclick",
+      "community": 2,
+      "norm_label": "handlesuggestionclick()"
+    },
+    {
+      "label": "handleProductClick()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L390",
+      "id": "layout_searchoverlay_handleproductclick",
+      "community": 2,
+      "norm_label": "handleproductclick()"
+    },
+    {
+      "label": "handleQuickSearch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L396",
+      "id": "layout_searchoverlay_handlequicksearch",
+      "community": 2,
+      "norm_label": "handlequicksearch()"
+    },
+    {
+      "label": "handleClear()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L405",
+      "id": "layout_searchoverlay_handleclear",
+      "community": 2,
+      "norm_label": "handleclear()"
+    },
+    {
+      "label": "removeRecentSearch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L414",
+      "id": "layout_searchoverlay_removerecentsearch",
+      "community": 2,
+      "norm_label": "removerecentsearch()"
+    },
+    {
+      "label": "StoreLayoutWrapper.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\StoreLayoutWrapper.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_storelayoutwrapper_tsx",
+      "community": 8,
+      "norm_label": "storelayoutwrapper.tsx"
+    },
+    {
+      "label": "StoreLayoutWrapper()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\StoreLayoutWrapper.tsx",
+      "source_location": "L9",
+      "id": "layout_storelayoutwrapper_storelayoutwrapper",
+      "community": 8,
+      "norm_label": "storelayoutwrapper()"
+    },
+    {
+      "label": "WhatsAppFAB.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\WhatsAppFAB.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_layout_whatsappfab_tsx",
+      "community": 8,
+      "norm_label": "whatsappfab.tsx"
+    },
+    {
+      "label": "WhatsAppFAB()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\layout\\WhatsAppFAB.tsx",
+      "source_location": "L10",
+      "id": "layout_whatsappfab_whatsappfab",
+      "community": 8,
+      "norm_label": "whatsappfab()"
+    },
+    {
+      "label": "ProductDetailClient.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_product_productdetailclient_tsx",
+      "community": 3,
+      "norm_label": "productdetailclient.tsx"
+    },
+    {
+      "label": "getDeliveryIcon()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L84",
+      "id": "product_productdetailclient_getdeliveryicon",
+      "community": 3,
+      "norm_label": "getdeliveryicon()"
+    },
+    {
+      "label": "getNext7Days()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L95",
+      "id": "product_productdetailclient_getnext7days",
+      "community": 3,
+      "norm_label": "getnext7days()"
+    },
+    {
+      "label": "getCategoryLabel()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L118",
+      "id": "product_productdetailclient_getcategorylabel",
+      "community": 3,
+      "norm_label": "getcategorylabel()"
+    },
+    {
+      "label": "BreadcrumbSchema.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\BreadcrumbSchema.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_schema_breadcrumbschema_tsx",
+      "community": 46,
+      "norm_label": "breadcrumbschema.tsx"
+    },
+    {
+      "label": "BreadcrumbSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\BreadcrumbSchema.tsx",
+      "source_location": "L8",
+      "id": "schema_breadcrumbschema_breadcrumbschema",
+      "community": 46,
+      "norm_label": "breadcrumbschema()"
+    },
+    {
+      "label": "FAQSchema.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\FAQSchema.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_schema_faqschema_tsx",
+      "community": 47,
+      "norm_label": "faqschema.tsx"
+    },
+    {
+      "label": "FAQSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\FAQSchema.tsx",
+      "source_location": "L8",
+      "id": "schema_faqschema_faqschema",
+      "community": 47,
+      "norm_label": "faqschema()"
+    },
+    {
+      "label": "OrganizationSchema.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\OrganizationSchema.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_schema_organizationschema_tsx",
+      "community": 48,
+      "norm_label": "organizationschema.tsx"
+    },
+    {
+      "label": "OrganizationSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\OrganizationSchema.tsx",
+      "source_location": "L3",
+      "id": "schema_organizationschema_organizationschema",
+      "community": 48,
+      "norm_label": "organizationschema()"
+    },
+    {
+      "label": "ProductSchema.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\ProductSchema.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_schema_productschema_tsx",
+      "community": 49,
+      "norm_label": "productschema.tsx"
+    },
+    {
+      "label": "ProductSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\schema\\ProductSchema.tsx",
+      "source_location": "L16",
+      "id": "schema_productschema_productschema",
+      "community": 49,
+      "norm_label": "productschema()"
+    },
+    {
+      "label": "AEOBlock.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\seo\\AEOBlock.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_seo_aeoblock_tsx",
+      "community": 75,
+      "norm_label": "aeoblock.tsx"
+    },
+    {
+      "label": "ProductListings.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\seo\\ProductListings.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_seo_productlistings_tsx",
+      "community": 76,
+      "norm_label": "productlistings.tsx"
+    },
+    {
+      "label": "SEOHead.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\seo\\SEOHead.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_seo_seohead_tsx",
+      "community": 77,
+      "norm_label": "seohead.tsx"
+    },
+    {
+      "label": "Badge.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Badge.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_badge_tsx",
+      "community": 50,
+      "norm_label": "badge.tsx"
+    },
+    {
+      "label": "Badge()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Badge.tsx",
+      "source_location": "L29",
+      "id": "ui_badge_badge",
+      "community": 50,
+      "norm_label": "badge()"
+    },
+    {
+      "label": "Button.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Button.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_button_tsx",
+      "community": 78,
+      "norm_label": "button.tsx"
+    },
+    {
+      "label": "Container.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Container.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_container_tsx",
+      "community": 51,
+      "norm_label": "container.tsx"
+    },
+    {
+      "label": "Container()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Container.tsx",
+      "source_location": "L23",
+      "id": "ui_container_container",
+      "community": 51,
+      "norm_label": "container()"
+    },
+    {
+      "label": "CountryCodeSelect.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\CountryCodeSelect.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_countrycodeselect_tsx",
+      "community": 29,
+      "norm_label": "countrycodeselect.tsx"
+    },
+    {
+      "label": "handleClickOutside()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\CountryCodeSelect.tsx",
+      "source_location": "L61",
+      "id": "ui_countrycodeselect_handleclickoutside",
+      "community": 29,
+      "norm_label": "handleclickoutside()"
+    },
+    {
+      "label": "handleKeyDown()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\CountryCodeSelect.tsx",
+      "source_location": "L76",
+      "id": "ui_countrycodeselect_handlekeydown",
+      "community": 29,
+      "norm_label": "handlekeydown()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_index_ts",
+      "community": 79,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "Logo.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Logo.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_logo_tsx",
+      "community": 52,
+      "norm_label": "logo.tsx"
+    },
+    {
+      "label": "Logo()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Logo.tsx",
+      "source_location": "L4",
+      "id": "ui_logo_logo",
+      "community": 52,
+      "norm_label": "logo()"
+    },
+    {
+      "label": "OptimizedImage.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\OptimizedImage.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_optimizedimage_tsx",
+      "community": 53,
+      "norm_label": "optimizedimage.tsx"
+    },
+    {
+      "label": "OptimizedImage()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\OptimizedImage.tsx",
+      "source_location": "L12",
+      "id": "ui_optimizedimage_optimizedimage",
+      "community": 53,
+      "norm_label": "optimizedimage()"
+    },
+    {
+      "label": "Skeleton.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_components_ui_skeleton_tsx",
+      "community": 21,
+      "norm_label": "skeleton.tsx"
+    },
+    {
+      "label": "Skeleton()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L14",
+      "id": "ui_skeleton_skeleton",
+      "community": 21,
+      "norm_label": "skeleton()"
+    },
+    {
+      "label": "ProductCardSkeleton()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L39",
+      "id": "ui_skeleton_productcardskeleton",
+      "community": 21,
+      "norm_label": "productcardskeleton()"
+    },
+    {
+      "label": "ProductGridSkeleton()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L59",
+      "id": "ui_skeleton_productgridskeleton",
+      "community": 21,
+      "norm_label": "productgridskeleton()"
+    },
+    {
+      "label": "site.config.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\config\\site.config.ts",
+      "source_location": "L1",
+      "id": "next_app_src_config_site_config_ts",
+      "community": 80,
+      "norm_label": "site.config.ts"
+    },
+    {
+      "label": "countryData.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\countryData.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_countrydata_ts",
+      "community": 81,
+      "norm_label": "countrydata.ts"
+    },
+    {
+      "label": "pricing.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_pricing_ts",
+      "community": 22,
+      "norm_label": "pricing.ts"
+    },
+    {
+      "label": "calculatePrice()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L117",
+      "id": "data_pricing_calculateprice",
+      "community": 22,
+      "norm_label": "calculateprice()"
+    },
+    {
+      "label": "getStartingPrice()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L156",
+      "id": "data_pricing_getstartingprice",
+      "community": 22,
+      "norm_label": "getstartingprice()"
+    },
+    {
+      "label": "getDeliveryETA()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L163",
+      "id": "data_pricing_getdeliveryeta",
+      "community": 22,
+      "norm_label": "getdeliveryeta()"
+    },
+    {
+      "label": "products.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_products_ts",
+      "community": 3,
+      "norm_label": "products.ts"
+    },
+    {
+      "label": "getProductBySlug()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L575",
+      "id": "data_products_getproductbyslug",
+      "community": 3,
+      "norm_label": "getproductbyslug()"
+    },
+    {
+      "label": "getProductById()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L579",
+      "id": "data_products_getproductbyid",
+      "community": 3,
+      "norm_label": "getproductbyid()"
+    },
+    {
+      "label": "getProductsByCategory()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L583",
+      "id": "data_products_getproductsbycategory",
+      "community": 3,
+      "norm_label": "getproductsbycategory()"
+    },
+    {
+      "label": "getFeaturedProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L587",
+      "id": "data_products_getfeaturedproducts",
+      "community": 3,
+      "norm_label": "getfeaturedproducts()"
+    },
+    {
+      "label": "getRelatedProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L591",
+      "id": "data_products_getrelatedproducts",
+      "community": 3,
+      "norm_label": "getrelatedproducts()"
+    },
+    {
+      "label": "scrapedCakes.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\scrapedCakes.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_scrapedcakes_ts",
+      "community": 82,
+      "norm_label": "scrapedcakes.ts"
+    },
+    {
+      "label": "scrapedFlowers.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\scrapedFlowers.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_scrapedflowers_ts",
+      "community": 83,
+      "norm_label": "scrapedflowers.ts"
+    },
+    {
+      "label": "scrapedFlowersData.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\scrapedFlowersData.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_scrapedflowersdata_ts",
+      "community": 84,
+      "norm_label": "scrapedflowersdata.ts"
+    },
+    {
+      "label": "scrapedProductsData.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\data\\scrapedProductsData.ts",
+      "source_location": "L1",
+      "id": "next_app_src_data_scrapedproductsdata_ts",
+      "community": 85,
+      "norm_label": "scrapedproductsdata.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_hooks_index_ts",
+      "community": 15,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "useIsMobile()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L10",
+      "id": "hooks_index_useismobile",
+      "community": 15,
+      "norm_label": "useismobile()"
+    },
+    {
+      "label": "useScrollPosition()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L26",
+      "id": "hooks_index_usescrollposition",
+      "community": 15,
+      "norm_label": "usescrollposition()"
+    },
+    {
+      "label": "useInView()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L48",
+      "id": "hooks_index_useinview",
+      "community": 15,
+      "norm_label": "useinview()"
+    },
+    {
+      "label": "useLocalStorage()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L82",
+      "id": "hooks_index_uselocalstorage",
+      "community": 15,
+      "norm_label": "uselocalstorage()"
+    },
+    {
+      "label": "useMediaQuery()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L107",
+      "id": "hooks_index_usemediaquery",
+      "community": 15,
+      "norm_label": "usemediaquery()"
+    },
+    {
+      "label": "useClickOutside()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L125",
+      "id": "hooks_index_useclickoutside",
+      "community": 15,
+      "norm_label": "useclickoutside()"
+    },
+    {
+      "label": "useProducts.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useProducts.ts",
+      "source_location": "L1",
+      "id": "next_app_src_hooks_useproducts_ts",
+      "community": 1,
+      "norm_label": "useproducts.ts"
+    },
+    {
+      "label": "useProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useProducts.ts",
+      "source_location": "L5",
+      "id": "hooks_useproducts_useproducts",
+      "community": 1,
+      "norm_label": "useproducts()"
+    },
+    {
+      "label": "useSearch.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L1",
+      "id": "next_app_src_hooks_usesearch_ts",
+      "community": 2,
+      "norm_label": "usesearch.ts"
+    },
+    {
+      "label": "parseSearchQuery()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L56",
+      "id": "hooks_usesearch_parsesearchquery",
+      "community": 2,
+      "norm_label": "parsesearchquery()"
+    },
+    {
+      "label": "computeRelevanceScore()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L170",
+      "id": "hooks_usesearch_computerelevancescore",
+      "community": 2,
+      "norm_label": "computerelevancescore()"
+    },
+    {
+      "label": "fetchAllProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L241",
+      "id": "hooks_usesearch_fetchallproducts",
+      "community": 2,
+      "norm_label": "fetchallproducts()"
+    },
+    {
+      "label": "clientSideSearch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L305",
+      "id": "hooks_usesearch_clientsidesearch",
+      "community": 2,
+      "norm_label": "clientsidesearch()"
+    },
+    {
+      "label": "getRecentSearches()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L383",
+      "id": "hooks_usesearch_getrecentsearches",
+      "community": 2,
+      "norm_label": "getrecentsearches()"
+    },
+    {
+      "label": "saveRecentSearches()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L392",
+      "id": "hooks_usesearch_saverecentsearches",
+      "community": 2,
+      "norm_label": "saverecentsearches()"
+    },
+    {
+      "label": "useSearch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L404",
+      "id": "hooks_usesearch_usesearch",
+      "community": 2,
+      "norm_label": "usesearch()"
+    },
+    {
+      "label": "AdminLayout.tsx",
+      "file_type": "code",
+      "source_file": "next-app\\src\\layouts\\AdminLayout.tsx",
+      "source_location": "L1",
+      "id": "next_app_src_layouts_adminlayout_tsx",
+      "community": 30,
+      "norm_label": "adminlayout.tsx"
+    },
+    {
+      "label": "handleLogout()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\layouts\\AdminLayout.tsx",
+      "source_location": "L32",
+      "id": "layouts_adminlayout_handlelogout",
+      "community": 30,
+      "norm_label": "handlelogout()"
+    },
+    {
+      "label": "SidebarContent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\layouts\\AdminLayout.tsx",
+      "source_location": "L37",
+      "id": "layouts_adminlayout_sidebarcontent",
+      "community": 30,
+      "norm_label": "sidebarcontent()"
+    },
+    {
+      "label": "api.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L1",
+      "id": "next_app_src_lib_api_ts",
+      "community": 6,
+      "norm_label": "api.ts"
+    },
+    {
+      "label": "ApiClient",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L9",
+      "id": "lib_api_apiclient",
+      "community": 6,
+      "norm_label": "apiclient"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L12",
+      "id": "lib_api_apiclient_constructor",
+      "community": 6,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".request()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L16",
+      "id": "lib_api_apiclient_request",
+      "community": 6,
+      "norm_label": ".request()"
+    },
+    {
+      "label": ".get()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L57",
+      "id": "lib_api_apiclient_get",
+      "community": 6,
+      "norm_label": ".get()"
+    },
+    {
+      "label": ".post()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L62",
+      "id": "lib_api_apiclient_post",
+      "community": 6,
+      "norm_label": ".post()"
+    },
+    {
+      "label": ".put()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L70",
+      "id": "lib_api_apiclient_put",
+      "community": 6,
+      "norm_label": ".put()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L78",
+      "id": "lib_api_apiclient_delete",
+      "community": 6,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".patch()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L83",
+      "id": "lib_api_apiclient_patch",
+      "community": 6,
+      "norm_label": ".patch()"
+    },
+    {
+      "label": "db.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L1",
+      "id": "next_app_src_lib_db_ts",
+      "community": 0,
+      "norm_label": "db.ts"
+    },
+    {
+      "label": "isSupabaseConfigured()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L11",
+      "id": "lib_db_issupabaseconfigured",
+      "community": 0,
+      "norm_label": "issupabaseconfigured()"
+    },
+    {
+      "label": "mapProduct()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L25",
+      "id": "lib_db_mapproduct",
+      "community": 0,
+      "norm_label": "mapproduct()"
+    },
+    {
+      "label": "getAllProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L61",
+      "id": "lib_db_getallproducts",
+      "community": 0,
+      "norm_label": "getallproducts()"
+    },
+    {
+      "label": "getProductBySlug()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L78",
+      "id": "lib_db_getproductbyslug",
+      "community": 0,
+      "norm_label": "getproductbyslug()"
+    },
+    {
+      "label": "getProductById()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L97",
+      "id": "lib_db_getproductbyid",
+      "community": 0,
+      "norm_label": "getproductbyid()"
+    },
+    {
+      "label": "getProductsByCategory()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L116",
+      "id": "lib_db_getproductsbycategory",
+      "community": 0,
+      "norm_label": "getproductsbycategory()"
+    },
+    {
+      "label": "getFeaturedProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L134",
+      "id": "lib_db_getfeaturedproducts",
+      "community": 0,
+      "norm_label": "getfeaturedproducts()"
+    },
+    {
+      "label": "getRelatedProducts()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L152",
+      "id": "lib_db_getrelatedproducts",
+      "community": 0,
+      "norm_label": "getrelatedproducts()"
+    },
+    {
+      "label": "getReviewsByProductId()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L182",
+      "id": "lib_db_getreviewsbyproductid",
+      "community": 0,
+      "norm_label": "getreviewsbyproductid()"
+    },
+    {
+      "label": "addReview()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L223",
+      "id": "lib_db_addreview",
+      "community": 0,
+      "norm_label": "addreview()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_lib_index_ts",
+      "community": 86,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "supabase.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\supabase.ts",
+      "source_location": "L1",
+      "id": "next_app_src_lib_supabase_ts",
+      "community": 87,
+      "norm_label": "supabase.ts"
+    },
+    {
+      "label": "schema.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L1",
+      "id": "next_app_src_lib_seo_schema_ts",
+      "community": 12,
+      "norm_label": "schema.ts"
+    },
+    {
+      "label": "generateProductSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L3",
+      "id": "seo_schema_generateproductschema",
+      "community": 12,
+      "norm_label": "generateproductschema()"
+    },
+    {
+      "label": "generateFAQSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L42",
+      "id": "seo_schema_generatefaqschema",
+      "community": 12,
+      "norm_label": "generatefaqschema()"
+    },
+    {
+      "label": "generateReviewSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L57",
+      "id": "seo_schema_generatereviewschema",
+      "community": 12,
+      "norm_label": "generatereviewschema()"
+    },
+    {
+      "label": "generateBreadcrumbSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L85",
+      "id": "seo_schema_generatebreadcrumbschema",
+      "community": 12,
+      "norm_label": "generatebreadcrumbschema()"
+    },
+    {
+      "label": "generateLocalBusinessSchema()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L98",
+      "id": "seo_schema_generatelocalbusinessschema",
+      "community": 12,
+      "norm_label": "generatelocalbusinessschema()"
+    },
+    {
+      "label": "cartStore.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\stores\\cartStore.ts",
+      "source_location": "L1",
+      "id": "next_app_src_stores_cartstore_ts",
+      "community": 88,
+      "norm_label": "cartstore.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\stores\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_stores_index_ts",
+      "community": 89,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "siteStore.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\stores\\siteStore.ts",
+      "source_location": "L1",
+      "id": "next_app_src_stores_sitestore_ts",
+      "community": 90,
+      "norm_label": "sitestore.ts"
+    },
+    {
+      "label": "uiStore.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\stores\\uiStore.ts",
+      "source_location": "L1",
+      "id": "next_app_src_stores_uistore_ts",
+      "community": 91,
+      "norm_label": "uistore.ts"
+    },
+    {
+      "label": "wishlistStore.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\stores\\wishlistStore.ts",
+      "source_location": "L1",
+      "id": "next_app_src_stores_wishliststore_ts",
+      "community": 92,
+      "norm_label": "wishliststore.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\types\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_types_index_ts",
+      "community": 93,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L1",
+      "id": "next_app_src_utils_index_ts",
+      "community": 5,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "formatPrice()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L8",
+      "id": "utils_index_formatprice",
+      "community": 5,
+      "norm_label": "formatprice()"
+    },
+    {
+      "label": "getDiscountPercent()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L20",
+      "id": "utils_index_getdiscountpercent",
+      "community": 5,
+      "norm_label": "getdiscountpercent()"
+    },
+    {
+      "label": "generateSlug()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L28",
+      "id": "utils_index_generateslug",
+      "community": 5,
+      "norm_label": "generateslug()"
+    },
+    {
+      "label": "truncateText()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L40",
+      "id": "utils_index_truncatetext",
+      "community": 5,
+      "norm_label": "truncatetext()"
+    },
+    {
+      "label": "debounce()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L48",
+      "id": "utils_index_debounce",
+      "community": 5,
+      "norm_label": "debounce()"
+    },
+    {
+      "label": "getCloudinaryUrl()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L62",
+      "id": "utils_index_getcloudinaryurl",
+      "community": 5,
+      "norm_label": "getcloudinaryurl()"
+    },
+    {
+      "label": "getWhatsAppLink()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L92",
+      "id": "utils_index_getwhatsapplink",
+      "community": 5,
+      "norm_label": "getwhatsapplink()"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L100",
+      "id": "utils_index_cn",
+      "community": 5,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "prefersReducedMotion()",
+      "file_type": "code",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L107",
+      "id": "utils_index_prefersreducedmotion",
+      "community": 5,
+      "norm_label": "prefersreducedmotion()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\scripts\\seed.js",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "next_app_scripts_seed_js",
+      "target": "scripts_seed_seed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\middleware.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_app_src_middleware_ts",
+      "target": "src_middleware_middleware",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\layout.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "next_app_src_app_layout_tsx",
+      "target": "layout_storelayoutwrapper_storelayoutwrapper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\layout.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "next_app_src_app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "next_app_src_app_page_tsx",
+      "target": "app_page_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\robots.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "next_app_src_app_robots_ts",
+      "target": "app_robots_robots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\sitemap.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "next_app_src_app_sitemap_ts",
+      "target": "app_sitemap_sitemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\layout.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_layout_tsx",
+      "target": "admin_layout_handlelogout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\layout.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_layout_tsx",
+      "target": "admin_layout_sidebarcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_page_tsx",
+      "target": "admin_page_loaddashboarddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_page_tsx",
+      "target": "admin_page_getstatuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\page.tsx",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_page_tsx",
+      "target": "admin_page_getstatuslabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\cms\\page.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_cms_page_tsx",
+      "target": "cms_page_fetchcmscontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\cms\\page.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_cms_page_tsx",
+      "target": "cms_page_handlesavehero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_opencreatemodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_openeditmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_handledeletecoupon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_handlesavecoupon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_getstatuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\coupons\\page.tsx",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_coupons_page_tsx",
+      "target": "coupons_page_getstatuslabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_customers_page_tsx",
+      "target": "customers_page_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_customers_page_tsx",
+      "target": "customers_page_handleverifyreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\customers\\page.tsx",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_customers_page_tsx",
+      "target": "customers_page_handledeletereview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_loadorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_handleupdatestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_getstatuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_getpaymentstatuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_getstatuslabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\orders\\page.tsx",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_orders_page_tsx",
+      "target": "orders_page_printdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\products\\page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_products_page_tsx",
+      "target": "products_page_fetchproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\products\\page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_products_page_tsx",
+      "target": "products_page_getstatuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_instagram",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_facebook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handlesavegeneral",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handleaddpincode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handledeletepincode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handleaddslot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handledeleteslot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L220",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handleaddcloseddate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\admin\\settings\\page.tsx",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "next_app_src_app_admin_settings_page_tsx",
+      "target": "settings_page_handledeletecloseddate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\api\\admin\\cms\\route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_app_src_app_api_admin_cms_route_ts",
+      "target": "cms_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\api\\admin\\cms\\route.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "next_app_src_app_api_admin_cms_route_ts",
+      "target": "cms_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\api\\admin\\products\\route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_app_src_app_api_admin_products_route_ts",
+      "target": "products_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\birthday-cake-vadodara\\page.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "next_app_src_app_birthday_cake_vadodara_page_tsx",
+      "target": "birthday_cake_vadodara_page_birthdaycakevadodara",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\layout.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_layout_tsx",
+      "target": "cakes_layout_cakeslayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_getsubcategories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_productcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L491",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_ontoggleflavour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L492",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_ontogglepricerange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L493",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_ontogglesubcategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L495",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_onsetsort",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\cakes\\page.tsx",
+      "source_location": "L503",
+      "weight": 1.0,
+      "source": "next_app_src_app_cakes_page_tsx",
+      "target": "cakes_page_onclearall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "next_app_src_app_checkout_page_tsx",
+      "target": "checkout_page_gettomorrowstring",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L384",
+      "weight": 1.0,
+      "source": "next_app_src_app_checkout_page_tsx",
+      "target": "checkout_page_updatefield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L389",
+      "weight": 1.0,
+      "source": "next_app_src_app_checkout_page_tsx",
+      "target": "checkout_page_validatestep1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L425",
+      "weight": 1.0,
+      "source": "next_app_src_app_checkout_page_tsx",
+      "target": "checkout_page_handlenextstep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L436",
+      "weight": 1.0,
+      "source": "next_app_src_app_checkout_page_tsx",
+      "target": "checkout_page_handleplaceorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\checkout\\page.tsx",
+      "source_location": "L427",
+      "weight": 1.0,
+      "source": "checkout_page_handlenextstep",
+      "target": "checkout_page_validatestep1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_getsubcategories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_productcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L457",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_ontogglepricerange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_ontogglesubcategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L460",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_onsetsort",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\combos\\page.tsx",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "next_app_src_app_combos_page_tsx",
+      "target": "combos_page_onclearall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\delivery\\[city]\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "next_app_src_app_delivery_city_page_tsx",
+      "target": "seo_schema_generatelocalbusinessschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\delivery\\[city]\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "next_app_src_app_delivery_city_page_tsx",
+      "target": "seo_schema_generatefaqschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\eggless-cake-vadodara\\page.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "next_app_src_app_eggless_cake_vadodara_page_tsx",
+      "target": "eggless_cake_vadodara_page_egglesscakevadodara",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\layout.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_layout_tsx",
+      "target": "flowers_layout_flowerslayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_getsubcategories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_productcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L457",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_ontogglepricerange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_ontogglesubcategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L460",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_onsetsort",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\flowers\\page.tsx",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "next_app_src_app_flowers_page_tsx",
+      "target": "flowers_page_onclearall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_playbeep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_handlemousemove",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_handlemouseenter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_handlemouseleave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_handletoppingtoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "next_app_src_app_homepage2_page_tsx",
+      "target": "homepage2_page_selectflavor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "homepage2_page_handlemouseenter",
+      "target": "homepage2_page_playbeep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "homepage2_page_handletoppingtoggle",
+      "target": "homepage2_page_playbeep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\homepage2\\page.tsx",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "homepage2_page_selectflavor",
+      "target": "homepage2_page_playbeep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\online-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "next_app_src_app_online_cake_delivery_vadodara_page_tsx",
+      "target": "online_cake_delivery_vadodara_page_onlinecakedeliveryvadodara",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\orders\\page.tsx",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "next_app_src_app_orders_page_tsx",
+      "target": "orders_page_getstepindex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\orders\\page.tsx",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "next_app_src_app_orders_page_tsx",
+      "target": "orders_page_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "lib_db_getproductbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "lib_db_getrelatedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "lib_db_getreviewsbyproductid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "slug_page_getdeliveryicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "slug_page_getnext7days",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "slug_page_getcategorylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L345",
+      "weight": 1.0,
+      "source": "next_app_src_app_product_slug_page_tsx",
+      "target": "slug_page_loadproductdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "next-app\\src\\app\\product\\[slug]\\page.tsx",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "slug_page_loadproductdata",
+      "target": "lib_db_getreviewsbyproductid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\same-day-cake-delivery-vadodara\\page.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "next_app_src_app_same_day_cake_delivery_vadodara_page_tsx",
+      "target": "same_day_cake_delivery_vadodara_page_samedaycakedeliveryvadodara",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\wishlist\\page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "next_app_src_app_wishlist_page_tsx",
+      "target": "data_products_getproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\wishlist\\page.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "next_app_src_app_wishlist_page_tsx",
+      "target": "wishlist_page_wishlistcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "next_app_src_app_category_slug_page_tsx",
+      "target": "data_products_getproductbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "next_app_src_app_category_slug_page_tsx",
+      "target": "slug_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\app\\[category]\\[slug]\\page.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "next_app_src_app_category_slug_page_tsx",
+      "target": "slug_page_productpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\conversion\\index.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_app_src_components_conversion_index_tsx",
+      "target": "conversion_index_deliverycountdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\conversion\\index.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "next_app_src_components_conversion_index_tsx",
+      "target": "conversion_index_trustbadges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellercarousel_tsx",
+      "target": "hooks_useproducts_useproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellercarousel_tsx",
+      "target": "home_bestsellercarousel_scroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellerCarousel.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellercarousel_tsx",
+      "target": "home_bestsellercarousel_handleaddtocart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellerssection_tsx",
+      "target": "lib_db_getproductsbycategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellerssection_tsx",
+      "target": "home_bestsellerssection_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\BestsellersSection.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_bestsellerssection_tsx",
+      "target": "home_bestsellerssection_handleaddtocart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\CategoriesSection.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_categoriessection_tsx",
+      "target": "home_categoriessection_categoriessection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\ComboGifts.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_combogifts_tsx",
+      "target": "hooks_useproducts_useproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\ComboGifts.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_combogifts_tsx",
+      "target": "home_combogifts_handleaddtocart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\DeliveryBanner.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_deliverybanner_tsx",
+      "target": "home_deliverybanner_deliverybanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredbouquets_tsx",
+      "target": "hooks_useproducts_useproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredbouquets_tsx",
+      "target": "home_featuredbouquets_getdiscountpercent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredbouquets_tsx",
+      "target": "home_featuredbouquets_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredbouquets_tsx",
+      "target": "home_featuredbouquets_handleaddtocart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedBouquets.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredbouquets_tsx",
+      "target": "home_featuredbouquets_handlewishlisttoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredcakes_tsx",
+      "target": "hooks_useproducts_useproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredcakes_tsx",
+      "target": "home_featuredcakes_getdiscountpercent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredcakes_tsx",
+      "target": "home_featuredcakes_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredcakes_tsx",
+      "target": "home_featuredcakes_handleaddtocart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\FeaturedCakes.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_featuredcakes_tsx",
+      "target": "home_featuredcakes_handlewishlisttoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_herosection_tsx",
+      "target": "home_herosection_starttimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_herosection_tsx",
+      "target": "home_herosection_stoptimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_herosection_tsx",
+      "target": "home_herosection_handlenext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_herosection_tsx",
+      "target": "home_herosection_handleprev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\HeroSection.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "home_herosection_starttimer",
+      "target": "home_herosection_stoptimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\home\\TrustBadges.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "next_app_src_components_home_trustbadges_tsx",
+      "target": "home_trustbadges_trustbadges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\MegaMenu.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_megamenu_tsx",
+      "target": "layout_megamenu_megamenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\Navbar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_navbar_tsx",
+      "target": "layout_megamenu_megamenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\Navbar.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_navbar_tsx",
+      "target": "layout_navbar_fetchcategories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\RootLayout.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_rootlayout_tsx",
+      "target": "layout_whatsappfab_whatsappfab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\RootLayout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_rootlayout_tsx",
+      "target": "layout_rootlayout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "hooks_usesearch_usesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L344",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handleesc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L360",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handleinputchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handlesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L383",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handlesuggestionclick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L390",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handleproductclick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L396",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handlequicksearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L405",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_handleclear",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\SearchOverlay.tsx",
+      "source_location": "L414",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_searchoverlay_tsx",
+      "target": "layout_searchoverlay_removerecentsearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\StoreLayoutWrapper.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_storelayoutwrapper_tsx",
+      "target": "layout_whatsappfab_whatsappfab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\StoreLayoutWrapper.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_storelayoutwrapper_tsx",
+      "target": "layout_storelayoutwrapper_storelayoutwrapper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\layout\\WhatsAppFAB.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "next_app_src_components_layout_whatsappfab_tsx",
+      "target": "layout_whatsappfab_whatsappfab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "next_app_src_components_product_productdetailclient_tsx",
+      "target": "data_products_getproductbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "next_app_src_components_product_productdetailclient_tsx",
+      "target": "data_products_getrelatedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "next_app_src_components_product_productdetailclient_tsx",
+      "target": "product_productdetailclient_getdeliveryicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "next_app_src_components_product_productdetailclient_tsx",
+      "target": "product_productdetailclient_getnext7days",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\product\\ProductDetailClient.tsx",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "next_app_src_components_product_productdetailclient_tsx",
+      "target": "product_productdetailclient_getcategorylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\schema\\BreadcrumbSchema.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "next_app_src_components_schema_breadcrumbschema_tsx",
+      "target": "schema_breadcrumbschema_breadcrumbschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\schema\\FAQSchema.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "next_app_src_components_schema_faqschema_tsx",
+      "target": "schema_faqschema_faqschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\schema\\OrganizationSchema.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "next_app_src_components_schema_organizationschema_tsx",
+      "target": "schema_organizationschema_organizationschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\schema\\ProductSchema.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "next_app_src_components_schema_productschema_tsx",
+      "target": "schema_productschema_productschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Badge.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_badge_tsx",
+      "target": "ui_badge_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Container.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_container_tsx",
+      "target": "ui_container_container",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\CountryCodeSelect.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_countrycodeselect_tsx",
+      "target": "ui_countrycodeselect_handleclickoutside",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\CountryCodeSelect.tsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_countrycodeselect_tsx",
+      "target": "ui_countrycodeselect_handlekeydown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Logo.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_logo_tsx",
+      "target": "ui_logo_logo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\OptimizedImage.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_optimizedimage_tsx",
+      "target": "ui_optimizedimage_optimizedimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_skeleton_tsx",
+      "target": "ui_skeleton_skeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_skeleton_tsx",
+      "target": "ui_skeleton_productcardskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\components\\ui\\Skeleton.tsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "next_app_src_components_ui_skeleton_tsx",
+      "target": "ui_skeleton_productgridskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "next_app_src_data_pricing_ts",
+      "target": "data_pricing_calculateprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "next_app_src_data_pricing_ts",
+      "target": "data_pricing_getstartingprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\pricing.ts",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "next_app_src_data_pricing_ts",
+      "target": "data_pricing_getdeliveryeta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L575",
+      "weight": 1.0,
+      "source": "next_app_src_data_products_ts",
+      "target": "data_products_getproductbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L579",
+      "weight": 1.0,
+      "source": "next_app_src_data_products_ts",
+      "target": "data_products_getproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L583",
+      "weight": 1.0,
+      "source": "next_app_src_data_products_ts",
+      "target": "data_products_getproductsbycategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L587",
+      "weight": 1.0,
+      "source": "next_app_src_data_products_ts",
+      "target": "data_products_getfeaturedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L591",
+      "weight": 1.0,
+      "source": "next_app_src_data_products_ts",
+      "target": "data_products_getrelatedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\data\\products.ts",
+      "source_location": "L592",
+      "weight": 1.0,
+      "source": "data_products_getrelatedproducts",
+      "target": "data_products_getproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_useismobile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_usescrollposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_useinview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_uselocalstorage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_usemediaquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\index.ts",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_index_ts",
+      "target": "hooks_index_useclickoutside",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useProducts.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_useproducts_ts",
+      "target": "hooks_useproducts_useproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_parsesearchquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_computerelevancescore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L241",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_fetchallproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_clientsidesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L383",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_getrecentsearches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L392",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_saverecentsearches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\hooks\\useSearch.ts",
+      "source_location": "L404",
+      "weight": 1.0,
+      "source": "next_app_src_hooks_usesearch_ts",
+      "target": "hooks_usesearch_usesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\layouts\\AdminLayout.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "next_app_src_layouts_adminlayout_tsx",
+      "target": "layouts_adminlayout_handlelogout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\layouts\\AdminLayout.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "next_app_src_layouts_adminlayout_tsx",
+      "target": "layouts_adminlayout_sidebarcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "next_app_src_lib_api_ts",
+      "target": "lib_api_apiclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_put",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "lib_api_apiclient",
+      "target": "lib_api_apiclient_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "lib_api_apiclient_get",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "lib_api_apiclient_post",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "lib_api_apiclient_put",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "lib_api_apiclient_delete",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\api.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "lib_api_apiclient_patch",
+      "target": "lib_api_apiclient_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_mapproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getallproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getproductbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getproductsbycategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getfeaturedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getrelatedproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_getreviewsbyproductid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "next_app_src_lib_db_ts",
+      "target": "lib_db_addreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "lib_db_getallproducts",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "lib_db_getproductbyslug",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "lib_db_getproductbyid",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "lib_db_getproductsbycategory",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "lib_db_getfeaturedproducts",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "lib_db_getrelatedproducts",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "lib_db_getreviewsbyproductid",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "lib_db_addreview",
+      "target": "lib_db_issupabaseconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "lib_db_getproductbyslug",
+      "target": "lib_db_mapproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "lib_db_getproductbyid",
+      "target": "lib_db_mapproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\db.ts",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "lib_db_getrelatedproducts",
+      "target": "lib_db_getproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "next_app_src_lib_seo_schema_ts",
+      "target": "seo_schema_generateproductschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "next_app_src_lib_seo_schema_ts",
+      "target": "seo_schema_generatefaqschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "next_app_src_lib_seo_schema_ts",
+      "target": "seo_schema_generatereviewschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "next_app_src_lib_seo_schema_ts",
+      "target": "seo_schema_generatebreadcrumbschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\lib\\seo\\schema.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "next_app_src_lib_seo_schema_ts",
+      "target": "seo_schema_generatelocalbusinessschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_getdiscountpercent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_generateslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_truncatetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_debounce",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_getcloudinaryurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_getwhatsapplink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next-app\\src\\utils\\index.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "next_app_src_utils_index_ts",
+      "target": "utils_index_prefersreducedmotion",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
