@@ -82,7 +82,7 @@ function CartItemCard({
       className="flex gap-4 p-4 sm:p-5 rounded-2xl bg-surface-secondary border border-border-secondary hover:border-brand-rose/20 transition-all duration-300"
     >
       {/* Image */}
-      <Link href={`/cakes/${item.productId}`} className="flex-shrink-0">
+      <Link href={`/${item.category || 'cakes'}/${item.slug || item.productId}`} className="flex-shrink-0">
         <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-surface-tertiary">
           <img
             src={item.image}
@@ -96,9 +96,11 @@ function CartItemCard({
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
-            <h3 className="font-display text-base sm:text-lg font-semibold text-text-primary truncate">
-              {item.name}
-            </h3>
+            <Link href={`/${item.category || 'cakes'}/${item.slug || item.productId}`} className="hover:text-brand-rose transition-colors">
+              <h3 className="font-display text-base sm:text-lg font-semibold text-text-primary truncate">
+                {item.name}
+              </h3>
+            </Link>
             <p className="text-xs text-text-muted mt-0.5">
               {item.weight}
               {item.flavour && ` • ${item.flavour.charAt(0).toUpperCase() + item.flavour.slice(1)}`}
@@ -258,7 +260,7 @@ export default function CartPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-brand-black flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose"></div>
       </div>
     );
@@ -304,34 +306,60 @@ export default function CartPage() {
       <SEOHead title="Your Cart" description="Review items in your cart before checkout." noIndex />
 
       <motion.div initial="hidden" animate="visible" variants={pageVariants}>
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-surface-primary py-8 sm:py-12">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-brand-rose/[0.04] blur-3xl" />
-          </div>
-          <Container as="div" size="xl" className="relative">
-            <motion.div variants={fadeUp}>
-              <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-sm">
-                <Link href="/" className="flex items-center gap-1 text-text-muted hover:text-brand-rose transition-colors">
-                  <Home className="h-3.5 w-3.5" /> Home
-                </Link>
-                <ChevronRight className="h-3.5 w-3.5 text-text-muted/50" />
-                <span className="text-text-accent font-medium">Cart</span>
-              </nav>
-              <h1 className="font-display text-3xl sm:text-4xl font-bold text-text-primary">
-                Your <span className="text-gradient-rose">Cart</span>
-              </h1>
-              <p className="mt-2 text-text-secondary text-sm">
-                {itemCount} {itemCount === 1 ? 'item' : 'items'} in your cart
-              </p>
-            </motion.div>
-          </Container>
-        </section>
-
-        {/* Main Content */}
-        <section className="bg-brand-black pb-24 lg:pb-20">
+        {/* ── 3-Step Progress Flow (Compact Giftlaya style) ── */}
+        <div className="bg-white border-b border-gray-150 py-2.5 sm:py-3 shadow-xs">
           <Container as="div" size="xl">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-10">
+            <nav aria-label="Order progress" className="flex items-center justify-center gap-0 max-w-xs sm:max-w-sm mx-auto">
+              {/* Step 1: Cart */}
+              <div className="flex flex-col items-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-rose flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-md">
+                  <ShoppingBag className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                </div>
+                <span className="mt-0.5 text-[10px] sm:text-[11px] font-bold text-brand-rose tracking-wide">Cart</span>
+              </div>
+              {/* Connector */}
+              <div className="flex-1 h-0.5 bg-brand-rose mx-2 mb-3" />
+              {/* Step 2: Details */}
+              <div className="flex flex-col items-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center text-gray-400 text-xs sm:text-sm font-bold">
+                  2
+                </div>
+                <span className="mt-0.5 text-[10px] sm:text-[11px] font-medium text-gray-400 tracking-wide">Details</span>
+              </div>
+              {/* Connector */}
+              <div className="flex-1 h-0.5 bg-gray-200 mx-2 mb-3" />
+              {/* Step 3: Payment */}
+              <div className="flex flex-col items-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center text-gray-400 text-xs sm:text-sm font-bold">
+                  3
+                </div>
+                <span className="mt-0.5 text-[10px] sm:text-[11px] font-medium text-gray-400 tracking-wide">Payment</span>
+              </div>
+            </nav>
+          </Container>
+        </div>
+
+        {/* Main Content — Starts immediately without scrolling */}
+        <section className="bg-white pt-3 sm:pt-4 pb-24 lg:pb-20">
+          <Container as="div" size="xl">
+            {/* Compact Header row: Title + Breadcrumb */}
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b border-gray-150">
+              <div className="flex items-baseline gap-2">
+                <h1 className="font-display text-xl sm:text-2xl font-bold text-gray-900">
+                  Your <span className="text-brand-rose">Cart</span>
+                </h1>
+                <span className="text-xs sm:text-sm text-gray-500 font-medium">
+                  ({itemCount} {itemCount === 1 ? 'item' : 'items'})
+                </span>
+              </div>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-gray-400">
+                <Link href="/" className="hover:text-brand-rose transition-colors">Home</Link>
+                <ChevronRight className="h-3 w-3 text-gray-300" />
+                <span className="text-brand-rose font-medium">Cart</span>
+              </nav>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 lg:gap-8">
 
               {/* Left: Cart Items */}
               <motion.div variants={fadeUp} className="space-y-4">

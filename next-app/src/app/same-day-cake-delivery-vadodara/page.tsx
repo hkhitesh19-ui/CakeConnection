@@ -1,109 +1,116 @@
-import { Metadata } from 'next'
-import FAQSchema from '@/components/schema/FAQSchema'
-import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema'
-import ProductListings from '@/components/seo/ProductListings'
-import { Container } from '@/components/ui'
+import { Metadata } from 'next';
+import Link from 'next/link';
+import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema';
+import AEOBlock from '@/components/seo/AEOBlock';
+import { LOCALITIES, FREE_DELIVERY_ABOVE, SAME_DAY_CUTOFF } from '@/data/localities';
+
+const BASE = 'https://cakeconnection.in';
 
 export const metadata: Metadata = {
-  title: 'Same Day Cake Delivery in Vadodara | Delivered within 3 Hours',
-  description: 'Need urgent cake delivery in Vadodara? Order fresh eggless cakes, chocolates, and flowers online with same-day express delivery within 3 hours. Handcrafted and delicious.',
-  alternates: {
-    canonical: 'https://cakeconnection.in/same-day-cake-delivery-vadodara',
-  },
-  openGraph: {
-    title: 'Same Day Cake Delivery Vadodara | CakeConnection',
-    description: 'Express cake delivery in Vadodara within 3 hours.',
-    url: 'https://cakeconnection.in/same-day-cake-delivery-vadodara',
-    images: [{ url: '/images/hero-cake.png', width: 1200, height: 630 }],
-  },
-}
+  title: 'Same Day Cake Delivery in Vadodara - 2 to 4 Hours | CakeConnection',
+  description: `Same-day cake delivery in Vadodara in 2-4 hours. Order by ${SAME_DAY_CUTOFF}. Superfast 1-2 hr delivery in Alkapuri and Gotri. 100% eggless fresh cakes. Free delivery above Rs.${FREE_DELIVERY_ABOVE}.`,
+  keywords: ['same day cake delivery vadodara', 'express cake delivery vadodara', '2 hour cake delivery vadodara', 'urgent cake delivery vadodara', 'fast cake delivery vadodara'],
+  alternates: { canonical: `${BASE}/same-day-cake-delivery-vadodara` },
+};
 
-const faqs = [
+const expressFaqs = [
   {
-    question: "How fast is your same-day cake delivery in Vadodara?",
-    answer: "We offer express delivery within 3 hours of confirming your order. Our live bakery handles production quickly to guarantee freshness."
+    question: 'Vadodara mein same-day cake delivery mein kitna time lagta hai?',
+    answer: `CakeConnection ${SAME_DAY_CUTOFF} se pehle order karne par 2-4 ghante mein fresh cake deliver karta hai. Alkapuri aur Gotri mein 90 min ka express option bhi hai.`,
   },
   {
-    question: "Is there any extra charge for same-day delivery?",
-    answer: "Standard same-day delivery during daytime slots has no extra charge above the normal shipping fee. Premium slots like midnight or fixed-time delivery may carry an additional nominal charge."
+    question: 'Kya aaj cake order karke aaj hi mil sakti hai Vadodara mein?',
+    answer: `Haan! ${SAME_DAY_CUTOFF} se pehle order karo aur usi din 2-4 ghante mein delivery paoge. Superfast 1-2 ghante wala option bhi select areas mein hai.`,
   },
   {
-    question: "Can I cancel a same-day order?",
-    answer: "Since same-day cakes are immediately baked and prepared upon order confirmation, cancellations are not accepted. However, scheduling changes can be requested if production hasn't started."
+    question: 'Last minute birthday cake kaise milegi Vadodara mein?',
+    answer: `${SAME_DAY_CUTOFF} tak order karo. CakeConnection.in pe jaao ya WhatsApp karo +917203824012 pe. Fresh cake banke usi din pahunch jaayegi.`,
   },
-  {
-    question: "What is the last time I can order for same-day cake delivery?",
-    answer: "You can place same-day cake orders until 9 PM in Vadodara. Orders placed after 9 PM are scheduled for next-day morning delivery by 10 AM."
-  },
-  {
-    question: "Which areas in Vadodara get same-day cake delivery?",
-    answer: "We deliver same-day to 500+ pincodes including Manjalpur, Alkapuri, Fatehgunj, Gotri, Vasna, Karelibaug, Nizampura, Makarpura, Akota, and all major Vadodara areas."
-  }
-]
+];
 
-export default function SameDayCakeDeliveryVadodara() {
+export default function SameDayCakeVadodara() {
+  const expressAreas = LOCALITIES.filter(l => l.expresAvailable);
+
   return (
     <>
-      <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[
-        { name: 'Home', url: 'https://cakeconnection.in' },
-        { name: 'Same Day Cake Delivery Vadodara', url: 'https://cakeconnection.in/same-day-cake-delivery-vadodara' },
+        { name: 'Home', url: BASE },
+        { name: 'Same Day Cake Delivery Vadodara', url: `${BASE}/same-day-cake-delivery-vadodara` },
       ]} />
-      
-      <main className="py-12 bg-background-primary text-text-primary">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-gradient-rose text-center mb-8">
-              Same Day Cake Delivery in Vadodara
-            </h1>
-            
-            <div className="p-6 rounded-2xl bg-surface-secondary border border-border-secondary mb-12 text-lg leading-relaxed text-text-secondary">
-              <p>
-                Forgot a birthday or celebrating last minute? CakeConnection offers premium same-day cake delivery services across Vadodara. 
-                Get 100% fresh, eggless cakes delivered straight to your doorstep within 3 hours. Order from our extensive collection of classic and gourmet flavors today.
-              </p>
+
+      <main className="py-10 bg-background-primary text-text-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <h1 className="font-display text-4xl font-bold text-gradient-rose mb-5">
+            Same Day Cake Delivery in Vadodara — 2 to 4 Hours
+          </h1>
+
+          <p className="text-lg text-text-secondary leading-relaxed mb-8">
+            Vadodara mein same-day cake delivery ka cut-off{' '}
+            <strong className="text-white">{SAME_DAY_CUTOFF}</strong> hai.
+            {SAME_DAY_CUTOFF} se pehle order karo — fresh eggless cake{' '}
+            <strong className="text-brand-rose">2–4 ghante</strong> mein deliver.
+            Alkapuri aur Gotri mein{' '}
+            <strong className="text-brand-rose">90-minute superfast</strong> option bhi available hai.
+          </p>
+
+          <Link href="/cakes" className="inline-block px-6 py-3 bg-brand-rose text-white font-semibold rounded-xl hover:bg-brand-rose/90 transition-colors mb-10">
+            Order Same-Day Cake →
+          </Link>
+
+          <section className="mb-10">
+            <h2 className="font-display text-xl font-bold text-white mb-3">Vadodara Delivery Time by Area</h2>
+            <div className="overflow-x-auto rounded-xl border border-border-secondary">
+              <table className="w-full text-sm">
+                <caption className="sr-only">Same Day Cake Delivery Times by Area in Vadodara</caption>
+                <thead className="bg-brand-rose/10">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-text-secondary font-semibold">Area</th>
+                    <th className="px-4 py-3 text-left text-text-secondary font-semibold">Standard ETA</th>
+                    <th className="px-4 py-3 text-left text-text-secondary font-semibold">Superfast</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border-secondary">
+                  {LOCALITIES.map(loc => (
+                    <tr key={loc.slug} className="hover:bg-surface-secondary/50">
+                      <td className="px-4 py-3 text-white font-medium">{loc.name}</td>
+                      <td className="px-4 py-3 text-white">{loc.etaText}</td>
+                      <td className="px-4 py-3">
+                        {loc.expresAvailable
+                          ? <span className="text-brand-rose font-medium">⚡ 90 min</span>
+                          : <span className="text-text-muted">—</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+          </section>
 
-            <ProductListings category="delivery" />
-
-            <section className="my-16 p-8 rounded-2xl bg-surface-secondary/50 border border-border-secondary/40">
-              <h2 className="font-display text-2xl font-bold text-white mb-6">
-                How to Order Same Day Cake in Vadodara
+          {expressAreas.length > 0 && (
+            <section className="mb-10">
+              <h2 className="font-display text-xl font-bold text-white mb-3">
+                Superfast 90-Min Areas ({expressAreas.length})
               </h2>
-              <ol className="space-y-4 text-text-secondary">
-                <li className="flex gap-3"><span className="font-bold text-brand-rose">1.</span><span>Browse cakes and select your favourite flavor and design</span></li>
-                <li className="flex gap-3"><span className="font-bold text-brand-rose">2.</span><span>Choose today's date and select a 3-hour delivery time slot</span></li>
-                <li className="flex gap-3"><span className="font-bold text-brand-rose">3.</span><span>Add your custom message (free) and confirm your address</span></li>
-                <li className="flex gap-3"><span className="font-bold text-brand-rose">4.</span><span>Pay securely via UPI, card, or net banking</span></li>
-                <li className="flex gap-3"><span className="font-bold text-brand-rose">5.</span><span>Fresh cake baked and delivered to your door within 3 hours</span></li>
-              </ol>
-            </section>
-
-            <section className="my-12 p-8 rounded-2xl bg-brand-rose/[0.02] border border-brand-rose/10 text-center">
-              <h2 className="font-display text-2xl font-bold text-white mb-4">
-                Same Day Delivery Areas in Vadodara
-              </h2>
-              <p className="text-text-secondary leading-relaxed max-w-2xl mx-auto">
-                Express same-day delivery available in Manjalpur, Alkapuri, Fatehgunj, 
-                Gotri, Vasna, Karelibaug, Nizampura, Makarpura, Akota, Waghodia Road, 
-                Harni, Subhanpura, and 500+ pincodes across Vadodara.
-              </p>
-            </section>
-
-            <section className="my-16">
-              <h2 className="font-display text-3xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="space-y-6">
-                {faqs.map((faq, i) => (
-                  <div key={i} className="p-6 rounded-xl bg-surface-secondary border border-border-secondary">
-                    <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                    <p className="text-text-secondary leading-relaxed">{faq.answer}</p>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {expressAreas.map(loc => (
+                  <Link key={loc.slug} href={`/cakes/vadodara/${loc.slug}`}
+                    className="px-3 py-2 bg-surface-secondary border border-border-secondary rounded-lg text-sm text-white hover:border-brand-rose transition-colors">
+                    {loc.name} ({loc.pincode})
+                  </Link>
                 ))}
               </div>
             </section>
-          </div>
-        </Container>
+          )}
+
+          <AEOBlock
+            title="Same-Day Delivery Vadodara — FAQ"
+            summary={`Vadodara mein same-day cake delivery cut-off ${SAME_DAY_CUTOFF} hai. Delivery 2-4 hrs. Alkapuri, Gotri mein 90 min superfast option. Free delivery above Rs.${FREE_DELIVERY_ABOVE}.`}
+            faqs={expressFaqs}
+            city="Vadodara"
+          />
+        </div>
       </main>
     </>
-  )
+  );
 }

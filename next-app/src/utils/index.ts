@@ -108,3 +108,52 @@ export function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
+
+/**
+ * Format delivery time slot cleanly:
+ * Strips category prefixes (e.g. "Morning Slot", "Standard Noon", "Afternoon Delight", etc.)
+ * Ensures direct time range with "(No Fix Time)" at the end.
+ * Example: "Morning Slot (10:00 AM - 1:00 PM)" -> "10:00 AM - 01:00 PM (No Fix Time)"
+ */
+export function formatTimeSlotDisplay(label: string): string {
+  if (!label) return '';
+  let clean = label.trim();
+
+  // If label contains parentheses with time, e.g. "Morning Slot (10:00 AM - 1:00 PM)"
+  const matchParen = clean.match(/\(([^)]+)\)/);
+  if (matchParen && !matchParen[1].toLowerCase().includes('no fix time')) {
+    clean = matchParen[1].trim();
+  } else {
+    // Strip common prefixes
+    clean = clean
+      .replace(/^(Morning Slot|Morning|Standard Noon|Standard|Afternoon Delight|Afternoon|Evening Celebration|Evening|Night Slot|Midnight Surprise)\s*[-:—]?\s*/i, '')
+      .trim();
+  }
+
+  // Remove any existing "(No Fix Time)" or "No Fix Time" to avoid repetition
+  clean = clean.replace(/\(?\s*no fix time\s*\)?/gi, '').trim();
+
+  // Standardize spacing around dash
+  clean = clean.replace(/\s*-\s*/g, ' - ');
+
+  // Standardize single digit hours like 1:00 PM -> 01:00 PM
+  clean = clean.replace(/\b(\d):([0-5]\d)\b/g, '0$1:$2');
+
+  return `${clean} (No Fix Time)`;
+}
+
+/**
+ * Official System & Surprise Delivery Instructions
+ */
+export const SYSTEM_DELIVERY_INSTRUCTIONS = [
+  "After order placement, sender will get pickup-time product photo on WhatsApp.",
+  "Once delivery is complete, WhatsApp update will be sent immediately.",
+  "Due to weather or any external reason, delivery may get delayed — update for this will also be sent on WhatsApp.",
+  "This is a Surprise Delivery, so sender's name is not shared with receiver until delivery is done.",
+  "Once delivery person reaches the address with the product, sender's name is shared as per company rule.",
+  "Please do not call for any query — we prefer WhatsApp message with Order Number and Delivery Date (+91 72038 24012)."
+];
+
+export const SYSTEM_DELIVERY_INSTRUCTIONS_TEXT = SYSTEM_DELIVERY_INSTRUCTIONS.map(
+  (inst, idx) => `${idx + 1}. ${inst}`
+).join('\n');

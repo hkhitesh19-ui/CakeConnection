@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { X, ChevronDown, ChevronRight, Heart, User, Package, MessageCircle, Phone, Search } from 'lucide-react';
 import { navigationConfig, siteConfig, whatsappConfig } from '@/config/site.config';
 import { useUIStore } from '@/stores';
+import { cn } from '@/utils';
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -39,13 +40,8 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border-secondary">
-          <Link href="/" onClick={onClose} className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-rose via-brand-rose-light to-brand-rose-gold flex items-center justify-center">
-              <span className="font-serif text-lg font-bold text-text-primary">CC</span>
-            </div>
-            <span className="font-serif text-lg font-semibold text-text-primary">
-              Cake <span className="text-gradient-rose">Connection</span>
-            </span>
+          <Link href="/" onClick={onClose} className="flex items-center gap-2">
+            <img src="/logo.png?v=new1" alt="Cake Connection" className="h-9 w-auto object-contain" />
           </Link>
           <button onClick={onClose} className="p-2 text-text-secondary hover:text-text-primary" aria-label="Close menu">
             <X size={24} />
@@ -94,7 +90,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                   {item.megaMenu?.map((section) => (
                     <div key={section.title} className="pl-4 py-2">
                       <p className="px-4 py-1 text-xs font-semibold text-brand-rose uppercase tracking-wider">{section.title}</p>
-                      <div className="mt-1 space-y-0.5">
+                      <div className={cn("mt-1", section.items.length > 4 ? "grid grid-cols-2 gap-x-2 space-y-0" : "space-y-0.5")}>
                         {section.items.map((subItem) => (
                           <Link key={subItem.label} href={subItem.href} onClick={onClose}
                             className="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-glass-light rounded-lg transition-colors">
@@ -104,6 +100,22 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                       </div>
                     </div>
                   ))}
+                  
+                  {/* Trending Links for Mobile */}
+                  {item.trendingLinks && (
+                    <div className="pl-4 py-2 border-t border-border-secondary/50 mt-1">
+                      <p className="px-4 py-1 text-xs font-semibold text-brand-rose uppercase tracking-wider">{item.trendingLinks.title}</p>
+                      <div className="mt-1 space-y-0.5">
+                        {item.trendingLinks.items.map((subItem) => (
+                          <Link key={subItem.label} href={subItem.href} onClick={onClose}
+                            className="flex items-center justify-between px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-glass-light rounded-lg transition-colors">
+                            {subItem.label}
+                            <ChevronRight size={14} className="opacity-50" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               </div>
             ))}
@@ -125,11 +137,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 border-t border-border-secondary space-y-3">
-          <a href={whatsappConfig.getOrderUrl()} target="_blank" rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-text-primary text-sm font-semibold rounded-lg transition-colors">
-            <MessageCircle size={18} /> Order via WhatsApp
-          </a>
+        <div className="p-4 border-t border-border-secondary">
           <a href={`tel:${siteConfig.contact.phone}`}
             className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-border-secondary text-text-secondary hover:text-text-primary text-sm font-medium rounded-lg transition-colors">
             <Phone size={18} /> Call Us

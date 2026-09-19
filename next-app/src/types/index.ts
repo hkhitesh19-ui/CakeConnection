@@ -57,6 +57,8 @@ export interface CartItem {
   deliverySpeed?: string;
   deliveryDate?: string;
   deliverySlot?: string;
+  slug?: string;
+  category?: string;
 }
 
 export interface Cart {

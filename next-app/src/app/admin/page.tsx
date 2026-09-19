@@ -71,6 +71,11 @@ export default function AdminDashboard() {
     async function loadDashboardData() {
       try {
         const response = await fetch('/api/orders');
+        if (!response.ok) {
+          console.warn('Orders API not available (status:', response.status, ')— showing empty dashboard.');
+          setLoading(false);
+          return;
+        }
         const resData = await response.json();
         if (resData.success && resData.data) {
           const fetchedOrders = resData.data;
@@ -173,8 +178,8 @@ export default function AdminDashboard() {
     <div className="space-y-8">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-3xl font-display font-bold text-white mb-2">Dashboard Overview</h2>
-          <p className="text-text-muted">Welcome back! Here's what's happening with your store today.</p>
+          <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">Dashboard Overview</h2>
+          <p className="text-gray-500">Welcome back! Here's what's happening with your store today.</p>
         </div>
         {loading && (
           <div className="flex items-center gap-2 text-brand-rose bg-brand-rose/10 px-4 py-2 rounded-xl text-sm font-medium border border-brand-rose/20">
@@ -192,18 +197,18 @@ export default function AdminDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-surface-secondary border border-border-secondary rounded-2xl p-6 flex flex-col"
+            className="bg-white shadow-sm border border-gray-200 rounded-2xl p-6 flex flex-col"
           >
             <div className="flex items-center justify-between mb-4">
               <div className={`p-3 rounded-xl ${stat.bg}`}>
                 <stat.icon className={`w-6 h-6 ${stat.color}`} />
               </div>
-              <div className="flex items-center gap-1 text-xs font-semibold text-text-muted uppercase tracking-wider">
+              <div className="flex items-center gap-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                 {stat.change}
               </div>
             </div>
-            <h3 className="text-text-secondary text-sm font-medium mb-1">{stat.title}</h3>
-            <p className="text-2xl font-bold text-white">{stat.value}</p>
+            <h3 className="text-gray-600 text-sm font-medium mb-1">{stat.title}</h3>
+            <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
           </motion.div>
         ))}
       </div>
@@ -214,28 +219,28 @@ export default function AdminDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-surface-secondary border border-border-secondary rounded-2xl p-6"
+          className="bg-white shadow-sm border border-gray-200 rounded-2xl p-6"
         >
-          <div className="flex items-center gap-2 mb-6 border-b border-border-secondary pb-4">
+          <div className="flex items-center gap-2 mb-6 border-b border-gray-200 pb-4">
             <Activity className="w-5 h-5 text-brand-rose" />
-            <h3 className="text-lg font-bold text-white">Weekly Revenue Trend</h3>
+            <h3 className="text-lg font-bold text-gray-900">Weekly Revenue Trend</h3>
           </div>
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="name" stroke="#888" axisLine={false} tickLine={false} />
-                <YAxis stroke="#888" axisLine={false} tickLine={false} tickFormatter={(value) => `₹${value/1000}k`} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" vertical={false} />
+                <XAxis dataKey="name" stroke="#9CA3AF" axisLine={false} tickLine={false} />
+                <YAxis stroke="#9CA3AF" axisLine={false} tickLine={false} tickFormatter={(value) => `₹${value/1000}k`} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1A1A1A', borderColor: '#333', borderRadius: '12px' }}
-                  itemStyle={{ color: '#fff' }}
+                  contentStyle={{ backgroundColor: '#fff', borderColor: '#E5E7EB', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                  itemStyle={{ color: '#111827' }}
                 />
                 <Line 
                   type="monotone" 
                   dataKey="revenue" 
                   stroke="#D81B60" 
                   strokeWidth={3}
-                  dot={{ r: 4, fill: '#D81B60', strokeWidth: 2, stroke: '#1A1A1A' }}
+                  dot={{ r: 4, fill: '#D81B60', strokeWidth: 2, stroke: '#fff' }}
                   activeDot={{ r: 6 }} 
                 />
               </LineChart>
@@ -247,22 +252,22 @@ export default function AdminDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-surface-secondary border border-border-secondary rounded-2xl p-6"
+          className="bg-white shadow-sm border border-gray-200 rounded-2xl p-6"
         >
-          <div className="flex items-center gap-2 mb-6 border-b border-border-secondary pb-4">
+          <div className="flex items-center gap-2 mb-6 border-b border-gray-200 pb-4">
             <ShoppingBag className="w-5 h-5 text-blue-500" />
-            <h3 className="text-lg font-bold text-white">Orders Volume</h3>
+            <h3 className="text-lg font-bold text-gray-900">Orders Volume</h3>
           </div>
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="name" stroke="#888" axisLine={false} tickLine={false} />
-                <YAxis stroke="#888" axisLine={false} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" vertical={false} />
+                <XAxis dataKey="name" stroke="#9CA3AF" axisLine={false} tickLine={false} />
+                <YAxis stroke="#9CA3AF" axisLine={false} tickLine={false} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1A1A1A', borderColor: '#333', borderRadius: '12px' }}
-                  itemStyle={{ color: '#fff' }}
-                  cursor={{ fill: '#333', opacity: 0.4 }}
+                  contentStyle={{ backgroundColor: '#fff', borderColor: '#E5E7EB', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                  itemStyle={{ color: '#111827' }}
+                  cursor={{ fill: '#F3F4F6', opacity: 0.8 }}
                 />
                 <Bar 
                   dataKey="orders" 
@@ -280,11 +285,11 @@ export default function AdminDashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="bg-surface-secondary border border-border-secondary rounded-2xl overflow-hidden"
+        className="bg-white shadow-sm border border-gray-200 rounded-2xl overflow-hidden"
       >
-        <div className="p-6 border-b border-border-secondary flex items-center justify-between">
-          <h3 className="text-lg font-bold text-white">Recent Orders</h3>
-          <Link href="/admin/orders" className="text-brand-rose hover:text-white text-sm font-medium transition-colors">
+        <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+          <h3 className="text-lg font-bold text-gray-900">Recent Orders</h3>
+          <Link href="/admin/orders" className="text-brand-rose hover:text-brand-rose/80 text-sm font-medium transition-colors">
             View All
           </Link>
         </div>
@@ -292,7 +297,7 @@ export default function AdminDashboard() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-brand-black/50 text-text-muted text-sm uppercase tracking-wider">
+              <tr className="bg-gray-50 text-gray-500 text-sm uppercase tracking-wider">
                 <th className="px-6 py-4 font-medium">Order Number</th>
                 <th className="px-6 py-4 font-medium">Customer</th>
                 <th className="px-6 py-4 font-medium">Date</th>
@@ -300,26 +305,26 @@ export default function AdminDashboard() {
                 <th className="px-6 py-4 font-medium">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-border-secondary">
+            <tbody className="divide-y divide-gray-100">
               {recentOrders.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="px-6 py-8 text-center text-text-muted">
+                  <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
                     {loading ? 'Loading orders...' : 'No orders placed yet.'}
                   </td>
                 </tr>
               ) : (
                 recentOrders.map((order) => (
-                  <tr key={order.id} className="hover:bg-brand-black/30 transition-colors">
-                    <td className="px-6 py-4 font-mono font-bold text-white">{order.order_number}</td>
-                    <td className="px-6 py-4 text-text-secondary">{order.customer_name}</td>
-                    <td className="px-6 py-4 text-text-secondary">
+                  <tr key={order.id} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-4 font-mono font-bold text-gray-900">{order.order_number}</td>
+                    <td className="px-6 py-4 text-gray-600">{order.customer_name}</td>
+                    <td className="px-6 py-4 text-gray-600">
                       {new Date(order.created_at).toLocaleDateString('en-IN', {
                         day: 'numeric',
                         month: 'short',
                         year: 'numeric'
                       })}
                     </td>
-                    <td className="px-6 py-4 font-medium text-white">₹{Number(order.total).toLocaleString('en-IN')}</td>
+                    <td className="px-6 py-4 font-medium text-gray-900">₹{Number(order.total).toLocaleString('en-IN')}</td>
                     <td className="px-6 py-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(order.order_status)}`}>
                         {getStatusLabel(order.order_status)}

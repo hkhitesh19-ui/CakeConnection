@@ -26,6 +26,8 @@ import { cn } from '@/utils';
 import { MegaMenu } from './MegaMenu';
 import { MobileMenu } from './MobileMenu';
 import { SearchOverlay } from './SearchOverlay';
+import { HeaderSearch } from './HeaderSearch';
+import { ExpressDeliveryScooter } from '@/components/common/ExpressDeliveryScooter';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -45,9 +47,9 @@ export function Navbar() {
     setIsMounted(true);
   }, []);
 
-  // Hide navbar on scroll down, show on scroll up (after 100px)
-  const isHidden = scrollY > 100 && direction === 'down';
-  const isScrolled = scrollY > 20;
+  // Keep navbar permanently sticky on scroll (always visible)
+  const isHidden = false;
+  const isScrolled = scrollY > 10;
 
   // Close mega menu when route changes
   useEffect(() => {
@@ -55,72 +57,86 @@ export function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname, setMobileMenuOpen]);
 
-  // Fetch dynamic categories
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const { data, error } = await supabase.from('cake_categories').select('*').order('display_order');
-      if (data && !error) {
-        const groups = ['Delivery based Cakes', 'Design Bases Cakes', 'Festival or Special Occassion Based'];
-        const dynamicMegaMenu = groups.map(group => {
-          const items = data.filter((c: any) => c.group_name === group).map((c: any) => ({
-            label: c.name,
-            href: `/cakes?category=${c.slug}`
-          }));
-          return { title: group, items };
-        }).filter(section => section.items.length > 0);
+      // Fetch dynamic categories for MegaMenu
+      useEffect(() => {
+        async function fetchCategories() {
+          try {
+            const res = await fetch('/api/admin/categories');
+            const data = await res.json();
+            if (data.success && data.data) {
+              const categories = data.data;
+              
+              // Group categories by group_name
+              const grouped = categories.reduce((acc: any, cat: any) => {
+                const group = cat.group_name || 'Other';
+                if (!acc[group]) acc[group] = [];
+                acc[group].push({ label: cat.name, href: `/cakes?category=${cat.slug}` });
+                return acc;
+              }, {});
 
-        setNavItems(prev => prev.map(nav => {
-          if (nav.label === 'Cakes') {
-            return { ...nav, megaMenu: dynamicMegaMenu };
+              // Build MegaMenuSection array
+              const dynamicMegaMenu = Object.entries(grouped).map(([title, items]) => ({
+                title,
+                items: items as any[]
+              }));
+
+              setNavItems((prev) => 
+                prev.map(item => {
+                  if (item.label === 'Cakes') {
+                    return { ...item, megaMenu: dynamicMegaMenu };
+                  }
+                  return item;
+                })
+              );
+            }
+          } catch (error) {
+            console.error('Failed to fetch categories:', error);
           }
-          return nav;
-        }));
-      }
-    };
-    fetchCategories();
-  }, []);
+        }
+        fetchCategories();
+      }, []);      // Mega menu hover with debounce
+      const handleMegaEnter = useCallback((label: string) => {
+        if (megaTimerRef.current) clearTimeout(megaTimerRef.current);
+        setActiveMega(label);
+      }, []);
 
-  // Mega menu hover with debounce
-  const handleMegaEnter = useCallback((label: string) => {
-    if (megaTimerRef.current) clearTimeout(megaTimerRef.current);
-    setActiveMega(label);
-  }, []);
+      const handleMegaLeave = useCallback(() => {
+        megaTimerRef.current = setTimeout(() => {
+          setActiveMega(null);
+        }, 200);
+      }, []);
 
-  const handleMegaLeave = useCallback(() => {
-    megaTimerRef.current = setTimeout(() => {
-      setActiveMega(null);
-    }, 200);
-  }, []);
+      const megaMenuRef = useRef<HTMLDivElement>(null);
+      useClickOutside(megaMenuRef, () => setActiveMega(null));
 
-  const megaMenuRef = useRef<HTMLDivElement>(null);
-  useClickOutside(megaMenuRef, () => setActiveMega(null));
-
-  return (
-    <>
-      <motion.header
-        ref={navRef}
-        className={cn(
-          'fixed top-0 left-0 right-0 z-[300] transition-all duration-500',
-          isHidden && '-translate-y-full'
-        )}
-        initial={{ y: -100 }}
-        animate={{ y: isHidden ? -100 : 0 }}
-        transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        {/* Top Announcement Bar */}
-        <div className="bg-brand-rose/90 text-white text-center py-1.5 text-xs sm:text-sm font-medium tracking-wide">
-          <span className="inline-flex items-center gap-2">
-            ✨ Free Delivery on Orders Above ₹999 | Same Day Delivery in Vadodara ✨
-          </span>
-        </div>
+      return (
+        <>
+          <motion.header
+            ref={navRef}
+            className="fixed top-0 left-0 right-0 z-[300] transition-all duration-300"
+            initial={{ y: 0 }}
+            animate={{ y: 0 }}
+          >
+            {/* Top Announcement Bar */}
+            <div className="bg-brand-rose/95 text-white py-1.5 px-3 text-xs sm:text-sm font-medium tracking-wide flex items-center justify-between sm:justify-center gap-2 sm:gap-4 overflow-hidden shadow-xs">
+              <span className="inline-flex items-center gap-2 truncate">
+                ✨ Free Delivery all Over Vadodara | Same Day Delivery in Vadodara ✨
+              </span>
+              <div className="flex-shrink-0">
+                <ExpressDeliveryScooter
+                  isMobile
+                  className="!bg-white/15 !border-white/30 !text-white hover:!bg-white/25 !py-0.5 !px-2.5 shadow-none"
+                />
+              </div>
+            </div>
 
         {/* Main Navbar */}
         <nav
           className={cn(
-            'transition-all duration-500',
+            'transition-all duration-300 relative',
             isScrolled
-              ? 'bg-surface-primary/85 backdrop-blur-xl border-b border-border-secondary shadow-2xl shadow-black/20'
-              : 'bg-surface-primary/60 backdrop-blur-lg border-b border-transparent'
+              ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm'
+              : 'bg-white/90 backdrop-blur-lg border-b border-gray-100'
           )}
         >
           <div className="container-luxury">
@@ -148,7 +164,6 @@ export function Navbar() {
                 {navItems.map((item) => (
                   <div
                     key={item.label}
-                    className="relative"
                     onMouseEnter={() => handleMegaEnter(item.label)}
                     onMouseLeave={handleMegaLeave}
                   >
@@ -177,7 +192,7 @@ export function Navbar() {
                     <AnimatePresence>
                       {activeMega === item.label && item.megaMenu && (
                         <MegaMenu
-                          sections={item.megaMenu}
+                          navItem={item}
                           onMouseEnter={() => handleMegaEnter(item.label)}
                           onMouseLeave={handleMegaLeave}
                         />
@@ -185,20 +200,20 @@ export function Navbar() {
                     </AnimatePresence>
                   </div>
                 ))}
+
+                {/* Winni-Style 2 Hour Delivery Gifts Animated Scooter */}
+                <div className="ml-1 pl-2 border-l border-gray-200">
+                  <ExpressDeliveryScooter />
+                </div>
+              </div>
+
+              {/* Center-Right: Desktop Direct Search Bar */}
+              <div className="hidden lg:block w-64 xl:w-80">
+                <HeaderSearch idPrefix="desktop" />
               </div>
 
               {/* Right: Action Icons */}
               <div className="flex items-center gap-1 sm:gap-2">
-                {/* Search */}
-                <button
-                  id="navbar-search"
-                  className="p-2 lg:p-2.5 text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-surface-glass-light"
-                  onClick={() => setSearchOpen(true)}
-                  aria-label="Search products"
-                >
-                  <Search size={20} />
-                </button>
-
                 {/* Wishlist */}
                 <Link
                   href="/wishlist"
@@ -255,10 +270,17 @@ export function Navbar() {
                   id="navbar-whatsapp"
                   className="hidden md:flex items-center gap-2 ml-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-text-primary text-sm font-medium rounded-lg transition-all duration-300 shadow-lg shadow-green-600/20 hover:shadow-green-600/40"
                 >
-                  <MessageCircle size={16} />
-                  <span className="hidden lg:inline">Quick Order</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                  </svg>
+                  <span className="hidden lg:inline">Order on WhatsApp</span>
                 </a>
               </div>
+            </div>
+
+            {/* Mobile Direct Search Bar — Always visible right below logo row */}
+            <div className="lg:hidden pb-2.5 pt-0.5">
+              <HeaderSearch idPrefix="mobile" placeholder="Search cakes, flavours, occasions..." />
             </div>
           </div>
         </nav>

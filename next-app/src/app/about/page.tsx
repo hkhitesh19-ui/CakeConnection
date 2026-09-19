@@ -28,7 +28,7 @@ export default function AboutPage() {
             <section className="space-y-6 text-text-secondary text-lg leading-relaxed mb-12">
               <p>
                 CakeConnection is Vadodara's trusted online bakery shop specializing in 100% eggless cakes, fresh flowers, and premium gift combos. 
-                Founded with a mission to bring delight and ease to celebrations, we deliver gourmet cakes to over 500+ pincodes in Vadodara, Surat, and Vadodara.
+                Founded with a mission to bring delight and ease to celebrations, we deliver gourmet cakes to over 500+ pincodes in Vadodara, Surat, and Baroda.
               </p>
               
               <h2 className="font-display text-2xl font-bold text-white mt-8 mb-4">Our Story</h2>

@@ -23,7 +23,7 @@ import {
 import { Container } from '@/components/ui';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { cn, formatPrice, getDiscountPercent } from '@/utils';
-import { comboProducts } from '@/data/products';
+import { useProducts } from '@/hooks/useProducts';
 import { useCartStore, useWishlistStore, useUIStore } from '@/stores';
 import type { Product } from '@/types';
 
@@ -44,15 +44,31 @@ const SORT_OPTIONS = [
   { value: 'rating', label: 'Top Rated' },
 ];
 
-function getSubcategories(): { value: string; label: string }[] {
-  const subs = [...new Set(comboProducts.map((p) => p.subcategory))];
-  return subs.map((s) => ({
-    value: s,
-    label: s
-      .split('-')
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' '),
-  }));
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function getSubcategories(products: Product[]): { value: string; label: string }[] {
+  if (!products || !Array.isArray(products)) return [];
+  const subsMap = new Map<string, string>();
+  products.forEach(p => {
+    if (!p.subcategory) return;
+    p.subcategory.split(',').forEach(s => {
+      const trimmed = s.trim();
+      const slug = slugify(trimmed);
+      if (slug && !subsMap.has(slug)) {
+        subsMap.set(slug, trimmed);
+      }
+    });
+  });
+  return Array.from(subsMap.entries())
+    .map(([value, label]) => ({ value, label }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 }
 
 // ── Animation Variants ───────────────────────
@@ -135,7 +151,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
     <motion.article variants={cardVariants} layout>
       <Link
         href={`/combos/${product.slug}`}
-        className="group relative flex flex-col rounded-2xl border border-border-secondary bg-surface-secondary overflow-hidden transition-all duration-500 hover:border-brand-rose/40 hover:shadow-[0_0_30px_rgba(183,110,121,0.15)] h-full"
+        className="group relative flex flex-col rounded-2xl border border-gray-200/90 bg-white overflow-hidden transition-all duration-300 hover:border-brand-rose/40 hover:shadow-lg h-full"
       >
         {/* Image */}
         <div className="relative aspect-square overflow-hidden bg-surface-tertiary">
@@ -300,6 +316,7 @@ function FilterSidebar({
   onToggleSubcategory,
   onClearAll,
   activeFilterCount,
+  products,
 }: {
   selectedPriceRanges: string[];
   selectedSubcategories: string[];
@@ -307,12 +324,13 @@ function FilterSidebar({
   onToggleSubcategory: (v: string) => void;
   onClearAll: () => void;
   activeFilterCount: number;
+  products: Product[];
 }) {
-  const subcategories = getSubcategories();
+  const subcategories = getSubcategories(products);
 
   return (
     <aside className="hidden lg:block w-72 shrink-0">
-      <div className="sticky top-28 glass rounded-2xl p-6">
+      <div className="sticky top-28 bg-white border border-gray-200/90 rounded-2xl p-6 shadow-sm">
         {/* Header */}
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
@@ -428,6 +446,8 @@ function CombosPageContent() {
   const [mobileSortOpen, setMobileSortOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const { products: comboProducts, loading } = useProducts('combos');
+
   // Parse URL params
   const selectedPriceRanges = searchParams.getAll('price');
   const selectedSubcategories = searchParams.getAll('subcategory');
@@ -489,7 +509,11 @@ function CombosPageContent() {
 
     // Subcategory
     if (selectedSubcategories.length > 0) {
-      result = result.filter((p) => selectedSubcategories.includes(p.subcategory));
+      result = result.filter((p) => {
+        if (!p.subcategory) return false;
+        const pSubs = p.subcategory.split(',').map(s => slugify(s.trim()));
+        return selectedSubcategories.some(sub => pSubs.includes(sub));
+      });
     }
 
     // Price range
@@ -523,13 +547,13 @@ function CombosPageContent() {
     }
 
     return result;
-  }, [selectedPriceRanges, selectedSubcategories, sortBy, searchQuery]);
+  }, [comboProducts, selectedPriceRanges, selectedSubcategories, sortBy, searchQuery]);
 
   // Shared filter content for mobile
   const filterContent = (
     <>
       <FilterGroup title="Category">
-        {getSubcategories().map((opt) => (
+        {getSubcategories(comboProducts).map((opt) => (
           <FilterCheckbox
             key={opt.value}
             label={opt.label}
@@ -563,6 +587,15 @@ function CombosPageContent() {
       )}
     </>
   );
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center text-gray-900">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose mb-4"></div>
+        <p className="text-sm font-medium text-gray-500">Loading gift combos...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -606,7 +639,7 @@ function CombosPageContent() {
         </section>
 
         {/* ── Main Content ─────────────────────── */}
-        <section className="bg-brand-black pb-20">
+        <section className="bg-[#FAF9F6] pb-24 border-t border-gray-150">
           <Container as="div" size="xl">
             {/* Top bar */}
             <motion.div
@@ -658,6 +691,7 @@ function CombosPageContent() {
                 onToggleSubcategory={onToggleSubcategory}
                 onClearAll={onClearAll}
                 activeFilterCount={activeFilterCount}
+                products={comboProducts}
               />
 
               {/* Product Grid */}
@@ -781,8 +815,9 @@ function CombosPageContent() {
 export default function CombosPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-brand-black flex items-center justify-center text-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose"></div>
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center text-gray-900">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose mb-4"></div>
+        <p className="text-sm font-medium text-gray-500">Loading gift combos...</p>
       </div>
     }>
       <CombosPageContent />

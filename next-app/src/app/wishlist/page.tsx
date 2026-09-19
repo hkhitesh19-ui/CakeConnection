@@ -53,6 +53,8 @@ function WishlistCard({ item }: { item: ReturnType<typeof useWishlistStore.getSt
     if (!product || !defaultVariant) return;
     addToCart({
       productId: product.id,
+      slug: product.slug,
+      category: product.category,
       variantId: defaultVariant.id,
       name: product.name,
       image: product.images[0]?.url || '',
@@ -76,13 +78,13 @@ function WishlistCard({ item }: { item: ReturnType<typeof useWishlistStore.getSt
       animate="visible"
       exit="exit"
       layout
-      className="group relative flex flex-col rounded-2xl border border-border-secondary bg-surface-secondary overflow-hidden transition-all duration-500 hover:border-brand-rose/40 hover:shadow-[0_0_30px_rgba(183,110,121,0.12)]"
+      className="group relative flex flex-col rounded-2xl border border-gray-200/90 bg-white overflow-hidden transition-all duration-300 hover:border-brand-rose/40 hover:shadow-lg"
     >
       {/* Remove button */}
       <button
         onClick={handleRemove}
         aria-label="Remove from wishlist"
-        className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-surface-primary/80 backdrop-blur-sm border border-border-secondary text-text-muted hover:text-brand-red hover:bg-brand-red/10 hover:border-brand-red/30 transition-all cursor-pointer"
+        className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-500 hover:text-brand-red hover:bg-rose-50 hover:border-rose-200 transition-all cursor-pointer"
       >
         <X className="h-3.5 w-3.5" />
       </button>
@@ -205,7 +207,7 @@ export default function WishlistPage() {
         </section>
 
         {/* Grid */}
-        <section className="bg-brand-black pb-20">
+        <section className="bg-[#FAF9F6] pb-24 border-t border-gray-100">
           <Container as="div" size="xl">
             <AnimatePresence mode="popLayout">
               <motion.div variants={pageVariants} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

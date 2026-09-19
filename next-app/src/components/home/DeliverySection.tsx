@@ -6,50 +6,41 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Gift, Heart, Sparkles, Smile, Target, Users, Gem, Star } from 'lucide-react';
 import { Container } from '@/components/ui';
 
 interface NavCard {
   title: string;
   description: string;
-  Icon: any;
+  image: string;
   href: string;
-  color: string;
-  bgGlow: string;
 }
 
 const occasions: NavCard[] = [
   {
     title: 'Birthday Special',
     description: 'Celebrate another beautiful year with sweet surprises',
-    Icon: Gift,
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80',
     href: '/cakes?search=birthday',
-    color: 'text-amber-500',
-    bgGlow: 'bg-amber-500/10',
   },
   {
     title: 'Anniversary Special',
     description: 'Make love grow with premium flowers and cakes',
-    Icon: Heart,
+    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80',
     href: '/cakes?search=anniversary',
-    color: 'text-red-500',
-    bgGlow: 'bg-red-500/10',
   },
   {
     title: 'Love & Romance',
     description: 'Fresh red roses to express your deepest emotions',
-    Icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80',
     href: '/flowers?search=love',
-    color: 'text-pink-500',
-    bgGlow: 'bg-pink-500/10',
   },
   {
     title: 'Congratulations',
     description: 'Perfect hampers to celebrate their success',
-    Icon: Smile,
+    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=80',
     href: '/combos?search=congratulations',
-    color: 'text-emerald-500',
-    bgGlow: 'bg-emerald-500/10',
   },
 ];
 
@@ -57,34 +48,26 @@ const recipients: NavCard[] = [
   {
     title: 'For Her',
     description: 'Beautiful bouquets and sweet treats she will love',
-    Icon: Gem,
+    image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80',
     href: '/flowers?search=her',
-    color: 'text-rose-500',
-    bgGlow: 'bg-rose-500/10',
   },
   {
     title: 'For Him',
     description: 'Premium cakes and gift hampers crafted for him',
-    Icon: Target,
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80',
     href: '/cakes?search=him',
-    color: 'text-blue-500',
-    bgGlow: 'bg-blue-500/10',
   },
   {
     title: 'For Mother',
     description: 'Delivering warmth and gratitude to the best mom',
-    Icon: Users,
+    image: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=600&q=80',
     href: '/cakes?search=mother',
-    color: 'text-purple-500',
-    bgGlow: 'bg-purple-500/10',
   },
   {
     title: 'For Father',
     description: 'Show your appreciation to the pillar of strength',
-    Icon: Star,
+    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80',
     href: '/cakes?search=father',
-    color: 'text-indigo-500',
-    bgGlow: 'bg-indigo-500/10',
   },
 ];
 
@@ -155,20 +138,24 @@ export default function DeliverySection() {
                 >
                   <Link
                     href={opt.href}
-                    className="block p-5 rounded-2xl border border-border-secondary bg-white hover:border-brand-rose/40 hover:shadow-md transition-all duration-300 group"
+                    className="block relative overflow-hidden rounded-xl h-40 w-full group hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${opt.bgGlow} ${opt.color}`}>
-                        <opt.Icon className="w-5.5 h-5.5" />
-                      </div>
-                      <div>
-                        <h4 className="font-sans text-sm font-bold text-text-primary group-hover:text-brand-rose transition-colors duration-300">
-                          {opt.title}
-                        </h4>
-                        <p className="mt-1 text-xs text-text-secondary leading-relaxed">
-                          {opt.description}
-                        </p>
-                      </div>
+                    <Image
+                      src={opt.image}
+                      alt={opt.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 z-10" />
+                    
+                    <div className="absolute inset-0 p-4 flex flex-col justify-end z-20 text-white font-bold">
+                      <h4 className="font-sans text-sm font-bold text-white transition-colors duration-300">
+                        {opt.title}
+                      </h4>
+                      <p className="mt-1 text-xs text-white/90 leading-relaxed font-bold">
+                        {opt.description}
+                      </p>
                     </div>
                   </Link>
                 </motion.div>
@@ -194,20 +181,24 @@ export default function DeliverySection() {
                 >
                   <Link
                     href={opt.href}
-                    className="block p-5 rounded-2xl border border-border-secondary bg-white hover:border-brand-rose/40 hover:shadow-md transition-all duration-300 group"
+                    className="block relative overflow-hidden rounded-xl h-40 w-full group hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${opt.bgGlow} ${opt.color}`}>
-                        <opt.Icon className="w-5.5 h-5.5" />
-                      </div>
-                      <div>
-                        <h4 className="font-sans text-sm font-bold text-text-primary group-hover:text-brand-rose transition-colors duration-300">
-                          {opt.title}
-                        </h4>
-                        <p className="mt-1 text-xs text-text-secondary leading-relaxed">
-                          {opt.description}
-                        </p>
-                      </div>
+                    <Image
+                      src={opt.image}
+                      alt={opt.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 z-10" />
+                    
+                    <div className="absolute inset-0 p-4 flex flex-col justify-end z-20 text-white font-bold">
+                      <h4 className="font-sans text-sm font-bold text-white transition-colors duration-300">
+                        {opt.title}
+                      </h4>
+                      <p className="mt-1 text-xs text-white/90 leading-relaxed font-bold">
+                        {opt.description}
+                      </p>
                     </div>
                   </Link>
                 </motion.div>

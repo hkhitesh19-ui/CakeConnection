@@ -26,7 +26,7 @@ export default function OrganizationSchema() {
           "postalCode": "390011",
           "addressCountry": "IN"
         },
-        "areaServed": ["Vadodara", "Surat", "Vadodara"],
+        "areaServed": ["Vadodara", "Baroda", "Surat"],  // ✅ Fixed: removed duplicate "Vadodara"
         "sameAs": [
           "https://www.zomato.com/vadodara/cake-connection-live-cake-manjalpur",
           "https://www.facebook.com/cakeconnection",

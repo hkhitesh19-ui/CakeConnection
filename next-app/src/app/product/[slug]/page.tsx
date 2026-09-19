@@ -347,15 +347,8 @@ export default function ProductPage() {
         setLoading(true);
         const prod = await getProductBySlug(slug);
         if (prod) {
-          setProduct(prod);
-          setSelectedVariant(prod.variants[0] || null);
-          setSelectedDelivery(prod.deliveryOptions[prod.deliveryOptions.length - 1] || 'same-day');
-          
-          const revs = await getReviewsByProductId(prod.id);
-          setReviews(revs);
-
-          const related = await getRelatedProducts(prod.id, 4);
-          setRelatedProducts(related);
+          router.replace(`/${prod.category}/${prod.slug}`);
+          return;
         }
       } catch (err) {
         console.error('Error fetching product details:', err);
@@ -471,7 +464,7 @@ export default function ProductPage() {
 
   if (loading) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center bg-brand-black text-white">
+      <div className="min-h-[60vh] flex items-center justify-center bg-white text-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose"></div>
       </div>
     );

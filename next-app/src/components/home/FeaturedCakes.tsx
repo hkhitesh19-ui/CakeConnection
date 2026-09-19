@@ -71,6 +71,8 @@ function CakeCard({ cake, index, rawProduct }: { cake: CakeProduct; index: numbe
 
     addItem({
       productId: cake.id,
+      slug: cake.slug,
+      category: 'cakes',
       variantId: defaultVariant.id,
       name: cake.name,
       image: cake.image,

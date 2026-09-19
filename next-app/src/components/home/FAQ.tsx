@@ -1,166 +1,258 @@
 'use client';
 // ============================================
 // FAQ Component — Cake Connection
-// Accordion FAQ section with smooth height
-// animation and rotating plus/minus icons
+// AEO (Answer Engine Optimization) & SEO Powerhouse
+// Features 12 Comprehensive Q&As for Vadodara, Category Tabs,
+// and embedded FAQPage JSON-LD Structured Data Schema
 // ============================================
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus } from 'lucide-react';
+import { Plus, Minus, HelpCircle, Truck, Cake, Flower2, ShieldCheck, MessageCircle } from 'lucide-react';
 import { Container } from '@/components/ui';
-import { useSiteStore } from '@/stores/siteStore';
+import { cn } from '@/utils';
+import { whatsappConfig } from '@/config/site.config';
 
-interface FAQItem {
+export interface FAQItem {
   id: number;
+  category: 'delivery' | 'cakes' | 'flowers' | 'payments';
   question: string;
   answer: string;
 }
 
-const faqData: FAQItem[] = [
+export const SEO_FAQ_DATA: FAQItem[] = [
+  // ── Delivery & Timings ──
   {
     id: 1,
-    question: 'What areas do you deliver to in Vadodara?',
+    category: 'delivery',
+    question: 'What areas do you deliver to in Vadodara, and is delivery free?',
     answer:
-      'We deliver across all major areas of Vadodara including Satellite, Vastrapur, Bodakdev, Prahlad Nagar, SG Highway, Navrangpura, CG Road, Maninagar, Bopal, Thaltej, Ambawadi, Paldi, and many more. We cover over 200+ pin codes across the city. If you\'re unsure whether we deliver to your area, simply enter your pin code at checkout or reach out to us on WhatsApp — we\'ll confirm instantly.',
+      'Yes! We offer free same-day cake delivery across all major localities of Vadodara including Alkapuri, Gotri, Manjalpur, Akota, Fatehgunj, Karelibaug, Sayajigunj, Vasna Road, Waghodia Road, Sama, Subhanpura, Atladra, and Harni. We cover over 20+ pin codes across Vadodara. Standard delivery is completely free for orders above ₹499 with no hidden charges.',
   },
   {
     id: 2,
-    question: 'How does same-day delivery work?',
+    category: 'delivery',
+    question: 'How does 2-hour express cake delivery work in Vadodara?',
     answer:
-      'Place your order before 4 PM, and we\'ll deliver it the same day! We offer multiple delivery windows: 2-hour express delivery for urgent celebrations, 4-hour standard same-day delivery, and scheduled time-slot delivery where you can choose a specific 2-hour window. Once your order is confirmed, you\'ll receive real-time tracking updates via WhatsApp so you always know when to expect your delivery.',
+      'Our 2-hour express delivery is powered by our local live bakery kitchen in Vadodara. The moment your order is confirmed, our pastry chefs immediately bake your cake fresh, package it in insulated boxes with cooling packs, and dispatch it via a dedicated delivery executive to reach your doorstep within 120 minutes.',
   },
   {
     id: 3,
-    question: 'Can I customize my cake design?',
+    category: 'delivery',
+    question: 'What are midnight cake delivery timings and charges in Vadodara?',
     answer:
-      'Absolutely! We love bringing your cake visions to life. You can customize the flavour, weight, design, colour scheme, and add personal messages or photo prints. For themed cakes, share your reference images with us on WhatsApp, and our pastry artists will create a custom design just for you. Custom cakes typically require 24–48 hours advance notice, depending on the complexity of the design.',
+      'Our midnight delivery window is between 11:15 PM and 11:59 PM to surprise your loved ones right as the clock strikes 12! You can book midnight delivery online anytime before 8:00 PM on the celebration day. A nominal midnight convenience surcharge applies depending on the delivery distance in Vadodara.',
   },
   {
     id: 4,
-    question: 'What payment methods do you accept?',
+    category: 'delivery',
+    question: 'What is the cut-off time for same-day cake delivery in Vadodara?',
     answer:
-      'We accept all major payment methods for your convenience. This includes UPI (Google Pay, PhonePe, Paytm), all debit and credit cards (Visa, Mastercard, RuPay), net banking, and Razorpay-powered secure checkout. You can also pay via direct bank transfer or cash on delivery (available for select areas within Vadodara). All online transactions are 100% secure and encrypted.',
+      'You can place same-day orders up to 7:00 PM for standard evening delivery, and up to 8:00 PM for midnight surprises. For emergency cake orders after 8:00 PM, you can WhatsApp our live support team directly for instant kitchen dispatch availability.',
   },
+
+  // ── Cakes, Flavours & 100% Eggless ──
   {
     id: 5,
-    question: 'Do you offer midnight delivery?',
+    category: 'cakes',
+    question: 'Are all cakes at CakeConnection 100% eggless and freshly baked?',
     answer:
-      'Yes! Our midnight delivery is one of our most popular options — perfect for birthday surprises and anniversary celebrations. We deliver between 11:30 PM and 12:30 AM to ensure your loved one receives their gift right at midnight. Midnight delivery is available across Vadodara at a nominal additional charge. We recommend placing midnight delivery orders at least 6 hours in advance.',
+      'Yes, 100% of our cakes are strictly pure vegetarian (eggless) baked in a dedicated egg-free bakery kitchen following strict FSSAI hygiene standards. We never use premade frozen cakes — every single order is freshly baked only after you place your order, guaranteeing ultra-soft sponge and fresh cream.',
   },
   {
     id: 6,
-    question: 'What is your cancellation policy?',
+    category: 'cakes',
+    question: 'Can I order custom photo cakes and personalized designer cakes in Vadodara?',
     answer:
-      'We understand plans can change. You can cancel your order for a full refund if cancelled more than 6 hours before the scheduled delivery time. Cancellations made within 6 hours of delivery are eligible for a 50% refund or full store credit. For custom-designed cakes that are already in preparation, we offer store credit valid for 90 days. Refunds are processed within 3–5 business days to your original payment method.',
+      'Absolutely! We specialize in customized photo cakes printed on 100% edible sugar sheets using food-grade natural inks. You can also order custom themed cakes (Unicorn, PubG, Barbie, Super Dad, Car themes, 2-tier wedding cakes) by sharing your reference photo with our master decorators on WhatsApp.',
+  },
+  {
+    id: 7,
+    category: 'cakes',
+    question: 'Can I write a personalized message on the cake? Is it free?',
+    answer:
+      'Yes! Writing a custom celebration message (up to 30 characters / 3 words, e.g., "Happy Birthday Priya" or "Happy 25th Anniversary Mom & Dad") on your cake is completely FREE. You can type your message directly in the message box on the product page before adding to cart.',
+  },
+
+  // ── Flowers, Combos & Gifts ──
+  {
+    id: 8,
+    category: 'flowers',
+    question: 'Can I send fresh flower bouquets, chocolates, and greeting cards with the cake?',
+    answer:
+      'Yes! When you click "Add to Cart", our "Make it Extra Special" celebration add-on popup allows you to pair your cake with farm-fresh Dutch red roses, pink carnations, exotic orchids, Ferrero Rocher chocolates, sparkling fountain candles, party poppers, and handwritten pop-up greeting cards — all delivered together in a single elegant gift hamper.',
+  },
+  {
+    id: 9,
+    category: 'flowers',
+    question: 'Are the flowers delivered fresh and hand-arranged?',
+    answer:
+      'Every flower bouquet is hand-arranged by our expert local florists right before delivery using fresh morning blooms sourced directly from farm growers. Stems are wrapped in water-retaining floral foam to ensure they stay fresh, vibrant, and fragrant for days.',
+  },
+
+  // ── Payments, Safety & Guarantee ──
+  {
+    id: 10,
+    category: 'payments',
+    question: 'What payment methods do you accept? Is Cash on Delivery (COD) available?',
+    answer:
+      'We accept UPI (Google Pay, PhonePe, Paytm, BHIM), all major Credit & Debit Cards (Visa, Mastercard, RuPay), Net Banking, and digital wallets via 256-bit encrypted Razorpay. Cash on Delivery (COD) is also available across select pincodes in Vadodara.',
+  },
+  {
+    id: 11,
+    category: 'payments',
+    question: 'What if the recipient is not available at the delivery address?',
+    answer:
+      'Our delivery partner will call both the recipient and sender. If unavailable, we can safely coordinate with a neighbor, security desk, or reschedule the delivery slot at the customer\'s convenience without compromising the cake freshness.',
+  },
+  {
+    id: 12,
+    category: 'payments',
+    question: 'What is your cancellation and 100% Satisfaction Guarantee policy?',
+    answer:
+      'If you need to modify or cancel your order, you can do so up to 4 hours before the scheduled delivery slot for a full 100% refund. Furthermore, if your cake arrives damaged or differs from what you ordered, simply send us a photo on WhatsApp and we will immediately issue a free fresh replacement or full refund.',
   },
 ];
 
 export function FAQ() {
-  const [openId, setOpenId] = useState<number | null>(null);
-  const { faqs } = useSiteStore();
+  const [openId, setOpenId] = useState<number | null>(1); // First question open by default for AEO/UX
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'delivery' | 'cakes' | 'flowers' | 'payments'>('all');
 
   const toggleItem = useCallback((id: number) => {
     setOpenId((prev) => (prev === id ? null : id));
   }, []);
 
-  const itemsToShow = faqs && faqs.length > 0 ? faqs : faqData;
+  const filteredFaqs = useMemo(() => {
+    if (selectedCategory === 'all') return SEO_FAQ_DATA;
+    return SEO_FAQ_DATA.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory]);
+
+  // Generate Google-compliant FAQPage JSON-LD schema
+  const faqSchema = useMemo(() => {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: SEO_FAQ_DATA.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    };
+  }, []);
 
   return (
-    <section className="relative py-10 sm:py-12 lg:py-16 bg-white overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-1/2 -translate-y-1/2 -left-32 w-64 h-64 bg-brand-rose/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 -right-24 w-48 h-48 bg-brand-rose-gold/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-rose-50/20 to-white overflow-hidden" id="faq">
+      {/* FAQPage JSON-LD Schema for Google Rich Snippets & AI Overviews */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Subtle Background Glows */}
+      <div className="absolute top-1/3 -left-32 w-72 h-72 bg-brand-rose/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-24 w-60 h-60 bg-pink-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <Container size="md">
-        {/* Section heading */}
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8 sm:mb-12"
         >
-          <p className="text-brand-rose font-medium text-sm tracking-widest uppercase mb-3">
-            Got Questions?
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary">
-            Frequently Asked Questions
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 border border-brand-rose/20 text-brand-rose text-xs font-bold uppercase tracking-wider mb-3">
+            <HelpCircle className="h-3.5 w-3.5" />
+            <span>Got Questions?</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+            Frequently Asked <span className="text-gradient-rose">Questions</span>
           </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
+            Everything you need to know about fresh eggless cakes, 2-hour delivery, and flower delivery across Vadodara.
+          </p>
+
+          {/* Category Filter Tabs for AEO / SEO Navigation */}
+          <div className="flex items-center justify-center gap-2 mt-6 overflow-x-auto no-scrollbar py-1">
+            {[
+              { key: 'all', label: `All Questions (${SEO_FAQ_DATA.length})`, icon: null },
+              { key: 'delivery', label: '🚚 Delivery & Timings', icon: <Truck className="h-3.5 w-3.5" /> },
+              { key: 'cakes', label: '🎂 Cakes & Eggless', icon: <Cake className="h-3.5 w-3.5" /> },
+              { key: 'flowers', label: '💐 Flowers & Gifts', icon: <Flower2 className="h-3.5 w-3.5" /> },
+              { key: 'payments', label: '💳 Payments & Guarantee', icon: <ShieldCheck className="h-3.5 w-3.5" /> },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => setSelectedCategory(tab.key as any)}
+                className={cn(
+                  'px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5',
+                  selectedCategory === tab.key
+                    ? 'bg-brand-rose text-white shadow-md shadow-brand-rose/25 scale-102'
+                    : 'bg-white border border-gray-200 text-gray-700 hover:border-brand-rose/50 hover:bg-rose-50/20'
+                )}
+              >
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         {/* FAQ List */}
         <div className="space-y-3">
-          {itemsToShow.map((item, index) => {
-            const itemId = (item as any).id || (index + 1);
-            const isOpen = openId === itemId;
+          {filteredFaqs.map((item) => {
+            const isOpen = openId === item.id;
 
             return (
               <motion.div
-                key={itemId}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.06,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className={`rounded-xl border transition-colors duration-300 ${
+                key={item.id}
+                layout
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className={cn(
+                  'rounded-2xl border transition-all duration-200 overflow-hidden bg-white',
                   isOpen
-                    ? 'border-brand-rose/30 bg-surface-secondary'
-                    : 'border-border-secondary bg-surface-secondary/50 hover:border-border-accent/30'
-                }`}
+                    ? 'border-brand-rose/40 shadow-md shadow-brand-rose/5 ring-1 ring-brand-rose/15'
+                    : 'border-gray-200 hover:border-brand-rose/30 hover:shadow-xs'
+                )}
               >
-                {/* Question button */}
                 <button
-                  onClick={() => toggleItem(itemId)}
-                  className="flex items-center justify-between w-full text-left px-6 py-5 sm:px-8 sm:py-6 gap-4 cursor-pointer group"
+                  onClick={() => toggleItem(item.id)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer transition-colors"
                   aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${itemId}`}
                 >
-                  <span
-                    className={`font-medium text-base sm:text-lg transition-colors duration-300 ${
-                      isOpen ? 'text-brand-rose' : 'text-text-primary group-hover:text-text-accent'
-                    }`}
-                  >
+                  <span className={cn(
+                    'text-sm sm:text-base font-bold pr-4 transition-colors',
+                    isOpen ? 'text-brand-rose' : 'text-gray-900'
+                  )}>
                     {item.question}
                   </span>
-
-                  {/* Plus/minus icon with rotation */}
-                  <motion.div
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                      isOpen
-                        ? 'bg-brand-rose text-white'
-                        : 'bg-surface-tertiary text-text-secondary'
-                    }`}
-                  >
-                    <Plus className="w-4 h-4" />
-                  </motion.div>
+                  <div className={cn(
+                    'w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-colors',
+                    isOpen ? 'bg-brand-rose text-white' : 'bg-gray-100 text-gray-500'
+                  )}>
+                    {isOpen ? (
+                      <Minus className="h-4 w-4 stroke-[2.5]" />
+                    ) : (
+                      <Plus className="h-4 w-4 stroke-[2.5]" />
+                    )}
+                  </div>
                 </button>
 
-                {/* Answer with height animation */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
-                      id={`faq-answer-${itemId}`}
-                      role="region"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{
-                        height: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
-                        opacity: { duration: 0.25, delay: 0.1 },
-                      }}
-                      className="overflow-hidden"
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
                     >
-                      <div className="px-6 pb-5 sm:px-8 sm:pb-6 pt-0">
-                        <div className="w-12 h-px bg-brand-rose/30 mb-4" />
-                        <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
-                          {item.answer}
-                        </p>
+                      <div className="px-4 pb-5 sm:px-5 sm:pb-6 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/40">
+                        {item.answer}
                       </div>
                     </motion.div>
                   )}
@@ -169,8 +261,28 @@ export function FAQ() {
             );
           })}
         </div>
+
+        {/* WhatsApp Help CTA */}
+        <div className="mt-10 sm:mt-12 p-5 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-green-50 border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h4 className="text-sm sm:text-base font-bold text-gray-900">
+              Still have questions or need a custom design?
+            </h4>
+            <p className="text-xs text-gray-500 mt-0.5">
+              Our cake artists are online 24/7 on WhatsApp to help with custom orders & quick queries.
+            </p>
+          </div>
+          <a
+            href={whatsappConfig.getOrderUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-600/25 transition-all shrink-0 cursor-pointer"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
       </Container>
     </section>
   );
 }
-

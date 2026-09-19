@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { supabase } from '@/lib/supabase';
+import { isSupabaseConfigured } from '@/lib/db';
 
 // ---- Interfaces ----
 
@@ -16,6 +17,7 @@ export interface GeneralSettings {
   coordinates: { lat: number; lng: number };
   hours: { open: string; close: string; days: string };
   socials: { instagram: string; facebook: string };
+  themeColor?: string; // Hex code for primary theme color
 }
 
 export interface HeroConfig {
@@ -53,6 +55,7 @@ export interface FAQItem {
 export interface DeliverySlot {
   label: string;
   isFestivalOnly?: boolean;
+  cutoffHour?: number; // Cutoff hour in 24h format (e.g. 11 for 11:00 AM)
 }
 
 export interface DeliverySpeedOption {
@@ -127,6 +130,7 @@ const DEFAULT_SETTINGS: GeneralSettings = {
     instagram: 'https://www.instagram.com/cakeconnection',
     facebook: 'https://www.facebook.com/cakeconnection',
   },
+  themeColor: '#D81B60',
 };
 
 const DEFAULT_HERO: HeroConfig = {
@@ -191,11 +195,10 @@ const DEFAULT_FAQS: FAQItem[] = [
 ];
 
 const DEFAULT_SLOTS: DeliverySlot[] = [
-  { label: 'Morning Slot (09:00 AM - 12:00 PM)' },
-  { label: 'Standard Noon (12:00 PM - 03:00 PM)' },
-  { label: 'Afternoon Delight (03:00 PM - 06:00 PM)' },
-  { label: 'Evening Celebration (06:00 PM - 09:00 PM)' },
-  { label: 'Midnight Surprise (11:30 PM - 12:15 AM)' },
+  { label: '10:00 AM - 01:00 PM (No Fix Time)', cutoffHour: 8 },
+  { label: '12:00 PM - 03:00 PM (No Fix Time)', cutoffHour: 11 },
+  { label: '03:00 PM - 06:00 PM (No Fix Time)', cutoffHour: 14 },
+  { label: '06:00 PM - 09:00 PM (No Fix Time)', cutoffHour: 17 },
 ];
 
 const DEFAULT_DELIVERY_SPEEDS: DeliverySpeedOption[] = [
@@ -250,6 +253,11 @@ export const useSiteStore = create<SiteState>((set, get) => ({
 
   fetchSettings: async () => {
     set({ loading: true });
+    if (!isSupabaseConfigured()) {
+      console.info('Supabase not configured — using default settings (mock mode).');
+      set({ loading: false });
+      return;
+    }
     try {
       const { data, error } = await supabase.from('site_settings').select('*');
       
@@ -289,6 +297,25 @@ export const useSiteStore = create<SiteState>((set, get) => ({
   },
 
   updateSetting: async (key: string, value: any) => {
+    // If Supabase isn't configured, just update local state (mock mode)
+    if (!isSupabaseConfigured()) {
+      console.info(`Mock mode: saved ${key} locally (not persisted to DB).`);
+      const stateUpdate: any = {};
+      if (key === 'general_settings') stateUpdate.generalSettings = value;
+      else if (key === 'hero_section') stateUpdate.heroConfig = value;
+      else if (key === 'delivery_banner') stateUpdate.deliveryBanner = value;
+      else if (key === 'testimonials') stateUpdate.testimonials = value;
+      else if (key === 'faqs') stateUpdate.faqs = value;
+      else if (key === 'delivery_slots') stateUpdate.deliverySlots = value;
+      else if (key === 'delivery_speeds') stateUpdate.deliverySpeeds = value;
+      else if (key === 'pincode_charges') stateUpdate.pincodeCharges = value;
+      else if (key === 'festival_dates') stateUpdate.festivalDates = value;
+      else if (key === 'closed_dates') stateUpdate.closedDates = value;
+      else if (key === 'seo_settings') stateUpdate.seoSettings = value;
+      else if (key === 'coupons') stateUpdate.coupons = value;
+      set(stateUpdate);
+      return true;
+    }
     try {
       const { error } = await supabase
         .from('site_settings')

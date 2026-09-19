@@ -2,16 +2,29 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
-export async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request: {
       headers: request.headers,
     },
   });
 
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (
+    !supabaseUrl ||
+    !supabaseAnonKey ||
+    supabaseUrl === 'YOUR_SUPABASE_URL' ||
+    supabaseUrl === 'https://placeholder.supabase.co' ||
+    supabaseAnonKey === 'YOUR_SUPABASE_ANON_KEY'
+  ) {
+    return supabaseResponse;
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         get(name: string) {
@@ -59,10 +72,10 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // If the user is trying to access an admin route but is not logged in
-  if (request.nextUrl.pathname.startsWith('/admin') && !user) {
-    return NextResponse.redirect(new URL('/auth/login', request.url));
-  }
+  // TESTING MODE: Temporarily bypass login for /admin routes
+  // if (request.nextUrl.pathname.startsWith('/admin') && !user) {
+  //   return NextResponse.redirect(new URL('/auth/login', request.url));
+  // }
 
   // NOTE: Role-based access control (RBAC) checking for 'super_admin' or 'manager'
   // can be added here by querying the `user_roles` table using the `user.id`

@@ -208,18 +208,18 @@ export default function AdminCustomersAndReviews() {
       {/* Header & Tabs */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h2 className="text-3xl font-display font-bold text-white mb-2">CRM &amp; Reviews Moderation</h2>
-          <p className="text-text-muted">Analyze your buyer list and moderate customer testimonials.</p>
+          <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">CRM &amp; Reviews Moderation</h2>
+          <p className="text-gray-500">Analyze your buyer list and moderate customer testimonials.</p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex bg-surface-secondary border border-border-secondary p-1 rounded-xl">
+        <div className="flex bg-white shadow-sm border border-gray-200 p-1 rounded-xl">
           <button
             onClick={() => setActiveTab('crm')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
               activeTab === 'crm' 
                 ? 'bg-brand-rose text-white shadow-lg' 
-                : 'text-text-secondary hover:text-white'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
             }`}
           >
             <Users className="w-4 h-4" />
@@ -230,7 +230,7 @@ export default function AdminCustomersAndReviews() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
               activeTab === 'reviews' 
                 ? 'bg-brand-rose text-white shadow-lg' 
-                : 'text-text-secondary hover:text-white'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
             }`}
           >
             <MessageSquare className="w-4 h-4" />
@@ -240,7 +240,7 @@ export default function AdminCustomersAndReviews() {
       </div>
 
       {/* Main Panel */}
-      <div className="bg-surface-secondary border border-border-secondary rounded-2xl p-6 shadow-2xl">
+      <div className="bg-white shadow-sm border border-gray-200 rounded-2xl p-6 shadow-2xl">
         <AnimatePresence mode="wait">
           {activeTab === 'crm' ? (
             <motion.div
@@ -253,38 +253,38 @@ export default function AdminCustomersAndReviews() {
               {/* Search CRM */}
               <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4">
                 <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
                   <input
                     type="text"
                     value={crmSearch}
                     onChange={(e) => setCrmSearch(e.target.value)}
                     placeholder="Search customers by name, email, or phone..."
-                    className="w-full bg-brand-black border border-border-secondary rounded-xl pl-10 pr-4 py-2.5 text-white focus:outline-none focus:border-brand-rose transition-colors placeholder:text-text-muted text-sm"
+                    className="w-full bg-white border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-gray-900 shadow-sm focus:outline-none focus:border-brand-rose focus:ring-2 focus:ring-brand-rose/20 transition-all placeholder:text-gray-400 text-sm"
                   />
                 </div>
-                <div className="flex items-center gap-2 text-text-secondary text-sm">
+                <div className="flex items-center gap-2 text-gray-600 text-sm">
                   {loading && <Loader2 className="w-4 h-4 animate-spin text-brand-rose" />}
                   <span>{filteredCustomers.length} Customers Found</span>
                 </div>
               </div>
 
               {/* CRM Table */}
-              <div className="overflow-x-auto rounded-xl border border-border-secondary bg-brand-black/35">
+              <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[850px]">
                   <thead>
-                    <tr className="bg-brand-black/60 text-text-muted text-xs uppercase tracking-wider">
-                      <th className="px-6 py-4 font-medium">Customer Profile</th>
-                      <th className="px-6 py-4 font-medium">Contact Details</th>
-                      <th className="px-6 py-4 font-medium">Total Orders</th>
-                      <th className="px-6 py-4 font-medium">Total Spent</th>
-                      <th className="px-6 py-4 font-medium">Last Order</th>
-                      <th className="px-6 py-4 font-medium text-right">Status</th>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-500 text-xs uppercase tracking-wider">
+                      <th className="px-6 py-4 font-semibold">Customer Profile</th>
+                      <th className="px-6 py-4 font-semibold">Contact Details</th>
+                      <th className="px-6 py-4 font-semibold">Total Orders</th>
+                      <th className="px-6 py-4 font-semibold">Total Spent</th>
+                      <th className="px-6 py-4 font-semibold">Last Order</th>
+                      <th className="px-6 py-4 font-semibold text-right">Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-border-secondary text-sm">
+                  <tbody className="divide-y divide-gray-100 text-sm">
                     {loading ? (
                       <tr>
-                        <td colSpan={6} className="px-6 py-12 text-center text-text-muted">
+                        <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
                           <div className="flex flex-col items-center gap-2 justify-center">
                             <Loader2 className="w-8 h-8 animate-spin text-brand-rose" />
                             <span>Compiling CRM database...</span>
@@ -293,21 +293,21 @@ export default function AdminCustomersAndReviews() {
                       </tr>
                     ) : filteredCustomers.length === 0 ? (
                       <tr>
-                        <td colSpan={6} className="px-6 py-8 text-center text-text-muted">
+                        <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
                           No customer profiles match your search criteria.
                         </td>
                       </tr>
                     ) : (
                       filteredCustomers.map((customer) => (
-                        <tr key={customer.email} className="hover:bg-brand-black/30 transition-colors">
+                        <tr key={customer.email} className="hover:bg-gray-50 transition-colors">
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-3">
                               <div className="w-10 h-10 rounded-full bg-brand-rose/10 flex items-center justify-center border border-brand-rose/20 text-brand-rose font-bold">
                                 {customer.name.charAt(0).toUpperCase()}
                               </div>
                               <div>
-                                <p className="font-semibold text-white">{customer.name}</p>
-                                <span className="text-[11px] font-mono text-text-muted bg-surface-tertiary px-2 py-0.5 rounded border border-border-secondary">
+                                <p className="font-semibold text-gray-900">{customer.name}</p>
+                                <span className="text-[11px] font-mono text-gray-500 bg-white px-2 py-0.5 rounded border border-gray-200">
                                   ID: {customer.email.split('@')[0].toUpperCase()}
                                 </span>
                               </div>
@@ -315,23 +315,23 @@ export default function AdminCustomersAndReviews() {
                           </td>
                           <td className="px-6 py-4">
                             <div className="flex flex-col gap-1">
-                              <div className="flex items-center gap-2 text-text-secondary text-xs">
-                                <Mail className="w-3.5 h-3.5 text-text-muted" />
+                              <div className="flex items-center gap-2 text-gray-600 text-xs">
+                                <Mail className="w-3.5 h-3.5 text-gray-500" />
                                 <span>{customer.email}</span>
                               </div>
-                              <div className="flex items-center gap-2 text-text-secondary text-xs">
-                                <Phone className="w-3.5 h-3.5 text-text-muted" />
+                              <div className="flex items-center gap-2 text-gray-600 text-xs">
+                                <Phone className="w-3.5 h-3.5 text-gray-500" />
                                 <span>{customer.phone}</span>
                               </div>
                             </div>
                           </td>
-                          <td className="px-6 py-4 font-semibold text-white">
+                          <td className="px-6 py-4 font-semibold text-gray-900">
                             {customer.ordersCount}
                           </td>
                           <td className="px-6 py-4 font-bold text-brand-rose">
                             ₹{customer.totalSpent.toLocaleString('en-IN')}
                           </td>
-                          <td className="px-6 py-4 text-text-secondary text-xs">
+                          <td className="px-6 py-4 text-gray-600 text-xs">
                             {new Date(customer.lastOrderDate).toLocaleDateString('en-IN', {
                               day: 'numeric',
                               month: 'short',
@@ -363,18 +363,18 @@ export default function AdminCustomersAndReviews() {
               {/* Search & Filters for Reviews */}
               <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4">
                 <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
                   <input
                     type="text"
                     value={reviewSearch}
                     onChange={(e) => setReviewSearch(e.target.value)}
                     placeholder="Search reviews by product name, client, or comment..."
-                    className="w-full bg-brand-black border border-border-secondary rounded-xl pl-10 pr-4 py-2.5 text-white focus:outline-none focus:border-brand-rose transition-colors placeholder:text-text-muted text-sm"
+                    className="w-full bg-white border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-gray-900 shadow-sm focus:outline-none focus:border-brand-rose focus:ring-2 focus:ring-brand-rose/20 transition-all placeholder:text-gray-400 text-sm"
                   />
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="flex bg-brand-black/50 border border-border-secondary p-1 rounded-lg">
+                  <div className="flex bg-gray-100 border border-gray-200 p-1 rounded-lg">
                     {[
                       { value: 'all', label: 'All Reviews' },
                       { value: 'pending', label: 'Pending Only' },
@@ -385,8 +385,8 @@ export default function AdminCustomersAndReviews() {
                         onClick={() => setReviewFilter(filter.value as any)}
                         className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
                           reviewFilter === filter.value 
-                            ? 'bg-surface-elevated text-brand-rose border border-brand-rose/20' 
-                            : 'text-text-secondary hover:text-white'
+                            ? 'bg-white text-brand-rose shadow-sm border border-gray-200 font-semibold' 
+                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200/60'
                         }`}
                       >
                         {filter.label}
@@ -394,7 +394,7 @@ export default function AdminCustomersAndReviews() {
                     ))}
                   </div>
 
-                  <div className="text-text-secondary text-sm">
+                  <div className="text-gray-600 text-sm">
                     {loading && <Loader2 className="w-4 h-4 animate-spin text-brand-rose inline mr-1" />}
                     <span>{filteredReviews.length} Reviews found</span>
                   </div>
@@ -402,22 +402,22 @@ export default function AdminCustomersAndReviews() {
               </div>
 
               {/* Reviews Moderation Table */}
-              <div className="overflow-x-auto rounded-xl border border-border-secondary bg-brand-black/35">
+              <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[950px]">
                   <thead>
-                    <tr className="bg-brand-black/60 text-text-muted text-xs uppercase tracking-wider">
-                      <th className="px-6 py-4 font-medium">Reviewer &amp; Product</th>
-                      <th className="px-6 py-4 font-medium">Rating</th>
-                      <th className="px-6 py-4 font-medium">Comment</th>
-                      <th className="px-6 py-4 font-medium">Posted Date</th>
-                      <th className="px-6 py-4 font-medium">Status</th>
-                      <th className="px-6 py-4 font-medium text-right">Actions</th>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-500 text-xs uppercase tracking-wider">
+                      <th className="px-6 py-4 font-semibold">Reviewer &amp; Product</th>
+                      <th className="px-6 py-4 font-semibold">Rating</th>
+                      <th className="px-6 py-4 font-semibold">Comment</th>
+                      <th className="px-6 py-4 font-semibold">Posted Date</th>
+                      <th className="px-6 py-4 font-semibold">Status</th>
+                      <th className="px-6 py-4 font-semibold text-right">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-border-secondary text-sm">
+                  <tbody className="divide-y divide-gray-100 text-sm">
                     {loading ? (
                       <tr>
-                        <td colSpan={6} className="px-6 py-12 text-center text-text-muted">
+                        <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
                           <div className="flex flex-col items-center gap-2 justify-center">
                             <Loader2 className="w-8 h-8 animate-spin text-brand-rose" />
                             <span>Fetching feedback database...</span>
@@ -426,16 +426,16 @@ export default function AdminCustomersAndReviews() {
                       </tr>
                     ) : filteredReviews.length === 0 ? (
                       <tr>
-                        <td colSpan={6} className="px-6 py-8 text-center text-text-muted">
+                        <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
                           No reviews found matching the current filters.
                         </td>
                       </tr>
                     ) : (
                       filteredReviews.map((review) => (
-                        <tr key={review.id} className="hover:bg-brand-black/30 transition-colors">
+                        <tr key={review.id} className="hover:bg-gray-50 transition-colors">
                           <td className="px-6 py-4">
                             <div>
-                              <p className="font-semibold text-white">{review.user_name}</p>
+                              <p className="font-semibold text-gray-900">{review.user_name}</p>
                               <span className="text-[11px] text-brand-rose-gold font-medium">
                                 Product: {review.product_name}
                               </span>
@@ -449,18 +449,18 @@ export default function AdminCustomersAndReviews() {
                                   className={`w-4 h-4 ${
                                     i < review.rating 
                                       ? 'text-amber-400 fill-amber-400' 
-                                      : 'text-text-muted'
+                                      : 'text-gray-500'
                                   }`}
                                 />
                               ))}
                             </div>
                           </td>
                           <td className="px-6 py-4 max-w-md">
-                            <p className="text-text-secondary line-clamp-3 italic">
+                            <p className="text-gray-600 line-clamp-3 italic">
                               "{review.comment}"
                             </p>
                           </td>
-                          <td className="px-6 py-4 text-xs text-text-secondary">
+                          <td className="px-6 py-4 text-xs text-gray-600">
                             {new Date(review.created_at).toLocaleDateString('en-IN', {
                               day: 'numeric',
                               month: 'short',
@@ -492,7 +492,7 @@ export default function AdminCustomersAndReviews() {
                               <button
                                 onClick={() => handleDeleteReview(review.id)}
                                 title="Delete Review"
-                                className="p-2 text-text-muted hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
+                                className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
                               >
                                 <Trash2 className="w-4 h-4" />
                               </button>

@@ -13,12 +13,16 @@ import {
   InstagramGallery,
   FAQ,
   FooterCTA,
+  FastDeliveryCarousel,
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: "Premium Cakes & Flower Bouquets in Vadodara | Same Day Delivery",
-  description: "Order premium cakes, flower bouquets, and gift combos online in Vadodara. Same day delivery available. Chocolate, Red Velvet, Black Forest & more.",
-  keywords: "cake delivery vadodara, flower bouquet vadodara, online cake order, birthday cake",
+  title: "Online Cake Delivery in Vadodara — Same Day & Midnight | CakeConnection",
+  description: "Order 100% eggless cakes & fresh flowers in Vadodara. Same-day delivery in 2–4 hours (cut-off 6 PM). Midnight delivery at ₹149. Birthday, designer, photo cakes. Free delivery above ₹999.",
+  keywords: "cake delivery vadodara, eggless cake vadodara, online cake order, birthday cake vadodara, same day cake delivery vadodara, midnight cake delivery, flower bouquet vadodara",
+  alternates: {
+    canonical: 'https://cakeconnection.in',
+  },
 };
 
 export default function HomePage() {
@@ -32,6 +36,11 @@ export default function HomePage() {
         <HeroSection />
         <CategoriesSection />
         <ShopByOccasion />
+        <FastDeliveryCarousel
+          title="2 Hours SuperFast Delivery"
+          category="cakes"
+          viewAllLink="/cakes?sort=fast"
+        />
         <BestsellerCarousel
           title="Bestselling Cakes"
           category="cakes"

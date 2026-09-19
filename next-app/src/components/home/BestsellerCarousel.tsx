@@ -1,10 +1,12 @@
 'use client';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Star, ShoppingCart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, ShoppingCart, Check } from 'lucide-react';
 import { Container } from '@/components/ui';
-import { useCartStore } from '@/stores';
+import { useCartStore, useUIStore } from '@/stores';
 import { useProducts } from '@/hooks/useProducts';
+import { cakeProducts } from '@/data/products';
+import { scrapedFlowerProducts } from '@/data/scrapedFlowersData';
 import type { Product } from '@/types';
 
 interface BestsellerCarouselProps {
@@ -20,10 +22,16 @@ export default function BestsellerCarousel({
 }: BestsellerCarouselProps) {
   const { products: allProducts, loading } = useProducts(category);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [addedId, setAddedId] = useState<string | null>(null);
   const addItem = useCartStore((s) => s.addItem);
+  const addToast = useUIStore((s) => s.addToast);
 
-  // Filter for available products and limit to 12
-  const products = allProducts.filter((p) => p.isAvailable).slice(0, 12);
+  // Filter for available products with rich fallback
+  const fallbackProducts = category === 'flowers' 
+    ? (scrapedFlowerProducts as unknown as Product[]) 
+    : cakeProducts;
+  const availableProducts = allProducts.filter((p) => p.isAvailable);
+  const products = (availableProducts.length > 0 ? availableProducts : fallbackProducts).slice(0, 12);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -37,18 +45,33 @@ export default function BestsellerCarousel({
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {
     e.preventDefault();
     e.stopPropagation();
-    const variant = product.variants[0];
-    if (!variant) return;
+    const variant = product.variants?.[0] || {
+      id: `${product.id}-default`,
+      weight: category === 'cakes' ? '500g' : 'Standard',
+      price: (product as any).price || 499,
+    };
 
     addItem({
       productId: product.id,
+      slug: product.slug,
+      category: product.category || category || 'cakes',
       variantId: variant.id,
       name: product.name,
-      image: product.images[0]?.url || '/images/hero-cake.png',
-      weight: variant.weight,
-      price: variant.price,
+      image: product.images?.[0]?.url || (category === 'flowers' ? '/images/hero-flowers.png' : '/images/hero-cake.png'),
+      weight: variant.weight || (category === 'cakes' ? '500g' : 'Standard'),
+      price: variant.price || 499,
       quantity: 1,
     });
+
+    setAddedId(product.id);
+    addToast({
+      type: 'success',
+      message: `Added "${product.name}" to cart!`,
+    });
+
+    setTimeout(() => {
+      setAddedId((prev) => (prev === product.id ? null : prev));
+    }, 1800);
   };
 
   return (
@@ -196,10 +219,23 @@ export default function BestsellerCarousel({
                         {/* CTA button */}
                         <button
                           onClick={(e) => handleAddToCart(e, product)}
-                          className="w-full py-2 bg-brand-rose hover:bg-brand-rose-dark text-white rounded-lg text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all duration-200 active:scale-95 cursor-pointer shadow-sm hover:shadow"
+                          className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all duration-200 active:scale-95 cursor-pointer shadow-sm hover:shadow ${
+                            addedId === product.id
+                              ? 'bg-emerald-600 text-white'
+                              : 'bg-brand-rose hover:bg-brand-rose-dark text-white'
+                          }`}
                         >
-                          <ShoppingCart className="h-3.5 w-3.5" />
-                          Add to Cart
+                          {addedId === product.id ? (
+                            <>
+                              <Check className="h-3.5 w-3.5" />
+                              Added!
+                            </>
+                          ) : (
+                            <>
+                              <ShoppingCart className="h-3.5 w-3.5" />
+                              Add to Cart
+                            </>
+                          )}
                         </button>
                       </div>
                     </div>

@@ -7,9 +7,18 @@ export function generateProductSchema(product: {
   price: string;
   sku: string;
   inStock: boolean;
+  url?: string;          // ✅ Accept URL as parameter (SSR-safe, no window)
+  category?: string;
+  slug?: string;
   rating?: number;
   reviewCount?: number;
 }) {
+  // ✅ SSR-safe URL — no window.location.href
+  const productUrl = product.url
+    || (product.category && product.slug
+        ? `${siteConfig.url}/${product.category}/${product.slug}`
+        : siteConfig.url);
+
   return {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -19,25 +28,32 @@ export function generateProductSchema(product: {
     "sku": product.sku,
     "brand": {
       "@type": "Brand",
-      "name": siteConfig.name
+      "name": "CakeConnection"
     },
     ...(product.rating && product.reviewCount ? {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": product.rating,
+        "bestRating": "5",
         "reviewCount": product.reviewCount
       }
     } : {}),
     "offers": {
       "@type": "Offer",
-      "url": window.location.href,
-      "priceCurrency": "USD",
+      "url": productUrl,
+      "priceCurrency": "INR",   // ✅ Fixed: INR for Indian business (was USD)
       "price": product.price,
+      "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "itemCondition": "https://schema.org/NewCondition"
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "CakeConnection"
+      }
     }
   };
 }
+
 
 export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
   return {
@@ -99,42 +115,38 @@ export function generateLocalBusinessSchema(city: string = "Vadodara") {
   return {
     "@context": "https://schema.org",
     "@type": "Bakery",
-    "name": `${siteConfig.name} - ${city}`,
+    "name": `CakeConnection`,
     "image": `${siteConfig.url}/og-image.jpg`,
-    "@id": `${siteConfig.url}/delivery/${city.toLowerCase()}`,
-    "url": `${siteConfig.url}/delivery/${city.toLowerCase()}`,
-    "telephone": "+91-9876543210",
-    "priceRange": "$$",
+    "@id": `${siteConfig.url}/#localbusiness`,
+    "url": siteConfig.url,
+    "telephone": siteConfig.contact.phone,  // ✅ Fixed: use siteConfig (was placeholder +91-9876543210)
+    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Main Market Road",
+      "streetAddress": "Exit Gate, GF9 RutuPlatina Complex, Eva Mall Rd",
       "addressLocality": city,
       "addressRegion": "GJ",
-      "postalCode": "390001",
+      "postalCode": "390011",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 22.3072,
-      "longitude": 73.1812
+      "latitude": 22.2700,
+      "longitude": 73.1855
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday"
       ],
-      "opens": "08:00",
-      "closes": "23:00"
+      "opens": siteConfig.hours.open,
+      "closes": siteConfig.hours.close
     },
     "sameAs": [
-      "https://www.facebook.com/cakeconnection",
-      "https://www.instagram.com/cakeconnection"
-    ]
+      siteConfig.social.instagram,
+      siteConfig.social.facebook,
+    ].filter(Boolean)
   };
 }
+

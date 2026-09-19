@@ -65,6 +65,15 @@ export interface NavCategory {
   label: string;
   href: string;
   megaMenu?: MegaMenuSection[];
+  trendingLinks?: {
+    title: string;
+    items: MegaMenuItem[];
+  };
+  promotions?: {
+    title: string;
+    image: string;
+    href: string;
+  }[];
   featured?: {
     title: string;
     image: string;
@@ -77,6 +86,15 @@ export const navigationConfig: NavCategory[] = [
     label: 'Cakes',
     href: '/cakes',
     megaMenu: [
+      {
+        title: 'Cakes By Delivery speed',
+        items: [
+          { label: '1 to 2 Hours SuperFast Delivery', href: '/cakes?delivery=superfast' },
+          { label: '2 to 4 hours Express Delivery', href: '/cakes?delivery=express' },
+          { label: '4 to 6 Hours Same Day Delivery', href: '/cakes?delivery=sameday' },
+          { label: 'MidNight Delivery', href: '/cakes?delivery=midnight' },
+        ],
+      },
       {
         title: 'Cakes By Type',
         items: [
@@ -109,7 +127,7 @@ export const navigationConfig: NavCategory[] = [
         ],
       },
       {
-        title: 'Cakes By Theme',
+        title: 'Design/Theme Based Cakes',
         items: [
           { label: 'Kids Cakes', href: '/cakes?theme=kids' },
           { label: 'Unicorn Cakes', href: '/cakes?theme=unicorn' },
@@ -140,9 +158,30 @@ export const navigationConfig: NavCategory[] = [
         ],
       },
     ],
+    trendingLinks: {
+      title: 'Top Trending Links',
+      items: [
+        { label: 'Pinata Cakes', href: '/cakes?trending=pinata' },
+        { label: 'Bento Cake', href: '/cakes?trending=bento' },
+        { label: 'All Cakes', href: '/cakes' },
+        { label: 'Best Seller Cakes', href: '/cakes?sort=best-seller' },
+      ],
+    },
+    promotions: [
+      {
+        title: 'NEW ARRIVALS',
+        image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=400&h=300',
+        href: '/cakes?sort=new',
+      },
+      {
+        title: 'PREMIUM CAKES',
+        image: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=400&h=300',
+        href: '/cakes?type=premium',
+      },
+    ],
   },
   {
-    label: 'Flowers',
+    label: 'Flower Bouquets',
     href: '/flowers',
     megaMenu: [
       {

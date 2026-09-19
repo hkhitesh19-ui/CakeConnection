@@ -44,16 +44,29 @@ function mapProduct(dbProduct: any): Product {
     createdAt: dbProduct.created_at || '',
     updatedAt: dbProduct.updated_at || '',
     variants: Array.isArray(dbProduct.product_variants)
-      ? dbProduct.product_variants.map((v: any) => ({
-          id: v.id,
-          weight: v.weight,
-          price: Number(v.price),
-          compareAtPrice: v.compare_at_price ? Number(v.compare_at_price) : undefined,
-          sku: v.sku,
-          stock: Number(v.stock),
-        }))
+      ? dbProduct.product_variants
+          .map((v: any) => ({
+            id: v.id,
+            weight: v.weight,
+            price: Number(v.price),
+            compareAtPrice: v.compare_at_price ? Number(v.compare_at_price) : undefined,
+            sku: v.sku,
+            stock: Number(v.stock),
+          }))
+          .sort((a: any, b: any) => a.price - b.price)
       : [],
   };
+}
+
+// Helper to prevent external query hangs (max 2.5s fallback)
+function withTimeout<T>(promise: PromiseLike<T>, ms = 2500): Promise<T> {
+  let timer: any;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`Query timed out after ${ms}ms`)), ms);
+  });
+  return Promise.race([Promise.resolve(promise), timeout]).finally(() => {
+    clearTimeout(timer);
+  });
 }
 
 // ── Products API ───────────────────────────────────
@@ -63,9 +76,11 @@ export async function getAllProducts(): Promise<Product[]> {
     return allProducts;
   }
   try {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)');
+    const { data, error } = await withTimeout(
+      supabase
+        .from('products')
+        .select('*, product_variants(*)')
+    );
 
     if (error) throw error;
     return (data || []).map(mapProduct);
@@ -77,20 +92,24 @@ export async function getAllProducts(): Promise<Product[]> {
 
 export async function getProductBySlug(slug: string): Promise<Product | undefined> {
   if (!isSupabaseConfigured()) {
-    return allProducts.find((p) => p.slug === slug);
+    return allProducts.find((p) => p.slug === slug || p.id === slug);
   }
   try {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)')
-      .eq('slug', slug)
-      .single();
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(slug);
+    let query = supabase.from('products').select('*, product_variants(*)');
+    if (isUuid) {
+      query = query.or(`slug.eq.${slug},id.eq.${slug}`);
+    } else {
+      query = query.eq('slug', slug);
+    }
+    const { data, error } = await withTimeout(query.maybeSingle());
 
     if (error) throw error;
-    return data ? mapProduct(data) : undefined;
+    if (data) return mapProduct(data);
+    return allProducts.find((p) => p.slug === slug || p.id === slug);
   } catch (err) {
     console.warn(`Supabase getProductBySlug(${slug}) error, falling back to mock data:`, err);
-    return allProducts.find((p) => p.slug === slug);
+    return allProducts.find((p) => p.slug === slug || p.id === slug);
   }
 }
 
@@ -99,11 +118,13 @@ export async function getProductById(id: string): Promise<Product | undefined> {
     return allProducts.find((p) => p.id === id);
   }
   try {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)')
-      .eq('id', id)
-      .single();
+    const { data, error } = await withTimeout(
+      supabase
+        .from('products')
+        .select('*, product_variants(*)')
+        .eq('id', id)
+        .single()
+    );
 
     if (error) throw error;
     return data ? mapProduct(data) : undefined;
@@ -118,10 +139,12 @@ export async function getProductsByCategory(category: Product['category']): Prom
     return allProducts.filter((p) => p.category === category);
   }
   try {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)')
-      .eq('category', category);
+    const { data, error } = await withTimeout(
+      supabase
+        .from('products')
+        .select('*, product_variants(*)')
+        .eq('category', category)
+    );
 
     if (error) throw error;
     return (data || []).map(mapProduct);
@@ -136,10 +159,12 @@ export async function getFeaturedProducts(): Promise<Product[]> {
     return allProducts.filter((p) => p.isFeatured);
   }
   try {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)')
-      .eq('is_featured', true);
+    const { data, error } = await withTimeout(
+      supabase
+        .from('products')
+        .select('*, product_variants(*)')
+        .eq('is_featured', true)
+    );
 
     if (error) throw error;
     return (data || []).map(mapProduct);
@@ -162,12 +187,14 @@ export async function getRelatedProducts(productId: string, limit: number = 4): 
     const product = await getProductById(productId);
     if (!product) return fallback;
 
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, product_variants(*)')
-      .eq('category', product.category)
-      .neq('id', productId)
-      .limit(limit);
+    const { data, error } = await withTimeout(
+      supabase
+        .from('products')
+        .select('*, product_variants(*)')
+        .eq('category', product.category)
+        .neq('id', productId)
+        .limit(limit)
+    );
 
     if (error) throw error;
     return (data || []).map(mapProduct);

@@ -34,13 +34,11 @@ import {
 
 import { Container } from '@/components/ui';
 
-import { cn, formatPrice, getDiscountPercent, getWhatsAppLink } from '@/utils';
-import { getProductBySlug, getRelatedProducts, mockReviews } from '@/data/products';
-import {
-  type DeliverySpeedOption,
-} from '@/data/pricing';
-import { useCartStore, useWishlistStore, useUIStore, useSiteStore } from '@/stores';
+import { cn, formatPrice, getDiscountPercent, getWhatsAppLink, formatTimeSlotDisplay } from '@/utils';
+import { mockReviews } from '@/data/products';
+import { useCartStore, useWishlistStore, useUIStore, useSiteStore, type DeliverySlot } from '@/stores';
 import type { Product, ProductVariant } from '@/types';
+import { AddonModal, type AddonProduct } from './AddonModal';
 
 // ── Animation Variants ───────────────────────
 
@@ -208,6 +206,11 @@ function RelatedProductCard({ product }: { product: Product }) {
             </span>
           )}
         </div>
+        <div className="absolute top-3 right-3">
+          <span className="rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold text-gray-800 shadow-xs backdrop-blur-sm uppercase">
+            {product.category === 'cakes' ? '🎂 Cake' : product.category === 'flowers' ? '💐 Flowers' : '🎁 Combo'}
+          </span>
+        </div>
       </Link>
 
       <button
@@ -309,10 +312,17 @@ function ProductNotFound() {
 // ║         MAIN PRODUCT PAGE COMPONENT         ║
 // ╚══════════════════════════════════════════════╝
 
-export default function ProductDetailClient() {
-  const { category, slug } = useParams<{ category: string; slug: string }>();
+interface ProductDetailClientProps {
+  product: Product;
+  relatedProducts: Product[];
+}
+
+export default function ProductDetailClient({ product, relatedProducts }: ProductDetailClientProps) {
+  const { category } = useParams<{ category: string; slug: string }>();
   const navigate = useNavigate();
   const reviewsRef = useRef<HTMLDivElement>(null);
+  const variantRef = useRef<HTMLDivElement>(null);
+  const dateTimeRef = useRef<HTMLDivElement>(null);
 
   // ── Stores ──
   const addItem = useCartStore((s) => s.addItem);
@@ -320,7 +330,6 @@ export default function ProductDetailClient() {
   const addToast = useUIStore((s) => s.addToast);
   const {
     deliverySlots,
-    deliverySpeeds,
     closedDates,
     festivalDates,
     fetchSettings
@@ -331,17 +340,26 @@ export default function ProductDetailClient() {
     fetchSettings();
   }, [fetchSettings]);
 
-  // ── Product lookup ──
-  const product = slug ? getProductBySlug(slug) : undefined;
+  // Sort variants by price (lowest weight / price first)
+  const sortedVariants = useMemo(() => {
+    if (!product?.variants || product.variants.length === 0) return [];
+    return [...product.variants].sort((a, b) => a.price - b.price);
+  }, [product?.variants]);
 
-  // ── State ──
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
-    product?.variants[0] || null
-  );
-  const [selectedDelivery, setSelectedDelivery] = useState<string>(
-    product?.deliveryOptions[product.deliveryOptions.length - 1] || 'same-day'
-  );
-  const [selectedDateIndex, setSelectedDateIndex] = useState(0);
+  // ── State (Lowest weight pre-selected by default as requested) ──
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(() => {
+    if (!product?.variants || product.variants.length === 0) return null;
+    return [...product.variants].sort((a, b) => a.price - b.price)[0] || null;
+  });
+
+  // Sync default variant when product/variants load
+  useEffect(() => {
+    if (sortedVariants.length > 0 && (!selectedVariant || !sortedVariants.some(v => v.id === selectedVariant.id))) {
+      setSelectedVariant(sortedVariants[0]);
+    }
+  }, [sortedVariants, selectedVariant]);
+
+  const [selectedDateIndex, setSelectedDateIndex] = useState<number | null>(null);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
   const [cakeMessage, setCakeMessage] = useState('');
@@ -349,12 +367,17 @@ export default function ProductDetailClient() {
   const [activeTab, setActiveTab] = useState<'description' | 'delivery' | 'reviews'>('description');
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<{
+    variant?: boolean;
+    date?: boolean;
+    slot?: boolean;
+  }>({});
 
   // ── Derived data ──
   const deliveryDays = useMemo(() => getNext7Days(), []);
 
   const selectedDateString = useMemo(() => {
-    if (!deliveryDays[selectedDateIndex]) return '';
+    if (selectedDateIndex === null || selectedDateIndex === undefined || !deliveryDays[selectedDateIndex]) return '';
     const d = deliveryDays[selectedDateIndex].date;
     return d.toISOString().split('T')[0];
   }, [deliveryDays, selectedDateIndex]);
@@ -364,51 +387,76 @@ export default function ProductDetailClient() {
     return closedDates.find((c) => c.date === selectedDateString) || null;
   }, [selectedDateString, closedDates]);
 
+  // Delivery Slots directly from Admin Panel (siteStore) without redundant slots or artificial sections
   const availableSlots = useMemo(() => {
     if (!selectedDateString) return [];
+    
+    // Check if selected date is today
+    const todayStr = new Date().toISOString().split('T')[0];
+    const isToday = selectedDateString === todayStr;
+    const currentHour = new Date().getHours();
+
     const festivalMatch = festivalDates.find((f) => f.date === selectedDateString);
-    if (festivalMatch) {
-      return festivalMatch.slots.map((label) => ({ label }));
+    
+    let rawSlots = deliverySlots && deliverySlots.length > 0 ? deliverySlots : [
+      { label: '10:00 AM - 01:00 PM (No Fix Time)', cutoffHour: 8 },
+      { label: '12:00 PM - 03:00 PM (No Fix Time)', cutoffHour: 11 },
+      { label: '03:00 PM - 06:00 PM (No Fix Time)', cutoffHour: 14 },
+      { label: '06:00 PM - 09:00 PM (No Fix Time)', cutoffHour: 17 },
+    ];
+
+    if (festivalMatch && festivalMatch.slots && festivalMatch.slots.length > 0) {
+      rawSlots = festivalMatch.slots.map((label) => ({ label }));
     }
-    return deliverySlots;
+
+    // Filter out disabled slots if it's today and past the cutoff hour
+    if (isToday) {
+      rawSlots = rawSlots.filter(slot => {
+        if (slot.cutoffHour === undefined || slot.cutoffHour === null) return true;
+        return currentHour < slot.cutoffHour;
+      });
+    }
+
+    // Deduplicate & format: Direct timeslot display without Morning/Afternoon/Evening and with "(No Fix Time)" at end
+    const seen = new Set<string>();
+    const cleanSlots: DeliverySlot[] = [];
+    rawSlots.forEach((s) => {
+      const formatted = formatTimeSlotDisplay(s.label || '');
+      if (formatted && !seen.has(formatted.toLowerCase())) {
+        seen.add(formatted.toLowerCase());
+        cleanSlots.push({ ...s, label: formatted });
+      }
+    });
+
+    return cleanSlots;
   }, [selectedDateString, festivalDates, deliverySlots]);
 
   // Sync / validate selected timeslot when available slots change
   useEffect(() => {
-    if (availableSlots.length > 0) {
+    if (availableSlots.length > 0 && selectedTimeSlot) {
       const isValid = availableSlots.some((s) => s.label === selectedTimeSlot);
       if (!isValid) {
-        setSelectedTimeSlot(availableSlots[0].label);
+        setSelectedTimeSlot('');
       }
-    } else {
+    } else if (availableSlots.length === 0) {
       setSelectedTimeSlot('');
     }
   }, [availableSlots, selectedTimeSlot]);
 
   const isCake = product?.category === 'cakes';
 
-  const availableDeliveryOptions = useMemo(() => {
-    if (!product || !deliverySpeeds) return [];
-    return deliverySpeeds.filter((opt) =>
-      product.deliveryOptions.includes(opt.value)
-    );
-  }, [product, deliverySpeeds]);
-
-  const deliverySurcharge = useMemo(() => {
-    if (!deliverySpeeds) return 0;
-    const opt = deliverySpeeds.find((d) => d.value === selectedDelivery);
-    return opt?.surcharge || 0;
-  }, [selectedDelivery, deliverySpeeds]);
-
+  // Base price from selected variant (or lowest price variant)
   const currentPrice = useMemo(() => {
-    if (!selectedVariant) return 0;
-    return selectedVariant.price + deliverySurcharge;
-  }, [selectedVariant, deliverySurcharge]);
+    if (selectedVariant) return selectedVariant.price;
+    if (sortedVariants.length > 0) return sortedVariants[0].price;
+    return 0;
+  }, [selectedVariant, sortedVariants]);
 
   const compareAtPrice = useMemo(() => {
-    if (!selectedVariant?.compareAtPrice) return 0;
-    return selectedVariant.compareAtPrice + deliverySurcharge;
-  }, [selectedVariant, deliverySurcharge]);
+    if (selectedVariant?.compareAtPrice) return selectedVariant.compareAtPrice;
+    if (sortedVariants.length > 0 && sortedVariants[0].compareAtPrice) return sortedVariants[0].compareAtPrice;
+    return 0;
+  }, [selectedVariant, sortedVariants]);
 
   const discount = useMemo(() => {
     if (!compareAtPrice || compareAtPrice <= currentPrice) return 0;
@@ -416,11 +464,6 @@ export default function ProductDetailClient() {
   }, [currentPrice, compareAtPrice]);
 
   const isWishlisted = product ? wishlist.isInWishlist(product.id) : false;
-
-  const relatedProducts = useMemo(() => {
-    if (!product) return [];
-    return getRelatedProducts(product.id, 4);
-  }, [product]);
 
   // Rating distribution (mock)
   const ratingDistribution = useMemo(() => {
@@ -433,12 +476,76 @@ export default function ProductDetailClient() {
 
   // ── Handlers ──
 
-  const handleAddToCart = useCallback(() => {
-    if (!product || !selectedVariant) return;
-    const deliveryDate = deliveryDays[selectedDateIndex]?.date.toISOString().split('T')[0];
+  const [isAddonModalOpen, setIsAddonModalOpen] = useState(false);
+  const [activeRelatedTab, setActiveRelatedTab] = useState<'all' | 'cakes' | 'flowers' | 'combos'>('all');
 
+  const filteredRelated = useMemo(() => {
+    if (activeRelatedTab === 'all') return relatedProducts;
+    return relatedProducts.filter((p) => p.category === activeRelatedTab);
+  }, [relatedProducts, activeRelatedTab]);
+
+  const handleAddToCart = useCallback(() => {
+    if (!product) return;
+
+    const errors: { variant?: boolean; date?: boolean; slot?: boolean } = {};
+    let errorMsg = '';
+
+    // Step 1: Weight is mandatory
+    if (!selectedVariant) {
+      errors.variant = true;
+      errorMsg = 'Please select a cake weight (e.g. 500g, 1kg)';
+    }
+    // Step 2: Date is mandatory
+    else if (selectedDateIndex === null) {
+      errors.date = true;
+      errorMsg = 'Please select a delivery date';
+    }
+    // Step 3: Closed date check
+    else if (isDateClosed) {
+      errors.date = true;
+      errorMsg = `Our bakery is closed on this date: ${isDateClosed.reason || 'Shop Closed'}. Please select another date.`;
+    }
+    // Step 4: Timeslot is mandatory
+    else if (!selectedTimeSlot) {
+      errors.slot = true;
+      errorMsg = availableSlots.length === 0
+        ? "Today's delivery slots have ended. Please select Tomorrow or an upcoming date."
+        : "Please select a delivery time slot";
+    }
+
+    if (errorMsg) {
+      setValidationErrors(errors);
+      addToast({
+        type: 'warning',
+        message: errorMsg,
+        duration: 3500,
+      });
+
+      // Smooth scroll to the missing selection
+      if (errors.variant && variantRef.current) {
+        variantRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if ((errors.date || errors.slot) && dateTimeRef.current) {
+        dateTimeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    setValidationErrors({});
+    setIsAddonModalOpen(true);
+  }, [product, selectedVariant, selectedDateIndex, isDateClosed, selectedTimeSlot, availableSlots, addToast]);
+
+  const handleConfirmAddons = useCallback((selectedAddons: AddonProduct[]) => {
+    if (!product || !selectedVariant) return;
+    const deliveryDate =
+      selectedDateIndex !== null && deliveryDays[selectedDateIndex]
+        ? deliveryDays[selectedDateIndex].date.toISOString().split('T')[0]
+        : new Date().toISOString().split('T')[0];
+
+    // 1. Add Main Cake Product
     addItem({
       productId: product.id,
+      slug: product.slug,
+      category: product.category,
       variantId: selectedVariant.id,
       name: product.name,
       image: product.images[0]?.url || '',
@@ -447,35 +554,59 @@ export default function ProductDetailClient() {
       price: currentPrice,
       quantity,
       customMessage: cakeMessage || undefined,
-      deliverySpeed: selectedDelivery,
+      deliverySpeed: 'Standard Delivery',
       deliveryDate,
       deliverySlot: selectedTimeSlot,
     });
 
+    // 2. Add Selected Add-on Items (Flowers, Chocolates, Candles, Cards)
+    selectedAddons.forEach((addon) => {
+      addItem({
+        productId: addon.id,
+        slug: addon.id,
+        category: addon.category === 'flowers' ? 'flowers' : 'combos',
+        variantId: `${addon.id}-std`,
+        name: addon.name,
+        image: addon.image,
+        weight: 'Celebration Add-on',
+        flavour: 'addon',
+        price: addon.price,
+        quantity: 1,
+        deliverySpeed: 'Standard Delivery',
+        deliveryDate,
+        deliverySlot: selectedTimeSlot,
+      });
+    });
+
     addToast({
       type: 'success',
-      message: `${product.name} added to cart!`,
+      message: selectedAddons.length > 0
+        ? `${product.name} + ${selectedAddons.length} add-on(s) added to cart!`
+        : `${product.name} added to cart!`,
       duration: 3000,
     });
 
-    // Redirect to the Cart page
+    setIsAddonModalOpen(false);
     navigate.push('/cart');
-  }, [product, selectedVariant, currentPrice, quantity, cakeMessage, selectedDelivery, selectedDateIndex, selectedTimeSlot, deliveryDays, addItem, addToast, navigate]);
+  }, [product, selectedVariant, currentPrice, quantity, cakeMessage, selectedDateIndex, selectedTimeSlot, deliveryDays, addItem, addToast, navigate]);
 
   const handleWhatsApp = useCallback(() => {
-    if (!product || !selectedVariant) return;
-    const msg = `Hi! I'd like to order:\n\n🎂 *${product.name}*\n📦 ${selectedVariant.weight}\n💰 ${formatPrice(currentPrice)}\n🚚 Delivery: ${selectedDelivery}\n📅 ${deliveryDays[selectedDateIndex]?.label}\n⏰ ${selectedTimeSlot}${cakeMessage ? `\n✉️ Message: "${cakeMessage}"` : ''}\n\nPlease confirm availability!`;
+    if (!product) return;
+    const weightLabel = selectedVariant ? selectedVariant.weight : '500g';
+    const dateLabel = selectedDateIndex !== null && deliveryDays[selectedDateIndex] ? deliveryDays[selectedDateIndex].label : 'Today';
+    const slotLabel = selectedTimeSlot || 'Standard Delivery';
+    const msg = `Hi! I'd like to order:\n\n🎂 *${product.name}*\n📦 ${weightLabel}\n💰 ${formatPrice(currentPrice)}\n🚚 Delivery: ${dateLabel} (${slotLabel})${cakeMessage ? `\n✉️ Message: "${cakeMessage}"` : ''}\n\nPlease confirm availability!`;
     const url = getWhatsAppLink(msg);
     window.open(url, '_blank');
-  }, [product, selectedVariant, currentPrice, selectedDelivery, selectedDateIndex, selectedTimeSlot, cakeMessage, deliveryDays]);
+  }, [product, selectedVariant, currentPrice, selectedDateIndex, selectedTimeSlot, cakeMessage, deliveryDays]);
 
   const handleToggleWishlist = useCallback(() => {
-    if (!product || !selectedVariant) return;
+    if (!product) return;
     wishlist.toggleItem({
       productId: product.id,
       name: product.name,
       image: product.images[0]?.url || '',
-      price: selectedVariant.price,
+      price: currentPrice,
       addedAt: new Date().toISOString(),
     });
     addToast({
@@ -483,7 +614,7 @@ export default function ProductDetailClient() {
       message: isWishlisted ? 'Removed from wishlist' : 'Added to wishlist ❤️',
       duration: 2000,
     });
-  }, [product, selectedVariant, wishlist, isWishlisted, addToast]);
+  }, [product, currentPrice, wishlist, isWishlisted, addToast]);
 
   const scrollToReviews = useCallback(() => {
     setActiveTab('reviews');
@@ -500,7 +631,7 @@ export default function ProductDetailClient() {
   // ════════════════════════════════════════════
 
   return (
-      <main className="relative pb-24 lg:pb-12">
+      <main className="relative pb-28 sm:pb-32 lg:pb-32">
         {/* ── Ambient background glow ── */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-rose/[0.03] blur-3xl" />
@@ -648,30 +779,63 @@ export default function ProductDetailClient() {
               <motion.div variants={fadeIn} className="my-5 h-px bg-border-secondary" />
 
               {/* (b) Variant / Weight Selection */}
-              <motion.div variants={fadeInUp}>
-                <label className="block text-sm font-semibold text-text-primary mb-3">
-                  {isCake ? 'Select Weight' : 'Select Variant'}
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {product.variants.map((v) => (
-                    <button
-                      key={v.id}
-                      onClick={() => setSelectedVariant(v)}
-                      className={cn(
-                        'px-4 py-2.5 rounded-xl text-sm font-medium border transition-all duration-300 cursor-pointer',
-                        selectedVariant?.id === v.id
-                          ? 'bg-brand-rose text-white border-brand-rose shadow-lg shadow-brand-rose/20'
-                          : 'bg-surface-secondary text-text-secondary border-border-secondary hover:border-brand-rose/40 hover:text-text-primary'
-                      )}
-                    >
-                      {v.weight}
-                    </button>
-                  ))}
+              {/* (b) Variant / Weight Selection — Step 1 (Mandatory) */}
+              <motion.div
+                variants={fadeInUp}
+                ref={variantRef}
+                className={cn(
+                  'p-3 sm:p-4 rounded-2xl transition-all duration-300',
+                  validationErrors.variant
+                    ? 'bg-rose-50/70 ring-2 ring-rose-400 border border-rose-300'
+                    : 'bg-gray-50/40 border border-gray-100'
+                )}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <label className="flex items-center gap-2 text-sm font-bold text-gray-900">
+                    <span className="w-5 h-5 rounded-full bg-brand-rose text-white flex items-center justify-center text-xs font-bold shadow-xs">
+                      1
+                    </span>
+                    <span>{isCake ? 'Select Cake Weight' : 'Select Variant'}</span>
+                  </label>
+                  <span className="text-[10px] font-bold text-brand-rose bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    * Required
+                  </span>
                 </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {sortedVariants.map((v) => {
+                    const isSelected = selectedVariant?.id === v.id;
+                    return (
+                      <button
+                        key={v.id}
+                        type="button"
+                        onClick={() => {
+                          setSelectedVariant(v);
+                          setValidationErrors((prev) => ({ ...prev, variant: false }));
+                        }}
+                        className={cn(
+                          'px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-all duration-200 cursor-pointer',
+                          isSelected
+                            ? 'bg-brand-rose text-white border-brand-rose shadow-md shadow-brand-rose/25 font-bold'
+                            : 'bg-white text-gray-700 border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose hover:bg-rose-50/30'
+                        )}
+                      >
+                        {v.weight}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {validationErrors.variant && (
+                  <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    <span>Please select a cake weight (500g, 1kg, etc.)</span>
+                  </p>
+                )}
               </motion.div>
 
               {/* (c) Dynamic Price Display */}
-              <motion.div variants={fadeInUp} className="mt-5">
+              <motion.div variants={fadeInUp} className="mt-4 px-1">
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <span className="text-3xl font-bold text-brand-rose">
                     {formatPrice(currentPrice)}
@@ -687,186 +851,219 @@ export default function ProductDetailClient() {
                     </span>
                   )}
                 </div>
-                <p className="mt-1 text-xs text-text-muted">Inclusive of all taxes</p>
-                {deliverySurcharge > 0 && (
-                  <p className="mt-0.5 text-xs text-text-muted">
-                    Includes {formatPrice(deliverySurcharge)} delivery surcharge
-                  </p>
+                <p className="mt-1 text-xs text-text-muted">
+                  Inclusive of all taxes
+                </p>
+
+                {/* (c.1) Custom Message on Cake — Step 2 (Optional) */}
+                {isCake && (
+                  <div className="mt-4 pt-3 border-t border-gray-150">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center text-xs font-bold">
+                          2
+                        </span>
+                        <Gift className="h-4 w-4 text-brand-rose" />
+                        <span className="text-sm font-bold text-gray-900">Add Message on Cake</span>
+                        <span className="text-[10px] font-medium text-gray-500 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded-full">
+                          Optional
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-semibold text-brand-rose bg-brand-rose/10 px-2 py-0.5 rounded-full">
+                        Only 3 words max.
+                      </span>
+                    </div>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        maxLength={30}
+                        value={cakeMessage}
+                        onChange={(e) => setCakeMessage(e.target.value)}
+                        placeholder="e.g., Happy Birthday Priya (Leave blank if not needed)"
+                        className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-rose focus:ring-2 focus:ring-brand-rose/15 transition-all duration-300"
+                      />
+                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-text-muted">
+                        {cakeMessage.length}/30
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-gray-400 mt-1">
+                      Free personalized message hand-piped on your cake
+                    </p>
+                  </div>
                 )}
               </motion.div>
 
-              {/* Divider */}
-              <motion.div variants={fadeIn} className="my-5 h-px bg-border-secondary" />
-
-              {/* (d) Delivery Options */}
-              {availableDeliveryOptions.length > 0 && (
-                <motion.div variants={fadeInUp}>
-                  <label className="block text-sm font-semibold text-text-primary mb-3">
-                    Delivery Speed
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {availableDeliveryOptions.map((opt: DeliverySpeedOption) => (
-                      <button
-                        key={opt.value}
-                        onClick={() => setSelectedDelivery(opt.value)}
-                        className={cn(
-                          'flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm border transition-all duration-300 cursor-pointer',
-                          selectedDelivery === opt.value
-                            ? 'bg-brand-rose text-white border-brand-rose shadow-lg shadow-brand-rose/20'
-                            : 'bg-surface-secondary text-text-secondary border-border-secondary hover:border-brand-rose/40 hover:text-text-primary'
-                        )}
-                      >
-                        {getDeliveryIcon(opt.icon)}
-                        <span className="font-medium">{opt.label}</span>
-                        {opt.surcharge > 0 && (
-                          <span className={cn(
-                            'text-[10px] ml-1',
-                            selectedDelivery === opt.value ? 'text-text-primary/70' : 'text-text-muted'
-                          )}>
-                            +{formatPrice(opt.surcharge)}
-                          </span>
-                        )}
-                        {opt.surcharge === 0 && (
-                          <span className={cn(
-                            'text-[10px] ml-1 font-semibold',
-                            selectedDelivery === opt.value ? 'text-text-primary/90' : 'text-emerald-500'
-                          )}>
-                            FREE
-                          </span>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-
-              {/* (e) Delivery Date & Time Slot */}
-              <motion.div variants={fadeInUp} className="mt-5 space-y-4">
-                {/* Date pills */}
-                <div>
-                  <label className="block text-sm font-semibold text-text-primary mb-3">
-                    Delivery Date
-                  </label>
-                  <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                    {deliveryDays.map((day, idx) => {
-                      const dayString = day.date.toISOString().split('T')[0];
-                      const isClosed = closedDates.some((c) => c.date === dayString);
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setSelectedDateIndex(idx)}
-                          className={cn(
-                            'flex-shrink-0 flex flex-col items-center px-4 py-2.5 rounded-xl text-xs border transition-all duration-300 cursor-pointer min-w-[70px]',
-                            selectedDateIndex === idx
-                              ? 'bg-brand-rose text-white border-brand-rose shadow-lg shadow-brand-rose/20'
-                              : 'bg-surface-secondary text-text-secondary border-border-secondary hover:border-brand-rose/40 hover:text-text-primary',
-                            isClosed && (selectedDateIndex === idx
-                              ? 'border-brand-red/50 bg-brand-rose/90'
-                              : 'border-brand-red/20 opacity-70 bg-brand-red/5 hover:border-brand-red/40')
-                          )}
-                        >
-                          <span className={cn(
-                            'font-semibold text-sm',
-                            isClosed && selectedDateIndex !== idx && 'text-brand-red/80 line-through'
-                          )}>{day.shortLabel}</span>
-                          {idx > 1 && (
-                            <span className={cn(
-                              'text-[10px] mt-0.5',
-                              selectedDateIndex === idx ? 'text-text-primary/70' : 'text-text-muted'
-                            )}>
-                              {day.date.toLocaleDateString('en-IN', { month: 'short' })}
-                            </span>
-                          )}
-                          {isClosed && (
-                            <span className={cn(
-                              'text-[8px] font-bold uppercase tracking-wider mt-0.5',
-                              selectedDateIndex === idx ? 'text-white/80' : 'text-brand-red/80'
-                            )}>
-                              Closed
-                            </span>
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Time slot pills */}
-                <div>
-                  <label className="block text-sm font-semibold text-text-primary mb-3">
-                    Time Slot
-                  </label>
-                  {availableSlots.length === 0 ? (
-                    <div className="flex items-center gap-2 p-3 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600">
-                      <AlertCircle className="h-4 w-4 flex-shrink-0" />
-                      <span className="text-xs font-medium">No slots available for this date.</span>
-                    </div>
-                  ) : (
-                    <div className="flex flex-wrap gap-2">
-                      {availableSlots.map((slot) => (
-                        <button
-                          key={slot.label}
-                          onClick={() => setSelectedTimeSlot(slot.label)}
-                          className={cn(
-                            'px-3 py-2 rounded-xl text-xs font-medium border transition-all duration-300 cursor-pointer',
-                            selectedTimeSlot === slot.label
-                              ? 'bg-brand-rose text-white border-brand-rose shadow-lg shadow-brand-rose/20'
-                              : 'bg-surface-secondary text-text-secondary border-border-secondary hover:border-brand-rose/40 hover:text-text-primary'
-                          )}
-                        >
-                          {slot.label}
-                        </button>
-                      ))}
-                    </div>
+              {/* (d) Choose Date & Time — Step 3 (Mandatory) */}
+              <motion.div variants={fadeInUp} className="mt-5">
+                <div
+                  ref={dateTimeRef}
+                  className={cn(
+                    'rounded-2xl border-2 bg-white shadow-md overflow-hidden transition-all duration-300',
+                    (validationErrors.date || validationErrors.slot)
+                      ? 'border-rose-500 ring-4 ring-rose-400/30 bg-rose-50/20'
+                      : 'border-brand-rose/60 ring-2 ring-brand-rose/15 hover:border-brand-rose hover:ring-brand-rose/25 shadow-brand-rose/10'
                   )}
+                >
+                  {/* Card Header */}
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-brand-rose/15 bg-gradient-to-r from-rose-50/80 via-rose-50/30 to-white">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-full bg-brand-rose flex items-center justify-center flex-shrink-0 text-white font-bold text-xs shadow-md shadow-brand-rose/25">
+                        {isCake ? 3 : 2}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm font-bold text-gray-900 leading-tight">Choose Date &amp; Time Slot</p>
+                          <span className="text-[10px] font-bold text-brand-rose bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            * Required
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-gray-500 mt-0.5">Select when your order should be delivered in Vadodara</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SELECT DATE */}
+                  <div className="px-4 pt-3.5 pb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Select Delivery Date *</p>
+                      {selectedDateIndex !== null && (
+                        <span className="text-xs font-semibold text-brand-rose">
+                          Selected: {deliveryDays[selectedDateIndex]?.label}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                      {deliveryDays.map((day, idx) => {
+                        const dayString = day.date.toISOString().split('T')[0];
+                        const isClosed = closedDates.some((c) => c.date === dayString);
+                        const dayName = idx === 0 ? 'Today' : idx === 1 ? 'Tmrw' : day.date.toLocaleDateString('en-IN', { weekday: 'short' });
+                        const dateNum = day.date.getDate();
+                        const monthName = day.date.toLocaleDateString('en-IN', { month: 'short' });
+                        const isSelected = selectedDateIndex === idx;
+
+                        return (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => {
+                              if (!isClosed) {
+                                setSelectedDateIndex(idx);
+                                setValidationErrors((prev) => ({ ...prev, date: false }));
+                              }
+                            }}
+                            disabled={isClosed}
+                            className={cn(
+                              'flex-shrink-0 flex flex-col items-center justify-center w-[60px] py-2.5 rounded-xl border transition-all duration-200 cursor-pointer',
+                              isSelected
+                                ? 'bg-brand-rose text-white border-brand-rose shadow-md'
+                                : 'bg-white text-gray-700 border-gray-200 hover:border-brand-rose/50 hover:bg-rose-50/20',
+                              isClosed && 'opacity-40 cursor-not-allowed bg-gray-50'
+                            )}
+                          >
+                            <span className={cn(
+                              'text-[10px] font-semibold leading-none mb-1',
+                              isSelected ? 'text-white/80' : 'text-gray-400'
+                            )}>{dayName}</span>
+                            <span className={cn(
+                              'text-lg font-bold leading-none',
+                              isSelected ? 'text-white' : 'text-gray-800',
+                              isClosed && 'line-through'
+                            )}>{dateNum}</span>
+                            <span className={cn(
+                              'text-[10px] font-medium leading-none mt-1',
+                              isSelected ? 'text-white/80' : 'text-gray-400'
+                            )}>{monthName}</span>
+                            {isClosed && (
+                              <span className="text-[8px] font-bold text-red-400 mt-0.5 uppercase">Closed</span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {validationErrors.date && (
+                      <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
+                        <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                        <span>Please select a delivery date</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Thin divider */}
+                  <div className="mx-4 h-px bg-gray-100" />
+
+                  {/* SELECT TIME */}
+                  <div className="px-4 pt-3 pb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Select Delivery Time Slot *</p>
+                      {selectedTimeSlot && (
+                        <span className="text-xs font-semibold text-brand-rose">
+                          Slot: {selectedTimeSlot}
+                        </span>
+                      )}
+                    </div>
+
+                    {selectedDateIndex === null ? (
+                      <div className="flex items-center gap-2.5 p-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-600">
+                        <Calendar className="h-4 w-4 text-brand-rose flex-shrink-0" />
+                        <span className="text-xs font-medium">
+                          Please select a delivery date above to view available delivery time slots.
+                        </span>
+                      </div>
+                    ) : availableSlots.length === 0 ? (
+                      <div className="flex items-center gap-2 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800">
+                        <AlertCircle className="h-4 w-4 flex-shrink-0 text-amber-600" />
+                        <span className="text-xs font-semibold">
+                          Today&apos;s delivery slots have ended. Please select Tomorrow or an upcoming date for fresh delivery.
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {availableSlots.map((slot) => {
+                          const isSelected = selectedTimeSlot === slot.label;
+                          return (
+                            <button
+                              key={slot.label}
+                              type="button"
+                              onClick={() => {
+                                setSelectedTimeSlot(slot.label);
+                                setValidationErrors((prev) => ({ ...prev, slot: false }));
+                              }}
+                              className={cn(
+                                'flex items-center justify-between px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all duration-200 cursor-pointer text-left',
+                                isSelected
+                                  ? 'bg-brand-rose text-white border-brand-rose shadow-md shadow-brand-rose/25 font-bold'
+                                  : 'bg-white text-gray-700 border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose hover:bg-rose-50/30'
+                              )}
+                            >
+                              <span className="flex items-center gap-2.5 min-w-0">
+                                <Clock className={cn("w-4 h-4 flex-shrink-0", isSelected ? "text-white" : "text-brand-rose")} />
+                                <span className="truncate">{slot.label}</span>
+                              </span>
+                              {isSelected && (
+                                <Check className="w-4 h-4 text-white flex-shrink-0 ml-1.5" />
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {validationErrors.slot && (
+                      <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
+                        <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                        <span>Please choose an available delivery time slot</span>
+                      </p>
+                    )}
+
+                    {availableSlots.length > 0 && (
+                      <p className="mt-2.5 text-[10px] text-gray-400 leading-relaxed">
+                        ⚡ Bakery Kitchen: Freshly baked &amp; dispatched across Vadodara right on time.
+                      </p>
+                    )}
+                  </div>
                 </div>
               </motion.div>
-
-              {/* (f) Custom Message on Cake */}
-              {isCake && (
-                <motion.div variants={fadeInUp} className="mt-5">
-                  <button
-                    onClick={() => setIsCakeMessageOpen(!isCakeMessageOpen)}
-                    className="flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-brand-rose transition-colors cursor-pointer w-full"
-                  >
-                    <Gift className="h-4 w-4 text-brand-rose" />
-                    Add Message on Cake
-                    <ChevronDown
-                      className={cn(
-                        'h-4 w-4 ml-auto transition-transform duration-300',
-                        isCakeMessageOpen && 'rotate-180'
-                      )}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {isCakeMessageOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-3">
-                          <div className="relative">
-                            <input
-                              type="text"
-                              maxLength={50}
-                              value={cakeMessage}
-                              onChange={(e) => setCakeMessage(e.target.value)}
-                              placeholder="e.g., Happy Birthday, Priya!"
-                              className="w-full bg-surface-secondary border border-border-secondary rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-brand-rose/50 focus:shadow-[0_0_12px_rgba(183,110,121,0.15)] transition-all duration-300"
-                            />
-                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-text-muted">
-                              {cakeMessage.length}/50
-                            </span>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              )}
 
               {/* Divider */}
               <motion.div variants={fadeIn} className="my-5 h-px bg-border-secondary" />
@@ -884,24 +1081,24 @@ export default function ProductDetailClient() {
               )}
 
               {/* (g) Quantity Selector */}
-              <motion.div variants={fadeInUp} className="flex items-center gap-4">
+              <motion.div variants={fadeInUp} className="flex items-center gap-4 mt-5">
                 <label className="text-sm font-semibold text-text-primary">Quantity</label>
-                <div className="flex items-center border border-border-secondary rounded-xl overflow-hidden">
+                <div className="flex items-center border-2 border-border-secondary rounded-full overflow-hidden bg-white">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1}
-                    className="px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-9 h-9 flex items-center justify-center text-text-secondary hover:text-brand-rose hover:bg-brand-rose/5 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                     aria-label="Decrease quantity"
                   >
                     <Minus className="h-4 w-4" />
                   </button>
-                  <span className="px-4 py-2 text-sm font-semibold text-text-primary min-w-[40px] text-center bg-surface-secondary">
+                  <span className="px-4 text-sm font-bold text-text-primary min-w-[36px] text-center">
                     {quantity}
                   </span>
                   <button
                     onClick={() => setQuantity(Math.min(10, quantity + 1))}
                     disabled={quantity >= 10}
-                    className="px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-9 h-9 flex items-center justify-center text-text-secondary hover:text-brand-rose hover:bg-brand-rose/5 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                     aria-label="Increase quantity"
                   >
                     <Plus className="h-4 w-4" />
@@ -911,46 +1108,55 @@ export default function ProductDetailClient() {
 
               {/* (h) Action Buttons — desktop */}
               <motion.div variants={fadeInUp} className="mt-6 space-y-3 hidden lg:block">
-                {/* Add to Cart */}
-                <motion.button
-                  whileHover={!isDateClosed && availableSlots.length > 0 ? { scale: 1.01 } : {}}
-                  whileTap={!isDateClosed && availableSlots.length > 0 ? { scale: 0.98 } : {}}
-                  onClick={handleAddToCart}
-                  disabled={!!isDateClosed || availableSlots.length === 0}
-                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-brand-rose text-white font-semibold text-base shadow-lg shadow-brand-rose/20 transition-all duration-300 hover:bg-brand-rose-dark hover:shadow-brand-rose/40 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <ShoppingBag className="h-5 w-5" />
-                  Add to Cart — {formatPrice(currentPrice * quantity)}
-                </motion.button>
+                {/* TOTAL + Add to Cart */}
+                <div className="rounded-2xl border border-gray-200 bg-white px-4 py-3.5 flex items-center justify-between gap-3 shadow-sm">
+                  <div>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                      Total Amount
+                    </p>
+                    <div className="flex items-baseline gap-2 mt-0.5">
+                      <span className="text-2xl font-bold text-gray-900">
+                        {formatPrice(currentPrice * quantity)}
+                      </span>
+                      {compareAtPrice > currentPrice && (
+                        <span className="text-sm text-gray-400 line-through">
+                          {formatPrice(compareAtPrice * quantity)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={handleAddToCart}
+                    className="flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-brand-rose text-white font-bold text-sm shadow-lg shadow-brand-rose/30 transition-all duration-300 hover:bg-brand-rose-dark hover:shadow-brand-rose/50 cursor-pointer whitespace-nowrap"
+                  >
+                    <ShoppingBag className="h-4.5 w-4.5" />
+                    <span>Add to Cart</span>
+                  </motion.button>
+                </div>
 
-                {/* WhatsApp */}
-                <motion.button
-                  whileHover={!isDateClosed && availableSlots.length > 0 ? { scale: 1.01 } : {}}
-                  whileTap={!isDateClosed && availableSlots.length > 0 ? { scale: 0.98 } : {}}
-                  onClick={handleWhatsApp}
-                  disabled={!!isDateClosed || availableSlots.length === 0}
-                  className="w-full flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-emerald-600 text-text-primary font-semibold text-sm shadow-lg shadow-emerald-600/20 transition-all duration-300 hover:bg-emerald-700 hover:shadow-emerald-600/40 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <MessageCircle className="h-4.5 w-4.5" />
-                  Order on WhatsApp
-                </motion.button>
-
-                {/* Wishlist */}
+                {/* Wishlist — Giftlaya style: circular border pill button */}
                 <button
                   onClick={handleToggleWishlist}
-                  className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-text-secondary hover:text-brand-rose transition-colors cursor-pointer"
+                  className={cn(
+                    'w-full flex items-center justify-center gap-2.5 py-3 rounded-full border-2 text-sm font-semibold transition-all duration-300 cursor-pointer',
+                    isWishlisted
+                      ? 'bg-brand-rose/8 border-brand-rose text-brand-rose'
+                      : 'bg-white border-border-secondary text-text-secondary hover:border-brand-rose/60 hover:text-brand-rose hover:bg-brand-rose/5'
+                  )}
                 >
                   <Heart
                     className={cn(
-                      'h-4 w-4 transition-colors',
-                      isWishlisted ? 'fill-brand-rose text-brand-rose' : ''
+                      'h-4 w-4 transition-all duration-300',
+                      isWishlisted ? 'fill-brand-rose text-brand-rose scale-110' : ''
                     )}
                   />
-                  {isWishlisted ? 'In Wishlist' : 'Add to Wishlist'}
+                  {isWishlisted ? '♥ In Wishlist' : '♡ Add to Wishlist'}
                 </button>
               </motion.div>
 
-              {/* (i) Trust Badges */}
+              {/* (i) Trust Badges — Giftlaya style: white cards */}
               <motion.div
                 variants={fadeInUp}
                 className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3"
@@ -963,10 +1169,10 @@ export default function ProductDetailClient() {
                 ].map((badge, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center gap-1.5 py-3 px-2 rounded-xl bg-surface-secondary/50 border border-border-secondary"
+                    className="flex flex-col items-center gap-1.5 py-3.5 px-2 rounded-2xl bg-white border-2 border-border-secondary shadow-sm hover:border-brand-rose/30 hover:shadow-md transition-all duration-300"
                   >
                     <span className="text-brand-rose">{badge.icon}</span>
-                    <span className="text-[11px] font-semibold text-text-primary leading-tight text-center">
+                    <span className="text-[11px] font-bold text-text-primary leading-tight text-center">
                       {badge.label}
                     </span>
                     <span className="text-[10px] text-text-muted">{badge.sub}</span>
@@ -1088,21 +1294,15 @@ export default function ProductDetailClient() {
                     </div>
 
                     <div className="p-5 rounded-xl bg-brand-rose/5 border border-brand-rose/20">
-                      <h4 className="font-semibold text-brand-rose mb-2">Available Delivery Options</h4>
-                      <div className="space-y-2">
-                        {availableDeliveryOptions.map((opt) => (
-                          <div key={opt.value} className="flex items-center justify-between text-sm">
-                            <div className="flex items-center gap-2 text-text-secondary">
-                              {getDeliveryIcon(opt.value)}
-                              <span>{opt.label}</span>
-                              <span className="text-text-muted text-xs">— {opt.description}</span>
-                            </div>
-                            <span className={cn(
-                              'font-medium',
-                              opt.surcharge === 0 ? 'text-emerald-500' : 'text-text-primary'
-                            )}>
-                              {opt.surcharge === 0 ? 'FREE' : `+${formatPrice(opt.surcharge)}`}
-                            </span>
+                      <h4 className="font-semibold text-brand-rose mb-2">Delivery Time Slots Across Vadodara</h4>
+                      <p className="text-xs text-text-secondary mb-3">
+                        Choose your preferred time slot for guaranteed on-time doorstep delivery:
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {deliverySlots.map((slot) => (
+                          <div key={slot.label} className="flex items-center gap-2 text-sm text-text-secondary bg-white p-2.5 rounded-lg border border-border-secondary">
+                            <Clock className="w-4 h-4 text-brand-rose flex-shrink-0" />
+                            <span className="font-medium text-gray-800">{formatTimeSlotDisplay(slot.label)}</span>
                           </div>
                         ))}
                       </div>
@@ -1195,21 +1395,44 @@ export default function ProductDetailClient() {
               viewport={{ once: true, margin: '-80px' }}
               className="mt-16 lg:mt-24 pb-8"
             >
-              <motion.div variants={fadeInUp} className="text-center mb-10">
-                <span className="inline-block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-rose">
+              <motion.div variants={fadeInUp} className="text-center mb-8">
+                <span className="inline-block mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-brand-rose">
                   Discover More
                 </span>
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary mb-5">
                   You Might Also{' '}
                   <span className="text-gradient-rose">Like</span>
                 </h2>
+
+                {/* Category Filter Tabs */}
+                <div className="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar py-1">
+                  {[
+                    { key: 'all', label: `All Recommendations (${relatedProducts.length})` },
+                    { key: 'cakes', label: '🎂 Fresh Cakes (3)' },
+                    { key: 'flowers', label: '💐 Flower Bouquets (3)' },
+                    { key: 'combos', label: '🎁 Combos & Hampers (3)' },
+                  ].map((tab) => (
+                    <button
+                      key={tab.key}
+                      onClick={() => setActiveRelatedTab(tab.key as any)}
+                      className={cn(
+                        'px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap',
+                        activeRelatedTab === tab.key
+                          ? 'bg-brand-rose text-white shadow-sm'
+                          : 'bg-white border-2 border-border-secondary text-text-secondary hover:border-brand-rose/50 hover:bg-rose-50/20'
+                      )}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
               </motion.div>
 
               <motion.div
                 variants={staggerContainer}
-                className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+                className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
               >
-                {relatedProducts.map((p) => (
+                {filteredRelated.map((p) => (
                   <RelatedProductCard key={p.id} product={p} />
                 ))}
               </motion.div>
@@ -1217,54 +1440,74 @@ export default function ProductDetailClient() {
           )}
         </Container>
 
-        {/* ═══ MOBILE STICKY BOTTOM BAR ═══ */}
-        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
-          <div className="glass border-t border-border-secondary">
-            <div className="flex items-center gap-3 px-4 py-3">
-              {/* Price display */}
+        {/* ═══ STICKY FOOTER ACTION BAR (DESKTOP & MOBILE) ═══ */}
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-4px_25px_rgba(0,0,0,0.1)]">
+          <Container as="div" size="xl">
+            <div className="flex items-center justify-between gap-3 px-1 py-3 sm:py-3.5">
+              {/* Price display & Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-brand-rose">
+                  <span className="text-xl sm:text-2xl font-bold text-brand-rose">
                     {formatPrice(currentPrice * quantity)}
                   </span>
-                  {discount > 0 && (
-                    <span className="text-xs text-text-muted line-through">
+                  {compareAtPrice > currentPrice && (
+                    <span className="text-xs sm:text-sm text-gray-400 line-through">
                       {formatPrice(compareAtPrice * quantity)}
                     </span>
                   )}
+                  {discount > 0 && (
+                    <span className="hidden sm:inline-block px-2 py-0.5 rounded-md bg-rose-50 text-brand-rose text-[11px] font-bold">
+                      {discount}% OFF
+                    </span>
+                  )}
                 </div>
-                <p className="text-[10px] text-text-muted truncate">
-                  {selectedVariant?.weight} • {deliveryDays[selectedDateIndex]?.label}
+                <p className="text-[11px] text-gray-500 truncate">
+                  {selectedVariant ? selectedVariant.weight : '500g'} • {selectedDateIndex !== null ? deliveryDays[selectedDateIndex]?.label : 'Select Date'}{selectedTimeSlot ? ` • ${selectedTimeSlot}` : ''}{cakeMessage ? ` • "${cakeMessage}"` : ''}
                 </p>
               </div>
 
-              {/* Wishlist mini */}
+              {/* Wishlist Button */}
               <button
                 onClick={handleToggleWishlist}
-                className="flex-shrink-0 p-2.5 rounded-xl border border-border-secondary transition-colors cursor-pointer"
+                className={cn(
+                  'flex-shrink-0 flex items-center gap-1.5 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full border-2 text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer',
+                  isWishlisted
+                    ? 'bg-brand-rose/10 border-brand-rose text-brand-rose'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-brand-rose/50 hover:text-brand-rose'
+                )}
                 aria-label="Toggle wishlist"
               >
                 <Heart
                   className={cn(
-                    'h-5 w-5',
-                    isWishlisted ? 'fill-brand-rose text-brand-rose' : 'text-text-secondary'
+                    'h-4 w-4 transition-all duration-300',
+                    isWishlisted ? 'fill-brand-rose text-brand-rose scale-110' : 'text-gray-500'
                   )}
                 />
+                <span className="hidden sm:inline">{isWishlisted ? 'In Wishlist' : 'Add to Wishlist'}</span>
               </button>
 
-              {/* Add to Cart */}
+              {/* Add to Cart — Prominent CTA */}
               <motion.button
-                whileTap={!isDateClosed && availableSlots.length > 0 ? { scale: 0.95 } : {}}
+                whileTap={{ scale: 0.96 }}
+                whileHover={{ scale: 1.02 }}
                 onClick={handleAddToCart}
-                disabled={!!isDateClosed || availableSlots.length === 0}
-                className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-rose text-white font-semibold text-sm shadow-lg shadow-brand-rose/30 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-shrink-0 flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-brand-rose text-white font-bold text-xs sm:text-sm shadow-lg shadow-brand-rose/35 hover:bg-brand-rose-dark transition-all cursor-pointer"
               >
                 <ShoppingBag className="h-4 w-4" />
                 Add to Cart
               </motion.button>
             </div>
-          </div>
+          </Container>
         </div>
+
+        {/* ═══ ADD-ON ITEMS MODAL ("Make it Extra Special" — IGP & Winni style) ═══ */}
+        <AddonModal
+          isOpen={isAddonModalOpen}
+          onClose={() => setIsAddonModalOpen(false)}
+          onConfirm={handleConfirmAddons}
+          cakeName={product.name}
+          cakePrice={currentPrice * quantity}
+        />
       </main>
   );
 }

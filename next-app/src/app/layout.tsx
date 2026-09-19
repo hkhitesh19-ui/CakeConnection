@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     template: '%s | CakeConnection Vadodara',
     default: 'Online Cake Delivery in Vadodara | Same Day | CakeConnection',
   },
-  description: 'Order fresh eggless cakes, flowers & gifts online in Vadodara. Same-day delivery within 3 hours. Birthday, anniversary, designer cakes. 100% fresh guarantee.',
-  keywords: ['cake delivery vadodara', 'eggless cake vadodara', 'online cake order vadodara', 'birthday cake vadodara', 'same day cake delivery'],
+  description: 'Order 100% eggless cakes, flowers & gifts online in Vadodara. Same-day delivery in 2–4 hours (cut-off 6 PM). Midnight delivery at ₹149. Birthday, designer, photo cakes. Free delivery above ₹999.',
+  keywords: ['cake delivery vadodara', 'eggless cake vadodara', 'online cake order vadodara', 'birthday cake vadodara', 'same day cake delivery', 'midnight cake delivery vadodara', 'flower delivery vadodara'],
   authors: [{ name: 'CakeConnection', url: 'https://cakeconnection.in' }],
   creator: 'CakeConnection',
   publisher: 'CakeConnection',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': -1,   // ✅ Allows AI Overviews & snippets to extract longer content
     },
   },
   verification: {

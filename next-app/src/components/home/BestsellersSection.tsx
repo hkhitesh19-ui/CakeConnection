@@ -174,7 +174,7 @@ export default function BestsellersSection() {
                   <div className="flex flex-col flex-1 p-4 text-left">
                     {/* Name */}
                     <h3 className="font-display text-sm sm:text-base font-semibold text-text-primary leading-snug line-clamp-2 min-h-[40px]">
-                      <Link href={`/${activeTab}/${product.slug}`} className="hover:text-brand-rose transition-colors">
+                      <Link href={`/product/${product.slug}`} className="hover:text-brand-rose transition-colors">
                         {product.name}
                       </Link>
                     </h3>

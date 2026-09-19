@@ -10,6 +10,28 @@ interface CountryCodeSelectProps {
   className?: string;
 }
 
+function CountryFlag({ code, alt, flag }: { code?: string; alt?: string; flag?: string }) {
+  const [hasError, setHasError] = useState(false);
+  const cleanCode = code?.toLowerCase();
+
+  if (!cleanCode || hasError) {
+    return <span className="text-base leading-none">{flag || '🏳️'}</span>;
+  }
+
+  return (
+    <img
+      src={`https://flagcdn.com/24x18/${cleanCode}.png`}
+      srcSet={`https://flagcdn.com/48x36/${cleanCode}.png 2x`}
+      width="20"
+      height="15"
+      alt={alt || code}
+      onError={() => setHasError(true)}
+      className="inline-block rounded-[2px] shadow-xs object-cover flex-shrink-0"
+      loading="lazy"
+    />
+  );
+}
+
 export default function CountryCodeSelect({
   value,
   onChange,
@@ -22,6 +44,14 @@ export default function CountryCodeSelect({
 
   // Find the currently selected country by dial code
   const selectedCountry = useMemo(() => {
+    if (!value) {
+      return {
+        code: '',
+        name: 'Select Country Code',
+        dial: 'Select Country Code',
+        flag: '🏳️',
+      };
+    }
     return (
       allCountries.find((c) => c.dial === value) ??
       popularCountries.find((c) => c.dial === value) ?? {
@@ -122,7 +152,7 @@ export default function CountryCodeSelect({
         type="button"
         onClick={handleToggle}
         className={`
-          flex items-center gap-1.5 px-3 py-2.5
+          flex items-center gap-2 px-3 py-2.5
           bg-surface-secondary border border-border-secondary rounded-lg
           text-text-primary text-sm font-medium
           hover:border-brand-rose/40 hover:bg-surface-tertiary
@@ -134,7 +164,7 @@ export default function CountryCodeSelect({
         aria-expanded={isOpen}
         aria-label={`Country code: ${selectedCountry.name} ${selectedCountry.dial}`}
       >
-        <span className="text-lg leading-none">{selectedCountry.flag}</span>
+        <CountryFlag code={selectedCountry.code} alt={selectedCountry.name} flag={selectedCountry.flag} />
         <span className="text-text-primary font-medium">{selectedCountry.dial}</span>
         <ChevronDown
           className={`w-3.5 h-3.5 text-text-muted transition-transform duration-200 ${
@@ -283,7 +313,7 @@ function CountryRow({ country, isSelected, onSelect }: CountryRowProps) {
       role="option"
       aria-selected={isSelected}
     >
-      <span className="text-lg leading-none flex-shrink-0">{country.flag}</span>
+      <CountryFlag code={country.code} alt={country.name} flag={country.flag} />
       <span className="flex-1 text-sm truncate">{country.name}</span>
       <span
         className={`text-xs font-mono flex-shrink-0 ${

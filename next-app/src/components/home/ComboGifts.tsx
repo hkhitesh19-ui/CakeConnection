@@ -1,15 +1,17 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { Star, ShoppingCart } from 'lucide-react';
+import { Star, ShoppingCart, Check } from 'lucide-react';
 import { Container } from '@/components/ui';
-import { useCartStore } from '@/stores';
+import { useCartStore, useUIStore } from '@/stores';
 import { useProducts } from '@/hooks/useProducts';
 import type { Product } from '@/types';
 
 export function ComboGifts() {
   const { products: allProducts, loading } = useProducts('combos');
+  const [addedId, setAddedId] = useState<string | null>(null);
   const addItem = useCartStore((s) => s.addItem);
+  const addToast = useUIStore((s) => s.addToast);
 
   // Filter for available products and limit to 4 for the homepage grid
   const combos = allProducts.filter((p) => p.isAvailable).slice(0, 4);
@@ -17,18 +19,33 @@ export function ComboGifts() {
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {
     e.preventDefault();
     e.stopPropagation();
-    const variant = product.variants[0];
-    if (!variant) return;
+    const variant = product.variants?.[0] || {
+      id: `${product.id}-default`,
+      weight: 'Combo Set',
+      price: (product as any).price || 899,
+    };
 
     addItem({
       productId: product.id,
+      slug: product.slug,
+      category: product.category || 'combos',
       variantId: variant.id,
       name: product.name,
-      image: product.images[0]?.url || '/images/combo-gift.png',
-      weight: variant.weight,
-      price: variant.price,
+      image: product.images?.[0]?.url || '/images/combo-gift.png',
+      weight: variant.weight || 'Combo Set',
+      price: variant.price || 899,
       quantity: 1,
     });
+
+    setAddedId(product.id);
+    addToast({
+      type: 'success',
+      message: `Added "${product.name}" to cart!`,
+    });
+
+    setTimeout(() => {
+      setAddedId((prev) => (prev === product.id ? null : prev));
+    }, 1800);
   };
 
   return (
@@ -151,10 +168,23 @@ export function ComboGifts() {
                       {/* CTA button */}
                       <button
                         onClick={(e) => handleAddToCart(e, product)}
-                        className="w-full py-2 bg-brand-rose hover:bg-brand-rose-dark text-white rounded-lg text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all duration-200 active:scale-95 cursor-pointer shadow-sm hover:shadow"
+                        className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all duration-200 active:scale-95 cursor-pointer shadow-sm hover:shadow ${
+                          addedId === product.id
+                            ? 'bg-emerald-600 text-white'
+                            : 'bg-brand-rose hover:bg-brand-rose-dark text-white'
+                        }`}
                       >
-                        <ShoppingCart className="h-3.5 w-3.5" />
-                        Add to Cart
+                        {addedId === product.id ? (
+                          <>
+                            <Check className="h-3.5 w-3.5" />
+                            Added!
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingCart className="h-3.5 w-3.5" />
+                            Add to Cart
+                          </>
+                        )}
                       </button>
                     </div>
                   </div>

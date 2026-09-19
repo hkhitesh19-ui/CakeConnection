@@ -117,7 +117,7 @@ export default function AccountPage() {
         </section>
 
         {/* Content */}
-        <section className="bg-brand-black pb-20">
+        <section className="bg-[#FAF9F6] pb-24 border-t border-gray-150">
           <Container as="div" size="xl">
             <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-6 lg:gap-10 pt-6">
 

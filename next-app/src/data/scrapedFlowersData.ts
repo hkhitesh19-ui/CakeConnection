@@ -12,7 +12,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/red-rose-in-premium-box-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "Red Rose in Premium Box"
       }
     ],
@@ -61,7 +61,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/09/10-red-roses-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "10 Red Roses Bouquet"
       }
     ],
@@ -110,7 +110,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/01/10-red-rose-flower-bouquet-247x247.jpeg",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Red Rose Flower Bouquet"
       }
     ],
@@ -159,7 +159,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/01/10-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Red Rose Flower Bouquet"
       }
     ],
@@ -208,7 +208,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f2-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 Red Roses With Red Paper Packing"
       }
     ],
@@ -257,7 +257,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f18-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "12 Red Roses Flower Bouquet"
       }
     ],
@@ -306,7 +306,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f23-247x247.jpeg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 Red Roses With Blue Paper Packing"
       }
     ],
@@ -355,7 +355,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/10-yellow-gerbera-1-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "10 Yellow Gerbera"
       }
     ],
@@ -404,7 +404,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/09/10-pink-roses-bouquet-247x247.jpeg",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Pink Roses Bouquet"
       }
     ],
@@ -453,7 +453,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-mix-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Mix Rose Flower Bouquet"
       }
     ],
@@ -502,7 +502,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-mix-rose-flower-bouquet-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "10 Mix Rose Flower Bouquet"
       }
     ],
@@ -551,7 +551,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/8-mix-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "8 Mix Rose Flower Bouquet"
       }
     ],
@@ -600,7 +600,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-mix-rose-flower-bouquet-247x247.jpeg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Mix Rose Flower Bouquet"
       }
     ],
@@ -649,7 +649,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/8-pink-roses-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "8 Pink Roses Flower Bouquet"
       }
     ],
@@ -698,7 +698,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/10-pink-roses-with-pink-paper-packing-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Pink Roses With Pink Paper Packing"
       }
     ],
@@ -747,7 +747,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/09/10-yellow-roses-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Yellow Roses Bouquet"
       }
     ],
@@ -796,7 +796,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/09/10-red-rose-bouquet-pink-paper-packing-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "10 Red Rose Bouquet Pink Paper Packing"
       }
     ],
@@ -845,7 +845,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/01/6-mix-gerbera-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "6 Mix Gerbera Flower Bouquet"
       }
     ],
@@ -894,7 +894,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/GTI1304_1-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 Mix Rose Flower Bouquet"
       }
     ],
@@ -943,7 +943,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/gggeegeeeg-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "10 Yellow Rose Flower Bouquet"
       }
     ],
@@ -992,7 +992,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-yellow-rose-in-flower-bouquet-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Yellow Rose in Flower Bouquet"
       }
     ],
@@ -1041,7 +1041,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f27-247x247.png",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 Pink Roses  Flower Bouquet"
       }
     ],
@@ -1090,7 +1090,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f31-247x247.jpeg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 Red Roses With White Paper Packing"
       }
     ],
@@ -1139,7 +1139,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/07/12-mix-roses-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "12 Mix Roses Bouquet"
       }
     ],
@@ -1188,7 +1188,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-white-rose-bunch-499-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 White Rose Flower Bouquet"
       }
     ],
@@ -1237,7 +1237,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-pink-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 Pink Rose Flower Bouquet"
       }
     ],
@@ -1286,7 +1286,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "12 Red Rose Flower Bouquet"
       }
     ],
@@ -1335,7 +1335,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-mix-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 Mix Rose Flower Bouquet"
       }
     ],
@@ -1384,7 +1384,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-pink-rose-flower-bouquet-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 Pink Rose Flower Bouquet"
       }
     ],
@@ -1433,7 +1433,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-yellow-rose-flower-bouquet-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Yellow Rose Flower Bouquet"
       }
     ],
@@ -1482,7 +1482,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-red-rose-basket-bouquet-247x247.png",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Red Rose Basket Bouquet"
       }
     ],
@@ -1531,7 +1531,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/15-pink-rose-in-glass-vase-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "15 Pink Rose in Glass Vase"
       }
     ],
@@ -1580,7 +1580,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/07/divine-love-247x247.jpg",
+        "url": "/images/hero-cake.png",
         "alt": "Divine LOVE"
       }
     ],
@@ -1629,7 +1629,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/07/10-pink-roses-basket-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Pink Roses Basket"
       }
     ],
@@ -1678,7 +1678,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/6-ORCHID-599-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "6 Orchid Flower Bouquet"
       }
     ],
@@ -1727,7 +1727,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-white-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 White Rose Flower Bouquet"
       }
     ],
@@ -1776,7 +1776,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-mix-rose-in-glass-vase-bouquet-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "10 Mix Rose in GLASS VASE Bouquet"
       }
     ],
@@ -1825,7 +1825,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/10-mix-rose-basket-bouquet-247x247.png",
+        "url": "/images/birthday-bouquet.png",
         "alt": "10 Mix Rose Basket Bouquet"
       }
     ],
@@ -1874,7 +1874,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f16-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "15 White Roses Bouquet"
       }
     ],
@@ -1923,7 +1923,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f33-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "15 Red Roses With Glass Vase"
       }
     ],
@@ -1972,7 +1972,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/20-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "20 Red Rose Flower Bouquet"
       }
     ],
@@ -2021,7 +2021,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/12-yellow-rose-glass-vase-bouquet-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "12 Yellow Rose Glass Vase Bouquet"
       }
     ],
@@ -2070,7 +2070,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/6-orchid-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "6 Orchid Flower Bouquet"
       }
     ],
@@ -2119,7 +2119,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f37-247x247.jpeg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "15 Red and White Roses with Basket"
       }
     ],
@@ -2168,7 +2168,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/07/mix-roses-basket-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "15 Mix Roses Basket"
       }
     ],
@@ -2217,7 +2217,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/GTI0031-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "25 Pink Rose Flower Bouquet"
       }
     ],
@@ -2266,7 +2266,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/15-red-rose-in-glass-vase-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "15 Red Rose in Glass Vase"
       }
     ],
@@ -2315,7 +2315,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/15-pink-rose-basket-bouquet-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "15 Pink Rose Basket Bouquet"
       }
     ],
@@ -2364,7 +2364,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f15-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "25 Red Roses With White Paper Packing"
       }
     ],
@@ -2413,7 +2413,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/25-rose-heart-shape-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "25 Rose Heart Shape Bouquet"
       }
     ],
@@ -2462,7 +2462,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/20-mix-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "20 Mix Rose Flower Bouquet"
       }
     ],
@@ -2511,7 +2511,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/20-red-yellow-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "20 Red Yellow Rose Flower Bouquet"
       }
     ],
@@ -2560,7 +2560,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f20-247x247.png",
+        "url": "/images/birthday-bouquet.png",
         "alt": "25 Red Roses With Red Paper Packing"
       }
     ],
@@ -2609,7 +2609,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f7-247x247.png",
+        "url": "/images/luxury-bouquet.png",
         "alt": "24 Red and Pink Roses"
       }
     ],
@@ -2658,7 +2658,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/20-mix-flower-bouquet-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "20 Mix Flower Bouquet"
       }
     ],
@@ -2707,7 +2707,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/18-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "18 Rose Flower Bouquet"
       }
     ],
@@ -2756,7 +2756,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/25-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "25 Red Rose Flower Bouquet"
       }
     ],
@@ -2805,7 +2805,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2020/07/3-layer-sweet-love-247x247.jpg",
+        "url": "/images/black-forest-cake.png",
         "alt": "3 Layer Sweet Love"
       }
     ],
@@ -2854,7 +2854,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/25-yellow-rose-glass-vase-bouquet-247x247.png",
+        "url": "/images/hero-flowers.png",
         "alt": "25 Yellow Rose Glass Vase Bouquet"
       }
     ],
@@ -2903,7 +2903,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f3-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "12 Red Roses Arrangements"
       }
     ],
@@ -2952,7 +2952,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/30-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "30 Red Rose Flower Bouquet"
       }
     ],
@@ -3001,7 +3001,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/25-pink-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "25 Pink Rose Flower Bouquet"
       }
     ],
@@ -3050,7 +3050,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2019/06/love-express-30-red-roses-in-basket-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "Love Express ( 30 Red Roses in Basket )"
       }
     ],
@@ -3099,7 +3099,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/50-rose-heart-shape-flower-bouquet-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "50 Rose Heart Shape Flower Bouquet"
       }
     ],
@@ -3148,7 +3148,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/40-red-rose-flower-gift-box-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "40 Red Rose Flower Gift Box"
       }
     ],
@@ -3197,7 +3197,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f21-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "50 Red Roses With White Paper Packing"
       }
     ],
@@ -3246,7 +3246,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2018/04/f34-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "50 Red Roses"
       }
     ],
@@ -3295,7 +3295,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/Magic-of-love-1-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "50 Red Rose Flower Bouquet"
       }
     ],
@@ -3344,7 +3344,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/50-pink-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "50 Pink Rose Flower Bouquet"
       }
     ],
@@ -3393,7 +3393,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/50-red-rose-in-black-1-247x247.jpg",
+        "url": "/images/luxury-bouquet.png",
         "alt": "50 Red Rose Flower Bouquet"
       }
     ],
@@ -3442,7 +3442,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/50-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/hero-flowers.png",
         "alt": "50 Rose Flower Bouquet"
       }
     ],
@@ -3491,7 +3491,7 @@ export const scrapedFlowerProducts: Product[] = [
     "subcategory": "premium",
     "images": [
       {
-        "url": "https://cakeconnection.in/wp-content/uploads/2021/09/50-red-rose-flower-bouquet-247x247.jpg",
+        "url": "/images/birthday-bouquet.png",
         "alt": "50 Red Rose Flower Bouquet"
       }
     ],

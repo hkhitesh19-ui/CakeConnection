@@ -71,6 +71,8 @@ function BouquetCard({ bouquet, index, rawProduct }: { bouquet: BouquetProduct; 
 
     addItem({
       productId: bouquet.id,
+      slug: bouquet.slug,
+      category: 'flowers',
       variantId: defaultVariant.id,
       name: bouquet.name,
       image: bouquet.image,
