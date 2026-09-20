@@ -10,6 +10,7 @@ import {
   Save,
   Loader2,
   UploadCloud,
+  X,
 } from "lucide-react";
 
 import Link from "next/link";
@@ -354,42 +355,118 @@ export default function NewProductPage() {
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-3">
-              Subcategories (Checklist)
-            </label>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-gray-100 p-5 rounded-xl border border-gray-200">
-              {subcategoryGroups.map((group, idx) => (
-                <div key={group.title} className="space-y-2">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2 pb-1 border-b border-gray-200">{group.title}</h4>
-                  <div className="space-y-2 max-h-[160px] overflow-y-auto pr-2 custom-scrollbar">
-                    {group.items.map((item) => (
-                      <label key={item} className="flex items-start gap-2 text-sm text-gray-600 hover:text-gray-900 cursor-pointer transition-colors group">
-                        <div className="relative flex items-center justify-center mt-0.5">
-                          <input
-                            type="checkbox"
-                            checked={selectedSubcategories.includes(item)}
-                            onChange={(e) => {
-                              if (e.target.checked) {
-                                setSelectedSubcategories([...selectedSubcategories, item]);
-                              } else {
-                                setSelectedSubcategories(selectedSubcategories.filter((s) => s !== item));
-                              }
-                            }}
-                            className="w-4 h-4 rounded border-gray-200 bg-white checked:bg-brand-rose checked:border-brand-rose appearance-none transition-colors cursor-pointer"
-                          />
-                          {selectedSubcategories.includes(item) && (
-                            <svg className="w-3 h-3 text-white absolute pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          )}
-                        </div>
-                        <span className="leading-tight">{item}</span>
-                      </label>
-                    ))}
+          {/* Multi-Category Assignment Section */}
+          <div className="bg-rose-50/30 border border-brand-rose/20 rounded-2xl p-5 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <label className="block text-base font-bold text-gray-900">
+                  Assign Categories (Multiple Selection)
+                </label>
+                <p className="text-xs text-gray-500">
+                  Choose 1 or more categories where this product should appear on the website.
+                </p>
+              </div>
+              <span className="self-start sm:self-auto px-3 py-1 rounded-full text-xs font-bold bg-brand-rose text-white shadow-xs">
+                {selectedSubcategories.length} {selectedSubcategories.length === 1 ? 'Category' : 'Categories'} Selected
+              </span>
+            </div>
+
+            {/* Selected Categories Badges Ribbon */}
+            {selectedSubcategories.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5 p-3 bg-white rounded-xl border border-gray-200">
+                <span className="text-xs font-semibold text-gray-500 mr-1">Active:</span>
+                {selectedSubcategories.map((cat) => (
+                  <span
+                    key={cat}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-rose-50 text-brand-rose border border-brand-rose/30"
+                  >
+                    <span>{cat}</span>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSubcategories(selectedSubcategories.filter((s) => s !== cat))}
+                      className="hover:bg-brand-rose hover:text-white rounded-full p-0.5 transition-colors cursor-pointer"
+                      title="Remove category"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => setSelectedSubcategories([])}
+                  className="text-xs text-gray-400 hover:text-red-600 underline ml-2 cursor-pointer font-medium"
+                >
+                  Clear all
+                </button>
+              </div>
+            )}
+
+            {/* Category Groups Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {subcategoryGroups.map((group) => {
+                const groupSelectedCount = group.items.filter((item) => selectedSubcategories.includes(item)).length;
+                const isAllInGroupSelected = group.items.length > 0 && groupSelectedCount === group.items.length;
+
+                return (
+                  <div key={group.title} className="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden flex flex-col">
+                    <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <h4 className="text-xs font-bold text-gray-800 uppercase tracking-wider">{group.title}</h4>
+                        {groupSelectedCount > 0 && (
+                          <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-rose-100 text-brand-rose">
+                            {groupSelectedCount}
+                          </span>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (isAllInGroupSelected) {
+                            setSelectedSubcategories(selectedSubcategories.filter((s) => !group.items.includes(s)));
+                          } else {
+                            const combined = Array.from(new Set([...selectedSubcategories, ...group.items]));
+                            setSelectedSubcategories(combined);
+                          }
+                        }}
+                        className="text-[11px] font-semibold text-brand-rose hover:underline cursor-pointer"
+                      >
+                        {isAllInGroupSelected ? 'Deselect All' : 'Select All'}
+                      </button>
+                    </div>
+
+                    <div className="p-3.5 space-y-2 max-h-[200px] overflow-y-auto custom-scrollbar">
+                      {group.items.map((item) => {
+                        const isChecked = selectedSubcategories.includes(item);
+
+                        return (
+                          <label
+                            key={item}
+                            className={`flex items-center gap-2.5 p-2 rounded-lg text-xs font-medium cursor-pointer transition-colors ${
+                              isChecked
+                                ? 'bg-rose-50/70 text-gray-900 font-semibold border border-brand-rose/25'
+                                : 'text-gray-700 hover:bg-gray-50'
+                            }`}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelectedSubcategories([...selectedSubcategories, item]);
+                                } else {
+                                  setSelectedSubcategories(selectedSubcategories.filter((s) => s !== item));
+                                }
+                              }}
+                              className="w-4 h-4 rounded border-gray-300 text-brand-rose focus:ring-brand-rose/20 cursor-pointer"
+                            />
+                            <span className="leading-tight flex-1">{item}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

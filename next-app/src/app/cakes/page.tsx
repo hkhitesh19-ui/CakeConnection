@@ -861,7 +861,7 @@ function CakesPageContent() {
       );
     }
 
-    // Subcategory filter
+    // Subcategory filter (supports multiple categories per product)
     if (selectedSubcategories.length > 0) {
       result = result.filter((p) => {
         if (!p.subcategory) return false;
@@ -871,7 +871,22 @@ function CakesPageContent() {
           else if (sl.endsWith('-cake')) sl = sl.replace(/-cake$/, '');
           return sl;
         });
-        return selectedSubcategories.some((sub) => pSubs.includes(sub));
+        return selectedSubcategories.some((sub) => {
+          let target = slugify(sub);
+          if (target.endsWith('-cakes')) target = target.replace(/-cakes$/, '');
+          else if (target.endsWith('-cake')) target = target.replace(/-cake$/, '');
+          return pSubs.some(pSub => pSub === target || pSub.includes(target) || target.includes(pSub));
+        });
+      });
+    }
+
+    // Occasion query param support (e.g. /cakes?occasion=birthday)
+    const occasionParam = searchParams.get('occasion');
+    if (occasionParam) {
+      const occTarget = slugify(occasionParam);
+      result = result.filter((p) => {
+        const text = `${p.name} ${p.subcategory || ''} ${(p.tags || []).join(' ')}`.toLowerCase();
+        return text.includes(occTarget);
       });
     }
 

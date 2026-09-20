@@ -32,8 +32,16 @@ export default function AdminProducts() {
     const filtered = selectedCategory
       ? products.filter((p) => p.category === selectedCategory)
       : products;
-    const subs = Array.from(new Set(filtered.map((p) => p.subcategory).filter(Boolean)));
-    return subs.sort((a, b) => a.localeCompare(b));
+    const allSubs = new Set<string>();
+    filtered.forEach((p) => {
+      if (p.subcategory) {
+        p.subcategory.split(',').forEach((s: string) => {
+          const trimmed = s.trim();
+          if (trimmed) allSubs.add(trimmed);
+        });
+      }
+    });
+    return Array.from(allSubs).sort((a, b) => a.localeCompare(b));
   }, [products, selectedCategory]);
 
   // ── Tri-state sort toggle handler ─────────────────────────
@@ -79,9 +87,14 @@ export default function AdminProducts() {
       result = result.filter((p) => p.category === selectedCategory);
     }
 
-    // Sub-category filter
+    // Sub-category filter (supports multiple categories per product)
     if (selectedSubcategory) {
-      result = result.filter((p) => p.subcategory === selectedSubcategory);
+      const target = selectedSubcategory.toLowerCase();
+      result = result.filter((p) => {
+        if (!p.subcategory) return false;
+        const pSubs = p.subcategory.split(',').map((s: string) => s.trim().toLowerCase());
+        return pSubs.includes(target);
+      });
     }
 
     // Sorting
@@ -283,7 +296,27 @@ export default function AdminProducts() {
                       <span className="text-xs text-gray-500">{product.id}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">{product.category}</td>
+                  <td className="px-6 py-4">
+                    <div className="flex flex-col gap-1.5">
+                      <span className="capitalize font-semibold text-gray-800 text-xs">{product.category}</span>
+                      {product.subcategory ? (
+                        <div className="flex flex-wrap gap-1 max-w-[240px]">
+                          {product.subcategory.split(',').slice(0, 2).map((sub: string, i: number) => (
+                            <span key={i} className="inline-block px-2 py-0.5 rounded-md text-[10px] font-medium bg-rose-50 text-brand-rose border border-brand-rose/20 truncate max-w-[140px]">
+                              {sub.trim()}
+                            </span>
+                          ))}
+                          {product.subcategory.split(',').length > 2 && (
+                            <span className="text-[10px] font-semibold text-gray-400 self-center" title={product.subcategory}>
+                              +{product.subcategory.split(',').length - 2} more
+                            </span>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="text-xs text-gray-400 italic">No subcategories</span>
+                      )}
+                    </div>
+                  </td>
                   <td className="px-6 py-4 font-medium text-gray-900">₹{product.price}</td>
                   <td className="px-6 py-4">
                     <span className={`text-sm ${!(product.in_stock ?? product.is_available) ? 'text-red-500 font-medium' : 'text-gray-600'}`}>
