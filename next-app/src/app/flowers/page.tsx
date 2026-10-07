@@ -746,23 +746,36 @@ function FlowersPageContent() {
                     ))}
                   </motion.div>
                 ) : (
-                  /* Empty State */
-                  <motion.div variants={fadeUp} className="flex flex-col items-center justify-center py-20 text-center">
-                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-surface-secondary border border-border-secondary">
-                      <PackageOpen className="h-9 w-9 text-text-muted" />
+                  /* Coming Soon State */
+                  <motion.div variants={fadeUp} className="flex flex-col items-center justify-center py-16 px-4 text-center bg-white border border-gray-150 rounded-3xl shadow-xs">
+                    <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-rose-50 border border-rose-100 text-3xl shadow-xs">
+                      🌸
                     </div>
-                    <h3 className="font-display text-xl font-semibold text-text-primary mb-2">
-                      No bouquets found
+                    <span className="rounded-full bg-rose-50 border border-rose-200 px-3 py-1 text-xs font-bold text-brand-rose mb-3">
+                      Coming Soon
+                    </span>
+                    <h3 className="font-display text-2xl font-bold text-gray-900 mb-2">
+                      Flower Bouquets Coming Soon!
                     </h3>
-                    <p className="text-text-secondary text-sm max-w-md mb-6">
-                      We couldn't find any bouquets matching your filters. Try adjusting or clearing your filters.
+                    <p className="text-gray-500 text-sm max-w-md mb-6 leading-relaxed">
+                      We are carefully curating fresh farm-direct roses, lilies, orchids, and carnations with same-day express delivery in Vadodara.
                     </p>
-                    <button
-                      onClick={onClearAll}
-                      className="rounded-xl bg-brand-rose px-6 py-3 text-sm font-semibold text-white hover:bg-brand-rose-dark transition-colors cursor-pointer"
-                    >
-                      Clear All Filters
-                    </button>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      <Link
+                        href="/cakes"
+                        className="rounded-xl bg-brand-rose px-6 py-3 text-sm font-semibold text-white hover:bg-brand-rose-dark transition-colors shadow-xs cursor-pointer"
+                      >
+                        Explore Handcrafted Cakes →
+                      </Link>
+                      <a
+                        href="https://wa.me/917203824012?text=Hi!%20I'm%20interested%20in%20ordering%20flowers%20in%20Vadodara."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-xl border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors shadow-xs cursor-pointer inline-flex items-center gap-2"
+                      >
+                        Enquire on WhatsApp
+                      </a>
+                    </div>
                   </motion.div>
                 )}
               </div>

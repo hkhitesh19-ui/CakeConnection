@@ -43,6 +43,56 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/birthday-cakes',
+        destination: '/birthday-cake-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/anniversary-cakes',
+        destination: '/anniversary-cake-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/custom-cakes',
+        destination: '/designer-cake-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/theme-cakes',
+        destination: '/designer-cake-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/photo-cakes',
+        destination: '/photo-cake-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/eggless-cakes',
+        destination: '/eggless-cake-delivery-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/midnight-cake-delivery',
+        destination: '/midnight-cake-delivery-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/same-day-delivery',
+        destination: '/same-day-cake-delivery-vadodara',
+        permanent: true,
+      },
+      {
+        source: '/live-cakes-vadodara',
+        destination: '/cakes/vadodara',
+        permanent: true,
+      },
+      {
+        source: '/flower-combos',
+        destination: '/combos',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

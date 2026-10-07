@@ -267,9 +267,13 @@ async function fetchAllProducts(): Promise<Product[]> {
     category: p.category,
     subcategory: p.subcategory || '',
     flavour: p.flavour,
-    images: (p.product_images || [])
-      .sort((a: any, b: any) => a.display_order - b.display_order)
-      .map((i: any) => ({ url: i.url, alt: i.alt })),
+    images: Array.isArray(p.images) && p.images.length > 0
+      ? p.images.map((i: any) => (typeof i === 'string' ? { url: i, alt: p.name } : { url: i.url, alt: i.alt || p.name }))
+      : Array.isArray(p.product_images) && p.product_images.length > 0
+      ? p.product_images
+          .sort((a: any, b: any) => (a.display_order || 0) - (b.display_order || 0))
+          .map((i: any) => ({ url: i.url, alt: i.alt || p.name }))
+      : [],
     variants: (p.product_variants || [])
       .sort((a: any, b: any) => a.price - b.price)
       .map((v: any) => ({

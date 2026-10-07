@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { Container } from '@/components/ui';
 
 const OCCASIONS = [
-  { name: 'Birthday', image: '/images/occasions/birthday.png', href: '/cakes?occasion=birthday' },
-  { name: 'Anniversary', image: '/images/occasions/anniversary.png', href: '/cakes?occasion=anniversary' },
-  { name: 'Love & Romance', image: '/images/occasions/love.png', href: '/flowers?occasion=love' },
-  { name: 'Congratulations', image: '/images/occasions/congratulations.png', href: '/flowers?occasion=congratulations' },
-  { name: 'Get Well Soon', image: '/images/occasions/get_well.png', href: '/flowers?occasion=get-well' },
+  { name: 'Birthday Cakes', image: '/images/occasions/birthday.png', href: '/birthday-cake-vadodara' },
+  { name: 'Anniversary Cakes', image: '/images/occasions/anniversary.png', href: '/anniversary-cake-vadodara' },
+  { name: 'Love & Romance (Flowers)', image: '/images/occasions/love.png', href: '/flowers/vadodara' },
+  { name: 'Gift Combos', image: '/images/occasions/congratulations.png', href: '/combos' },
+  { name: 'Custom Photo Cakes', image: '/images/occasions/get_well.png', href: '/photo-cake-vadodara' },
 ];
 
 export default function ShopByOccasion() {

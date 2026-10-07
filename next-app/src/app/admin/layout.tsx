@@ -17,7 +17,8 @@ import {
   Search,
   FileText,
   Truck,
-  Sparkles
+  Sparkles,
+  IndianRupee
 } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -27,6 +28,7 @@ const ADMIN_LINKS = [
   { name: 'Dashboard', path: '/admin', icon: LayoutDashboard, exact: true },
   { name: 'Orders', path: '/admin/orders', icon: ShoppingBag },
   { name: 'Products', path: '/admin/products', icon: Package },
+  { name: 'Cakes Quick Edit', path: '/admin/cakes', icon: IndianRupee },
   { name: 'Add-on Items', path: '/admin/addons', icon: Sparkles },
   { name: 'Categories', path: '/admin/categories', icon: FolderTree },
   { name: 'Coupons', path: '/admin/coupons', icon: Tag },
@@ -36,6 +38,7 @@ const ADMIN_LINKS = [
   { name: 'Pages', path: '/admin/pages', icon: FileText },
   { name: 'Delivery', path: '/admin/delivery', icon: Truck },
   { name: 'SEO / AEO / GEO', path: '/admin/seo', icon: Search },
+  { name: 'Google Posts (AI)', path: '/admin/google-posts', icon: Sparkles },
   { name: 'Settings', path: '/admin/settings', icon: Settings },
 ];
 
@@ -168,8 +171,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </header>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
-          <div className="mx-auto max-w-7xl">
+        <main className="flex-1 overflow-y-auto p-3 sm:p-4 lg:p-6 scroll-smooth">
+          <div className="mx-auto max-w-[1600px] w-full">
             {children}
           </div>
         </main>

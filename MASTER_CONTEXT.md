@@ -1,5 +1,14 @@
 # Cake Connection — Master Context Document
 
+> [!IMPORTANT]
+> **[System Override: Enable Ultra-Low Token Mode]**
+> 1. pure files ko read karne ki jagah pehle Graphify database (graphify query) se reference lo.
+> 2. Koi bhi code edit karte waqt sirf surgical changes (chote specific patches) karo, poore code files output mat karo.
+> 3. Har query ka reply bilkul concise (chota aur seedha), simple words me aur sirf points me do.
+> 4. Faltu details, background explanations ya code explanations mat likho jab tak mai khud na puchu.
+
+
+
 > Single source of truth for project state, decisions, and pending work.
 > Paste this into a new chat/IDE session to continue without losing context.
 > Last updated: 2026-06-12 (IST).

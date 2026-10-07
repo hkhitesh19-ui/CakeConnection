@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # ==============================================================================
+  # Local PostgreSQL 16 (0.1ms Latency, Zero Pauses, Lifetime 24/7 Active)
+  # ==============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: cakeconnection_db
+    restart: always
+    environment:
+      POSTGRES_DB: cakeconnection
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: CakeConnectionStrongDbPassword2026!
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./master_postgres_schema.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d cakeconnection"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==============================================================================
+  # Local PostgREST API (High-performance REST API for Next.js app)
+  # Translates Supabase-compatible HTTP requests directly to PostgreSQL
+  # ==============================================================================
+  postgrest:
+    image: postgrest/postgrest:latest
+    container_name: cakeconnection_postgrest
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:3000"
+    environment:
+      PGRST_DB_URI: "postgres://postgres:CakeConnectionStrongDbPassword2026!@postgres:5432/cakeconnection"
+      PGRST_DB_SCHEMA: "public"
+      PGRST_DB_ANON_ROLE: "postgres"
+      PGRST_OPENAPI_SERVER_PROXY_URI: "http://127.0.0.1:8000"
+
+volumes:
+  postgres_data:
+    driver: local

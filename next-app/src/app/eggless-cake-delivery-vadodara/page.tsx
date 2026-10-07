@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema';
 import AEOBlock from '@/components/seo/AEOBlock';
@@ -7,9 +7,9 @@ import { FREE_DELIVERY_ABOVE, SAME_DAY_CUTOFF } from '@/data/localities';
 const BASE = 'https://cakeconnection.in';
 
 export const metadata: Metadata = {
-  title: 'Eggless Cake Delivery in Vadodara — 100% Eggless | CakeConnection',
-  description: `Order 100% eggless cakes in Vadodara. All CakeConnection cakes are strictly eggless — safe for pure vegetarians. Same-day delivery by ${SAME_DAY_CUTOFF}. Birthday, designer, photo cakes. Free delivery above Rs.${FREE_DELIVERY_ABOVE}.`,
-  keywords: ['eggless cake vadodara', 'eggless cake delivery vadodara', 'pure veg cake vadodara', 'eggless birthday cake vadodara', '100% eggless cake vadodara'],
+  title: '100% Eggless Cakes Online Vadodara | Pure Veg Bakery',
+  description: 'Explore a wide range of 100% pure eggless cakes in Vadodara. From chocolate truffle to fresh fruit cakes, order fresh veg cakes today.',
+  keywords: ['100% eggless cakes vadodara', 'pure veg cake shop vadodara', 'eggless cake delivery vadodara', 'pure veg bakery vadodara'],
   alternates: { canonical: `${BASE}/eggless-cake-delivery-vadodara` },
 };
 
@@ -55,7 +55,7 @@ export default function EgglessCakeVadodara() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <h1 className="font-display text-4xl font-bold text-gradient-rose mb-5">
-            Eggless Cake Delivery in Vadodara — 100% Eggless
+            100% Pure Eggless Cake Delivery in Vadodara
           </h1>
 
           <p className="text-lg text-text-secondary leading-relaxed mb-8">

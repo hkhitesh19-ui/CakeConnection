@@ -3,6 +3,41 @@ import { supabase } from '@/lib/supabase';
 import { isSupabaseConfigured } from '@/lib/db';
 import { allProducts } from '@/data/products';
 
+// Helper to map all fallback products to DB-like shape
+function getFallbackProducts() {
+  return allProducts.map((p) => ({
+    id: p.id,
+    name: p.name,
+    slug: p.slug,
+    description: p.description,
+    short_description: p.shortDescription,
+    category: p.category,
+    subcategory: p.subcategory,
+    images: p.images,
+    flavour: p.flavour,
+    tags: p.tags,
+    delivery_options: p.deliveryOptions,
+    is_available: p.isAvailable,
+    is_featured: p.isFeatured,
+    is_new_arrival: p.isNewArrival,
+    is_bestseller: p.isBestseller,
+    rating: p.rating,
+    review_count: p.reviewCount,
+    price: p.variants[0]?.price ?? 0,
+    in_stock: p.isAvailable,
+    product_variations: p.variants.map((v) => ({
+      id: v.id,
+      weight: v.weight,
+      price: v.price,
+      compare_at_price: v.compareAtPrice,
+      sku: v.sku,
+      stock: v.stock,
+    })),
+    created_at: p.createdAt,
+    updated_at: p.updatedAt,
+  }));
+}
+
 // ── GET: Fetch all products (or single by ?id=) ──────────────
 export async function GET(request: Request) {
   try {
@@ -23,39 +58,7 @@ export async function GET(request: Request) {
           ? NextResponse.json({ success: true, data: product })
           : NextResponse.json({ success: false, message: 'Product not found' }, { status: 404 });
       }
-      // Return all mock products mapped to DB-like shape for the admin table
-      const mapped = allProducts.map((p) => ({
-        id: p.id,
-        name: p.name,
-        slug: p.slug,
-        description: p.description,
-        short_description: p.shortDescription,
-        category: p.category,
-        subcategory: p.subcategory,
-        images: p.images,
-        flavour: p.flavour,
-        tags: p.tags,
-        delivery_options: p.deliveryOptions,
-        is_available: p.isAvailable,
-        is_featured: p.isFeatured,
-        is_new_arrival: p.isNewArrival,
-        is_bestseller: p.isBestseller,
-        rating: p.rating,
-        review_count: p.reviewCount,
-        price: p.variants[0]?.price ?? 0,
-        in_stock: p.isAvailable,
-        product_variations: p.variants.map((v) => ({
-          id: v.id,
-          weight: v.weight,
-          price: v.price,
-          compare_at_price: v.compareAtPrice,
-          sku: v.sku,
-          stock: v.stock,
-        })),
-        created_at: p.createdAt,
-        updated_at: p.updatedAt,
-      }));
-      return NextResponse.json({ success: true, data: mapped });
+      return NextResponse.json({ success: true, data: getFallbackProducts() });
     }
 
     if (id) {
@@ -90,14 +93,14 @@ export async function GET(request: Request) {
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.error('Supabase products fetch error:', error);
-      return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+      console.warn('Supabase products fetch error, falling back to local dataset:', error);
+      return NextResponse.json({ success: true, data: getFallbackProducts() });
     }
 
     return NextResponse.json({ success: true, data: products });
   } catch (error: any) {
-    console.error('Admin products GET error:', error);
-    return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
+    console.warn('Admin products GET error, falling back to local dataset:', error);
+    return NextResponse.json({ success: true, data: getFallbackProducts() });
   }
 }
 

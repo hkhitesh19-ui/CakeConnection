@@ -15,25 +15,49 @@ import { useInView } from '@/hooks';
 const footerLinks = {
   shop: [
     { label: 'All Cakes', href: '/cakes' },
-    { label: 'Flower Bouquets', href: '/flowers' },
+    { label: 'Flower Bouquets', href: '/flowers/vadodara' },
     { label: 'Gift Combos', href: '/combos' },
-    { label: 'Same Day Delivery', href: '/cakes/same-day' },
-    { label: 'Bestsellers', href: '/bestsellers' },
+    { label: 'Same Day Delivery (2-4 Hrs)', href: '/same-day-cake-delivery-vadodara' },
+    { label: '100% Eggless Cakes', href: '/eggless-cake-delivery-vadodara' },
+  ],
+  celebrations: [
+    { label: 'Birthday Cakes', href: '/birthday-cake-vadodara' },
+    { label: 'Anniversary Cakes', href: '/anniversary-cake-vadodara' },
+    { label: 'Photo Print Cakes', href: '/photo-cake-vadodara' },
+    { label: 'Designer & Theme Cakes', href: '/designer-cake-vadodara' },
+    { label: '1st Birthday Cakes', href: '/1st-birthday-cake-vadodara' },
+    { label: 'Chocolate Truffle Cakes', href: '/chocolate-cake-vadodara' },
+    { label: 'Red Velvet Cakes', href: '/red-velvet-cake-vadodara' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Vadodara Cake Hub', href: '/cakes/vadodara' },
+    { label: 'Delivery Areas & Pincodes', href: '/delivery-areas' },
   ],
   support: [
-    { label: 'FAQs', href: '/faq' },
-    { label: 'Shipping Policy', href: '/shipping-policy' },
-    { label: 'Return Policy', href: '/return-policy' },
+    { label: 'FAQs & Sizing Guide', href: '/faq' },
+    { label: 'Shipping & Delivery Policy', href: '/shipping-policy' },
+    { label: 'Return & Refund Policy', href: '/return-policy' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms & Conditions', href: '/terms' },
   ],
 };
+
+const VADODARA_LOCALITIES = [
+  { name: 'Alkapuri', slug: 'alkapuri' },
+  { name: 'Gotri', slug: 'gotri' },
+  { name: 'Manjalpur', slug: 'manjalpur' },
+  { name: 'Akota', slug: 'akota' },
+  { name: 'Sayajigunj', slug: 'sayajigunj' },
+  { name: 'Fatehgunj', slug: 'fatehgunj' },
+  { name: 'Karelibaug', slug: 'karelibaug' },
+  { name: 'Old Padra Road', slug: 'old-padra-road' },
+  { name: 'Waghodia Road', slug: 'waghodia-road' },
+  { name: 'Subhanpura', slug: 'subhanpura' },
+  { name: 'Diwalipura', slug: 'diwalipura' },
+  { name: 'Vadiwadi', slug: 'vadiwadi' },
+];
 
 const socialLinks = [
   { icon: FaInstagram, href: siteConfig.social.instagram, label: 'Instagram' },
@@ -112,7 +136,7 @@ export function Footer() {
 
           {/* Shop Links */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Shop</h4>
+            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Shop Cakes</h4>
             <ul className="space-y-2.5">
               {footerLinks.shop.map((link) => (
                 <li key={link.label}>
@@ -124,11 +148,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Celebrations Links */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Company</h4>
+            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Celebrations</h4>
             <ul className="space-y-2.5">
-              {footerLinks.company.map((link) => (
+              {footerLinks.celebrations.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-rose transition-colors duration-200">
                     {link.label}
@@ -138,11 +162,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Quick Info & Support Links */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Support</h4>
+            <h4 className="font-display text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
-              {footerLinks.support.map((link) => (
+              {footerLinks.company.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-rose transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              {footerLinks.support.slice(0, 3).map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-rose transition-colors duration-200">
                     {link.label}
@@ -158,7 +189,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-text-secondary">
                 <MapPin size={16} className="text-brand-rose mt-0.5 shrink-0" />
-                <span>{siteConfig.location.city}, {siteConfig.location.state}, {siteConfig.location.country}</span>
+                <span>GF9 RutuPlatina Complex, Besides Duliram Pendawala, Eva Mall Rd, Manjalpur, Vadodara</span>
               </li>
               <li>
                 <a href={`tel:${siteConfig.contact.phone}`} className="flex items-center gap-3 text-sm text-text-secondary hover:text-brand-rose transition-colors">
@@ -172,11 +203,32 @@ export function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-text-secondary">
-                <Clock size={16} className="text-brand-rose shrink-0" />
-                {siteConfig.hours.open} - {siteConfig.hours.close}
-              </li>
             </ul>
+          </div>
+        </div>
+
+        {/* SEO Localities Directory Row */}
+        <div className="mt-12 pt-8 border-t border-border-secondary/60">
+          <div className="mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-text-primary">
+              Cake Delivery in Vadodara Localities (Same-Day &amp; Express):
+            </h5>
+            <Link href="/delivery-areas" className="text-xs text-brand-rose hover:underline font-medium">
+              View All Areas, Pincodes &amp; ETA →
+            </Link>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs text-text-muted leading-relaxed">
+            {VADODARA_LOCALITIES.map((loc, i) => (
+              <span key={loc.slug} className="inline-flex items-center gap-2">
+                <Link
+                  href={`/cakes/vadodara/${loc.slug}`}
+                  className="hover:text-brand-rose transition-colors"
+                >
+                  Cake Delivery {loc.name}
+                </Link>
+                {i < VADODARA_LOCALITIES.length - 1 && <span className="text-border-secondary">•</span>}
+              </span>
+            ))}
           </div>
         </div>
       </Container>

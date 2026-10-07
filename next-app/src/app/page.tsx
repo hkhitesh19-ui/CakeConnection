@@ -9,6 +9,7 @@ import {
   ComboGifts,
   DeliverySection,
   TrustBadges,
+  WhyChooseUsSection,
   Testimonials,
   InstagramGallery,
   FAQ,
@@ -17,9 +18,9 @@ import {
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: "Online Cake Delivery in Vadodara — Same Day & Midnight | CakeConnection",
-  description: "Order 100% eggless cakes & fresh flowers in Vadodara. Same-day delivery in 2–4 hours (cut-off 6 PM). Midnight delivery at ₹149. Birthday, designer, photo cakes. Free delivery above ₹999.",
-  keywords: "cake delivery vadodara, eggless cake vadodara, online cake order, birthday cake vadodara, same day cake delivery vadodara, midnight cake delivery, flower bouquet vadodara",
+  title: "Online Cake & Flower Delivery in Vadodara | Live Cake Bakery - Cake Connection",
+  description: "Order fresh live cakes, custom birthday cakes & flower bouquets online at cakeconnection.in. Same-day & midnight delivery in Vadodara & Manjalpur. Order now!",
+  keywords: "online cake delivery in vadodara, same day cake and flower delivery vadodara, best live cake shop in manjalpur vadodara, customized theme cake online vadodara, fresh flower bouquet delivery vadodara, live cake vadodara, midnight cake delivery manjalpur",
   alternates: {
     canonical: 'https://cakeconnection.in',
   },
@@ -55,6 +56,7 @@ export default function HomePage() {
         <ComboGifts />
         <DeliverySection />
         <TrustBadges />
+        <WhyChooseUsSection />
         <Testimonials />
         <InstagramGallery />
         <FAQ />

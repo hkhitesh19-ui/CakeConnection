@@ -3,15 +3,22 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui';
 
-const CATEGORIES = [
-  { name: 'Bestsellers', image: '/images/hero-cake.png', href: '/cakes?sort=bestseller' },
-  { name: 'Birthday Cakes', image: '/images/red-velvet-cake.png', href: '/cakes?occasion=birthday' },
-  { name: 'Cakes', image: '/images/categories/cakes.png', href: '/cakes' },
-  { name: 'Flower Bouquets', image: '/images/categories/flowers.png', href: '/flowers' },
+interface CategoryItem {
+  name: string;
+  image: string;
+  href: string;
+  badge?: string;
+}
+
+const CATEGORIES: CategoryItem[] = [
+  { name: 'Bestsellers', image: '/images/hero-cake.png', href: '/cakes' },
+  { name: 'Birthday Cakes', image: '/images/red-velvet-cake.png', href: '/birthday-cake-vadodara' },
+  { name: 'All Cakes', image: '/images/categories/cakes.png', href: '/cakes/vadodara' },
+  { name: 'Flower Bouquets', image: '/images/categories/flowers.png', href: '/flowers/vadodara' },
   { name: 'Combos', image: '/images/categories/combos.png', href: '/combos' },
-  { name: 'Anniversary', image: '/images/luxury-bouquet.png', href: '/cakes?occasion=anniversary' },
-  { name: 'Same Day', image: '/images/combo-gift.png', href: '/cakes?delivery=same-day' },
-  { name: 'Midnight', image: '/images/black-forest-cake.png', href: '/cakes?delivery=midnight' },
+  { name: 'Anniversary', image: '/images/luxury-bouquet.png', href: '/anniversary-cake-vadodara' },
+  { name: 'Same Day (2h)', image: '/images/combo-gift.png', href: '/same-day-cake-delivery-vadodara' },
+  { name: 'Midnight', image: '/images/black-forest-cake.png', href: '/midnight-cake-delivery-vadodara' },
 ];
 
 export default function CategoriesSection() {
@@ -36,6 +43,11 @@ export default function CategoriesSection() {
                   alt={cat.name}
                   className="w-full h-full object-cover p-1 group-hover:scale-105 transition-transform duration-300"
                 />
+                {cat.badge && (
+                  <span className="absolute bottom-1 bg-brand-rose text-white text-[9px] font-bold px-1.5 py-0.2 rounded-full shadow-xs uppercase tracking-wider">
+                    {cat.badge}
+                  </span>
+                )}
               </motion.div>
               <span className="text-xs md:text-sm font-medium text-gray-700 group-hover:text-brand-rose transition-colors duration-200 text-center whitespace-nowrap md:whitespace-normal max-w-[90px] md:max-w-[110px]">
                 {cat.name}
@@ -47,5 +59,3 @@ export default function CategoriesSection() {
     </section>
   );
 }
-
-

@@ -1,4 +1,4 @@
-﻿// ============================================
+// ============================================
 // Vadodara Localities Data
 // Used for: locality pages, sitemap, delivery areas, schema
 // ============================================
@@ -17,7 +17,7 @@ export interface Locality {
 export const LOCALITIES: Locality[] = [
   { slug: 'alkapuri',     name: 'Alkapuri',      pincode: '390007', etaMinutes: 90,  etaText: '90 min', midnightAvailable: true,  expresAvailable: true,  popularFor: ['Birthday Cakes', 'Designer Cakes', 'Flower Bouquets'] },
   { slug: 'gotri',        name: 'Gotri',         pincode: '390021', etaMinutes: 120, etaText: '2 hrs',  midnightAvailable: true,  expresAvailable: true,  popularFor: ['Eggless Cakes', 'Anniversary Cakes', 'Combos'] },
-  { slug: 'manjalpur',    name: 'Manjalpur',     pincode: '390011', etaMinutes: 120, etaText: '2 hrs',  midnightAvailable: true,  expresAvailable: true,  popularFor: ['Photo Cakes', 'Birthday Cakes', 'Midnight Cakes'] },
+  { slug: 'manjalpur',    name: 'Manjalpur',     pincode: '390011', etaMinutes: 120, etaText: '2 hrs',  midnightAvailable: false, expresAvailable: true,  popularFor: ['Photo Cakes', 'Birthday Cakes', 'Live Cakes'] },
   { slug: 'akota',        name: 'Akota',         pincode: '390020', etaMinutes: 120, etaText: '2 hrs',  midnightAvailable: true,  expresAvailable: false, popularFor: ['Chocolate Cakes', 'Red Velvet', 'Flower Bouquets'] },
   { slug: 'sayajigunj',   name: 'Sayajigunj',    pincode: '390005', etaMinutes: 120, etaText: '2 hrs',  midnightAvailable: true,  expresAvailable: false, popularFor: ['Fondant Cakes', 'Designer Cakes', 'Combos'] },
   { slug: 'vadiwadi',     name: 'Vadiwadi',      pincode: '390017', etaMinutes: 150, etaText: '2.5 hrs',midnightAvailable: false, expresAvailable: false, popularFor: ['Birthday Cakes', 'Eggless Cakes'] },

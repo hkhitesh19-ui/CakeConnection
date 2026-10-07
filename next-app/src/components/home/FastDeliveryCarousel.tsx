@@ -165,12 +165,7 @@ export default function FastDeliveryCarousel({
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
-                      {/* Discount Tag */}
-                      {hasDiscount && (
-                        <span className="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-sm">
-                          {discountPercent}% OFF
-                        </span>
-                      )}
+
                     </Link>
 
                     {/* Product Details */}

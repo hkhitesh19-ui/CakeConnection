@@ -1,614 +1,797 @@
 {
-  "F:\\Cake_Connection_Website_May2026\\next-app\\eslint.config.mjs": {
-    "mtime": 1779898271.469159,
-    "hash": "dfa1f5f6a7037bf39dc510f30b180002"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\next-env.d.ts": {
-    "mtime": 1781089229.79565,
-    "hash": "29f60a376e12bf72b67d4994fcc84214"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\next.config.ts": {
-    "mtime": 1781090015.744318,
-    "hash": "9c16be102d63e382153658fe28a3a92c"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\postcss.config.mjs": {
-    "mtime": 1779898271.548453,
-    "hash": "239f3ebf717465dc636818a1a619398d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\schema.sql": {
-    "mtime": 1780035300.0860105,
-    "hash": "62c5db74ece85f823e8c2ef70f04b104"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\scripts\\seed.js": {
-    "mtime": 1780035315.8106878,
-    "hash": "4f3e5950f51ca1e3d9e3af97319fb0d5"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\middleware.ts": {
-    "mtime": 1781101568.9725454,
-    "hash": "8868fe5f1badf6d6de3b962ff0955d62"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\layout.tsx": {
-    "mtime": 1781088185.020821,
-    "hash": "941d024794ece65ee6aeeccc7a5ffce4"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\not-found.tsx": {
-    "mtime": 1780941529.2042725,
-    "hash": "ea93859983ff3fe9931c5c1eb28ebf07"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\page.tsx": {
-    "mtime": 1781194890.6709712,
-    "hash": "3912f812d7e05db7b45b29c25a2e3aad"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\robots.ts": {
-    "mtime": 1780941529.2837844,
-    "hash": "9fd4d93c9dc3d5c68fe16f9a15ef193e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\sitemap.ts": {
-    "mtime": 1780941529.3321242,
-    "hash": "ec0c0ffca17c0a145bf0e0e0962c5cef"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\about\\page.tsx": {
-    "mtime": 1780941517.7656372,
-    "hash": "be53ab72a33e15c0d1535c4a9fbdfd97"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\account\\page.tsx": {
-    "mtime": 1780941517.9975111,
-    "hash": "9ac0b144d541e93a8a6c62aaca890657"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\layout.tsx": {
-    "mtime": 1781105897.9116855,
-    "hash": "78dc5f8551dac8c4b05d4500a53774b0"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\page.tsx": {
-    "mtime": 1781105981.4283755,
-    "hash": "2097b608396fd133b986198bbf96f4e2"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\cms\\page.tsx": {
-    "mtime": 1781105934.207933,
-    "hash": "659a7272603488be9dea81ce29931b28"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\coupons\\page.tsx": {
-    "mtime": 1781086827.4016523,
-    "hash": "2c85172cfa4d1551c0f537d29972e540"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\customers\\page.tsx": {
-    "mtime": 1781087955.2547183,
-    "hash": "7e1faeaeb8f58f5131c0b06f581c981e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\orders\\page.tsx": {
-    "mtime": 1781088475.7935605,
-    "hash": "8d68ffcea5d2f0840d91f8e6e4877fc1"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\products\\page.tsx": {
-    "mtime": 1781105467.740646,
-    "hash": "50390235b569c4d2287c765a8525066c"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\admin\\settings\\page.tsx": {
-    "mtime": 1781087964.3537264,
-    "hash": "2ed39446b56f0da59990bece242202e6"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\api\\admin\\cms\\route.ts": {
-    "mtime": 1781105909.3751917,
-    "hash": "8aeaf679b36de3d5871d0a983480ecf2"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\api\\admin\\products\\route.ts": {
-    "mtime": 1781105422.4058135,
-    "hash": "c43f49e4127208ef9560976749929814"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\birthday-cake-vadodara\\page.tsx": {
-    "mtime": 1780941519.1448367,
-    "hash": "45749a1575ba90915558394821fac32c"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\cakes\\layout.tsx": {
-    "mtime": 1780941519.2287903,
-    "hash": "db6bd04d42924f03461fdd0ca2009d80"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\cakes\\page.tsx": {
-    "mtime": 1780941519.5705113,
-    "hash": "22878a4f9ce8f364bdfdf132e250f811"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\cart\\page.tsx": {
-    "mtime": 1781086894.343476,
-    "hash": "542d9e09d2c36aa1418afdee233bb96d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\checkout\\page.tsx": {
-    "mtime": 1781091386.6989975,
-    "hash": "31c87d78de38483c06c0057b0c745e2b"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\combos\\page.tsx": {
-    "mtime": 1780941521.17055,
-    "hash": "ff2641cdba86aeecae6daf87c2e29d45"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\delivery\\[city]\\page.tsx": {
-    "mtime": 1780941577.2907176,
-    "hash": "a4821807ad5a5f42282eaf9562ba0d8d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\eggless-cake-vadodara\\page.tsx": {
-    "mtime": 1780941527.4748669,
-    "hash": "7d3af25bc373b634518ca9180f28bb3a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\faq\\page.tsx": {
-    "mtime": 1780941527.5584035,
-    "hash": "93585784f4ec98d8104d971fea97f22a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\flowers\\layout.tsx": {
-    "mtime": 1780941527.5921345,
-    "hash": "11abee567553ee96ed2cbd8627848664"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\flowers\\page.tsx": {
-    "mtime": 1780941528.0713646,
-    "hash": "5f953d79a32ce6ab40a1e437940494a5"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\homepage2\\page.tsx": {
-    "mtime": 1780941528.206921,
-    "hash": "7c2e21667dbe5f73e578d3ae690a70fc"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\online-cake-delivery-vadodara\\page.tsx": {
-    "mtime": 1780941528.278475,
-    "hash": "7244672792040a0bcf0cf313184a5c83"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\orders\\page.tsx": {
-    "mtime": 1780941528.6085098,
-    "hash": "8cc9abef1114d24209ba7334c0367cd9"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\product\\[slug]\\page.tsx": {
-    "mtime": 1780941588.886515,
-    "hash": "a26e29c6ae82dbd163b05dd99e376bfa"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\same-day-cake-delivery-vadodara\\page.tsx": {
-    "mtime": 1780941528.859831,
-    "hash": "80d561ae2dbab2ff63b4fae64dff1d0a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\wishlist\\page.tsx": {
-    "mtime": 1780941529.0915687,
-    "hash": "fc58cd07ce9a97d918fdea2cea27fdb5"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\app\\[category]\\[slug]\\page.tsx": {
-    "mtime": 1781065347.0027888,
-    "hash": "73d7956e83f54dbd3caca7cbdd92a919"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\conversion\\index.tsx": {
-    "mtime": 1780941529.4157896,
-    "hash": "5c7f96b23bedcf1c4510d41ff6d3b459"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\BestsellerCarousel.tsx": {
-    "mtime": 1781064220.1131537,
-    "hash": "9bb9ccf0db561bf5100cb4b0fd97446d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\BestsellersSection.tsx": {
-    "mtime": 1781061644.6332402,
-    "hash": "1b0fd3e324bf0c4d26b570277678a1ba"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\CategoriesSection.tsx": {
-    "mtime": 1781064220.155831,
-    "hash": "b1c00f27a5ea3aee04ab6f38b8856099"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\ComboGifts.tsx": {
-    "mtime": 1781064220.1613395,
-    "hash": "427a36d539b21d468c9784f5039ded1a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\DeliveryBanner.tsx": {
-    "mtime": 1781064220.163337,
-    "hash": "04e76909a51049c1c70f1622de6e934e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\DeliverySection.tsx": {
-    "mtime": 1781064220.1703346,
-    "hash": "a5e41ccfe9eec8a3561d8afb09583d58"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\FAQ.tsx": {
-    "mtime": 1781061644.6511383,
-    "hash": "2e9379f872d37f301858d62c42ee91f2"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\FeaturedBouquets.tsx": {
-    "mtime": 1781064220.176371,
-    "hash": "51c219c73208641a8ee385a2a04a5d09"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\FeaturedCakes.tsx": {
-    "mtime": 1781064220.1787472,
-    "hash": "f3df0562bdc8544e40a9c4bedf1b1933"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\FooterCTA.tsx": {
-    "mtime": 1781064220.2015374,
-    "hash": "8ea27df6e9d9d95085c4ca7c7c88db62"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\HeroSection.tsx": {
-    "mtime": 1781064220.222536,
-    "hash": "ac9f502963d7a60029f9f1356af14fd6"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\index.ts": {
-    "mtime": 1781060621.37928,
-    "hash": "f88425bac83bab7e6e515ccf1dae792e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\InstagramGallery.tsx": {
-    "mtime": 1781061644.715722,
-    "hash": "3bd35492f8c8aa72a80594d9b19b75ee"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\LoadingScreen.tsx": {
-    "mtime": 1781147376.345191,
-    "hash": "dd2436723cb4da0fc52361f7581f6832"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\MustHaveSection.tsx": {
-    "mtime": 1781061644.7378745,
-    "hash": "1f813330b0834f462fa9283122240c3e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\ShopByOccasion.tsx": {
-    "mtime": 1781064220.235541,
-    "hash": "39e0990ce0dfad9967fb60c5459be847"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\Testimonials.tsx": {
-    "mtime": 1781061644.7446063,
-    "hash": "f0a23c89fe5001b1ec6914eb1c3150d0"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\home\\TrustBadges.tsx": {
-    "mtime": 1781061644.757027,
-    "hash": "c508b8f866223a4ba91ba3b99750c541"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\Footer.tsx": {
-    "mtime": 1781064220.2437243,
-    "hash": "d140dd80820cb862b8e5df3c378524ef"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\index.ts": {
-    "mtime": 1779643248.3582196,
-    "hash": "c75ebfd4e7ff15c433973da6e04ed9d5"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\MegaMenu.tsx": {
-    "mtime": 1781064220.245723,
-    "hash": "5156713ba06cd49072e35b79cdc55e1b"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\MobileMenu.tsx": {
-    "mtime": 1781064220.260292,
-    "hash": "074b9a26952fffda5b56fefa8b1280c1"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\Navbar.tsx": {
-    "mtime": 1781069546.5218463,
-    "hash": "fd980e32517b18af9c10a876645a0bda"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\RootLayout.tsx": {
-    "mtime": 1781062366.611647,
-    "hash": "20edb7af7466b8e74eba047879b4d87c"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\SearchOverlay.tsx": {
-    "mtime": 1781068803.3390038,
-    "hash": "fce625d8902ba663e85a3dcf51407c97"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\StoreLayoutWrapper.tsx": {
-    "mtime": 1781062366.6716611,
-    "hash": "9e7b1f1345d7cdd5aa366ef9845ffd92"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\layout\\WhatsAppFAB.tsx": {
-    "mtime": 1781062366.7044773,
-    "hash": "85bf37c3c4446c011a5c6c09690235f3"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\product\\ProductDetailClient.tsx": {
-    "mtime": 1781066181.4589958,
-    "hash": "1d82f61efecbedf489a9044b1166f31f"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\schema\\BreadcrumbSchema.tsx": {
-    "mtime": 1780941532.8188956,
-    "hash": "acfa81ef845ffd54afa56c17f8242be7"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\schema\\FAQSchema.tsx": {
-    "mtime": 1780941532.8524852,
-    "hash": "b78f365137bd9e13599707378b3d094e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\schema\\OrganizationSchema.tsx": {
-    "mtime": 1780941532.9179232,
-    "hash": "3631f81edeb4f019f7237e02aebfd282"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\schema\\ProductSchema.tsx": {
-    "mtime": 1780941533.00089,
-    "hash": "9cdad527087e1624f221b2372e1ed296"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\seo\\AEOBlock.tsx": {
-    "mtime": 1780941533.0818317,
-    "hash": "0fbff8fa719dbd8ba676d860d8beedc3"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\seo\\ProductListings.tsx": {
-    "mtime": 1780941533.2417376,
-    "hash": "ec7302bebe95aa051374e7cd433f9bbe"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\seo\\SEOHead.tsx": {
-    "mtime": 1780941533.3296876,
-    "hash": "4b4ab99c8b1abc4271891342607edb29"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\Badge.tsx": {
-    "mtime": 1780941533.3761277,
-    "hash": "167b9496c25b573e482a82ccd366c0ff"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\Button.tsx": {
-    "mtime": 1780941533.4524095,
-    "hash": "202769d2e199bf1ed965b5f403b6f518"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\Container.tsx": {
-    "mtime": 1780941533.486292,
-    "hash": "ad97f98d08680fa5718d104d7f0c3b6c"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\CountryCodeSelect.tsx": {
-    "mtime": 1781059563.5582612,
-    "hash": "401aeff6daaa33affce0859bb80ddecb"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\index.ts": {
-    "mtime": 1780941533.5061636,
-    "hash": "45aac2cf62fe55212a928a9565915d53"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\Logo.tsx": {
-    "mtime": 1781026155.6035962,
-    "hash": "c576f683ec30698a009cd49bd99c94d8"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\OptimizedImage.tsx": {
-    "mtime": 1780941533.6368384,
-    "hash": "693ce03c1fc5a186c76f344346ee274b"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\components\\ui\\Skeleton.tsx": {
-    "mtime": 1780941533.7703333,
-    "hash": "5f816bfc12d3cd8381d404ff78f8f9ea"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\config\\site.config.ts": {
-    "mtime": 1780941533.9358087,
-    "hash": "b06f1c94231386745c081a3fd6610aac"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\countryData.ts": {
-    "mtime": 1781059563.2588177,
-    "hash": "e73b671ff7e8e015243fd517d4a40582"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\pricing.ts": {
-    "mtime": 1780941534.0414522,
-    "hash": "1fb625128b872c0c74f3fd9aa9ca2e99"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\products.ts": {
-    "mtime": 1781065891.8970137,
-    "hash": "000aea30ef1d937aff30c8f0c0fc91d1"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\scrapedCakes.ts": {
-    "mtime": 1780941535.9734218,
-    "hash": "fb2b8f61bd585d5ddc0d9101b2064e58"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\scrapedFlowers.ts": {
-    "mtime": 1780941536.2738538,
-    "hash": "f6722d81e20d36cf52e4bc9271f5c047"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\scrapedFlowersData.ts": {
-    "mtime": 1780941537.3828092,
-    "hash": "76f1affed16274ebd0faf6a6589e1cd6"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\data\\scrapedProductsData.ts": {
-    "mtime": 1780941545.2188764,
-    "hash": "bcafe4a13a7fdf858ee4c13edbcf844b"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\hooks\\index.ts": {
-    "mtime": 1779643741.6909049,
-    "hash": "7ff23775b1a39914a31788a3093a18ec"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\hooks\\useProducts.ts": {
-    "mtime": 1780655837.6131244,
-    "hash": "058f561a1089f7638576f2875680ccff"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\hooks\\useSearch.ts": {
-    "mtime": 1781059554.0245957,
-    "hash": "37e5789e7ebb2031dc132f09cfbe5c18"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\layouts\\AdminLayout.tsx": {
-    "mtime": 1780941545.3473759,
-    "hash": "463a309650de502de9023e835213896a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\lib\\api.ts": {
-    "mtime": 1780941545.551079,
-    "hash": "c1340a42df6f952202e228e694de88d2"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\lib\\db.ts": {
-    "mtime": 1780941546.0073059,
-    "hash": "ddf0987888ed651b67053cb2bb212f06"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\lib\\index.ts": {
-    "mtime": 1780941546.079265,
-    "hash": "8021355b6d688bce8eb1f2f67c0bc611"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\lib\\supabase.ts": {
-    "mtime": 1780941546.1042514,
-    "hash": "8cf9312ceb4f6c85e0beeea188cb7f2a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\lib\\seo\\schema.ts": {
-    "mtime": 1780941545.4489799,
-    "hash": "67924b97bf95f8da17d9ef0ef1b069f8"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\stores\\cartStore.ts": {
-    "mtime": 1779642962.8137999,
-    "hash": "fe109d4a43ca784eef83481d7b7720de"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\stores\\index.ts": {
-    "mtime": 1780977968.1425529,
-    "hash": "e09d0c4fe6e7bfeb615a6b8f46fac918"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\stores\\siteStore.ts": {
-    "mtime": 1781086815.360991,
-    "hash": "cdddb9280b2e213f66ee3417e60dd039"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\stores\\uiStore.ts": {
-    "mtime": 1779642971.777426,
-    "hash": "020a07d78a4ebeed61c731415398443d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\stores\\wishlistStore.ts": {
-    "mtime": 1779642969.7576404,
-    "hash": "fa7e32fe066fc356ba2bffd9e77461e2"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\types\\index.ts": {
-    "mtime": 1780941546.8877988,
-    "hash": "1763037bef167022b1f147e11275d203"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\src\\utils\\index.ts": {
-    "mtime": 1780941546.9697526,
-    "hash": "3f73c71894663caaec1d311be375b1e6"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\add_categories.sql": {
-    "mtime": 1780657535.2481692,
-    "hash": "f6e05b27e65f8b24a9e4f2b12d88bee6"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\add_razorpay_fields.sql": {
-    "mtime": 1781060268.6417646,
-    "hash": "8730b65c6e4ba6a80058c7b6905bcddd"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\admin_features_schema.sql": {
-    "mtime": 1781101534.3147404,
-    "hash": "4d37efe7c64963309d87caec50d4ffc9"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\create_settings_table.sql": {
-    "mtime": 1780977939.8463466,
-    "hash": "4f566506cb8c074166f542e95315234f"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\schema.sql": {
-    "mtime": 1780159153.908065,
-    "hash": "80ae900c316774e87870ae7d600fa6a1"
-  },
-  "F:\\Cake_Connection_Website_May2026\\supabase\\search_migration.sql": {
-    "mtime": 1781060258.931787,
-    "hash": "ecfc809edde9b52831459db7a2411595"
-  },
-  "F:\\Cake_Connection_Website_May2026\\CakeConnection_SEO_AEO_GEO_Implementation_Guide.md": {
-    "mtime": 1780914630.0573971,
-    "hash": "1ca480958e1e0d0a276c98a0a7da36f4"
-  },
-  "F:\\Cake_Connection_Website_May2026\\Database_Supabase.txt": {
-    "mtime": 1780650739.5570917,
-    "hash": "4c06e8e7883c82ce52439251ec12ce00"
-  },
-  "F:\\Cake_Connection_Website_May2026\\Resolved_Errors.md": {
-    "mtime": 1781091536.5200672,
-    "hash": "a359fa17ab8ce091c0306d1337dec610"
-  },
-  "F:\\Cake_Connection_Website_May2026\\session_summary.md": {
-    "mtime": 1781091525.2628124,
-    "hash": "27fdec4775a2c62d0069ca400b755c95"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\AGENTS.md": {
-    "mtime": 1779898631.6879377,
-    "hash": "9e09241799026ac05be315a2f0b50055"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\CLAUDE.md": {
-    "mtime": 1779898631.6884592,
-    "hash": "5c27369b226fcf2be8a6cfe52224e767"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\README.md": {
-    "mtime": 1779898271.2501059,
-    "hash": "f15aaa42d5d299d091b1171097ea56ad"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\docs\\TROUBLESHOOTING.md": {
-    "mtime": 1781069665.0952861,
-    "hash": "6783e7a54e2d9304a72f1eca046dca70"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\file.svg": {
-    "mtime": 1779898271.5640383,
-    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\globe.svg": {
-    "mtime": 1779898271.5941954,
-    "hash": "2aaafa6a49b6563925fe440891e32717"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\logo.png": {
-    "mtime": 1663125705.3742466,
-    "hash": "a725e39a093a4fb3833e94887decc158"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\next.svg": {
-    "mtime": 1779898271.6428874,
-    "hash": "8e061864f388b47f33a1c3780831193e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\og-image.jpg": {
-    "mtime": 1780919103.2532322,
-    "hash": "0b46f3e778e336d28df21933a756151a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\vercel.svg": {
-    "mtime": 1779898271.712107,
-    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\window.svg": {
-    "mtime": 1779898271.7564075,
-    "hash": "a2760511c65806022ad20adf74370ff3"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\birthday-bouquet.png": {
-    "mtime": 1779704007.0671585,
-    "hash": "8315814f192a639b79cff705b0c63818"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\black-forest-cake.png": {
-    "mtime": 1779703945.8631034,
-    "hash": "34b33869bcfc3a8bec1aba71bd597c11"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\butterscotch-cake.png": {
-    "mtime": 1779703963.650462,
-    "hash": "7fc3ee91af7f2f503bf05cdbfa48f3ca"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\combo-gift.png": {
-    "mtime": 1779703892.5789914,
-    "hash": "c31002b6d7273f03bc26521affd189bf"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\hero-cake.png": {
-    "mtime": 1779703860.1344533,
-    "hash": "6ed4fcf2980f3a2d1748b981b59fae34"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\hero-flowers.png": {
-    "mtime": 1779703876.8283145,
-    "hash": "3df8d8b4264a5c72f89ed81e9de59bb1"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\hero_couple_banner.png": {
-    "mtime": 1780049309.4333146,
-    "hash": "9780d10011acb12f4a4bdc80116573ca"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\luxury-bouquet.png": {
-    "mtime": 1779703982.0746043,
-    "hash": "f93647eaa222427d84b27c0adc259445"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\red-velvet-cake.png": {
-    "mtime": 1779703929.1914237,
-    "hash": "05d960372f2999f7988ac8a5e1af1c8d"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\strawberry-cake.png": {
-    "mtime": 1779704023.34288,
-    "hash": "56bb937b7f08e388c82001a558d52d8f"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\banners\\banner_cakes.png": {
-    "mtime": 1781024136.6977568,
-    "hash": "02cfd571aee51a90e441d09fa3f0c209"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\banners\\banner_combos.png": {
-    "mtime": 1781024163.4334984,
-    "hash": "d4d0e82b44cdeeba7fed1d58e34624e4"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\banners\\banner_delivery.png": {
-    "mtime": 1781024175.7670228,
-    "hash": "c501e19a43423f3d1584c6ca5656a95a"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\banners\\banner_flowers.png": {
-    "mtime": 1781024150.3036041,
-    "hash": "f1b2d79029a16d748613105b450290a9"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\categories\\cakes.png": {
-    "mtime": 1781024200.350412,
-    "hash": "2916303793be3511e7b56115c9ff6e06"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\categories\\combos.png": {
-    "mtime": 1781024227.3527348,
-    "hash": "14dfa07889c53051058260c2c80ce0d0"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\categories\\flowers.png": {
-    "mtime": 1781024214.7233338,
-    "hash": "4b95ab69e5c1a8ca7db09d07e1d29345"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\occasions\\anniversary.png": {
-    "mtime": 1781026538.056392,
-    "hash": "2532bdf64e71fe434d07d19c1bbf1917"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\occasions\\birthday.png": {
-    "mtime": 1781026519.9241216,
-    "hash": "c10db497dfb01b9c58b726aa6e19701f"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\occasions\\congratulations.png": {
-    "mtime": 1781026572.8846197,
-    "hash": "4777c70df5197cc43d43f548f56796ef"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\occasions\\get_well.png": {
-    "mtime": 1781026588.9957795,
-    "hash": "455659b1807921e5cbfe1fd8a21e7ad7"
-  },
-  "F:\\Cake_Connection_Website_May2026\\next-app\\public\\images\\occasions\\love.png": {
-    "mtime": 1781026555.7067726,
-    "hash": "12f166e56b8fa31f8ccc984ab1632aca"
+  "next-app/eslint.config.mjs": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "6c4307ffa009658f5c97f5629094c0c2",
+    "semantic_hash": ""
+  },
+  "next-app/next.config.ts": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "9c16be102d63e382153658fe28a3a92c",
+    "semantic_hash": ""
+  },
+  "next-app/package.json": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "d9f3b390fb18f440e9fdcd4d28176ccd",
+    "semantic_hash": ""
+  },
+  "next-app/postcss.config.mjs": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": ""
+  },
+  "next-app/schema.sql": {
+    "mtime": 1781261691.6753037,
+    "ast_hash": "98a3a53ede0d59fbe7cfa0c8b4e17708",
+    "semantic_hash": ""
+  },
+  "next-app/scripts/seed.js": {
+    "mtime": 1781261691.6753037,
+    "ast_hash": "749dd4662f69d0ccc5a2bdc8b4210341",
+    "semantic_hash": ""
+  },
+  "next-app/scripts/test_supabase_hang.js": {
+    "mtime": 1781261691.6753037,
+    "ast_hash": "e1062b70b25fdbd0cdc1217f9f7b931d",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/[category]/[slug]/page.tsx": {
+    "mtime": 1781261691.706531,
+    "ast_hash": "c0ba0fd66b6dbe6237cfa65d7c5e9033",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/about/page.tsx": {
+    "mtime": 1781261691.706531,
+    "ast_hash": "be53ab72a33e15c0d1535c4a9fbdfd97",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/account/page.tsx": {
+    "mtime": 1781261691.9274333,
+    "ast_hash": "9ac0b144d541e93a8a6c62aaca890657",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/cms/page.tsx": {
+    "mtime": 1781261692.0836658,
+    "ast_hash": "48614c1b63ddfa76dc1cc4e3a9869caf",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/coupons/page.tsx": {
+    "mtime": 1781261692.0836658,
+    "ast_hash": "7719989a99ab85d8f39a66011a3231bf",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/customers/page.tsx": {
+    "mtime": 1781261692.1461625,
+    "ast_hash": "9124e282bba3643d1b8e4958d544d692",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/layout.tsx": {
+    "mtime": 1781261692.1461625,
+    "ast_hash": "78dc5f8551dac8c4b05d4500a53774b0",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/orders/page.tsx": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "a04e1744bd6741e78889028eaa1a22be",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/page.tsx": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "2097b608396fd133b986198bbf96f4e2",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/products/page.tsx": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "e1d6a968449d0959591b2d9b59db7245",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/admin/settings/page.tsx": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "17055c71f54d49e3e6c0aef53a515fe3",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/api/admin/cms/route.ts": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "e9ee28c4628e53f827fac2424f8d9f20",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/api/admin/products/route.ts": {
+    "mtime": 1781261692.1617882,
+    "ast_hash": "82b80dc7c9db42b86a4fa9e708c96a43",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/birthday-cake-vadodara/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "45749a1575ba90915558394821fac32c",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/cakes/layout.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "db6bd04d42924f03461fdd0ca2009d80",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/cakes/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "22878a4f9ce8f364bdfdf132e250f811",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/cart/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "542d9e09d2c36aa1418afdee233bb96d",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/checkout/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "7bf489ce6cc19b9e1e7f3624b065f750",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/combos/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "ff2641cdba86aeecae6daf87c2e29d45",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/delivery/[city]/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "9a89fd2d24b7714c56cfcfd00e95585b",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/eggless-cake-vadodara/page.tsx": {
+    "mtime": 1781261692.1774108,
+    "ast_hash": "7d3af25bc373b634518ca9180f28bb3a",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/faq/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "93585784f4ec98d8104d971fea97f22a",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/flowers/layout.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "11abee567553ee96ed2cbd8627848664",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/flowers/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "5f953d79a32ce6ab40a1e437940494a5",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/homepage2/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "7c2e21667dbe5f73e578d3ae690a70fc",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/layout.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "941d024794ece65ee6aeeccc7a5ffce4",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/not-found.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "ea93859983ff3fe9931c5c1eb28ebf07",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/online-cake-delivery-vadodara/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "7244672792040a0bcf0cf313184a5c83",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/orders/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "8cc9abef1114d24209ba7334c0367cd9",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/page.tsx": {
+    "mtime": 1781261692.193032,
+    "ast_hash": "d0f7ae1575ac8f8618e1aa298fe17de4",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/product/[slug]/page.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "c42987613c364d9034524dba38f43227",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/robots.ts": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "9fd4d93c9dc3d5c68fe16f9a15ef193e",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/same-day-cake-delivery-vadodara/page.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "80d561ae2dbab2ff63b4fae64dff1d0a",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/sitemap.ts": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "ec0c0ffca17c0a145bf0e0e0962c5cef",
+    "semantic_hash": ""
+  },
+  "next-app/src/app/wishlist/page.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "fc58cd07ce9a97d918fdea2cea27fdb5",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/conversion/index.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "5c7f96b23bedcf1c4510d41ff6d3b459",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/BestsellerCarousel.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "55eca28ef663c360bdd300239618768a",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/BestsellersSection.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "eaeaa3138fd68a36e0804b4e4fe48c2c",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/CategoriesSection.tsx": {
+    "mtime": 1781261692.2086587,
+    "ast_hash": "96cb6944475ff209a31f70d9d6f94a6b",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/ComboGifts.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "96afcd318840eabdffa07861482d1b44",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/DeliveryBanner.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "56e1dd4ca1488828e1ffe416b9ef5d8f",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/DeliverySection.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "d13f927843381befc8b321de014f84af",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/FAQ.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "9333ab075d9872a97bc27790cb4c7e02",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/FeaturedBouquets.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "0337b1b92d049b4128b818695d617bc2",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/FeaturedCakes.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "697832af74521009499fe47acd13e4a2",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/FooterCTA.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "0a206c9a52f34d2e30c6fd410739a8b3",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/HeroSection.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "692b7bc86316e8f4bdb051955fe7c853",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/InstagramGallery.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "0b54d0cf39fd2924785a49983e0bd74b",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/LoadingScreen.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "cdf67f063053b5755017ff17f1bce5c9",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/MustHaveSection.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "34010a7aafa829ffbf50571d2623a258",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/ShopByOccasion.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "a3f2a376bf67e27eee9e7d9a5c2267f2",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/Testimonials.tsx": {
+    "mtime": 1781261692.2242813,
+    "ast_hash": "4319e745d2d5aa349dc8a7ad4a5e76f1",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/TrustBadges.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "3b0209407c078137c9c5b0e6ebbb2c63",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/home/index.ts": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "7c8c6cd59ffe20a563dd01976fcb6950",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/Footer.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "0e6b87c353feeb861d1fd63a8edf215e",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/MegaMenu.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "02945db4794a8573ad306967890239be",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/MobileMenu.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "fed811d23eedc610f7a31933be952e3b",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/Navbar.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "5864dab1d38ea01fb2044aa1d79464fa",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/RootLayout.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "ac87541d8c00b38167fb72a97ea5201f",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/SearchOverlay.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "d2bdc467927bc06d3c682e8c0356ff86",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/StoreLayoutWrapper.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "9bb60e41e50b81a56887d591778f2b79",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/WhatsAppFAB.tsx": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "f006126fbebee202b7f9c342dc1203cc",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/layout/index.ts": {
+    "mtime": 1781261692.239906,
+    "ast_hash": "477e272bbbdfbb45a23e75a2526570de",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/product/ProductDetailClient.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "18d43659cf28750a418f95856192b270",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/schema/BreadcrumbSchema.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "acfa81ef845ffd54afa56c17f8242be7",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/schema/FAQSchema.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "b78f365137bd9e13599707378b3d094e",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/schema/OrganizationSchema.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "3631f81edeb4f019f7237e02aebfd282",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/schema/ProductSchema.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "9cdad527087e1624f221b2372e1ed296",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/seo/AEOBlock.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "0fbff8fa719dbd8ba676d860d8beedc3",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/seo/ProductListings.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "ec7302bebe95aa051374e7cd433f9bbe",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/seo/SEOHead.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "4b4ab99c8b1abc4271891342607edb29",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/Badge.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "167b9496c25b573e482a82ccd366c0ff",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/Button.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "202769d2e199bf1ed965b5f403b6f518",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/Container.tsx": {
+    "mtime": 1781261692.2555296,
+    "ast_hash": "ad97f98d08680fa5718d104d7f0c3b6c",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/CountryCodeSelect.tsx": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "00607281834c7efdcdd0b7f17ec91a09",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/Logo.tsx": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "c576f683ec30698a009cd49bd99c94d8",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/OptimizedImage.tsx": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "693ce03c1fc5a186c76f344346ee274b",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/Skeleton.tsx": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "5f816bfc12d3cd8381d404ff78f8f9ea",
+    "semantic_hash": ""
+  },
+  "next-app/src/components/ui/index.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "45aac2cf62fe55212a928a9565915d53",
+    "semantic_hash": ""
+  },
+  "next-app/src/config/site.config.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "b06f1c94231386745c081a3fd6610aac",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/countryData.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "ae609f4876f7da1d3966596adcba6903",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/pricing.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "1fb625128b872c0c74f3fd9aa9ca2e99",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/products.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "000aea30ef1d937aff30c8f0c0fc91d1",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/scrapedCakes.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "fb2b8f61bd585d5ddc0d9101b2064e58",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/scrapedFlowers.ts": {
+    "mtime": 1781261692.271167,
+    "ast_hash": "f6722d81e20d36cf52e4bc9271f5c047",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/scrapedFlowersData.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "76f1affed16274ebd0faf6a6589e1cd6",
+    "semantic_hash": ""
+  },
+  "next-app/src/data/scrapedProductsData.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "bcafe4a13a7fdf858ee4c13edbcf844b",
+    "semantic_hash": ""
+  },
+  "next-app/src/hooks/index.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "775dcaf64469cdfd1c7900d74d64f7ce",
+    "semantic_hash": ""
+  },
+  "next-app/src/hooks/useProducts.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "e0bf171358e3a927165becfef8b708bb",
+    "semantic_hash": ""
+  },
+  "next-app/src/hooks/useSearch.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "f35cfe84a64a28a6021e07234c946b4f",
+    "semantic_hash": ""
+  },
+  "next-app/src/layouts/AdminLayout.tsx": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "463a309650de502de9023e835213896a",
+    "semantic_hash": ""
+  },
+  "next-app/src/lib/api.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "c1340a42df6f952202e228e694de88d2",
+    "semantic_hash": ""
+  },
+  "next-app/src/lib/db.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "ddf0987888ed651b67053cb2bb212f06",
+    "semantic_hash": ""
+  },
+  "next-app/src/lib/index.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "8021355b6d688bce8eb1f2f67c0bc611",
+    "semantic_hash": ""
+  },
+  "next-app/src/lib/seo/schema.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "67924b97bf95f8da17d9ef0ef1b069f8",
+    "semantic_hash": ""
+  },
+  "next-app/src/lib/supabase.ts": {
+    "mtime": 1781261692.2867777,
+    "ast_hash": "8cf9312ceb4f6c85e0beeea188cb7f2a",
+    "semantic_hash": ""
+  },
+  "next-app/src/middleware.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "129f9d8689bc0b10ab2e038ef803e1cc",
+    "semantic_hash": ""
+  },
+  "next-app/src/stores/cartStore.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "aa10a87ac3f784e39901f6bfb4a7e252",
+    "semantic_hash": ""
+  },
+  "next-app/src/stores/index.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "49400c179818ff49b29f808d39fd572b",
+    "semantic_hash": ""
+  },
+  "next-app/src/stores/siteStore.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "a7e6e4f6b2818c74f668f576f10204ad",
+    "semantic_hash": ""
+  },
+  "next-app/src/stores/uiStore.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "149efc21c4a774eb90455090db2fa1af",
+    "semantic_hash": ""
+  },
+  "next-app/src/stores/wishlistStore.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "ca7de326d2cae628c426c2c248187622",
+    "semantic_hash": ""
+  },
+  "next-app/src/types/index.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "1763037bef167022b1f147e11275d203",
+    "semantic_hash": ""
+  },
+  "next-app/src/utils/index.ts": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "3f73c71894663caaec1d311be375b1e6",
+    "semantic_hash": ""
+  },
+  "next-app/tsconfig.json": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "0a2f4ed9289b65cd3feb4fb4ab3a4fcd",
+    "semantic_hash": ""
+  },
+  "supabase/add_categories.sql": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "c75ec5fb4a8820889d023ea0d159165d",
+    "semantic_hash": ""
+  },
+  "supabase/add_razorpay_fields.sql": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "fba3f07d9104a78bf5b3582e12e1e21b",
+    "semantic_hash": ""
+  },
+  "supabase/admin_features_schema.sql": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "5543ab66470d4c71a958cb20583f0370",
+    "semantic_hash": ""
+  },
+  "supabase/create_settings_table.sql": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "34406c72d1fe316cf98c5b80dd976e1a",
+    "semantic_hash": ""
+  },
+  "supabase/schema.sql": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "45621098d0d8b14d0cb7d1d53fbb13a3",
+    "semantic_hash": ""
+  },
+  "supabase/search_migration.sql": {
+    "mtime": 1781261692.3180256,
+    "ast_hash": "b77ce6738aa3463c0077000e5e7dd1e3",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1781327482.0576482,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/rules/user_instructions.md": {
+    "mtime": 1781261691.4544084,
+    "ast_hash": "333716004d7e8fbcd49e72dc62bbf2fa",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1781327482.0758545,
+    "ast_hash": "637776aa6f7496d069afe7520c845c8a",
+    "semantic_hash": ""
+  },
+  "CakeConnection_SEO_AEO_GEO_Implementation_Guide.md": {
+    "mtime": 1781261691.4565449,
+    "ast_hash": "8b9dc34a6ecd19da8c770c4052527523",
+    "semantic_hash": ""
+  },
+  "Database_Supabase.txt": {
+    "mtime": 1781261691.4565449,
+    "ast_hash": "4c06e8e7883c82ce52439251ec12ce00",
+    "semantic_hash": ""
+  },
+  "MASTER_CONTEXT.md": {
+    "mtime": 1781261691.4565449,
+    "ast_hash": "881b77ba14de45294d9d53186df66f93",
+    "semantic_hash": ""
+  },
+  "Resolved_Errors.md": {
+    "mtime": 1781261691.4565449,
+    "ast_hash": "dd7df573be165ca02ba21c4969cde751",
+    "semantic_hash": ""
+  },
+  "next-app/AGENTS.md": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "9346a4897ff955555ddedb7bebf77adb",
+    "semantic_hash": ""
+  },
+  "next-app/CLAUDE.md": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "771faa62feb60b7de901a397aebb29b0",
+    "semantic_hash": ""
+  },
+  "next-app/README.md": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "9162add00befbcdb432430f405c4ad8d",
+    "semantic_hash": ""
+  },
+  "next-app/docs/TROUBLESHOOTING.md": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "737f51afbbd267ae6ac1c14caf883d3b",
+    "semantic_hash": ""
+  },
+  "session_summary.md": {
+    "mtime": 1781261692.3024247,
+    "ast_hash": "5718f16e6f68916140088eeb1ee46e34",
+    "semantic_hash": ""
+  },
+  "next-app/public/file.svg": {
+    "mtime": 1781261691.50342,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "next-app/public/globe.svg": {
+    "mtime": 1781261691.5190437,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/banners/banner_cakes.png": {
+    "mtime": 1781261691.5190437,
+    "ast_hash": "02cfd571aee51a90e441d09fa3f0c209",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/banners/banner_combos.png": {
+    "mtime": 1781261691.5190437,
+    "ast_hash": "d4d0e82b44cdeeba7fed1d58e34624e4",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/banners/banner_delivery.png": {
+    "mtime": 1781261691.5346694,
+    "ast_hash": "c501e19a43423f3d1584c6ca5656a95a",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/banners/banner_flowers.png": {
+    "mtime": 1781261691.5346694,
+    "ast_hash": "f1b2d79029a16d748613105b450290a9",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/birthday-bouquet.png": {
+    "mtime": 1781261691.5346694,
+    "ast_hash": "8315814f192a639b79cff705b0c63818",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/black-forest-cake.png": {
+    "mtime": 1781261691.5502937,
+    "ast_hash": "34b33869bcfc3a8bec1aba71bd597c11",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/butterscotch-cake.png": {
+    "mtime": 1781261691.5502937,
+    "ast_hash": "7fc3ee91af7f2f503bf05cdbfa48f3ca",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/categories/cakes.png": {
+    "mtime": 1781261691.5502937,
+    "ast_hash": "2916303793be3511e7b56115c9ff6e06",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/categories/combos.png": {
+    "mtime": 1781261691.5659158,
+    "ast_hash": "14dfa07889c53051058260c2c80ce0d0",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/categories/flowers.png": {
+    "mtime": 1781261691.5659158,
+    "ast_hash": "4b95ab69e5c1a8ca7db09d07e1d29345",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/combo-gift.png": {
+    "mtime": 1781261691.5659158,
+    "ast_hash": "c31002b6d7273f03bc26521affd189bf",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/hero-cake.png": {
+    "mtime": 1781261691.5659158,
+    "ast_hash": "6ed4fcf2980f3a2d1748b981b59fae34",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/hero-flowers.png": {
+    "mtime": 1781261691.5815394,
+    "ast_hash": "3df8d8b4264a5c72f89ed81e9de59bb1",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/hero_couple_banner.png": {
+    "mtime": 1781261691.5815394,
+    "ast_hash": "9780d10011acb12f4a4bdc80116573ca",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/luxury-bouquet.png": {
+    "mtime": 1781261691.5815394,
+    "ast_hash": "f93647eaa222427d84b27c0adc259445",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/occasions/anniversary.png": {
+    "mtime": 1781261691.5815394,
+    "ast_hash": "2532bdf64e71fe434d07d19c1bbf1917",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/occasions/birthday.png": {
+    "mtime": 1781261691.597163,
+    "ast_hash": "c10db497dfb01b9c58b726aa6e19701f",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/occasions/congratulations.png": {
+    "mtime": 1781261691.597163,
+    "ast_hash": "4777c70df5197cc43d43f548f56796ef",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/occasions/get_well.png": {
+    "mtime": 1781261691.597163,
+    "ast_hash": "455659b1807921e5cbfe1fd8a21e7ad7",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/occasions/love.png": {
+    "mtime": 1781261691.612787,
+    "ast_hash": "12f166e56b8fa31f8ccc984ab1632aca",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/red-velvet-cake.png": {
+    "mtime": 1781261691.612787,
+    "ast_hash": "05d960372f2999f7988ac8a5e1af1c8d",
+    "semantic_hash": ""
+  },
+  "next-app/public/images/strawberry-cake.png": {
+    "mtime": 1781261691.612787,
+    "ast_hash": "56bb937b7f08e388c82001a558d52d8f",
+    "semantic_hash": ""
+  },
+  "next-app/public/logo.png": {
+    "mtime": 1781261691.6284108,
+    "ast_hash": "a725e39a093a4fb3833e94887decc158",
+    "semantic_hash": ""
+  },
+  "next-app/public/next.svg": {
+    "mtime": 1781261691.6284108,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "next-app/public/og-image.jpg": {
+    "mtime": 1781261691.659658,
+    "ast_hash": "0b46f3e778e336d28df21933a756151a",
+    "semantic_hash": ""
+  },
+  "next-app/public/vercel.svg": {
+    "mtime": 1781261691.659658,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "next-app/public/window.svg": {
+    "mtime": 1781261691.6753037,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
   }
 }

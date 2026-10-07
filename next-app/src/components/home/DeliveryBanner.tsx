@@ -15,12 +15,12 @@ interface PromoBanner {
 
 const promoBanners: PromoBanner[] = [
   {
-    title: 'Midnight Celebrations',
-    subtitle: 'Surprise your loved ones right at 12 AM with fresh cakes',
+    title: 'Express Celebrations',
+    subtitle: 'Lightning fast 60 to 90 minute cake delivery across Vadodara',
     image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600',
-    btnText: 'Order Midnight Cake',
-    href: '/cakes?delivery=midnight',
-    tag: 'Midnight Special',
+    btnText: 'Order Express Cake',
+    href: '/cakes',
+    tag: 'Express Special',
   },
   {
     title: 'Fresh Rose Bouquets',

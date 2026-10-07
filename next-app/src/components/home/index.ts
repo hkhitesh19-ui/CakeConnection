@@ -20,3 +20,4 @@ export { default as ShopByOccasion } from './ShopByOccasion';
 export { default as BestsellerCarousel } from './BestsellerCarousel';
 export { default as FastDeliveryCarousel } from './FastDeliveryCarousel';
 export { default as TrustBadges } from './TrustBadges';
+export { default as WhyChooseUsSection } from './WhyChooseUsSection';

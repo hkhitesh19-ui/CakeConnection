@@ -189,8 +189,8 @@ const DEFAULT_FAQS: FAQItem[] = [
     answer: 'Once your order is placed, you can track its status in the "My Orders" section of your account. We also send real-time updates via email/SMS. You can contact us directly on WhatsApp with your Order Number for instant delivery status.',
   },
   {
-    question: 'Do you offer same-day and midnight cake delivery?',
-    answer: 'Yes! We offer same-day delivery for orders placed before 6 PM. Our midnight delivery (11:30 PM - 12:30 AM) is also highly popular for surprises, available at a nominal additional charge. We recommend booking midnight orders 6 hours in advance.',
+    question: 'Do you offer same-day express cake delivery?',
+    answer: 'Yes! We offer 60 to 90 minute superfast express delivery across Vadodara for orders placed before 7 PM. All cakes are freshly baked live upon order confirmation.',
   },
 ];
 

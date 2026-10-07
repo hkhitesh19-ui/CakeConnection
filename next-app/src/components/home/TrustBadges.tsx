@@ -1,10 +1,10 @@
 'use client';
-import { Truck, Moon, Leaf, Shield, Sparkles } from 'lucide-react';
+import { Truck, Clock, Leaf, Shield, Sparkles } from 'lucide-react';
 import { Container } from '@/components/ui';
 
 const BADGES = [
   { icon: Truck, title: 'Same Day Delivery', subtitle: 'Order by 5 PM' },
-  { icon: Moon, title: 'Midnight Delivery', subtitle: 'Surprise at 12 AM' },
+  { icon: Clock, title: '60-90 Min Express', subtitle: 'Superfast Delivery' },
   { icon: Leaf, title: '100% Eggless', subtitle: 'Pure Vegetarian Cakes' },
   { icon: Shield, title: 'Secure Payments', subtitle: 'Razorpay Protected' },
   { icon: Sparkles, title: 'Freshness Guaranteed', subtitle: 'Baked Fresh Daily' },

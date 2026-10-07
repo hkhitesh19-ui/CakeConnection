@@ -659,21 +659,38 @@ export default function ProductPage() {
                 <label className="block text-sm font-semibold text-text-primary mb-3">
                   {isCake ? 'Select Weight' : 'Select Variant'}
                 </label>
-                <div className="flex flex-wrap gap-2">
-                  {product.variants.map((v) => (
-                    <button
-                      key={v.id}
-                      onClick={() => setSelectedVariant(v)}
-                      className={cn(
-                        'px-4 py-2.5 rounded-xl text-sm font-medium border transition-all duration-300 cursor-pointer',
-                        selectedVariant?.id === v.id
-                          ? 'bg-brand-rose text-white border-brand-rose shadow-lg shadow-brand-rose/20'
-                          : 'bg-surface-secondary text-text-secondary border-border-secondary hover:border-brand-rose/40 hover:text-text-primary'
-                      )}
-                    >
-                      {v.weight}
-                    </button>
-                  ))}
+                <div className="flex flex-wrap gap-2.5">
+                  {product.variants.map((v) => {
+                    const isSelected = selectedVariant?.id === v.id;
+                    const vPrice = v.price || v.compareAtPrice || 0;
+                    return (
+                      <button
+                        key={v.id}
+                        type="button"
+                        onClick={() => setSelectedVariant(v)}
+                        className={cn(
+                          'group relative inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border-2 transition-all duration-200 cursor-pointer select-none',
+                          isSelected
+                            ? 'bg-brand-rose text-white border-brand-rose shadow-md shadow-brand-rose/25 ring-2 ring-brand-rose/30 scale-[1.02]'
+                            : 'bg-white text-gray-800 border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose hover:bg-rose-50/30'
+                        )}
+                      >
+                        <span className={cn('font-bold', isSelected ? 'text-white' : 'text-gray-900 group-hover:text-brand-rose')}>
+                          {v.weight}
+                        </span>
+                        <span
+                          className={cn(
+                            'px-2 py-0.5 rounded-md text-xs font-black transition-all duration-200',
+                            isSelected
+                              ? 'bg-white text-brand-rose shadow-xs ring-1 ring-black/5 font-extrabold'
+                              : 'bg-gray-100 text-gray-900 group-hover:bg-rose-100/80 group-hover:text-brand-rose'
+                          )}
+                        >
+                          {formatPrice(vPrice)}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </motion.div>
 

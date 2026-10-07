@@ -188,24 +188,33 @@ export function HeaderSearch({
 
                     {/* Product rows */}
                     <div className="divide-y divide-gray-100">
-                      {suggestions.slice(0, 5).map((product) => {
-                        const price = product.variants?.[0]?.price || 449;
-                        const weight = product.variants?.[0]?.weight || '500g';
-                        const img = product.images?.[0]?.url || '/images/cakes/chocolate-truffle.jpeg';
+                      {suggestions.slice(0, 6).map((product) => {
+                        const firstVar = product.variants?.[0];
+                        const price = (firstVar?.compareAtPrice && firstVar.compareAtPrice > 0)
+                          ? firstVar.compareAtPrice
+                          : (firstVar?.price || 449);
+                        const weight = firstVar?.weight || '500g';
+                        const firstImg = Array.isArray(product.images) && product.images.length > 0
+                          ? (typeof product.images[0] === 'string' ? product.images[0] : product.images[0]?.url)
+                          : '';
+                        const img = firstImg || '/images/placeholder-cake.jpg';
 
                         return (
                           <Link
                             key={product.id}
                             href={`/cakes/${product.slug}`}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center gap-3 p-3 hover:bg-rose-50/40 transition-colors group cursor-pointer"
+                            className="flex items-center gap-3.5 p-3 hover:bg-rose-50/50 transition-colors group cursor-pointer"
                           >
-                            {/* Product Thumbnail */}
-                            <div className="w-12 h-12 rounded-xl overflow-hidden bg-gray-100 shrink-0 border border-gray-200">
+                            {/* Product Thumbnail (Enlarged & Reliable) */}
+                            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-gray-100 shrink-0 border border-gray-200/80 shadow-xs">
                               <img
                                 src={img}
                                 alt={product.name}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                onError={(e) => {
+                                  e.currentTarget.src = '/images/placeholder-cake.jpg';
+                                }}
                               />
                             </div>
 

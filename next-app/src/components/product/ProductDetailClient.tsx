@@ -122,6 +122,21 @@ function getCategoryLabel(category: string): string {
   }
 }
 
+// Helper to parse weight into grams for accurate numerical sorting
+function parseWeightInGrams(weightStr: string): number {
+  const norm = (weightStr || '').toLowerCase().trim();
+  if (norm.includes('kg')) {
+    const val = parseFloat(norm.replace('kg', '').trim());
+    return isNaN(val) ? 99999 : val * 1000;
+  }
+  if (norm.includes('g') || norm.includes('gm') || norm.includes('gram')) {
+    const val = parseFloat(norm.replace(/[^0-9.]/g, '').trim());
+    return isNaN(val) ? 99999 : val;
+  }
+  const val = parseFloat(norm);
+  return isNaN(val) ? 99999 : val;
+}
+
 // ── Star Rating Component ────────────────────
 
 function StarRating({ rating, size = 'sm' }: { rating: number; size?: 'sm' | 'md' | 'lg' }) {
@@ -340,16 +355,26 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
     fetchSettings();
   }, [fetchSettings]);
 
-  // Sort variants by price (lowest weight / price first)
+  // Sort variants by weight in grams (lowest weight / price first)
   const sortedVariants = useMemo(() => {
     if (!product?.variants || product.variants.length === 0) return [];
-    return [...product.variants].sort((a, b) => a.price - b.price);
+    return [...product.variants].sort((a, b) => {
+      const gA = parseWeightInGrams(a.weight);
+      const gB = parseWeightInGrams(b.weight);
+      if (gA !== gB && gA < 99999 && gB < 99999) return gA - gB;
+      return a.price - b.price;
+    });
   }, [product?.variants]);
 
   // ── State (Lowest weight pre-selected by default as requested) ──
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(() => {
     if (!product?.variants || product.variants.length === 0) return null;
-    return [...product.variants].sort((a, b) => a.price - b.price)[0] || null;
+    return [...product.variants].sort((a, b) => {
+      const gA = parseWeightInGrams(a.weight);
+      const gB = parseWeightInGrams(b.weight);
+      if (gA !== gB && gA < 99999 && gB < 99999) return gA - gB;
+      return a.price - b.price;
+    })[0] || null;
   });
 
   // Sync default variant when product/variants load
@@ -488,40 +513,38 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
     if (!product) return;
 
     const errors: { variant?: boolean; date?: boolean; slot?: boolean } = {};
-    let errorMsg = '';
+    const missing: string[] = [];
 
     // Step 1: Weight is mandatory
     if (!selectedVariant) {
       errors.variant = true;
-      errorMsg = 'Please select a cake weight (e.g. 500g, 1kg)';
-    }
-    // Step 2: Date is mandatory
-    else if (selectedDateIndex === null) {
-      errors.date = true;
-      errorMsg = 'Please select a delivery date';
-    }
-    // Step 3: Closed date check
-    else if (isDateClosed) {
-      errors.date = true;
-      errorMsg = `Our bakery is closed on this date: ${isDateClosed.reason || 'Shop Closed'}. Please select another date.`;
-    }
-    // Step 4: Timeslot is mandatory
-    else if (!selectedTimeSlot) {
-      errors.slot = true;
-      errorMsg = availableSlots.length === 0
-        ? "Today's delivery slots have ended. Please select Tomorrow or an upcoming date."
-        : "Please select a delivery time slot";
+      missing.push(isCake ? 'Cake Weight' : 'Variant');
     }
 
-    if (errorMsg) {
+    // Step 2: Date is mandatory
+    if (selectedDateIndex === null) {
+      errors.date = true;
+      missing.push('Delivery Date');
+    } else if (isDateClosed) {
+      errors.date = true;
+      missing.push(`Valid Delivery Date (${isDateClosed.reason || 'Bakery Closed'})`);
+    }
+
+    // Step 3: Timeslot is mandatory
+    if (!selectedTimeSlot) {
+      errors.slot = true;
+      missing.push('Delivery Time Slot');
+    }
+
+    if (missing.length > 0) {
       setValidationErrors(errors);
       addToast({
         type: 'warning',
-        message: errorMsg,
-        duration: 3500,
+        message: `Please select required details: ${missing.join(', ')}`,
+        duration: 4000,
       });
 
-      // Smooth scroll to the missing selection
+      // Smooth scroll to the first missing selection
       if (errors.variant && variantRef.current) {
         variantRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else if ((errors.date || errors.slot) && dateTimeRef.current) {
@@ -532,7 +555,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
 
     setValidationErrors({});
     setIsAddonModalOpen(true);
-  }, [product, selectedVariant, selectedDateIndex, isDateClosed, selectedTimeSlot, availableSlots, addToast]);
+  }, [product, isCake, selectedVariant, selectedDateIndex, isDateClosed, selectedTimeSlot, addToast]);
 
   const handleConfirmAddons = useCallback((selectedAddons: AddonProduct[]) => {
     if (!product || !selectedVariant) return;
@@ -753,10 +776,23 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
             >
               {/* (a) Title Block */}
               <motion.div variants={fadeInUp}>
-                <span className="inline-block mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-rose bg-brand-rose/10 px-3 py-1 rounded-full">
-                  {getCategoryLabel(product.category)}
-                </span>
-                <h1 className="font-display text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
+                <div className="flex items-center gap-2.5 mb-3 flex-wrap">
+                  <span className="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-brand-rose bg-brand-rose/10 px-3 py-1 rounded-full">
+                    {getCategoryLabel(product.category)}
+                  </span>
+                  {/* 100% Fresh - 100% Eggless Logo Badge for Cakes Only */}
+                  {isCake && (
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 shadow-2xs">
+                      <span className="inline-flex items-center justify-center w-3.5 h-3.5 border-2 border-emerald-600 rounded-[3px] bg-white">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      </span>
+                      <span className="text-xs font-bold tracking-wide text-emerald-900">
+                        100% Fresh - 100% Eggless
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <h1 className="font-display font-times text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
                   {product.name}
                 </h1>
                 <p className="mt-2 text-text-secondary text-base leading-relaxed">
@@ -790,21 +826,41 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                     : 'bg-gray-50/40 border border-gray-100'
                 )}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <label className="flex items-center gap-2 text-sm font-bold text-gray-900">
-                    <span className="w-5 h-5 rounded-full bg-brand-rose text-white flex items-center justify-center text-xs font-bold shadow-xs">
-                      1
-                    </span>
-                    <span>{isCake ? 'Select Cake Weight' : 'Select Variant'}</span>
-                  </label>
-                  <span className="text-[10px] font-bold text-brand-rose bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <label className={cn(
+                      "flex items-center gap-2 text-sm font-bold transition-colors",
+                      validationErrors.variant ? "text-red-600" : "text-gray-900"
+                    )}>
+                      <span className={cn(
+                        "w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shadow-xs text-white",
+                        validationErrors.variant ? "bg-red-600" : "bg-brand-rose"
+                      )}>
+                        1
+                      </span>
+                      <span>{isCake ? 'Select Cake Weight' : 'Select Variant'}</span>
+                    </label>
+                    {validationErrors.variant && (
+                      <span className="text-xs font-bold text-red-600 flex items-center gap-1 animate-pulse">
+                        <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 text-red-600" />
+                        Please select a cake weight
+                      </span>
+                    )}
+                  </div>
+                  <span className={cn(
+                    "text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider",
+                    validationErrors.variant
+                      ? "text-red-600 bg-red-50 border border-red-300"
+                      : "text-brand-rose bg-rose-50 border border-rose-200"
+                  )}>
                     * Required
                   </span>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {sortedVariants.map((v) => {
                     const isSelected = selectedVariant?.id === v.id;
+                    const vPrice = v.price || v.compareAtPrice || 0;
                     return (
                       <button
                         key={v.id}
@@ -814,24 +870,29 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                           setValidationErrors((prev) => ({ ...prev, variant: false }));
                         }}
                         className={cn(
-                          'px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-all duration-200 cursor-pointer',
+                          'group relative inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border-2 transition-all duration-200 cursor-pointer select-none',
                           isSelected
-                            ? 'bg-brand-rose text-white border-brand-rose shadow-md shadow-brand-rose/25 font-bold'
-                            : 'bg-white text-gray-700 border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose hover:bg-rose-50/30'
+                            ? 'bg-brand-rose text-white border-brand-rose shadow-md shadow-brand-rose/25 ring-2 ring-brand-rose/30 scale-[1.02]'
+                            : 'bg-white text-gray-800 border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose hover:bg-rose-50/30'
                         )}
                       >
-                        {v.weight}
+                        <span className={cn('font-bold', isSelected ? 'text-white' : 'text-gray-900 group-hover:text-brand-rose')}>
+                          {v.weight}
+                        </span>
+                        <span
+                          className={cn(
+                            'px-2 py-0.5 rounded-md text-xs font-black transition-all duration-200',
+                            isSelected
+                              ? 'bg-white text-brand-rose shadow-xs ring-1 ring-black/5 font-extrabold'
+                              : 'bg-gray-100 text-gray-900 group-hover:bg-rose-100/80 group-hover:text-brand-rose'
+                          )}
+                        >
+                          {formatPrice(vPrice)}
+                        </span>
                       </button>
                     );
                   })}
                 </div>
-
-                {validationErrors.variant && (
-                  <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
-                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                    <span>Please select a cake weight (500g, 1kg, etc.)</span>
-                  </p>
-                )}
               </motion.div>
 
               {/* (c) Dynamic Price Display */}
@@ -848,6 +909,14 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                   {discount > 0 && (
                     <span className="px-2.5 py-1 rounded-lg bg-brand-red/15 text-brand-red text-xs font-bold uppercase">
                       {discount}% OFF
+                    </span>
+                  )}
+                  {isCake && (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold shadow-2xs">
+                      <span className="inline-flex items-center justify-center w-3 h-3 border border-emerald-600 rounded-[2px] bg-white">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      </span>
+                      100% Fresh - 100% Eggless
                     </span>
                   )}
                 </div>
@@ -924,8 +993,21 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
 
                   {/* SELECT DATE */}
                   <div className="px-4 pt-3.5 pb-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Select Delivery Date *</p>
+                    <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className={cn(
+                          "text-[10px] font-bold uppercase tracking-widest transition-colors",
+                          validationErrors.date ? "text-red-600 font-extrabold" : "text-gray-500"
+                        )}>
+                          Select Delivery Date *
+                        </p>
+                        {validationErrors.date && (
+                          <span className="text-xs font-bold text-red-600 flex items-center gap-1 animate-pulse">
+                            <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 text-red-600" />
+                            Please select a delivery date
+                          </span>
+                        )}
+                      </div>
                       {selectedDateIndex !== null && (
                         <span className="text-xs font-semibold text-brand-rose">
                           Selected: {deliveryDays[selectedDateIndex]?.label}
@@ -980,13 +1062,6 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                         );
                       })}
                     </div>
-
-                    {validationErrors.date && (
-                      <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
-                        <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                        <span>Please select a delivery date</span>
-                      </p>
-                    )}
                   </div>
 
                   {/* Thin divider */}
@@ -994,8 +1069,21 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
 
                   {/* SELECT TIME */}
                   <div className="px-4 pt-3 pb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Select Delivery Time Slot *</p>
+                    <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className={cn(
+                          "text-[10px] font-bold uppercase tracking-widest transition-colors",
+                          validationErrors.slot ? "text-red-600 font-extrabold" : "text-gray-500"
+                        )}>
+                          Select Delivery Time Slot *
+                        </p>
+                        {validationErrors.slot && (
+                          <span className="text-xs font-bold text-red-600 flex items-center gap-1 animate-pulse">
+                            <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 text-red-600" />
+                            Please select a delivery time slot
+                          </span>
+                        )}
+                      </div>
                       {selectedTimeSlot && (
                         <span className="text-xs font-semibold text-brand-rose">
                           Slot: {selectedTimeSlot}
@@ -1004,8 +1092,13 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                     </div>
 
                     {selectedDateIndex === null ? (
-                      <div className="flex items-center gap-2.5 p-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-600">
-                        <Calendar className="h-4 w-4 text-brand-rose flex-shrink-0" />
+                      <div className={cn(
+                        "flex items-center gap-2.5 p-3.5 rounded-xl border transition-all",
+                        validationErrors.slot
+                          ? "bg-red-50/60 border-red-300 text-red-700"
+                          : "bg-gray-50 border-gray-200 text-gray-600"
+                      )}>
+                        <Calendar className={cn("h-4 w-4 flex-shrink-0", validationErrors.slot ? "text-red-600" : "text-brand-rose")} />
                         <span className="text-xs font-medium">
                           Please select a delivery date above to view available delivery time slots.
                         </span>
@@ -1047,13 +1140,6 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                           );
                         })}
                       </div>
-                    )}
-
-                    {validationErrors.slot && (
-                      <p className="text-xs text-rose-600 font-semibold mt-2 flex items-center gap-1.5 animate-in fade-in">
-                        <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                        <span>Please choose an available delivery time slot</span>
-                      </p>
                     )}
 
                     {availableSlots.length > 0 && (
@@ -1164,7 +1250,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                 {[
                   { icon: <Truck className="h-5 w-5" />, label: 'Free Delivery', sub: '₹999+' },
                   { icon: <Sparkles className="h-5 w-5" />, label: '100% Fresh', sub: 'Guaranteed' },
-                  { icon: <Clock className="h-5 w-5" />, label: 'Midnight', sub: 'Delivery' },
+                  { icon: <Clock className="h-5 w-5" />, label: 'Express', sub: '60-90 Min' },
                   { icon: <Zap className="h-5 w-5" />, label: 'Same Day', sub: 'Available' },
                 ].map((badge, idx) => (
                   <div
@@ -1270,7 +1356,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                           Delivery Timing
                         </h4>
                         <p className="text-sm text-text-secondary leading-relaxed">
-                          Orders can be delivered between 8:00 AM and 10:00 PM. Midnight delivery available for special occasions.
+                          Orders can be delivered between 9:00 AM and 10:00 PM with superfast express delivery across Vadodara.
                         </p>
                       </div>
                       <div className="p-5 rounded-xl bg-surface-secondary border border-border-secondary">

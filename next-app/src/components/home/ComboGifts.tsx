@@ -85,8 +85,25 @@ export function ComboGifts() {
               </div>
             ))
           ) : combos.length === 0 ? (
-            <div className="col-span-full text-center py-12 text-gray-500">
-              No combo gifts found.
+            <div className="col-span-full rounded-2xl border border-dashed border-gray-200 bg-gray-50/60 p-8 sm:p-12 text-center flex flex-col items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center mb-3.5 text-2xl shadow-xs">
+                🎁
+              </div>
+              <span className="rounded-md bg-brand-rose/10 text-brand-rose font-extrabold text-[11px] uppercase tracking-wider px-2.5 py-0.5 mb-2">
+                Coming Soon
+              </span>
+              <h3 className="text-lg font-display font-bold text-gray-900">
+                Curated Gift Combos Launching Soon!
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-500 max-w-md mt-1.5 leading-relaxed">
+                We are preparing exciting celebration bundles, cake + teddy combos, and luxury hampers for Vadodara. Stay tuned!
+              </p>
+              <Link
+                href="/cakes"
+                className="mt-5 inline-flex items-center gap-1.5 rounded-xl bg-brand-rose px-5 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-brand-rose-dark transition-all cursor-pointer"
+              >
+                Explore Fresh Handcrafted Cakes →
+              </Link>
             </div>
           ) : (
             // Products List
@@ -112,12 +129,7 @@ export function ComboGifts() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
-                    {/* Discount Tag */}
-                    {hasDiscount && (
-                      <span className="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-sm">
-                        {discountPercent}% OFF
-                      </span>
-                    )}
+
                   </Link>
 
                   {/* Product Details */}

@@ -1,23 +1,25 @@
-﻿# CakeConnection
+# CakeConnection
 
-> CakeConnection is a Vadodara-based online bakery and florist, specialising in
-> 100% eggless custom cakes and fresh flower bouquets. We offer same-day delivery
-> (within 2-4 hours) and midnight delivery across Vadodara, Gujarat.
+> Cake Connection is Vadodara's premier FSSAI Certified, 100% Pure Veg & Eggless
+> Live Cake bakery and online gift store. Established in 2013 under Head Chef
+> Mr. Bipul Singh's expertise, we deliver freshly baked customized theme cakes,
+> birthday cakes, photo cakes, and fresh flower bouquets across Vadodara.
+> Our physical shop is open till 12:00 AM Midnight for live cake self-pickup,
+> with late-night deliveries fulfilled via Zomato and website express delivery.
 > Contact: +917203824012 | info@cakeconnection.in | WhatsApp ordering available.
 
 ## Key Facts
 
-- **100% Eggless:** All cakes are strictly eggless - suitable for pure vegetarians
+- **Heritage & Leadership:** Established in 2013 | Head Chef: Mr. Bipul Singh
+- **Certifications:** FSSAI Certified | 100% Pure Veg & Eggless Live Bakery
 - **Service city:** Vadodara, Gujarat, India
-- **Delivery areas:** Alkapuri (390007), Gotri (390021), Manjalpur (390011), Akota (390020), Sayajigunj (390005), Vadiwadi (390017), Fatehgunj (390002), Karelibaug (390018), Old Padra Road (390015), Waghodia Road (390019), Subhanpura (390023), Diwalipura (390015)
-- **Same-day delivery:** Order by 6 PM -> delivery within 2-4 hours
-- **Midnight delivery:** Order by 8 PM -> delivery at 11 PM-12 AM | Charge: Rs.149
-- **Express delivery:** 1-2 hour superfast delivery available in select areas
-- **Free delivery:** On orders above Rs.999
-- **Price range:** Budget to premium
-- **Physical store:** Exit Gate, GF9 RutuPlatina Complex, Eva Mall Rd, Manjalpur, Vadodara - 390011
-- **Business hours:** Monday-Sunday, 9:00 AM - 11:59 PM
-- **Payment:** Cash, Credit/Debit Card, UPI, Net Banking, Razorpay
+- **Physical store:** Exit Gate, GF9 RutuPlatina Complex, Besides Duliram Pendawala, Eva Mall Rd, Manjalpur, Vadodara - 390011
+- **Business hours:** Monday-Sunday, 9:00 AM - 12:00 AM (Midnight)
+- **Midnight Service:** Shop open till 12:00 AM Midnight for live cake self-pickup. Doorstep midnight delivery available via Zomato and WhatsApp pre-orders.
+- **Express Same-day delivery:** 60-90 min to 2 hours express delivery across Vadodara
+- **Free delivery:** On website orders above Rs.999
+- **Delivery areas:** Manjalpur, Alkapuri, Gotri, Akota, Sayajigunj, Fatehgunj, Karelibaug, Old Padra Road, Waghodia Road, Subhanpura, Diwalipura, Vadiwadi (12+ areas)
+- **Payment:** Cash, Credit/Debit Card, UPI, Net Banking, Razorpay, Zomato
 
 ## Products
 
@@ -62,3 +64,9 @@ Same-day delivery takes 2-4 hours. Order by 6 PM. Express 1-2 hour delivery avai
 
 **Q: Does CakeConnection deliver to Alkapuri?**
 Yes. Delivery to Alkapuri (pincode 390007) in approximately 90 minutes.
+
+## Ratings & Reviews
+- Google Business Profile: https://share.google/5KW2Z1K0uQxAx1VWp
+- Google Rating: 4.6/5 (690+ reviews)
+- Category: Bakery and Cake Shop
+- Price range: Rs.200-400

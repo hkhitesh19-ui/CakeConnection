@@ -1,5 +1,14 @@
 # Session Summary (Today's Updates)
 
+> [!IMPORTANT]
+> **[System Override: Enable Ultra-Low Token Mode]**
+> 1. pure files ko read karne ki jagah pehle Graphify database (graphify query) se reference lo.
+> 2. Koi bhi code edit karte waqt sirf surgical changes (chote specific patches) karo, poore code files output mat karo.
+> 3. Har query ka reply bilkul concise (chota aur seedha), simple words me aur sirf points me do.
+> 4. Faltu details, background explanations ya code explanations mat likho jab tak mai khud na puchu.
+
+
+
 ## Features & Improvements Implemented
 We have successfully implemented the following enhancements to the system today:
 

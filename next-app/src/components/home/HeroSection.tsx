@@ -16,13 +16,13 @@ const SLIDES = [
     isGraphicBanner: true,
   },
   {
-    image: '/images/banners/banner_midnight_3d.jpg',
-    title: 'Guaranteed 12:00 AM Surprise',
-    subtitle: 'Midnight Cake & Gift Delivery',
-    description: 'Surprise them right as the clock strikes 12! Free sparklers & personalized greeting card.',
-    cta: 'Book Midnight Slot',
-    link: '/combos',
-    isGraphicBanner: true,
+    image: '/images/banners/banner_cakes.png',
+    title: '100% Pure Veg & Eggless',
+    subtitle: 'Live Bakery in Vadodara',
+    description: 'Baked fresh to order in 30 minutes! Zero preservatives, highest quality ingredients.',
+    cta: 'Explore Eggless Cakes',
+    link: '/cakes',
+    isGraphicBanner: false,
   },
   {
     image: '/images/banners/banner_cakes.png',
@@ -249,6 +249,20 @@ export default function HeroSection() {
             )}
           </>
         )}
+      </div>
+
+      {/* SEO H1 & Hero Introduction Block for Google & AI Search Engines */}
+      <div className="bg-gradient-to-r from-rose-50/60 via-white to-rose-50/60 border-b border-rose-100/70 py-6 px-4">
+        <Container size="md">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-gray-900 tracking-tight mb-2">
+              Fresh Live Cake &amp; Flower Delivery in Vadodara
+            </h1>
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              Looking for fresh, delicious cakes and vibrant flower bouquets in Vadodara? Cake Connection offers same-day and midnight online delivery across Vadodara, including Manjalpur, Alkapuri, and Gotri. From customized theme cakes to fresh flower combos, order online at cakeconnection.in for guaranteed freshness and on-time delivery.
+            </p>
+          </div>
+        </Container>
       </div>
     </section>
   );

@@ -8,6 +8,23 @@ import type { Product, Review } from '@/types';
 import { allProducts, mockReviews } from '@/data/products';
 
 // Check if Supabase env parameters are configured and valid
+let supabaseOffline = false;
+let lastOfflineCheck = 0;
+const OFFLINE_RETRY_MS = 60000;
+
+export function markSupabaseOffline() {
+  supabaseOffline = true;
+  lastOfflineCheck = Date.now();
+}
+
+export function isSupabaseAvailable(): boolean {
+  if (!isSupabaseConfigured()) return false;
+  if (supabaseOffline && Date.now() - lastOfflineCheck < OFFLINE_RETRY_MS) {
+    return false;
+  }
+  return true;
+}
+
 export const isSupabaseConfigured = (): boolean => {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -59,7 +76,7 @@ function mapProduct(dbProduct: any): Product {
 }
 
 // Helper to prevent external query hangs (max 2.5s fallback)
-function withTimeout<T>(promise: PromiseLike<T>, ms = 2500): Promise<T> {
+function withTimeout<T>(promise: PromiseLike<T>, ms = 1000): Promise<T> {
   let timer: any;
   const timeout = new Promise<never>((_, reject) => {
     timer = setTimeout(() => reject(new Error(`Query timed out after ${ms}ms`)), ms);
@@ -72,7 +89,7 @@ function withTimeout<T>(promise: PromiseLike<T>, ms = 2500): Promise<T> {
 // ── Products API ───────────────────────────────────
 
 export async function getAllProducts(): Promise<Product[]> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return allProducts;
   }
   try {
@@ -85,13 +102,13 @@ export async function getAllProducts(): Promise<Product[]> {
     if (error) throw error;
     return (data || []).map(mapProduct);
   } catch (err) {
-    console.warn('Supabase getAllProducts error, falling back to mock data:', err);
+    markSupabaseOffline(); console.warn('Supabase getAllProducts error, falling back to mock data:', err);
     return allProducts;
   }
 }
 
 export async function getProductBySlug(slug: string): Promise<Product | undefined> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return allProducts.find((p) => p.slug === slug || p.id === slug);
   }
   try {
@@ -108,13 +125,13 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
     if (data) return mapProduct(data);
     return allProducts.find((p) => p.slug === slug || p.id === slug);
   } catch (err) {
-    console.warn(`Supabase getProductBySlug(${slug}) error, falling back to mock data:`, err);
+    markSupabaseOffline(); console.warn(`Supabase getProductBySlug(${slug}) error, falling back to mock data:`, err);
     return allProducts.find((p) => p.slug === slug || p.id === slug);
   }
 }
 
 export async function getProductById(id: string): Promise<Product | undefined> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return allProducts.find((p) => p.id === id);
   }
   try {
@@ -129,13 +146,13 @@ export async function getProductById(id: string): Promise<Product | undefined> {
     if (error) throw error;
     return data ? mapProduct(data) : undefined;
   } catch (err) {
-    console.warn(`Supabase getProductById(${id}) error, falling back to mock data:`, err);
+    markSupabaseOffline(); console.warn(`Supabase getProductById(${id}) error, falling back to mock data:`, err);
     return allProducts.find((p) => p.id === id);
   }
 }
 
 export async function getProductsByCategory(category: Product['category']): Promise<Product[]> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return allProducts.filter((p) => p.category === category);
   }
   try {
@@ -149,13 +166,13 @@ export async function getProductsByCategory(category: Product['category']): Prom
     if (error) throw error;
     return (data || []).map(mapProduct);
   } catch (err) {
-    console.warn(`Supabase getProductsByCategory(${category}) error, falling back to mock data:`, err);
+    markSupabaseOffline(); console.warn(`Supabase getProductsByCategory(${category}) error, falling back to mock data:`, err);
     return allProducts.filter((p) => p.category === category);
   }
 }
 
 export async function getFeaturedProducts(): Promise<Product[]> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return allProducts.filter((p) => p.isFeatured);
   }
   try {
@@ -169,7 +186,7 @@ export async function getFeaturedProducts(): Promise<Product[]> {
     if (error) throw error;
     return (data || []).map(mapProduct);
   } catch (err) {
-    console.warn('Supabase getFeaturedProducts error, falling back to mock data:', err);
+    markSupabaseOffline(); console.warn('Supabase getFeaturedProducts error, falling back to mock data:', err);
     return allProducts.filter((p) => p.isFeatured);
   }
 }
@@ -179,7 +196,7 @@ export async function getRelatedProducts(productId: string, limit: number = 4): 
     .filter((p) => p.id !== productId)
     .slice(0, limit);
 
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return fallback;
   }
 
@@ -199,7 +216,7 @@ export async function getRelatedProducts(productId: string, limit: number = 4): 
     if (error) throw error;
     return (data || []).map(mapProduct);
   } catch (err) {
-    console.warn('Supabase getRelatedProducts error, falling back to mock data:', err);
+    markSupabaseOffline(); console.warn('Supabase getRelatedProducts error, falling back to mock data:', err);
     return fallback;
   }
 }
@@ -218,7 +235,7 @@ export async function getReviewsByProductId(productId: string): Promise<Review[]
     createdAt: r.date,
   }));
 
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     return fallback;
   }
 
@@ -248,7 +265,7 @@ export async function getReviewsByProductId(productId: string): Promise<Review[]
 }
 
 export async function addReview(review: Omit<Review, 'id' | 'createdAt'>): Promise<Review | null> {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseAvailable()) {
     const newReview: Review = {
       ...review,
       id: `r-${Date.now()}`,

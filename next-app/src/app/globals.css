@@ -45,8 +45,9 @@
 
   /* === Typography — Font Families === */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+  --font-serif: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+  --font-times: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
 
   /* === Spacing Scale === */
   --spacing-18: 4.5rem;
@@ -248,5 +249,9 @@
   .focus-ring:focus-visible {
     outline: 2px solid var(--color-brand-rose);
     outline-offset: 2px;
+  }
+
+  .font-times {
+    font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
   }
 }

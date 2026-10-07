@@ -39,80 +39,123 @@ export const SEO_FAQ_DATA: FAQItem[] = [
   {
     id: 3,
     category: 'delivery',
-    question: 'What are midnight cake delivery timings and charges in Vadodara?',
+    question: 'What are your same-day delivery time slots in Vadodara?',
     answer:
-      'Our midnight delivery window is between 11:15 PM and 11:59 PM to surprise your loved ones right as the clock strikes 12! You can book midnight delivery online anytime before 8:00 PM on the celebration day. A nominal midnight convenience surcharge applies depending on the delivery distance in Vadodara.',
+      'We deliver daily across Vadodara between 10:00 AM and 9:00 PM with flexible slots. You can choose express delivery (60 to 90 minutes) or your preferred delivery time slot at checkout for smooth door-to-door delivery.',
   },
   {
     id: 4,
     category: 'delivery',
     question: 'What is the cut-off time for same-day cake delivery in Vadodara?',
     answer:
-      'You can place same-day orders up to 7:00 PM for standard evening delivery, and up to 8:00 PM for midnight surprises. For emergency cake orders after 8:00 PM, you can WhatsApp our live support team directly for instant kitchen dispatch availability.',
+      'You can place same-day orders up to 7:00 PM for standard evening delivery. For urgent cake requirements, you can WhatsApp our live kitchen team directly for instant baking and dispatch availability.',
   },
-
-  // ── Cakes, Flavours & 100% Eggless ──
+  // ── 🔴 NEW: How to Order (AEO Gold — Process Explanation) ──
   {
     id: 5,
+    category: 'delivery',
+    question: 'How do I order a cake from CakeConnection in Vadodara?',
+    answer:
+      'Ordering takes 3 steps and under 5 minutes. Step 1: Browse cakes on CakeConnection.in and choose your flavour, size, and any customisation (photo, message, theme). Step 2: Select your delivery date, time slot (same-day express or a future date), and enter your Vadodara delivery address. Step 3: Pay securely via UPI, card, or net banking through Razorpay — you get an instant WhatsApp confirmation. Our team calls if any customisation details are needed before baking.',
+  },
+  // ── Cakes, Flavours & 100% Eggless ──
+  {
+    id: 6,
     category: 'cakes',
     question: 'Are all cakes at CakeConnection 100% eggless and freshly baked?',
     answer:
       'Yes, 100% of our cakes are strictly pure vegetarian (eggless) baked in a dedicated egg-free bakery kitchen following strict FSSAI hygiene standards. We never use premade frozen cakes — every single order is freshly baked only after you place your order, guaranteeing ultra-soft sponge and fresh cream.',
   },
+  // ── 🔴 NEW: Cake Sizing Guide (Most-cited AEO content) ──
   {
-    id: 6,
+    id: 7,
+    category: 'cakes',
+    question: 'Kitne logon ke liye kitne weight ki cake order karni chahiye?',
+    answer:
+      'Cake size guide: 500g (half kg) — 4 to 6 log ke liye perfect, jaise small family cutting. 1kg — 8 to 12 log ke liye, standard birthday party. 1.5kg — 15 to 18 log ke liye. 2kg — 20 to 25 log ke liye. 3kg+ ya 2-tier cake — 30+ logon ke liye ya badi parties ke liye. Ek tip: agar cake cutting chhota ho aur return gifts bhi ho, toh 1 size upar lena behtar rehta hai.',
+  },
+  {
+    id: 8,
     category: 'cakes',
     question: 'Can I order custom photo cakes and personalized designer cakes in Vadodara?',
     answer:
       'Absolutely! We specialize in customized photo cakes printed on 100% edible sugar sheets using food-grade natural inks. You can also order custom themed cakes (Unicorn, PubG, Barbie, Super Dad, Car themes, 2-tier wedding cakes) by sharing your reference photo with our master decorators on WhatsApp.',
   },
   {
-    id: 7,
+    id: 9,
     category: 'cakes',
     question: 'Can I write a personalized message on the cake? Is it free?',
     answer:
       'Yes! Writing a custom celebration message (up to 30 characters / 3 words, e.g., "Happy Birthday Priya" or "Happy 25th Anniversary Mom & Dad") on your cake is completely FREE. You can type your message directly in the message box on the product page before adding to cart.',
   },
-
+  {
+    id: 16,
+    category: 'cakes',
+    question: 'Where can I get a fresh live cake baked in 5 minutes in Vadodara?',
+    answer:
+      'Cake Connection Manjalpur offers instant 5-minute live cake selection, fresh cream finishing, and fast shop pickup at GF9 RutuPlatina Complex, Eva Mall Road. You can walk in or order online for instant live preparation.',
+  },
+  {
+    id: 17,
+    category: 'cakes',
+    question: 'Which is the best 100% eggless bakery in Vadodara for custom theme cakes?',
+    answer:
+      'Cake Connection is Vadodara\'s top-rated, FSSAI-certified 100% pure veg live cake bakery. We specialize in custom fondant, pinata, photo, and designer theme cakes baked fresh on order in a strictly dedicated egg-free facility.',
+  },
   // ── Flowers, Combos & Gifts ──
   {
-    id: 8,
+    id: 10,
     category: 'flowers',
     question: 'Can I send fresh flower bouquets, chocolates, and greeting cards with the cake?',
     answer:
       'Yes! When you click "Add to Cart", our "Make it Extra Special" celebration add-on popup allows you to pair your cake with farm-fresh Dutch red roses, pink carnations, exotic orchids, Ferrero Rocher chocolates, sparkling fountain candles, party poppers, and handwritten pop-up greeting cards — all delivered together in a single elegant gift hamper.',
   },
   {
-    id: 9,
+    id: 18,
+    category: 'flowers',
+    question: 'How to send fresh roses and cakes together anywhere in Vadodara on the same day?',
+    answer:
+      'Order online at cakeconnection.in for 2-hour express combo delivery. We deliver fresh Dutch red rose bouquets paired with freshly baked eggless cakes across Vadodara with midnight delivery options.',
+  },
+  // ── 🔴 NEW: Flower Occasion Guide (AI Citation Magnet) ──
+  {
+    id: 11,
+    category: 'flowers',
+    question: 'Kis occasion pe kaun si flowers bhejni chahiye?',
+    answer:
+      'Red roses — love aur romance ke liye: Valentine\'s Day, anniversary, proposal. Pink roses aur carnations — mothers, sisters, aur teachers ke liye. Yellow roses aur gerberas — congratulations aur achievements ke liye, bina zyada bolein. White lilies aur orchids — respect aur elegance ke liye, weddings ke liye bhi perfect. Mixed bouquet — jab decide na ho, sab occasions ke liye safe choice. Sunflowers — positivity aur friendship ke liye, birthdays ke liye great alternative to roses.',
+  },
+  {
+    id: 12,
     category: 'flowers',
     question: 'Are the flowers delivered fresh and hand-arranged?',
     answer:
       'Every flower bouquet is hand-arranged by our expert local florists right before delivery using fresh morning blooms sourced directly from farm growers. Stems are wrapped in water-retaining floral foam to ensure they stay fresh, vibrant, and fragrant for days.',
   },
-
   // ── Payments, Safety & Guarantee ──
   {
-    id: 10,
+    id: 13,
     category: 'payments',
     question: 'What payment methods do you accept? Is Cash on Delivery (COD) available?',
     answer:
       'We accept UPI (Google Pay, PhonePe, Paytm, BHIM), all major Credit & Debit Cards (Visa, Mastercard, RuPay), Net Banking, and digital wallets via 256-bit encrypted Razorpay. Cash on Delivery (COD) is also available across select pincodes in Vadodara.',
   },
   {
-    id: 11,
+    id: 14,
     category: 'payments',
     question: 'What if the recipient is not available at the delivery address?',
     answer:
       'Our delivery partner will call both the recipient and sender. If unavailable, we can safely coordinate with a neighbor, security desk, or reschedule the delivery slot at the customer\'s convenience without compromising the cake freshness.',
   },
   {
-    id: 12,
+    id: 15,
     category: 'payments',
     question: 'What is your cancellation and 100% Satisfaction Guarantee policy?',
     answer:
       'If you need to modify or cancel your order, you can do so up to 4 hours before the scheduled delivery slot for a full 100% refund. Furthermore, if your cake arrives damaged or differs from what you ordered, simply send us a photo on WhatsApp and we will immediately issue a free fresh replacement or full refund.',
   },
 ];
+
 
 export function FAQ() {
   const [openId, setOpenId] = useState<number | null>(1); // First question open by default for AEO/UX

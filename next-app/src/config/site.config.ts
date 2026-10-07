@@ -92,14 +92,13 @@ export const navigationConfig: NavCategory[] = [
           { label: '1 to 2 Hours SuperFast Delivery', href: '/cakes?delivery=superfast' },
           { label: '2 to 4 hours Express Delivery', href: '/cakes?delivery=express' },
           { label: '4 to 6 Hours Same Day Delivery', href: '/cakes?delivery=sameday' },
-          { label: 'MidNight Delivery', href: '/cakes?delivery=midnight' },
         ],
       },
       {
         title: 'Cakes By Type',
         items: [
+          { label: 'Mini Cakes (250g)', href: '/cakes?type=mini' },
           { label: 'Eggless Cakes', href: '/cakes?type=eggless' },
-          { label: 'Midnight Cakes', href: '/cakes?type=midnight' },
           { label: 'Photo Cakes', href: '/cakes?type=photo' },
           { label: 'Heart Shape Cakes', href: '/cakes?type=heart-shape' },
           { label: 'Designer Cakes', href: '/cakes?type=designer' },

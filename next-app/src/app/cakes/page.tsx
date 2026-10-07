@@ -1,9 +1,8 @@
 "use client";
 
 // ============================================
-// Cakes Category Page — Cake Connection
-// Monginis-Style Sticky Left Filter + 4 Variants (500g, 1kg, 1.5kg, 2kg)
-// Clean White Theme Inspired by Giftlaya & Monginis
+// Cakes Page — Cake Connection
+// Giftlaya-Inspired Sleek Cards + Left Filter Panel
 // ============================================
 
 import { useState, useMemo, useCallback, useEffect, Suspense } from 'react';
@@ -11,9 +10,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import {
-  Star,
-  Heart,
-  ShoppingBag,
   SlidersHorizontal,
   ArrowUpDown,
   X,
@@ -22,34 +18,99 @@ import {
   Home,
   Search,
   PackageOpen,
-  Scale,
+  Plus,
+  Check,
+  Zap,
 } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { cn, formatPrice, getDiscountPercent } from '@/utils';
+import { cn, formatPrice } from '@/utils';
 import { useProducts } from '@/hooks/useProducts';
-import { useCartStore, useWishlistStore, useUIStore } from '@/stores';
+import { useCartStore, useUIStore } from '@/stores';
 import type { Product, ProductVariant } from '@/types';
 
 // ── Constants ────────────────────────────────
 
 const WEIGHT_OPTIONS = [
+  { value: '250g', label: 'Mini (250g)' },
   { value: '500g', label: '500g' },
   { value: '1kg', label: '1kg' },
   { value: '1.5kg', label: '1.5kg' },
   { value: '2kg', label: '2kg' },
 ];
 
-const QUICK_FLAVOURS = [
-  { value: 'chocolate', label: 'Chocolate', image: '/images/cakes/choco-chips.jpg' },
-  { value: 'red-velvet', label: 'Red Velvet', image: '/images/cakes/red-velvet-flavour.jfif' },
-  { value: 'black-forest', label: 'Black Forest', image: '/images/cakes/beautiful-blackforest.jpeg' },
-  { value: 'truffle', label: 'Truffle', image: '/images/cakes/choco-truffle-2-5-hours.jpeg' },
-  { value: 'butterscotch', label: 'Butterscotch', image: '/images/cakes/butterscotch-1.jpeg' },
-  { value: 'fruit', label: 'Fresh Fruit', image: '/images/cakes/fresh-fruit-cake.jpg' },
-  { value: 'rasmalai', label: 'Rasmalai', image: '/images/cakes/rasmalai-cake.jpg' },
-  { value: 'pineapple', label: 'Pineapple', image: '/images/cakes/15-kg-2-step-pineapple-cake.jpeg' },
-  { value: 'strawberry', label: 'Strawberry', image: '/images/cakes/15-kg-2-step-strawberry-cake.jpeg' },
+// Top Visual Category Bubble Cards (Giftlaya Style)
+const CATEGORY_BUBBLES = [
+  {
+    id: 'mini-cakes',
+    label: 'Mini Cakes (250g)',
+    type: 'weight',
+    value: '250g',
+    image: '/images/cakes/mini-creamy-choco-truffle-cake-250g.png',
+  },
+  {
+    id: 'chocolate',
+    label: 'Chocolate',
+    type: 'flavour',
+    value: 'chocolate',
+    image: '/images/cakes/belgium-supreme-cake.jpeg',
+  },
+  {
+    id: 'truffle',
+    label: 'Choco Truffle',
+    type: 'flavour',
+    value: 'truffle',
+    image: '/images/cakes/choco-truffle-2-5-hours.jpeg',
+  },
+  {
+    id: 'black-forest',
+    label: 'Black Forest',
+    type: 'flavour',
+    value: 'black-forest',
+    image: '/images/cakes/beautiful-blackforest.jpeg',
+  },
+  {
+    id: 'red-velvet',
+    label: 'Red Velvet',
+    type: 'flavour',
+    value: 'red-velvet',
+    image: '/images/cakes/red-velvet-flavour.jfif',
+  },
+  {
+    id: 'butterscotch',
+    label: 'Butterscotch',
+    type: 'flavour',
+    value: 'butterscotch',
+    image: '/images/cakes/butterscotch-1.jpeg',
+  },
+  {
+    id: 'fruit',
+    label: 'Fresh Fruit',
+    type: 'flavour',
+    value: 'fruit',
+    image: '/images/cakes/fresh-fruit-cake.jpg',
+  },
+  {
+    id: 'rasmalai',
+    label: 'Rasmalai',
+    type: 'flavour',
+    value: 'rasmalai',
+    image: '/images/cakes/rasmalai-cake.jpg',
+  },
+  {
+    id: 'pineapple',
+    label: 'Pineapple',
+    type: 'flavour',
+    value: 'pineapple',
+    image: '/images/cakes/15-kg-2-step-pineapple-cake.jpeg',
+  },
+  {
+    id: 'strawberry',
+    label: 'Strawberry',
+    type: 'flavour',
+    value: 'strawberry',
+    image: '/images/cakes/15-kg-2-step-strawberry-cake.jpeg',
+  },
 ];
 
 const FLAVOUR_OPTIONS = [
@@ -74,10 +135,9 @@ const PRICE_RANGES = [
 
 const SORT_OPTIONS = [
   { value: 'popular', label: 'Popularity' },
-  { value: 'price-asc', label: 'Price: Low → High' },
-  { value: 'price-desc', label: 'Price: High → Low' },
-  { value: 'rating', label: 'Top Rated' },
   { value: 'newest', label: 'New Arrivals' },
+  { value: 'price-asc', label: 'Price: Low to High' },
+  { value: 'price-desc', label: 'Price: High to Low' },
 ];
 
 function slugify(text: string): string {
@@ -149,35 +209,35 @@ const pageVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.3, staggerChildren: 0.04, delayChildren: 0.02 },
+    transition: { duration: 0.25, staggerChildren: 0.03 },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
-  },
-};
-
-const fadeUp = {
   hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
 };
 
-const slideUp = {
-  hidden: { y: '100%' },
-  visible: { y: 0, transition: { type: 'spring', damping: 30, stiffness: 300 } },
-  exit: { y: '100%', transition: { duration: 0.2 } },
-} as const;
+// Helper to parse weight into grams for accurate numerical sorting
+function parseWeightInGrams(weightStr: string): number {
+  const norm = (weightStr || '').toLowerCase().trim();
+  if (norm.includes('kg')) {
+    const val = parseFloat(norm.replace('kg', '').trim());
+    return isNaN(val) ? 99999 : val * 1000;
+  }
+  if (norm.includes('g') || norm.includes('gm') || norm.includes('gram')) {
+    const val = parseFloat(norm.replace(/[^0-9.]/g, '').trim());
+    return isNaN(val) ? 99999 : val;
+  }
+  const val = parseFloat(norm);
+  return isNaN(val) ? 99999 : val;
+}
 
-// ── Product Card with 500g, 1kg, 1.5kg, 2kg Selectors ────
+// ── Clean Product Card (Giftlaya Style) ───────
 
 function ProductCard({
   product,
@@ -189,223 +249,141 @@ function ProductCard({
   activeWeightFilter?: string;
 }) {
   const addItem = useCartStore((s) => s.addItem);
-  const toggleWishlist = useWishlistStore((s) => s.toggleItem);
-  const isInWishlist = useWishlistStore((s) => s.isInWishlist(product.id));
   const addToast = useUIStore((s) => s.addToast);
+  const [isAdded, setIsAdded] = useState(false);
 
-  // Pick variant matching activeWeightFilter if provided, else default to first
-  const initialVariant = useMemo(() => {
-    if (activeWeightFilter && product.variants && product.variants.length > 0) {
-      const match = product.variants.find((v) =>
-        v.weight.toLowerCase().replace(/\s+/g, '') === activeWeightFilter.toLowerCase().replace(/\s+/g, '')
-      );
-      if (match) return match;
+  // Extract starting lowest two weight variations (as per weight variation) with MRP prices
+  const displayVariants = useMemo(() => {
+    const vars = product.variants || [];
+    const valid = vars
+      .map((v) => {
+        // "Only MRP price hi disply karo, Discounted price nahi"
+        const mrp = (v.compareAtPrice && v.compareAtPrice > 0) ? v.compareAtPrice : v.price;
+        return {
+          ...v,
+          mrp: Number(mrp) || 0,
+          weightGrams: parseWeightInGrams(v.weight),
+        };
+      })
+      .filter((v) => v.mrp > 0)
+      .sort((a, b) => a.weightGrams - b.weightGrams);
+
+    // If active weight filter is applied, place it first if matched
+    if (activeWeightFilter) {
+      const filterNorm = activeWeightFilter.toLowerCase().replace(/\s+/g, '');
+      const matched = valid.find((v) => v.weight.toLowerCase().replace(/\s+/g, '') === filterNorm);
+      if (matched) {
+        const others = valid.filter((v) => v.id !== matched.id);
+        return [matched, ...others].slice(0, 2);
+      }
     }
-    return product.variants[0];
+
+    // Default: Return the lowest starting two weight variations (or 1 if only 250g or single variant)
+    return valid.slice(0, 2);
   }, [product.variants, activeWeightFilter]);
 
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | undefined>(initialVariant);
-
-  // Sync if weight filter changes
-  useEffect(() => {
-    if (activeWeightFilter && product.variants && product.variants.length > 0) {
-      const match = product.variants.find((v) =>
-        v.weight.toLowerCase().replace(/\s+/g, '') === activeWeightFilter.toLowerCase().replace(/\s+/g, '')
-      );
-      if (match) setSelectedVariant(match);
-    }
-  }, [activeWeightFilter, product.variants]);
-
-  const currentVariant = selectedVariant || product.variants[0] || {
-    id: 'default',
-    weight: '500g',
-    price: 449,
-    stock: 50,
-  };
-
-  const discount = currentVariant.compareAtPrice
-    ? getDiscountPercent(currentVariant.price, currentVariant.compareAtPrice)
-    : 0;
-
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+
+    const selectedVar = displayVariants[0] || product.variants?.[0];
+    if (!selectedVar) return;
+
+    const finalPrice = (selectedVar as any).mrp || selectedVar.price;
 
     addItem({
       productId: product.id,
       slug: product.slug,
       category: 'cakes',
-      variantId: currentVariant.id,
-      name: `${product.name} (${currentVariant.weight})`,
+      variantId: selectedVar.id,
+      name: `${product.name} (${selectedVar.weight})`,
       image: product.images[0]?.url || '',
-      weight: currentVariant.weight,
+      weight: selectedVar.weight,
       flavour: product.flavour,
-      price: currentVariant.price,
+      price: finalPrice,
       quantity: 1,
     });
+
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 1500);
+
     addToast({
       type: 'success',
-      message: `${product.name} (${currentVariant.weight}) added to cart!`,
-    });
-  };
-
-  const handleWishlistToggle = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleWishlist({
-      productId: product.id,
-      name: product.name,
-      image: product.images[0]?.url || '',
-      price: currentVariant.price,
-      addedAt: new Date().toISOString(),
+      message: `${product.name} (${selectedVar.weight}) added to cart!`,
     });
   };
 
   return (
-    <motion.article variants={cardVariants} layout>
-      <div className="group relative flex flex-col rounded-2xl border border-gray-200/90 bg-white overflow-hidden transition-all duration-300 hover:border-brand-rose/50 hover:shadow-xl hover:-translate-y-1 h-full">
-        {/* Clickable Area to Product Detail */}
-        <Link href={`/cakes/${product.slug}`} className="block relative aspect-square overflow-hidden bg-gray-50">
+    <motion.article variants={cardVariants} layout className="h-full">
+      <div className="group relative flex flex-col h-full rounded-2xl bg-white border border-gray-100 hover:border-brand-rose/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+        {/* 1:1 Aspect Image Container */}
+        <Link
+          href={`/cakes/${product.slug}`}
+          className="relative block aspect-square w-full overflow-hidden bg-[#F9F9F9] rounded-2xl"
+        >
           <img
-            src={product.images[0]?.url}
+            src={product.images[0]?.url || '/placeholder.png'}
             alt={product.images[0]?.alt || product.name}
-            loading={index < 6 ? 'eager' : 'lazy'}
+            loading={index < 8 ? 'eager' : 'lazy'}
             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
 
-          {/* Badges */}
-          <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 z-10">
-            {product.isBestseller && (
-              <span className="rounded-md bg-brand-rose px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-xs">
-                Bestseller
-              </span>
-            )}
-            {product.isNewArrival && (
-              <span className="rounded-md bg-emerald-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-xs">
-                New
-              </span>
-            )}
-            {discount > 0 && (
-              <span className="rounded-md bg-rose-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-xs">
-                {discount}% OFF
-              </span>
-            )}
-          </div>
-
-          {/* Wishlist Button */}
+          {/* Bottom Right Floating Quick Add (+) Button — Giftlaya Style */}
           <button
             type="button"
-            onClick={handleWishlistToggle}
-            aria-label={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
-            className="absolute top-2.5 right-2.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-xs transition-all duration-200 hover:bg-white hover:border-brand-rose hover:scale-110 cursor-pointer"
+            onClick={handleQuickAdd}
+            aria-label="Quick Add to Cart"
+            title="Quick Add to Cart"
+            className={cn(
+              'absolute bottom-2.5 right-2.5 z-10 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full shadow-md transition-all duration-200 cursor-pointer',
+              isAdded
+                ? 'bg-emerald-600 text-white scale-110'
+                : 'bg-white border border-gray-150 text-brand-rose hover:bg-brand-rose hover:text-white hover:scale-110 active:scale-95'
+            )}
           >
-            <Heart
-              className={cn(
-                'h-4 w-4 transition-colors duration-200',
-                isInWishlist ? 'fill-brand-rose text-brand-rose' : 'text-gray-400 group-hover:text-gray-600'
-              )}
-            />
+            {isAdded ? (
+              <Check className="h-4 w-4 stroke-[3]" />
+            ) : (
+              <Plus className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2.5]" />
+            )}
           </button>
         </Link>
 
-        {/* Content */}
-        <div className="flex flex-1 flex-col p-3.5 sm:p-4 bg-white justify-between">
+        {/* Minimal Clean Details Under Image */}
+        <div className="flex flex-1 flex-col justify-between pt-3 pb-2 px-1">
           <div>
-            {/* Rating */}
-            <div className="mb-1.5 flex items-center gap-1.5">
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={cn(
-                      'h-3.5 w-3.5',
-                      i < Math.floor(product.rating)
-                        ? 'fill-amber-400 text-amber-400'
-                        : 'fill-gray-200 text-gray-200'
-                    )}
-                  />
-                ))}
-              </div>
-              <span className="text-xs font-medium text-gray-500">
-                {product.rating} ({product.reviewCount})
-              </span>
-            </div>
-
-            {/* Name */}
+            {/* Cake Name */}
             <Link href={`/cakes/${product.slug}`}>
-              <h3 className="font-display text-sm sm:text-base font-semibold text-gray-900 leading-snug line-clamp-2 hover:text-brand-rose transition-colors">
+              <h3 className="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-1 hover:text-brand-rose transition-colors">
                 {product.name}
               </h3>
             </Link>
 
-            {/* Same Day Delivery Badge */}
+            {/* Price Line: Lowest 2 Weight Variation MRP Prices (No Discounted Price) */}
+            <div className="mt-1.5 flex items-center gap-1.5 flex-wrap">
+              {displayVariants.map((v, i) => (
+                <div
+                  key={v.id || i}
+                  className={cn(
+                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-bold leading-normal",
+                    i === 0
+                      ? "bg-rose-50 text-gray-900 border border-brand-rose/25"
+                      : "bg-gray-50 text-gray-700 border border-gray-200"
+                  )}
+                >
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase">{v.weight}:</span>
+                  <span className="text-xs sm:text-[13px] font-extrabold text-gray-900">
+                    {formatPrice(v.mrp)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Delivery Badge */}
             <div className="mt-1 flex items-center gap-1 text-[11px] font-medium text-emerald-600">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              ⚡ Express Vadodara Delivery
+              <Zap className="h-3 w-3 fill-emerald-600 text-emerald-600 shrink-0" />
+              <span>Same Day Delivery</span>
             </div>
-
-            {/* Weight Variant Selector (500g, 1kg, 1.5kg, 2kg) */}
-            <div className="mt-2.5 pt-2 border-t border-gray-100">
-              <div className="flex items-center justify-between text-[11px] font-semibold text-gray-500 mb-1.5">
-                <span>Weight:</span>
-                <span className="text-brand-rose font-bold">{currentVariant.weight}</span>
-              </div>
-              <div className="grid grid-cols-4 gap-1">
-                {product.variants.map((v) => {
-                  const isSelected = currentVariant.id === v.id;
-                  return (
-                    <button
-                      key={v.id}
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setSelectedVariant(v);
-                      }}
-                      className={cn(
-                        'py-1 text-[10px] sm:text-[11px] font-semibold rounded-md border text-center transition-all cursor-pointer',
-                        isSelected
-                          ? 'bg-brand-rose text-white border-brand-rose shadow-xs'
-                          : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-brand-rose/60 hover:bg-rose-50/40'
-                      )}
-                    >
-                      {v.weight}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            {/* Price */}
-            <div className="mt-3 flex items-baseline gap-2">
-              <span className="text-lg sm:text-xl font-bold text-gray-900">
-                {formatPrice(currentVariant.price)}
-              </span>
-              {currentVariant.compareAtPrice && (
-                <span className="text-xs sm:text-sm text-gray-400 line-through">
-                  {formatPrice(currentVariant.compareAtPrice)}
-                </span>
-              )}
-              {discount > 0 && (
-                <span className="text-xs font-bold text-emerald-600">
-                  {discount}% off
-                </span>
-              )}
-            </div>
-
-            {/* Add to Cart */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="button"
-              onClick={handleAddToCart}
-              className="mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-rose px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-brand-rose-dark hover:shadow-md cursor-pointer"
-            >
-              <ShoppingBag className="h-4 w-4" />
-              Add to Cart
-            </motion.button>
           </div>
         </div>
       </div>
@@ -428,19 +406,11 @@ function FilterCheckbox({
 }) {
   return (
     <label className="flex items-center gap-2.5 cursor-pointer group/check py-1">
-      {/* Hidden real checkbox so label click fires onChange correctly */}
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        className="sr-only"
-      />
+      <input type="checkbox" checked={checked} onChange={onChange} className="sr-only" />
       <div
         className={cn(
           'h-4 w-4 rounded border flex items-center justify-center transition-all duration-150 shrink-0',
-          checked
-            ? 'bg-brand-rose border-brand-rose text-white'
-            : 'border-gray-300 bg-white group-hover/check:border-brand-rose'
+          checked ? 'bg-brand-rose border-brand-rose text-white' : 'border-gray-300 bg-white group-hover/check:border-brand-rose'
         )}
       >
         {checked && (
@@ -464,7 +434,7 @@ function FilterCheckbox({
   );
 }
 
-// ── Monginis-Style Accordion Group ───────────
+// ── Accordion Group Component ─────────────────
 
 function AccordionGroup({
   title,
@@ -520,9 +490,9 @@ function AccordionGroup({
   );
 }
 
-// ── Monginis-Style Sticky Sidebar Filters (Desktop) ──
+// ── Leftside Filter Panel (Desktop Sticky) ───
 
-function FilterSidebar({
+function LeftFilterSidebar({
   selectedWeights,
   selectedFlavours,
   selectedPriceRanges,
@@ -549,13 +519,11 @@ function FilterSidebar({
 }) {
   const subcategories = getSubcategories(products);
 
-  // Accordion open states
   const [openWeight, setOpenWeight] = useState(true);
   const [openCategory, setOpenCategory] = useState(true);
   const [openFlavour, setOpenFlavour] = useState(true);
   const [openPrice, setOpenPrice] = useState(true);
 
-  // Subcategory search filter within sidebar
   const [catSearch, setCatSearch] = useState('');
   const filteredSubcategories = useMemo(() => {
     if (!catSearch.trim()) return subcategories;
@@ -575,14 +543,13 @@ function FilterSidebar({
   };
 
   return (
-    <aside className="hidden lg:block w-72 shrink-0">
-      {/* Sticky container that stays firmly visible on scroll right under the header */}
-      <div className="sticky top-[96px] lg:top-[112px] max-h-[calc(100vh-110px)] lg:max-h-[calc(100vh-125px)] overflow-y-auto pr-1 bg-white border border-gray-200/90 rounded-2xl p-5 shadow-sm scrollbar-thin scrollbar-thumb-gray-200">
+    <aside className="w-64 xl:w-72 shrink-0">
+      <div className="sticky top-[100px] max-h-[calc(100vh-120px)] overflow-y-auto bg-white border border-gray-200/90 rounded-2xl p-4 shadow-xs scrollbar-thin scrollbar-thumb-gray-200">
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-gray-150 mb-1">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-4 w-4 text-brand-rose" />
-            <h3 className="font-display text-base font-bold text-gray-900">Filters</h3>
+            <h3 className="font-display text-sm font-bold text-gray-900">Filters</h3>
             {activeFilterCount > 0 && (
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-rose text-[10px] font-bold text-white">
                 {activeFilterCount}
@@ -592,14 +559,14 @@ function FilterSidebar({
           {activeFilterCount > 0 && (
             <button
               onClick={onClearAll}
-              className="text-xs font-semibold text-brand-rose hover:text-brand-rose-dark transition-colors cursor-pointer"
+              className="text-xs font-semibold text-brand-rose hover:underline cursor-pointer"
             >
               Clear All
             </button>
           )}
         </div>
 
-        {/* 1. Weight Filter (500g, 1kg, 1.5kg, 2kg) */}
+        {/* 1. Cake Weight */}
         <AccordionGroup
           title="Cake Weight"
           isOpen={openWeight}
@@ -619,47 +586,14 @@ function FilterSidebar({
           </div>
         </AccordionGroup>
 
-        {/* 2. Categories & Subcategories (Monginis style) */}
-        {subcategories.length > 0 && (
-          <AccordionGroup
-            title="Categories & Themes"
-            isOpen={openCategory}
-            onToggle={() => setOpenCategory(!openCategory)}
-            badge={selectedSubcategories.length}
-          >
-            {subcategories.length > 8 && (
-              <div className="relative mb-2">
-                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search categories..."
-                  value={catSearch}
-                  onChange={(e) => setCatSearch(e.target.value)}
-                  className="w-full text-xs rounded-lg border border-gray-200 pl-8 pr-2.5 py-1.5 focus:outline-none focus:border-brand-rose"
-                />
-              </div>
-            )}
-            <div className="space-y-1 max-h-52 overflow-y-auto pr-1">
-              {filteredSubcategories.map((opt) => (
-                <FilterCheckbox
-                  key={opt.value}
-                  label={opt.label}
-                  checked={selectedSubcategories.includes(opt.value)}
-                  onChange={() => onToggleSubcategory(opt.value)}
-                />
-              ))}
-            </div>
-          </AccordionGroup>
-        )}
-
-        {/* 3. Flavour */}
+        {/* 2. Flavours */}
         <AccordionGroup
-          title="Flavour"
+          title="Flavours"
           isOpen={openFlavour}
           onToggle={() => setOpenFlavour(!openFlavour)}
           badge={selectedFlavours.length}
         >
-          <div className="space-y-1 max-h-52 overflow-y-auto pr-1">
+          <div className="space-y-1 max-h-48 overflow-y-auto pr-1">
             {FLAVOUR_OPTIONS.map((opt) => (
               <FilterCheckbox
                 key={opt.value}
@@ -671,6 +605,39 @@ function FilterSidebar({
             ))}
           </div>
         </AccordionGroup>
+
+        {/* 3. Categories & Occasions */}
+        {subcategories.length > 0 && (
+          <AccordionGroup
+            title="Categories"
+            isOpen={openCategory}
+            onToggle={() => setOpenCategory(!openCategory)}
+            badge={selectedSubcategories.length}
+          >
+            {subcategories.length > 8 && (
+              <div className="relative mb-2">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={catSearch}
+                  onChange={(e) => setCatSearch(e.target.value)}
+                  className="w-full text-xs rounded-lg border border-gray-200 pl-8 pr-2.5 py-1.5 focus:outline-none focus:border-brand-rose"
+                />
+              </div>
+            )}
+            <div className="space-y-1 max-h-48 overflow-y-auto pr-1">
+              {filteredSubcategories.map((opt) => (
+                <FilterCheckbox
+                  key={opt.value}
+                  label={opt.label}
+                  checked={selectedSubcategories.includes(opt.value)}
+                  onChange={() => onToggleSubcategory(opt.value)}
+                />
+              ))}
+            </div>
+          </AccordionGroup>
+        )}
 
         {/* 4. Price Range */}
         <AccordionGroup
@@ -695,19 +662,59 @@ function FilterSidebar({
   );
 }
 
-// ── Mobile Sheet ─────────────────────────────
+// ── Slide-Over Filter Drawer (Mobile) ────────
 
-function MobileSheet({
+function FilterDrawer({
   isOpen,
   onClose,
-  title,
-  children,
+  selectedWeights,
+  selectedFlavours,
+  selectedPriceRanges,
+  selectedSubcategories,
+  onToggleWeight,
+  onToggleFlavour,
+  onTogglePriceRange,
+  onToggleSubcategory,
+  onClearAll,
+  activeFilterCount,
+  products,
+  totalMatchingCount,
 }: {
   isOpen: boolean;
   onClose: () => void;
-  title: string;
-  children: React.ReactNode;
+  selectedWeights: string[];
+  selectedFlavours: string[];
+  selectedPriceRanges: string[];
+  selectedSubcategories: string[];
+  onToggleWeight: (v: string) => void;
+  onToggleFlavour: (v: string) => void;
+  onTogglePriceRange: (v: string) => void;
+  onToggleSubcategory: (v: string) => void;
+  onClearAll: () => void;
+  activeFilterCount: number;
+  products: Product[];
+  totalMatchingCount: number;
 }) {
+  const subcategories = getSubcategories(products);
+  const [catSearch, setCatSearch] = useState('');
+
+  const filteredSubcategories = useMemo(() => {
+    if (!catSearch.trim()) return subcategories;
+    const q = catSearch.toLowerCase();
+    return subcategories.filter((s) => s.label.toLowerCase().includes(q));
+  }, [subcategories, catSearch]);
+
+  const getWeightCount = (weight: string) => {
+    const wNorm = weight.toLowerCase().replace(/\s+/g, '');
+    return products.filter((p) =>
+      p.variants.some((v) => v.weight.toLowerCase().replace(/\s+/g, '') === wNorm)
+    ).length;
+  };
+
+  const getFlavourCount = (flavour: string) => {
+    return products.filter((p) => matchesFlavour(p, flavour)).length;
+  };
+
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
@@ -720,54 +727,178 @@ function MobileSheet({
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[500]"
+            className="fixed inset-0 bg-black/50 backdrop-blur-xs z-[600]"
             onClick={onClose}
           />
-          <motion.div
-            variants={slideUp}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed bottom-0 left-0 right-0 z-[501] max-h-[85vh] rounded-t-3xl bg-white border-t border-gray-200 overflow-hidden flex flex-col shadow-2xl"
+
+          {/* Drawer Panel */}
+          <motion.aside
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+            className="fixed top-0 right-0 bottom-0 z-[601] w-full max-w-md bg-white shadow-2xl flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-150 shrink-0 bg-white">
-              <h3 className="font-display text-lg font-bold text-gray-900">{title}</h3>
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-150 bg-white">
+              <div className="flex items-center gap-2">
+                <SlidersHorizontal className="h-5 w-5 text-brand-rose" />
+                <h3 className="font-display text-lg font-bold text-gray-900">Filters</h3>
+                {activeFilterCount > 0 && (
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-rose text-[11px] font-bold text-white">
+                    {activeFilterCount}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-3">
+                {activeFilterCount > 0 && (
+                  <button
+                    onClick={onClearAll}
+                    className="text-xs font-semibold text-brand-rose hover:underline cursor-pointer"
+                  >
+                    Clear All
+                  </button>
+                )}
+                <button
+                  onClick={onClose}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Filters Body */}
+            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              {/* 1. Cake Weight */}
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">
+                  Cake Weight
+                </h4>
+                <div className="grid grid-cols-2 gap-2">
+                  {WEIGHT_OPTIONS.map((opt) => (
+                    <FilterCheckbox
+                      key={opt.value}
+                      label={opt.label}
+                      checked={selectedWeights.includes(opt.value)}
+                      onChange={() => onToggleWeight(opt.value)}
+                      count={getWeightCount(opt.value)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* 2. Flavours */}
+              <div className="pt-4 border-t border-gray-150">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">
+                  Flavours
+                </h4>
+                <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+                  {FLAVOUR_OPTIONS.map((opt) => (
+                    <FilterCheckbox
+                      key={opt.value}
+                      label={opt.label}
+                      checked={selectedFlavours.includes(opt.value)}
+                      onChange={() => onToggleFlavour(opt.value)}
+                      count={getFlavourCount(opt.value)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* 3. Categories & Themes */}
+              {subcategories.length > 0 && (
+                <div className="pt-4 border-t border-gray-150">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">
+                    Categories & Occasions
+                  </h4>
+                  {subcategories.length > 8 && (
+                    <div className="relative mb-2">
+                      <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Search categories..."
+                        value={catSearch}
+                        onChange={(e) => setCatSearch(e.target.value)}
+                        className="w-full text-xs rounded-lg border border-gray-200 pl-8 pr-2.5 py-1.5 focus:outline-none focus:border-brand-rose"
+                      />
+                    </div>
+                  )}
+                  <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+                    {filteredSubcategories.map((opt) => (
+                      <FilterCheckbox
+                        key={opt.value}
+                        label={opt.label}
+                        checked={selectedSubcategories.includes(opt.value)}
+                        onChange={() => onToggleSubcategory(opt.value)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4. Price Range */}
+              <div className="pt-4 border-t border-gray-150">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">
+                  Price Range
+                </h4>
+                <div className="space-y-1.5">
+                  {PRICE_RANGES.map((opt) => (
+                    <FilterCheckbox
+                      key={opt.value}
+                      label={opt.label}
+                      checked={selectedPriceRanges.includes(opt.value)}
+                      onChange={() => onTogglePriceRange(opt.value)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Footer Actions */}
+            <div className="p-4 border-t border-gray-150 bg-gray-50 flex items-center gap-3">
+              {activeFilterCount > 0 && (
+                <button
+                  type="button"
+                  onClick={onClearAll}
+                  className="flex-1 py-3 rounded-xl border border-gray-300 text-xs font-semibold text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                >
+                  Clear All
+                </button>
+              )}
               <button
+                type="button"
                 onClick={onClose}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                className="flex-1 py-3 rounded-xl bg-brand-rose text-white text-xs font-bold shadow-sm hover:bg-brand-rose-dark transition-colors cursor-pointer text-center"
               >
-                <X className="h-4 w-4" />
+                Apply Filters ({totalMatchingCount} Cakes)
               </button>
             </div>
-            {/* Content */}
-            <div className="overflow-y-auto flex-1 p-4 bg-white">{children}</div>
-          </motion.div>
+          </motion.aside>
         </>
       )}
     </AnimatePresence>
   );
 }
 
-// ── Main Page Component ──────────────────────
+// ── Main Page Content ────────────────────────
 
 function CakesPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [mobileSortOpen, setMobileSortOpen] = useState(false);
+  const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
   const urlSearch = searchParams.get('search') || searchParams.get('q') || '';
   const [searchQuery, setSearchQuery] = useState(urlSearch);
 
   useEffect(() => {
-    if (urlSearch) {
-      setSearchQuery(urlSearch);
-    }
+    if (urlSearch) setSearchQuery(urlSearch);
   }, [urlSearch]);
 
   const { products: cakeProducts, loading } = useProducts('cakes');
@@ -810,7 +941,6 @@ function CakesPageContent() {
     if (v === 'popular') params.delete('sort');
     else params.set('sort', v);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    setMobileSortOpen(false);
   };
 
   const onClearAll = () => {
@@ -824,12 +954,19 @@ function CakesPageContent() {
     selectedPriceRanges.length +
     selectedSubcategories.length;
 
-  // Active primary weight for card display
   const activeWeightFilter = selectedWeights[0];
 
   // Filter & sort products
   const filteredProducts = useMemo(() => {
-    let result = [...cakeProducts].filter((p) => p.isAvailable);
+    // "but price set na kiya ho ya Zero ho wo Product Disaply hoga nahi"
+    let result = [...cakeProducts].filter((p) => {
+      if (!p.isAvailable) return false;
+      const validVariants = (p.variants || []).filter((v) => {
+        const mrp = (v.compareAtPrice && v.compareAtPrice > 0) ? v.compareAtPrice : v.price;
+        return mrp && Number(mrp) > 0;
+      });
+      return validVariants.length > 0;
+    });
 
     // Search query
     if (searchQuery.trim()) {
@@ -844,7 +981,7 @@ function CakesPageContent() {
       );
     }
 
-    // Weight filter (500g, 1kg, 1.5kg, 2kg)
+    // Weight filter (250g, 500g, 1kg, 1.5kg, 2kg)
     if (selectedWeights.length > 0) {
       result = result.filter((p) =>
         selectedWeights.some((w) => {
@@ -854,14 +991,12 @@ function CakesPageContent() {
       );
     }
 
-    // Flavour filter (smart matching across flavour, name, subcategory)
+    // Flavour filter
     if (selectedFlavours.length > 0) {
-      result = result.filter((p) =>
-        selectedFlavours.some((f) => matchesFlavour(p, f))
-      );
+      result = result.filter((p) => selectedFlavours.some((f) => matchesFlavour(p, f)));
     }
 
-    // Subcategory filter (supports multiple categories per product)
+    // Subcategory filter
     if (selectedSubcategories.length > 0) {
       result = result.filter((p) => {
         if (!p.subcategory) return false;
@@ -875,47 +1010,44 @@ function CakesPageContent() {
           let target = slugify(sub);
           if (target.endsWith('-cakes')) target = target.replace(/-cakes$/, '');
           else if (target.endsWith('-cake')) target = target.replace(/-cake$/, '');
-          return pSubs.some(pSub => pSub === target || pSub.includes(target) || target.includes(pSub));
+          return pSubs.some((pSub) => pSub === target || pSub.includes(target) || target.includes(pSub));
         });
       });
     }
 
-    // Occasion query param support (e.g. /cakes?occasion=birthday)
-    const occasionParam = searchParams.get('occasion');
-    if (occasionParam) {
-      const occTarget = slugify(occasionParam);
-      result = result.filter((p) => {
-        const text = `${p.name} ${p.subcategory || ''} ${(p.tags || []).join(' ')}`.toLowerCase();
-        return text.includes(occTarget);
-      });
-    }
-
-    // Price range filter
+    // Price range filter (using MRP price)
     if (selectedPriceRanges.length > 0) {
       const ranges = selectedPriceRanges
         .map((v) => PRICE_RANGES.find((r) => r.value === v)!)
         .filter(Boolean);
       result = result.filter((p) => {
-        const lowestPrice = Math.min(...p.variants.map((v) => v.price));
+        const lowestPrice = Math.min(
+          ...(p.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price))
+        );
         return ranges.some((r) => lowestPrice >= r.min && lowestPrice <= r.max);
       });
     }
 
-    // Sort
+    // Sort (using MRP price for price-asc and price-desc)
     switch (sortBy) {
       case 'price-asc':
-        result.sort((a, b) => a.variants[0].price - b.variants[0].price);
+        result.sort((a, b) => {
+          const minA = Math.min(...(a.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          const minB = Math.min(...(b.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          return minA - minB;
+        });
         break;
       case 'price-desc':
-        result.sort((a, b) => b.variants[0].price - a.variants[0].price);
+        result.sort((a, b) => {
+          const minA = Math.min(...(a.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          const minB = Math.min(...(b.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          return minB - minA;
+        });
         break;
       case 'newest':
         result.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         break;
-      case 'rating':
-        result.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
-        break;
-      default: // popular — bestseller first, then by reviews
+      default: // popular
         result.sort((a, b) => {
           if (a.isBestseller !== b.isBestseller) return a.isBestseller ? -1 : 1;
           return b.reviewCount - a.reviewCount;
@@ -933,84 +1065,11 @@ function CakesPageContent() {
     searchQuery,
   ]);
 
-  // Mobile Filter Content
-  const mobileFilterContent = (
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-2">Cake Weight</h4>
-        <div className="grid grid-cols-2 gap-2">
-          {WEIGHT_OPTIONS.map((opt) => (
-            <FilterCheckbox
-              key={opt.value}
-              label={opt.label}
-              checked={selectedWeights.includes(opt.value)}
-              onChange={() => onToggleWeight(opt.value)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="pt-3 border-t border-gray-150">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-2">Flavours</h4>
-        <div className="space-y-1 max-h-48 overflow-y-auto">
-          {FLAVOUR_OPTIONS.map((opt) => (
-            <FilterCheckbox
-              key={opt.value}
-              label={opt.label}
-              checked={selectedFlavours.includes(opt.value)}
-              onChange={() => onToggleFlavour(opt.value)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="pt-3 border-t border-gray-150">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-2">Categories</h4>
-        <div className="space-y-1 max-h-48 overflow-y-auto">
-          {getSubcategories(cakeProducts).map((opt) => (
-            <FilterCheckbox
-              key={opt.value}
-              label={opt.label}
-              checked={selectedSubcategories.includes(opt.value)}
-              onChange={() => onToggleSubcategory(opt.value)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="pt-3 border-t border-gray-150">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-2">Price Range</h4>
-        <div className="space-y-1">
-          {PRICE_RANGES.map((opt) => (
-            <FilterCheckbox
-              key={opt.value}
-              label={opt.label}
-              checked={selectedPriceRanges.includes(opt.value)}
-              onChange={() => onTogglePriceRange(opt.value)}
-            />
-          ))}
-        </div>
-      </div>
-
-      {activeFilterCount > 0 && (
-        <button
-          onClick={() => {
-            onClearAll();
-            setMobileFiltersOpen(false);
-          }}
-          className="mt-4 w-full rounded-xl border border-brand-rose/40 py-3 text-sm font-semibold text-brand-rose hover:bg-rose-50 transition-colors cursor-pointer"
-        >
-          Clear All Filters
-        </button>
-      )}
-    </div>
-  );
-
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center text-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose mb-4"></div>
-        <p className="text-sm font-medium text-gray-500">Loading cakes & variants...</p>
+        <p className="text-sm font-medium text-gray-500">Loading cakes...</p>
       </div>
     );
   }
@@ -1018,262 +1077,255 @@ function CakesPageContent() {
   return (
     <>
       <SEOHead
-        title="Online Cake Delivery in Vadodara — Fresh & Handcrafted Cakes"
-        description="Order fresh handcrafted cakes online in Vadodara — Chocolate Truffle, Red Velvet, Black Forest, Butterscotch & more in 500g, 1kg, 1.5kg, 2kg variants."
-        keywords="cakes, birthday cakes, chocolate cake, red velvet cake, order cake online, Vadodara, eggless cake, 500g, 1kg, 1.5kg, 2kg cake delivery"
+        title="Online Cake Delivery in Vadodara — Fresh Handcrafted Cakes"
+        description="Browse our luxury handcrafted cake collection in Vadodara with same-day express delivery."
       />
 
-      <motion.div initial="hidden" animate="visible" variants={pageVariants} className="bg-white">
-        {/* ── Top Header / Hero Section ───────────── */}
-        <section className="bg-white border-b border-gray-150 pt-8 pb-6">
+      <motion.div initial="hidden" animate="visible" variants={pageVariants} className="bg-white min-h-screen">
+        {/* ── Top Category Bubble Carousel (Giftlaya Style) ──── */}
+        <section className="bg-white pt-6 pb-4 border-b border-gray-100">
           <Container as="div" size="xl">
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-xs sm:text-sm">
-              <Link href="/" className="flex items-center gap-1 text-gray-500 hover:text-brand-rose transition-colors">
+            <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-xs text-gray-500">
+              <Link href="/" className="flex items-center gap-1 hover:text-brand-rose transition-colors">
                 <Home className="h-3.5 w-3.5" />
                 Home
               </Link>
-              <ChevronRight className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-gray-900 font-semibold">Cakes</span>
+              <ChevronRight className="h-3 w-3 text-gray-400" />
+              <span className="text-gray-900 font-medium">Cakes</span>
             </nav>
 
-            {/* Title & Trust Highlights */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                  Online Cake Delivery in <span className="text-brand-rose">Vadodara</span>
-                </h1>
-                <div className="mt-2.5 flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
-                  <div className="flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200/80 px-2.5 py-0.5 text-amber-700 font-semibold">
-                    <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
-                    4.8 (2,450+ Ratings)
-                  </div>
-                  <span className="hidden sm:inline text-gray-300">•</span>
-                  <span className="flex items-center gap-1 text-gray-700 font-medium">
-                    <Scale className="h-3.5 w-3.5 text-brand-rose" />
-                    Available in 500g, 1kg, 1.5kg & 2kg
-                  </span>
-                  <span className="hidden sm:inline text-gray-300">•</span>
-                  <span className="flex items-center gap-1 text-emerald-700 font-medium">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    100% Eggless Available
-                  </span>
-                  <span className="hidden sm:inline text-gray-300">•</span>
-                  <span className="flex items-center gap-1 text-brand-rose font-medium">
-                    ⚡ 90-Min SuperFast Delivery
-                  </span>
-                </div>
-              </div>
-            </div>
+            {/* Visual Round Category Cards */}
+            <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+              {CATEGORY_BUBBLES.map((cat) => {
+                const isActive =
+                  (cat.type === 'weight' && selectedWeights.includes(cat.value)) ||
+                  (cat.type === 'flavour' && selectedFlavours.includes(cat.value)) ||
+                  (cat.type === 'subcategory' && selectedSubcategories.includes(cat.value));
 
-            {/* ── Flavour Quick Filter Cards ── */}
-            <div className="mt-6 pt-5 border-t border-gray-150">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                  Popular Cake Flavours
-                </h2>
-                {selectedFlavours.length > 0 && (
+                const handleClick = () => {
+                  if (cat.type === 'weight') onToggleWeight(cat.value);
+                  else if (cat.type === 'flavour') onToggleFlavour(cat.value);
+                  else if (cat.type === 'subcategory') onToggleSubcategory(cat.value);
+                };
+
+                return (
                   <button
-                    onClick={() => updateParam('flavour', [])}
-                    className="text-xs text-brand-rose font-semibold hover:underline cursor-pointer"
+                    key={cat.id}
+                    type="button"
+                    onClick={handleClick}
+                    className={cn(
+                      'group flex flex-col items-center justify-center p-2.5 rounded-2xl border shrink-0 transition-all duration-200 cursor-pointer w-24 sm:w-28 text-center',
+                      isActive
+                        ? 'bg-rose-50 border-brand-rose ring-2 ring-brand-rose/20 shadow-sm'
+                        : 'bg-white border-rose-100/70 hover:border-brand-rose/50 hover:bg-rose-50/20 hover:shadow-xs'
+                    )}
                   >
-                    Clear Flavour Filter
-                  </button>
-                )}
-              </div>
-
-              <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2 sm:gap-3">
-                {QUICK_FLAVOURS.map((item) => {
-                  const isSelected = selectedFlavours.includes(item.value);
-                  return (
-                    <button
-                      key={item.value}
-                      onClick={() => onToggleFlavour(item.value)}
+                    <div className="relative aspect-square w-16 sm:w-18 overflow-hidden rounded-full border-2 border-white shadow-xs bg-gray-50 mb-1.5">
+                      <img
+                        src={cat.image}
+                        alt={cat.label}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <span
                       className={cn(
-                        'group flex flex-col items-center rounded-2xl p-2 sm:p-2.5 border transition-all duration-200 cursor-pointer text-center',
-                        isSelected
-                          ? 'bg-rose-50/90 border-brand-rose ring-2 ring-brand-rose/20 shadow-sm'
-                          : 'bg-white border-gray-200 hover:border-brand-rose/50 hover:bg-rose-50/20 hover:shadow-xs'
+                        'text-[11px] sm:text-xs font-semibold leading-tight line-clamp-1',
+                        isActive ? 'text-brand-rose font-bold' : 'text-gray-800 group-hover:text-brand-rose'
                       )}
                     >
-                      <div className="relative aspect-square w-14 sm:w-16 overflow-hidden rounded-xl bg-gray-100 mb-1.5">
-                        <img
-                          src={item.image}
-                          alt={item.label}
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-                      <span
-                        className={cn(
-                          'text-[11px] sm:text-xs font-semibold leading-tight line-clamp-1',
-                          isSelected ? 'text-brand-rose font-bold' : 'text-gray-800 group-hover:text-brand-rose'
-                        )}
-                      >
-                        {item.label}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+                      {cat.label}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </Container>
         </section>
 
-        {/* ── Main Content Section with Sticky Sidebar ─────── */}
-        <section className="bg-[#FAF9F6] min-h-screen py-8 pb-24">
+        {/* ── Sort, Count & Controls Bar ──── */}
+        <section className="bg-white border-b border-gray-100 py-4">
           <Container as="div" size="xl">
-            {/* Top Controls Bar: Search + Product Count + Sort */}
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 pb-6 mb-6 border-b border-gray-200/80"
-            >
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search cakes by name, flavour, weight..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full rounded-xl bg-white border border-gray-200 py-2.5 pl-10 pr-9 text-sm text-gray-900 placeholder:text-gray-400 shadow-sm focus:outline-none focus:border-brand-rose focus:ring-2 focus:ring-brand-rose/20 transition-all"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                )}
-              </div>
-
-              {/* Count & Sort Controls */}
-              <div className="flex flex-wrap items-center justify-between lg:justify-end gap-3 sm:gap-4">
-                <span className="text-sm font-semibold text-gray-700">
-                  {filteredProducts.length} {filteredProducts.length === 1 ? 'cake' : 'cakes'}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              {/* Product Count & Search */}
+              <div className="flex items-center gap-3">
+                <span className="text-sm font-semibold text-gray-500">
+                  {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
                 </span>
 
-                {/* Quick Sort Pills */}
-                <div className="hidden sm:flex items-center gap-1.5 p-1 bg-white border border-gray-200 rounded-xl shadow-sm text-xs font-medium">
-                  <span className="px-2 py-1 text-gray-400 flex items-center gap-1 font-semibold uppercase tracking-wider text-[10px]">
-                    <ArrowUpDown className="h-3 w-3" /> Sort:
-                  </span>
-                  {SORT_OPTIONS.map((opt) => {
-                    const isActive = sortBy === opt.value;
-                    return (
-                      <button
-                        key={opt.value}
-                        onClick={() => onSetSort(opt.value)}
-                        className={cn(
-                          'px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer',
-                          isActive
-                            ? 'bg-brand-rose text-white shadow-xs font-semibold'
-                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                        )}
-                      >
-                        {opt.label}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Mobile Sort Dropdown */}
-                <div className="sm:hidden flex items-center">
-                  <select
-                    value={sortBy}
-                    onChange={(e) => onSetSort(e.target.value)}
-                    className="bg-white border border-gray-200 text-gray-800 text-xs font-medium rounded-xl px-3 py-2 shadow-sm focus:outline-none focus:border-brand-rose"
-                  >
-                    {SORT_OPTIONS.map((opt) => (
-                      <option key={opt.value} value={opt.value}>
-                        Sort: {opt.label}
-                      </option>
-                    ))}
-                  </select>
+                {/* Quick Search */}
+                <div className="relative hidden md:block w-64">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search cakes..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full rounded-full bg-gray-50 border border-gray-200 py-1.5 pl-8 pr-7 text-xs text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-rose focus:bg-white transition-all"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  )}
                 </div>
               </div>
-            </motion.div>
 
-            {/* Layout: Sticky Left Filter + Product Grid */}
-            <div className="flex gap-8 items-start">
-              {/* Monginis-style Sticky Left Filter */}
-              <FilterSidebar
-                selectedWeights={selectedWeights}
-                selectedFlavours={selectedFlavours}
-                selectedPriceRanges={selectedPriceRanges}
-                selectedSubcategories={selectedSubcategories}
-                onToggleWeight={onToggleWeight}
-                onToggleFlavour={onToggleFlavour}
-                onTogglePriceRange={onTogglePriceRange}
-                onToggleSubcategory={onToggleSubcategory}
-                onClearAll={onClearAll}
-                activeFilterCount={activeFilterCount}
-                products={cakeProducts}
-              />
+              {/* Sort Pills + Filter Toggle Buttons */}
+              <div className="flex items-center gap-2 self-end sm:self-auto overflow-x-auto pb-1 sm:pb-0">
+                {SORT_OPTIONS.map((opt) => {
+                  const isActive = sortBy === opt.value;
+                  return (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      onClick={() => onSetSort(opt.value)}
+                      className={cn(
+                        'px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer',
+                        isActive
+                          ? 'bg-[#7B1113] text-white shadow-xs'
+                          : 'bg-white text-gray-700 border border-gray-200 hover:border-brand-rose/60 hover:text-brand-rose'
+                      )}
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
+
+                {/* Desktop Toggle Left Sidebar Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowSidebar(!showSidebar)}
+                  className="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border border-gray-200 text-gray-800 hover:border-brand-rose hover:text-brand-rose shadow-xs transition-all cursor-pointer whitespace-nowrap"
+                  title="Toggle left filter panel"
+                >
+                  <SlidersHorizontal className="h-3.5 w-3.5" />
+                  <span>{showSidebar ? 'Hide Panel' : 'Show Panel'}</span>
+                  {activeFilterCount > 0 && (
+                    <span className="flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-brand-rose text-[10px] font-bold text-white">
+                      {activeFilterCount}
+                    </span>
+                  )}
+                </button>
+
+                {/* Mobile Filter Drawer Trigger Button */}
+                <button
+                  type="button"
+                  onClick={() => setFilterDrawerOpen(true)}
+                  className={cn(
+                    'lg:hidden flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer whitespace-nowrap',
+                    activeFilterCount > 0
+                      ? 'bg-rose-50 border-brand-rose text-brand-rose'
+                      : 'bg-white border-gray-200 text-gray-800 hover:border-brand-rose hover:text-brand-rose shadow-xs'
+                  )}
+                >
+                  <SlidersHorizontal className="h-3.5 w-3.5" />
+                  <span>Filters</span>
+                  {activeFilterCount > 0 && (
+                    <span className="flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-brand-rose text-[10px] font-bold text-white">
+                      {activeFilterCount}
+                    </span>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Active Filter Chips */}
+            {activeFilterCount > 0 && (
+              <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+                <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                  Active:
+                </span>
+                {selectedWeights.map((w) => (
+                  <button
+                    key={w}
+                    onClick={() => onToggleWeight(w)}
+                    className="flex items-center gap-1 rounded-full bg-rose-50 border border-brand-rose/40 px-2.5 py-0.5 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
+                  >
+                    <span>{w}</span>
+                    <X className="h-3 w-3" />
+                  </button>
+                ))}
+                {selectedFlavours.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => onToggleFlavour(f)}
+                    className="flex items-center gap-1 rounded-full bg-rose-50 border border-brand-rose/40 px-2.5 py-0.5 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
+                  >
+                    <span>{FLAVOUR_OPTIONS.find((o) => o.value === f)?.label || f}</span>
+                    <X className="h-3 w-3" />
+                  </button>
+                ))}
+                {selectedSubcategories.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => onToggleSubcategory(s)}
+                    className="flex items-center gap-1 rounded-full bg-rose-50 border border-brand-rose/40 px-2.5 py-0.5 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
+                  >
+                    <span>{s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+                    <X className="h-3 w-3" />
+                  </button>
+                ))}
+                {selectedPriceRanges.map((p) => (
+                  <button
+                    key={p}
+                    onClick={() => onTogglePriceRange(p)}
+                    className="flex items-center gap-1 rounded-full bg-rose-50 border border-brand-rose/40 px-2.5 py-0.5 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
+                  >
+                    <span>{PRICE_RANGES.find((r) => r.value === p)?.label}</span>
+                    <X className="h-3 w-3" />
+                  </button>
+                ))}
+                <button
+                  onClick={onClearAll}
+                  className="text-xs font-semibold text-gray-500 hover:text-brand-rose underline ml-2 cursor-pointer"
+                >
+                  Clear All
+                </button>
+              </div>
+            )}
+          </Container>
+        </section>
+
+        {/* ── Main Content: Left Filter Panel + Product Grid ──── */}
+        <section className="py-8 pb-20">
+          <Container as="div" size="xl">
+            <div className="flex gap-6 lg:gap-8 items-start">
+              {/* Leftside Sticky Filter Panel */}
+              {showSidebar && (
+                <div className="hidden lg:block">
+                  <LeftFilterSidebar
+                    selectedWeights={selectedWeights}
+                    selectedFlavours={selectedFlavours}
+                    selectedPriceRanges={selectedPriceRanges}
+                    selectedSubcategories={selectedSubcategories}
+                    onToggleWeight={onToggleWeight}
+                    onToggleFlavour={onToggleFlavour}
+                    onTogglePriceRange={onTogglePriceRange}
+                    onToggleSubcategory={onToggleSubcategory}
+                    onClearAll={onClearAll}
+                    activeFilterCount={activeFilterCount}
+                    products={cakeProducts}
+                  />
+                </div>
+              )}
 
               {/* Product Grid Area */}
               <div className="flex-1 min-w-0">
-                {/* Active Filter Badges */}
-                {activeFilterCount > 0 && (
-                  <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2 mb-6">
-                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mr-1">
-                      Active:
-                    </span>
-                    {selectedWeights.map((w) => (
-                      <button
-                        key={w}
-                        onClick={() => onToggleWeight(w)}
-                        className="flex items-center gap-1.5 rounded-full bg-rose-50 border border-brand-rose/40 px-3 py-1 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
-                      >
-                        <span>Weight: {w}</span>
-                        <X className="h-3 w-3" />
-                      </button>
-                    ))}
-                    {selectedFlavours.map((v) => (
-                      <button
-                        key={v}
-                        onClick={() => onToggleFlavour(v)}
-                        className="flex items-center gap-1.5 rounded-full bg-rose-50 border border-brand-rose/40 px-3 py-1 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
-                      >
-                        <span>Flavour: {FLAVOUR_OPTIONS.find((o) => o.value === v)?.label || v}</span>
-                        <X className="h-3 w-3" />
-                      </button>
-                    ))}
-                    {selectedSubcategories.map((v) => (
-                      <button
-                        key={v}
-                        onClick={() => onToggleSubcategory(v)}
-                        className="flex items-center gap-1.5 rounded-full bg-rose-50 border border-brand-rose/40 px-3 py-1 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
-                      >
-                        <span>{v.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
-                        <X className="h-3 w-3" />
-                      </button>
-                    ))}
-                    {selectedPriceRanges.map((v) => (
-                      <button
-                        key={v}
-                        onClick={() => onTogglePriceRange(v)}
-                        className="flex items-center gap-1.5 rounded-full bg-rose-50 border border-brand-rose/40 px-3 py-1 text-xs font-medium text-brand-rose hover:bg-rose-100 transition-colors cursor-pointer"
-                      >
-                        <span>{PRICE_RANGES.find((o) => o.value === v)?.label}</span>
-                        <X className="h-3 w-3" />
-                      </button>
-                    ))}
-                    <button
-                      onClick={onClearAll}
-                      className="text-xs font-semibold text-gray-500 hover:text-brand-rose underline ml-1 cursor-pointer"
-                    >
-                      Clear all
-                    </button>
-                  </motion.div>
-                )}
-
                 {filteredProducts.length > 0 ? (
                   <motion.div
                     variants={pageVariants}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
+                    className={cn(
+                      'grid gap-4 sm:gap-5 lg:gap-6',
+                      showSidebar
+                        ? 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4'
+                        : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'
+                    )}
                   >
                     {filteredProducts.map((product, index) => (
                       <ProductCard
@@ -1286,18 +1338,13 @@ function CakesPageContent() {
                   </motion.div>
                 ) : (
                   /* Empty State */
-                  <motion.div
-                    variants={fadeUp}
-                    className="flex flex-col items-center justify-center py-16 px-4 bg-white border border-gray-200 rounded-3xl text-center shadow-sm"
-                  >
+                  <div className="flex flex-col items-center justify-center py-16 px-4 bg-gray-50 rounded-3xl text-center border border-gray-200">
                     <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 border border-rose-100">
                       <PackageOpen className="h-8 w-8 text-brand-rose" />
                     </div>
-                    <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
-                      No cakes found
-                    </h3>
+                    <h3 className="font-display text-xl font-bold text-gray-900 mb-2">No cakes found</h3>
                     <p className="text-gray-500 text-sm max-w-md mb-6">
-                      We couldn't find any cakes matching your selected filters. Try choosing a different weight, flavour or clear your filters to view all cakes.
+                      We couldn't find any cakes matching your selected filters. Try choosing a different option or clear all filters.
                     </p>
                     <button
                       onClick={onClearAll}
@@ -1305,62 +1352,30 @@ function CakesPageContent() {
                     >
                       Clear All Filters
                     </button>
-                  </motion.div>
+                  </div>
                 )}
               </div>
             </div>
           </Container>
         </section>
 
-        {/* ── Mobile Bottom Bar ────────────────── */}
-        <div className="fixed bottom-0 left-0 right-0 z-[400] lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-xl shadow-lg">
-          <div className="grid grid-cols-2 divide-x divide-gray-200">
-            <button
-              onClick={() => setMobileFiltersOpen(true)}
-              className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-gray-800 hover:text-brand-rose transition-colors cursor-pointer"
-            >
-              <SlidersHorizontal className="h-4 w-4" />
-              Filters
-              {activeFilterCount > 0 && (
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-rose text-[10px] font-bold text-white">
-                  {activeFilterCount}
-                </span>
-              )}
-            </button>
-            <button
-              onClick={() => setMobileSortOpen(true)}
-              className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-gray-800 hover:text-brand-rose transition-colors cursor-pointer"
-            >
-              <ArrowUpDown className="h-4 w-4" />
-              Sort
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Filter Sheet */}
-        <MobileSheet isOpen={mobileFiltersOpen} onClose={() => setMobileFiltersOpen(false)} title="Filter Cakes">
-          {mobileFilterContent}
-        </MobileSheet>
-
-        {/* Mobile Sort Sheet */}
-        <MobileSheet isOpen={mobileSortOpen} onClose={() => setMobileSortOpen(false)} title="Sort Cakes">
-          <div className="space-y-1.5">
-            {SORT_OPTIONS.map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() => onSetSort(opt.value)}
-                className={cn(
-                  'w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer',
-                  sortBy === opt.value
-                    ? 'bg-rose-50 text-brand-rose font-bold border border-brand-rose/30'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-                )}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-        </MobileSheet>
+        {/* ── Slide-Over Filter Drawer (Mobile) ───────────── */}
+        <FilterDrawer
+          isOpen={filterDrawerOpen}
+          onClose={() => setFilterDrawerOpen(false)}
+          selectedWeights={selectedWeights}
+          selectedFlavours={selectedFlavours}
+          selectedPriceRanges={selectedPriceRanges}
+          selectedSubcategories={selectedSubcategories}
+          onToggleWeight={onToggleWeight}
+          onToggleFlavour={onToggleFlavour}
+          onTogglePriceRange={onTogglePriceRange}
+          onToggleSubcategory={onToggleSubcategory}
+          onClearAll={onClearAll}
+          activeFilterCount={activeFilterCount}
+          products={cakeProducts}
+          totalMatchingCount={filteredProducts.length}
+        />
       </motion.div>
     </>
   );
@@ -1372,7 +1387,7 @@ export default function CakesPage() {
       fallback={
         <div className="min-h-screen bg-white flex flex-col items-center justify-center text-gray-900">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-rose mb-4"></div>
-          <p className="text-sm font-medium text-gray-500">Loading delicious cakes...</p>
+          <p className="text-sm font-medium text-gray-500">Loading cakes...</p>
         </div>
       }
     >
