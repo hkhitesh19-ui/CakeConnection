@@ -339,7 +339,7 @@ export default function CakesQuickPricingPage() {
       });
 
       const data = await res.json();
-      if (data.success) {
+      if (data.success && (data.updatedCount === undefined || data.updatedCount > 0)) {
         // Mark as saved
         setJustSavedIds((prev) => new Set(prev).add(p.id));
         setTimeout(() => {
@@ -376,9 +376,9 @@ export default function CakesQuickPricingPage() {
 
         // Clear edit state for this product
         handleResetProduct(p.id);
-        showToast(`✓ "${row.name}" updated successfully!`);
+        showToast(`✓ "${row.name}" updated and saved permanently!`);
       } else {
-        showToast(data.message || 'Failed to update cake', 'error');
+        showToast(data.message || data.error || 'Failed to update cake', 'error');
       }
     } catch (err: any) {
       console.error('Error saving cake:', err);
@@ -799,7 +799,7 @@ export default function CakesQuickPricingPage() {
         <div className="flex flex-col items-center justify-center py-24 bg-white rounded-3xl border border-gray-200 shadow-xs">
           <div className="w-12 h-12 border-4 border-rose-200 border-t-brand-rose rounded-full animate-spin mb-4" />
           <p className="text-gray-700 font-semibold text-sm">Loading 101 cakes & pricing data...</p>
-          <p className="text-gray-400 text-xs mt-1">Connecting to Supabase database</p>
+          <p className="text-gray-400 text-xs mt-1">Loading cakes catalog...</p>
         </div>
       ) : filteredProducts.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-gray-200 shadow-xs text-center px-4">
@@ -929,7 +929,7 @@ export default function CakesQuickPricingPage() {
                   {/* Just saved banner */}
                   {isJustSaved && (
                     <div className="absolute bottom-0 inset-x-0 bg-emerald-600 text-white text-[10px] font-bold text-center py-1 tracking-wider uppercase flex items-center justify-center gap-1">
-                      <Check className="w-3 h-3" /> Saved to Supabase
+                      <Check className="w-3 h-3" /> Saved Permanently
                     </div>
                   )}
                 </div>

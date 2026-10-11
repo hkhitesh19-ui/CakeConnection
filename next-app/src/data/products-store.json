@@ -1,0 +1,45 @@
+{
+  "real-cake-118": {
+    "id": "real-cake-118",
+    "name": "Mini Black Forest Cake (250g)",
+    "slug": "mini-black-forest-cake-250g",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/mini-black-forest-cake-250g.png",
+        "alt": "Mini Black Forest Cake (250g)"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-mini-black-forest-cake-250g-250g",
+        "weight": "250g",
+        "price": 429,
+        "compareAtPrice": 349,
+        "sku": "CK-mini-black-forest-cake-250g-250G",
+        "stock": 100000
+      }
+    ],
+    "price": 429,
+    "category": "cakes",
+    "subcategory": "mini",
+    "flavour": "black-forest",
+    "description": "Freshly baked Mini Black Forest Cake (250g) in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Mini Black Forest Cake (250g)",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "black-forest",
+      "mini",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-10-11T11:33:31.151Z"
+  }
+}

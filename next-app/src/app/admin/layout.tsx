@@ -8,19 +8,25 @@ import {
   Tag, 
   Users, 
   Settings, 
-  LogOut,
-  Bell,
-  Menu,
-  LayoutTemplate,
-  FolderTree,
-  Home,
-  Search,
-  FileText,
-  Truck,
-  Sparkles,
-  IndianRupee
+  LogOut, 
+  Bell, 
+  Menu, 
+  LayoutTemplate, 
+  FolderTree, 
+  Home, 
+  Search, 
+  FileText, 
+  Truck, 
+  Sparkles, 
+  IndianRupee,
+  Lock,
+  Mail,
+  Eye,
+  EyeOff,
+  Loader2,
+  ShieldCheck
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
@@ -43,14 +49,172 @@ const ADMIN_LINKS = [
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleLogout = () => {
-    router.push('/');
+  // Check auth cookie on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch('/api/admin/auth');
+        const data = await res.json();
+        setIsAuthenticated(!!data.authenticated);
+      } catch {
+        // Fallback cookie check
+        const isAuth = document.cookie.includes('admin_auth=authenticated');
+        setIsAuthenticated(isAuth);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const handleLoginSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoginError('');
+    setLoginLoading(true);
+
+    try {
+      const res = await fetch('/api/admin/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setIsAuthenticated(true);
+        router.refresh();
+      } else {
+        setLoginError(data.error || 'Invalid Admin ID or Password');
+      }
+    } catch {
+      setLoginError('Server error while authenticating');
+    } finally {
+      setLoginLoading(false);
+    }
   };
 
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/admin/auth', { method: 'DELETE' });
+    } catch {
+      // ignore
+    }
+    document.cookie = 'admin_auth=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+    setIsAuthenticated(false);
+    router.push('/admin');
+  };
+
+  // Loading state while checking auth
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3 text-white">
+          <Loader2 className="w-8 h-8 animate-spin text-rose-500" />
+          <p className="text-sm font-medium text-slate-300">Verifying Admin Access...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Not authenticated: Show Login Screen
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-rose-950 flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          {/* Brand Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-rose-500/10 text-rose-500 mb-4 border border-rose-500/20 shadow-lg shadow-rose-500/10">
+              <ShieldCheck className="w-8 h-8" />
+            </div>
+            <h1 className="text-2xl font-bold text-white tracking-tight">CakeConnection Admin</h1>
+            <p className="text-slate-400 text-sm mt-1">Sign in with authorized credentials to continue</p>
+          </div>
+
+          {/* Login Card */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 shadow-2xl backdrop-blur-xl">
+            <form onSubmit={handleLoginSubmit} className="space-y-5">
+              {loginError && (
+                <div className="p-3.5 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm font-medium text-center">
+                  {loginError}
+                </div>
+              )}
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  Admin ID / Email
+                </label>
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    placeholder="admin@cakeconnection.in"
+                    className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-slate-600 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  Password
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="••••••••••••"
+                    className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-12 pr-12 py-3 text-white placeholder:text-slate-600 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all text-sm"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors"
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loginLoading}
+                className="w-full py-3.5 bg-rose-600 hover:bg-rose-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+              >
+                {loginLoading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Verifying...</span>
+                  </>
+                ) : (
+                  <span>Sign In to Admin Panel</span>
+                )}
+              </button>
+            </form>
+          </div>
+
+          <p className="text-center text-slate-500 text-xs mt-6">
+            Authorized administrator access only • CakeConnection Vadodara
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Authenticated Layout
   const SidebarContent = () => (
     <div className="flex flex-col h-full bg-white border-r border-gray-200">
       <div className="p-6">
@@ -82,10 +246,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="p-4 border-t border-gray-200">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 w-full px-4 py-3 text-gray-600 hover:text-brand-rose hover:bg-brand-rose/10 rounded-xl transition-colors"
+          className="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium text-sm"
         >
           <LogOut className="w-5 h-5" />
-          <span className="font-medium">Logout</span>
+          <span>Logout</span>
         </button>
       </div>
     </div>
@@ -166,6 +330,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <p className="text-sm font-medium">Admin User</p>
                 <p className="text-xs text-gray-500">Superadmin</p>
               </div>
+              <button
+                onClick={handleLogout}
+                title="Logout"
+                className="p-2 text-gray-400 hover:text-red-600 transition-colors rounded-lg hover:bg-gray-100 ml-2"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </header>
