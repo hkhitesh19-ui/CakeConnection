@@ -9,20 +9,19 @@ Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "📦 Packaging CakeConnection Next.js..." -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 
-# Remove old archive if exists
-if (Test-Path "project.tar.gz") {
-    Remove-Item "project.tar.gz" -Force
-}
-
 # Create tar.gz archive excluding bulky and build directories
-tar -czf project.tar.gz --exclude="node_modules" --exclude=".next" --exclude=".git" .
+$archivePath = "..\deploy_payload.tar.gz"
+if (Test-Path $archivePath) {
+    Remove-Item $archivePath -Force
+}
+tar -czf $archivePath --exclude="node_modules" --exclude=".next" --exclude=".git" .
 
-Write-Host "✅ Archive created: project.tar.gz" -ForegroundColor Green
+Write-Host "✅ Archive created: $archivePath" -ForegroundColor Green
 Write-Host "🚀 Uploading to VPS ($VPS_IP)..." -ForegroundColor Yellow
 
 # Ensure remote folder exists and transfer
 ssh ${VPS_USER}@${VPS_IP} "mkdir -p ${REMOTE_DIR}"
-scp project.tar.gz ${VPS_USER}@${VPS_IP}:${REMOTE_DIR}/
+scp $archivePath ${VPS_USER}@${VPS_IP}:${REMOTE_DIR}/project.tar.gz
 
 Write-Host "✅ File uploaded successfully!" -ForegroundColor Green
 Write-Host "📂 Extracting files on VPS and launching deployment..." -ForegroundColor Yellow
