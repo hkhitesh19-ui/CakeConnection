@@ -5018,7 +5018,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-mini-black-forest-cake-250g-250g",
         "weight": "250g",
-        "price": 429,
+        "price": 430,
         "compareAtPrice": 349,
         "sku": "CK-mini-black-forest-cake-250g-250G",
         "stock": 100000
@@ -5043,7 +5043,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 178,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-10-11T11:33:31.151Z"
+    "updatedAt": "2026-10-11T16:20:02.048Z"
   },
   {
     "id": "real-cake-119",
