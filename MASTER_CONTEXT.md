@@ -2,128 +2,108 @@
 
 > [!IMPORTANT]
 > **[System Override: Enable Ultra-Low Token Mode]**
-> 1. pure files ko read karne ki jagah pehle Graphify database (graphify query) se reference lo.
+> 1. Pure files ko read karne ki jagah pehle Graphify database (graphify query) se reference lo.
 > 2. Koi bhi code edit karte waqt sirf surgical changes (chote specific patches) karo, poore code files output mat karo.
 > 3. Har query ka reply bilkul concise (chota aur seedha), simple words me aur sirf points me do.
 > 4. Faltu details, background explanations ya code explanations mat likho jab tak mai khud na puchu.
+> 5. **Date, TimeStamp & Git ID Rule:** Every response must start with the current Date & TimeStamp (IST) and Local Git Commit Hash.
+> 6. Context Counter 80% reach hone par session summary aur Master Context Document update offer karo.
 
+---
 
+> **Single Source of Truth** for project architecture, server credentials, live deployment, decisions, and system capabilities.
+> **Last Updated:** 2026-10-12 (IST).
+> **Current Synchronized Git Commit ID:** `5d254a5`
 
-> Single source of truth for project state, decisions, and pending work.
-> Paste this into a new chat/IDE session to continue without losing context.
-> Last updated: 2026-06-12 (IST).
+---
 
-## 1. Project Overview
-- **Name:** Cake Connection — e-commerce site for cakes, flowers & gift combos.
-- **Market:** Vadodara, Gujarat, India (same-day delivery focus).
-- **Status:** ~80% built; pre-deployment hardening in progress.
-- **GitLab project:** `cakeconnection-group/CakeConnection-project` (project ID `83111437`).
-- **Local path:** `F:\Cake_Connection_Website_May2026`.
-- **Default branch:** `main`. Visibility: private.
-- **Deploy target (planned):** AWS Amplify (domain migrating Hostinger → AWS).
+## 1. Project Overview & Environments
+- **Project Name:** CakeConnection — Online 100% Eggless Live Cake Bakery, Flowers & Celebrations.
+- **Market:** Vadodara, Gujarat, India (2-hour express delivery + guaranteed midnight delivery).
+- **Live Production URL:** [https://cakeconnection.in](https://cakeconnection.in)
+- **Local Working Directory:** `F:\HITESH\CakeConnection-project-June2026\CakeConnection-project-June2026\next-app`
+- **GitHub Repository (Public):** [https://github.com/hkhitesh19-ui/CakeConnection.git](https://github.com/hkhitesh19-ui/CakeConnection.git)
+- **Primary Git Branch:** `main` (Tracks `github/main`)
 
-## 2. Tech Stack
-- **Framework:** Next.js 16.2.6 (App Router) + React 19 + TypeScript.
+---
+
+## 2. Server & Cloud Infrastructure
+
+### A. Cloudflare Edge Network (Front-Layer)
+- **Cloudflare Account ID:** `300bb7f3583a8ade508c64eabd1d1f1c`
+- **Admin Email:** `hk.hitesh19@gmail.com`
+- **Nameservers:** `wilson.ns.cloudflare.com` & `athena.ns.cloudflare.com`
+- **Proxy Status:** Proxied 🟧 (Anycast IPs `104.21.17.209`, `172.67.178.79`)
+- **SSL/TLS Mode:** Full (Auto-renewing HTTPS Padlock)
+- **Protection:** Real VPS IP masking, DDoS mitigation, Bot Fight Mode, edge asset caching.
+
+### B. Hostinger VPS (Origin Server)
+- **IP Address:** `200.97.170.53` (Port 22 SSH)
+- **User / Credentials:** `root` / Stored in `.env.vps`
+- **Web Server:** Nginx (Proxy passes `cakeconnection.in:80` ➔ `http://127.0.0.1:3001`)
+- **Process Manager:** PM2 (App Name: `cakeconnection`, Process ID 5, Cluster mode on Port 3001)
+- **Production Git Root:** `/var/www/CakeConnection`
+- **Next.js App Root:** `/var/www/CakeConnection/next-app`
+- **Automated Deploy Script:** `/var/www/CakeConnection/deploy.sh`
+
+---
+
+## 3. Tech Stack & Architecture
+- **Framework:** Next.js 16.2.6 (Turbopack, App Router) + React 19 + TypeScript.
 - **Styling:** Tailwind CSS v4.
-- **State:** Zustand (with `persist` for cart).
-- **Forms/validation:** react-hook-form + Zod.
-- **Animation:** GSAP + Framer Motion. **Charts:** Recharts.
-- **DB/Auth:** Supabase (Postgres). Client in `next-app/src/lib/supabase.ts`.
-- **Payments:** Razorpay (India).
+- **State Management:** Zustand (with persist for cart).
+- **Database / Persistent Storage:** 
+  - **Primary High-Speed Storage:** `serverProductStore.ts` + `products-store.json` (disk-persisted, in-memory sync, zero external network dependency).
+  - **Self-Hosted Database:** Local PostgreSQL on VPS (`localhost:5432 / localhost:8000`).
+  - **Cloud Supabase:** Permanently removed/disabled to eliminate 2-5s DNS timeout delays (`ENOTFOUND`).
+- **Payment Gateway:** Razorpay (Test mode active).
+- **Email / SMTP:** Nodemailer (Order.CakeConnection@gmail.com).
 
-## 3. Repository Structure (key paths)
-- `next-app/` — the Next.js app (all app code lives here).
-  - `src/app/` — routes (home, cakes, combos, flowers, product/[slug], cart, checkout,
-    wishlist, account, orders, about, faq, delivery/[city], 4 SEO landing pages, admin/*).
-  - `src/app/api/` — route handlers (admin/products, admin/cms, orders, payments/*).
-  - `src/stores/` — `cartStore.ts`, `siteStore.ts`, `uiStore.ts`, `wishlistStore.ts`.
-  - `src/utils/` — `index.ts` (formatPrice, cn, slug...), `pricing.ts` (pricing source of truth).
-  - `src/lib/` — `supabase.ts`, `db.ts`, `api.ts`, `seo/`.
-  - `src/components/` — home, layout, product, seo, schema, ui, conversion.
-- `supabase/` — Supabase config/migrations.
-- Root docs: `session_summary.md`, `Resolved_Errors.md`, SEO guide, this file.
+---
 
-## 4. Pricing Rules (VERIFIED — do not change without re-confirming)
-Single source of truth: `next-app/src/utils/pricing.ts`. Used by BOTH cart and checkout,
-and recomputed server-side in `/api/orders`.
-- `subtotal = Σ(price × quantity)`
-- `deliveryCharge = subtotal >= 999 ? 0 : 49` (pincode override allowed)
-- `couponDiscount`: percent → `min(round(subtotal × value / 100), subtotal)`;
-  flat → `min(value, subtotal)`; only if `subtotal >= minPurchase`.
-- `codCharge = paymentMethod === 'cod' ? 29 : 0`
-- `total = max(0, subtotal + deliveryCharge + codCharge − couponDiscount)`
-- Razorpay amount = `round(total × 100)` paise; must equal DB-saved total.
-- **No global Minimum Order Value (MOV).** Orders are never blocked by a price floor.
-  Coupons enforce only their OWN `minPurchase` (optional, per-coupon); absent → no restriction.
+## 4. Automated CI/CD & Deployment Workflow
 
-## 5. Checkout / Order Flow
-1. Cart applies coupon → persisted in cart store (`appliedCoupon`).
-2. Checkout reads the same coupon; builds `orderPayload`.
-3. `POST /api/orders` → Zod-validates, recomputes pricing server-side, inserts order,
-   returns `order_number`, sets `payment_status: pending`.
-4. Razorpay: `POST /api/payments/create-order` (paise) → open Razorpay modal →
-   `POST /api/payments/verify` (HMAC SHA256 signature) → mark order `paid`.
-5. COD: order created directly with pending payment.
+### ⚡ 1-Click Automated Deployment (Local PowerShell)
+```powershell
+cd F:\HITESH\CakeConnection-project-June2026\CakeConnection-project-June2026\next-app
+.\git-deploy-to-vps.ps1
+```
+*Executes `git push github main` ➔ Triggers `/var/www/CakeConnection/deploy.sh` via SSH ➔ Rebuilds Next.js Turbopack ➔ Zero-downtime PM2 reload.*
 
-## 6. Required Supabase `orders` table columns
-`order_number, customer_name, customer_email, customer_phone, sender_whatsapp,
-delivery_address (jsonb), items (jsonb), subtotal, delivery_charge, coupon_code,
-coupon_discount, cod_charge, total, payment_method, payment_status,
-special_instructions, delivery_date, delivery_slot, status,
-razorpay_order_id, razorpay_payment_id`.
-(Also note: `site_settings` table with `key`/`value` JSON rows drives the CMS/settings.)
+### 🛠️ Manual Deployment Commands (VPS)
+```bash
+ssh root@200.97.170.53
+/var/www/CakeConnection/deploy.sh
+```
 
-## 7. Environment Variables (set in `.env.local` AND AWS Amplify)
-See `next-app/.env.example`. Required:
-- `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY` (server-side only, if used)
-- `NEXT_PUBLIC_RAZORPAY_KEY_ID` (browser), `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` (server)
-- Optional: `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`, `NEXT_PUBLIC_WHATSAPP_NUMBER`
+---
 
-## 8. Work Completed
-- Verified local code pushed to GitLab.
-- Code review of checkout/cart/stores/utils.
-- **MR !1** (`fix/pricing-and-order-apis`):
-  - Added `pricing.ts` single source of truth; fixed checkout ignoring coupon discount.
-  - Cart store persists applied coupon; cart page syncs it.
-  - Added API routes: `/api/orders`, `/api/payments/create-order`, `/api/payments/verify`.
-  - Server-side total recompute (anti-tamper).
-  - Razorpay SDK loaded via `next/script`; env var standardized to `NEXT_PUBLIC_RAZORPAY_KEY_ID`.
-  - Added `.env.example`; removed committed secret `Database_Supabase.txt` + `.gitignore` entry.
-  - Added automated testing to !1: Vitest unit tests for `pricing.ts`, Playwright route
-    smoke tests (`e2e/routes.smoke.spec.ts`), and `.gitlab-ci.yml`
-    (lint→typecheck→build→unit→e2e).
-- **MR !2** (`feat/page-builder-engine`) — DIY Page Builder engine (Admin Module #1, backend):
-  - `supabase/migrations/20260612_page_blocks.sql`: `page_blocks` table + indexes +
-    `updated_at` trigger + RLS (public reads published; service-role writes).
-  - `src/lib/blocks/schema.ts`: Zod discriminated union (hero/banner/product_grid/richtext/faq).
-  - `src/components/blocks/*` + `BlockRegistry` + `BlockRenderer` (invalid blocks skipped).
-  - `src/lib/blocks/getPageBlocks.ts`: published, position-ordered fetch.
-  - `/preview/[slug]` ISR page (`revalidate = 60`).
-  - `/api/admin/cms/blocks` route: GET/POST/DELETE + `revalidatePath()` on write.
-  - No existing page modified. RichText = plain text (no XSS); FaqBlock emits FAQPage JSON-LD.
+## 5. Marketing & Content Engine (Instagram Agent Skills)
+Installed in `.agents/skills/` and global config:
+1. **`/ig-reel`** — 26 Hook formulas, hook scoring engine (`hookscore.py`), timed beat sheet (`beats.py`).
+2. **`/ig-caption`** — First 125 chars feed linting & hashtag analyzer (`caption.py`).
+3. **`/ig-carousel`** — High-swipe carousel slide copy generator.
+4. **`/ig-story`** — Daily story sequencing & DM conversion funnels.
+5. **`/ig-profile`** — 12-point rubric profile optimizer (`rubric.json`).
+6. **`/ig-plan`** — 7-day weekly content calendar.
+7. **`/ig-human`** — AI slop stripper & detection scorer (`detect.py`, `humanize.py`).
+8. **Brand Voice:** Stored at `.agents/instagram/voice.md` (100% pure eggless, live bakery, 2-hr Vadodara delivery).
 
-## 9. Known Resolved Issues (history)
-- `navigate is not a function` → use `router.push()` (App Router).
-- Next.js Image local query string → removed `?v=...` cache-busting.
-- Dev server freeze → removed `localPatterns` from `next.config.ts`.
+---
 
-## 10. Pending / Next Steps
-- [ ] **USER ACTION:** Rotate exposed Supabase key + DB password (was in git history).
-- [ ] **USER ACTION:** Create/verify Supabase `orders` table (columns in §6).
-- [ ] **USER ACTION:** Run the `page_blocks` migration (`supabase/migrations/20260612_page_blocks.sql`).
-- [ ] **USER ACTION:** Set all env vars locally + on AWS Amplify (§7).
-- [ ] Merge MR !1, then MR !2 (in that order) after review.
-- [x] Added automated testing + CI in !1 (Vitest unit + Playwright smoke + `.gitlab-ci.yml`).
-- [ ] Build Admin Module #1 frontend: page-builder editor UI (drag-drop ordering + per-block forms)
-      driving the `/api/admin/cms/blocks` endpoints.
-- [ ] Wire `ProductGridBlock` to the products API.
-- [ ] Verify auth flow (login/signup/logout) + `account` page data.
-- [ ] Verify order placement end-to-end against real Supabase.
-- [ ] AWS Amplify deployment (build settings, env vars, domain migration).
+## 6. Key Files & Reference Documentation
+- `GITHUB_VPS_DEPLOYMENT_GUIDE.md` — Complete technical deployment manual.
+- `next-app/.env.vps` — Master credentials file (VPS, GitHub, Cloudflare, Database). Protected by `.gitignore`.
+- `next-app/.env.production` — Production runtime environment for Next.js.
+- `next-app/src/lib/serverProductStore.ts` — Server-side persistent storage engine.
+- `next-app/src/data/products-store.json` — JSON disk store for cake prices and overrides.
+- `next-app/src/data/realCakesData.ts` — Real cake catalog definitions.
+- `.agents/rules/user_instructions.md` — Agent rules (IST Timestamp, Git ID, Ultra-Low Token mode).
 
-## 11. Working Agreements / Preferences
-- 1000% accuracy on math/logic; verify formulas before applying, no assumptions.
-- Token-saving mode: concise, surgical patches.
-- Note: GitLab Duo foundational agents (developer flow) returned HTTP 403 — likely a
-  Duo seat/tier/permission gap. Re-check before relying on agent delegation.
+---
+
+## 7. Recently Resolved Issues (Milestones)
+- **Price Reset on Refresh Bug:** Fixed by routing admin edits to `serverProductStore.ts` and `products-store.json`. Tested & verified on live VPS.
+- **Dead Supabase DNS Delays:** Removed dead cloud URLs from `.env.local` and `.env.production`. Response times dropped to ~120ms.
+- **Git Deployment Migration:** Moved from 141MB manual tar archives to automated Git-based pull & PM2 zero-downtime deployment.
+- **Cloudflare Integration:** Fully mapped DNS, SSL Full mode, and reverse proxy topology documented.
