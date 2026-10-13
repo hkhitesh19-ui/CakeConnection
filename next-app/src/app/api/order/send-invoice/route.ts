@@ -12,7 +12,9 @@ export const SYSTEM_DELIVERY_INSTRUCTIONS = [
   "Please do not call for any query — we prefer WhatsApp message with Order Number and Delivery Date (+91 72038 24012)."
 ];
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in';
+// SITE_URL = server-only env var (read at runtime, NOT baked at build like NEXT_PUBLIC_*)
+// This guarantees email links always use the correct production URL.
+const BASE_URL = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in').replace(/\/$/, '');
 
 // Helper to construct absolute image URL for email clients
 function getProductImageUrl(rawImage?: string): string {

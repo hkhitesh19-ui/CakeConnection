@@ -252,16 +252,17 @@ function ProductCard({
   const addToast = useUIStore((s) => s.addToast);
   const [isAdded, setIsAdded] = useState(false);
 
-  // Extract starting lowest two weight variations (as per weight variation) with MRP prices
+  // Extract starting lowest two weight variations (as per weight variation) with actual prices
   const displayVariants = useMemo(() => {
     const vars = product.variants || [];
     const valid = vars
       .map((v) => {
-        // "Only MRP price hi disply karo, Discounted price nahi"
-        const mrp = (v.compareAtPrice && v.compareAtPrice > 0) ? v.compareAtPrice : v.price;
+        // Use actual sale price (v.price) — same as product detail page shows
+        // compareAtPrice was causing mismatch: listing showed 15% higher than detail page
+        const mrp = Number(v.price) || 0;
         return {
           ...v,
-          mrp: Number(mrp) || 0,
+          mrp,
           weightGrams: parseWeightInGrams(v.weight),
         };
       })
