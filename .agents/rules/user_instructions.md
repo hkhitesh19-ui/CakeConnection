@@ -7,3 +7,4 @@ The following constraints and preferences must be strictly followed by the AI Ag
 3. **Token-Saving Mode**: Give direct answers only. No introductions, no fillers, no repetitive text. Provide only 'Surgical Patches' for code changes.
 4. **Context Counter**: After every reply, show the Context Counter in the following format:
    `IST Timestamp Context : X% used/Y% left , reminder : Token Saving Mode Active karo, 80% context use hone pe Full Session ki detailed summary do and Master Context Document update offer karo.`
+5. **Automated Regression Guardrail**: Before modifying API routes, prices, image sources, or navigation, AI Agent MUST adhere to `Resolved_Errors.md` and `MASTER_CONTEXT.md Section 8`. Run `npm run check:rules` before deployment to verify zero violations.

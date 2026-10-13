@@ -155,7 +155,7 @@ export function Navbar() {
 
                 {/* Logo */}
                 <Link href="/" className="flex items-center group" id="navbar-logo">
-                  <img src="/logo.png?v=new1" alt="Cake Connection" className="w-auto h-10 md:h-12 object-contain" />
+                  <img src="/logo.png" alt="Cake Connection" className="w-auto h-10 md:h-12 object-contain" />
                 </Link>
               </div>
 

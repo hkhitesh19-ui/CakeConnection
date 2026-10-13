@@ -963,8 +963,8 @@ function CakesPageContent() {
     let result = [...cakeProducts].filter((p) => {
       if (!p.isAvailable) return false;
       const validVariants = (p.variants || []).filter((v) => {
-        const mrp = (v.compareAtPrice && v.compareAtPrice > 0) ? v.compareAtPrice : v.price;
-        return mrp && Number(mrp) > 0;
+        const price = Number(v.price) || 0;
+        return price > 0;
       });
       return validVariants.length > 0;
     });
@@ -1016,32 +1016,32 @@ function CakesPageContent() {
       });
     }
 
-    // Price range filter (using MRP price)
+    // Price range filter (using actual selling price v.price)
     if (selectedPriceRanges.length > 0) {
       const ranges = selectedPriceRanges
         .map((v) => PRICE_RANGES.find((r) => r.value === v)!)
         .filter(Boolean);
       result = result.filter((p) => {
         const lowestPrice = Math.min(
-          ...(p.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price))
+          ...(p.variants || []).map((v) => Number(v.price) || 0).filter((pr) => pr > 0)
         );
         return ranges.some((r) => lowestPrice >= r.min && lowestPrice <= r.max);
       });
     }
 
-    // Sort (using MRP price for price-asc and price-desc)
+    // Sort (using actual selling price v.price for price-asc and price-desc)
     switch (sortBy) {
       case 'price-asc':
         result.sort((a, b) => {
-          const minA = Math.min(...(a.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
-          const minB = Math.min(...(b.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          const minA = Math.min(...(a.variants || []).map((v) => Number(v.price) || 0).filter((pr) => pr > 0));
+          const minB = Math.min(...(b.variants || []).map((v) => Number(v.price) || 0).filter((pr) => pr > 0));
           return minA - minB;
         });
         break;
       case 'price-desc':
         result.sort((a, b) => {
-          const minA = Math.min(...(a.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
-          const minB = Math.min(...(b.variants || []).map((v) => (v.compareAtPrice && v.compareAtPrice > 0 ? v.compareAtPrice : v.price)));
+          const minA = Math.min(...(a.variants || []).map((v) => Number(v.price) || 0).filter((pr) => pr > 0));
+          const minB = Math.min(...(b.variants || []).map((v) => Number(v.price) || 0).filter((pr) => pr > 0));
           return minB - minA;
         });
         break;

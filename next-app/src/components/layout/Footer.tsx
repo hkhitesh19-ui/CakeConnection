@@ -116,7 +116,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <img src="/logo.png?v=new1" alt="Cake Connection Logo" className="w-auto h-12 object-contain" />
+              <img src="/logo.png" alt="Cake Connection Logo" className="w-auto h-12 object-contain" />
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6 max-w-xs">
               Delivering happiness with premium cakes and beautiful flower bouquets across Vadodara.

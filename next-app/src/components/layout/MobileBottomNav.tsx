@@ -40,7 +40,7 @@ export function MobileBottomNav() {
             isHome ? 'ring-2 ring-brand-rose/30 bg-rose-50' : 'bg-gray-100/80'
           )}>
             <img
-              src="/logo.png?v=new1"
+              src="/logo.png"
               alt="CakeConnection"
               className="h-5 w-auto object-contain"
             />

@@ -41,7 +41,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border-secondary">
           <Link href="/" onClick={onClose} className="flex items-center gap-2">
-            <img src="/logo.png?v=new1" alt="Cake Connection" className="h-9 w-auto object-contain" />
+            <img src="/logo.png" alt="Cake Connection" className="h-9 w-auto object-contain" />
           </Link>
           <button onClick={onClose} className="p-2 text-text-secondary hover:text-text-primary" aria-label="Close menu">
             <X size={24} />

@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
         // 2. Trigger invoice / notification email dispatch if not already sent
         try {
-          const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+          const siteUrl = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in').replace(/\/$/, '');
           await fetch(`${siteUrl}/api/order/send-invoice`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
