@@ -102,7 +102,7 @@ export function ExpressDeliveryScooter({
             />
 
             {/* Rear Wheel (Animated Rotation) */}
-            <g className="scooter-wheel wheel-rear" transform-origin="18 36">
+            <g className="scooter-wheel wheel-rear" style={{ transformOrigin: '18px 36px' }}>
               <circle cx="18" cy="36" r="6" stroke="#334155" strokeWidth="2.5" fill="#f8fafc" />
               <circle cx="18" cy="36" r="2" fill="#e11d48" />
               <line x1="18" y1="30" x2="18" y2="42" stroke="#64748b" strokeWidth="1" />
@@ -110,7 +110,7 @@ export function ExpressDeliveryScooter({
             </g>
 
             {/* Front Wheel (Animated Rotation) */}
-            <g className="scooter-wheel wheel-front" transform-origin="48 36">
+            <g className="scooter-wheel wheel-front" style={{ transformOrigin: '48px 36px' }}>
               <circle cx="48" cy="36" r="6" stroke="#334155" strokeWidth="2.5" fill="#f8fafc" />
               <circle cx="48" cy="36" r="2" fill="#e11d48" />
               <line x1="48" y1="30" x2="48" y2="42" stroke="#64748b" strokeWidth="1" />

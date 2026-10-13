@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CakeConnection — Thursday Carousel (1080x1350)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1a1114; font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px; }
+    section.slide {
+      width: 1080px;
+      height: 1350px;
+      background: linear-gradient(155deg, #211016 0%, #14090d 100%);
+      color: #fff8f5;
+      padding: 140px 125px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      border: 2px solid rgba(232, 93, 117, 0.28);
+      page-break-after: always;
+    }
+    .top-bar { display: flex; justify-content: space-between; align-items: center; font-size: 32px; color: #f4a2b8; font-weight: 700; letter-spacing: 1px; }
+    .badge { background: #e11d48; color: #fff; padding: 10px 26px; border-radius: 999px; font-size: 28px; font-weight: 800; }
+    .middle { my: auto; }
+    h1 { font-size: 92px; line-height: 1.08; font-weight: 800; color: #ffffff; margin-bottom: 36px; letter-spacing: -2px; }
+    h1 span { color: #fb7185; }
+    p.sub { font-size: 46px; line-height: 1.42; color: #f5d0da; font-weight: 500; }
+    ul.recap { list-style: none; display: flex; flex-direction: column; gap: 26px; margin-top: 20px; }
+    ul.recap li { font-size: 40px; line-height: 1.35; color: #ffe4e9; background: rgba(251, 113, 133, 0.12); padding: 24px 32px; border-left: 8px solid #fb7185; border-radius: 14px; }
+    .footer { display: flex; justify-content: space-between; align-items: center; font-size: 30px; color: #fda4af; border-top: 1px solid rgba(253, 164, 175, 0.2); padding-top: 28px; }
+    @media print {
+      body { padding: 0; gap: 0; background: none; }
+      section.slide { border: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: COVER -->
+  <section class="slide">
+    <div class="top-bar"><span>100% EGGLESS LIVE BAKERY</span><span class="badge">1 / 8</span></div>
+    <div class="middle">
+      <h1>5 SIGNS YOUR CAKE IS <span>3 DAYS OLD</span></h1>
+      <p class="sub">How to spot a frozen display counter cake in 5 seconds (before you serve it at a birthday).</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Swipe ➔</span></div>
+  </section>
+
+  <!-- SLIDE 2: THE STAKE -->
+  <section class="slide">
+    <div class="top-bar"><span>THE DISPLAY COUNTER TRUTH</span><span class="badge">2 / 8</span></div>
+    <div class="middle">
+      <h1>72 HOURS IN A <span>GLASS FRIDGE</span></h1>
+      <p class="sub">Most commercial shops bake sponges in bulk, freeze them for 3 days, and ice them when you walk in.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Manjalpur, Vadodara</span></div>
+  </section>
+
+  <!-- SLIDE 3: SIGN 1 -->
+  <section class="slide">
+    <div class="top-bar"><span>SIGN #1</span><span class="badge">3 / 8</span></div>
+    <div class="middle">
+      <h1>HAIRLINE CRACKS <span>NEAR THE BASE</span></h1>
+      <p class="sub">When a sponge sits in cold air for 48+ hours, it shrinks inside and cracks the outer cream ring.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Swipe ➔</span></div>
+  </section>
+
+  <!-- SLIDE 4: SIGN 2 -->
+  <section class="slide">
+    <div class="top-bar"><span>SIGN #2</span><span class="badge">4 / 8</span></div>
+    <div class="middle">
+      <h1>DRENCHED IN <span>SUGAR SYRUP</span></h1>
+      <p class="sub">Old sponges lose moisture fast. Shops pour heavy sugar water on top so you don't notice the dry crumb.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Swipe ➔</span></div>
+  </section>
+
+  <!-- SLIDE 5: SIGN 3 & 4 -->
+  <section class="slide">
+    <div class="top-bar"><span>SIGNS #3 & #4</span><span class="badge">5 / 8</span></div>
+    <div class="middle">
+      <h1>COLD CRUMB & <span>FRIDGE SMELL</span></h1>
+      <p class="sub">Fresh 100% eggless sponge springs back when pressed with a fork. A 3-day-old sponge feels dense and waxy.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Swipe ➔</span></div>
+  </section>
+
+  <!-- SLIDE 6: SIGN 5 (THE FIX) -->
+  <section class="slide">
+    <div class="top-bar"><span>SIGN #5 · THE FIX</span><span class="badge">6 / 8</span></div>
+    <div class="middle">
+      <h1>BAKED LIVE IN <span>20 MINUTES</span></h1>
+      <p class="sub">At our Manjalpur live kitchen, the oven stays off until your order lands. Zero display counter storage.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Swipe ➔</span></div>
+  </section>
+
+  <!-- SLIDE 7: RECAP (SCREENSHOT SLIDE) -->
+  <section class="slide">
+    <div class="top-bar"><span>SCREENSHOT THIS CHECKLIST</span><span class="badge">7 / 8</span></div>
+    <div class="middle">
+      <h1>FRESH vs <span>COUNTER CAKE</span></h1>
+      <ul class="recap">
+        <li>1. No hairline cream cracks along the cake board</li>
+        <li>2. Soft bouncy crumb — not drowned in sugar water</li>
+        <li>3. Glossy warm ganache, never waxy or sweating</li>
+        <li>4. 100% pure eggless sponge baked after your order</li>
+        <li>5. Delivered in 2 hours or 12 midnight across Vadodara</li>
+      </ul>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>Save & Share</span></div>
+  </section>
+
+  <!-- SLIDE 8: CTA -->
+  <section class="slide">
+    <div class="top-bar"><span>VADODARA 2-HR & MIDNIGHT DELIVERY</span><span class="badge">8 / 8</span></div>
+    <div class="middle">
+      <h1>COMMENT <span>"FRESH"</span> BELOW</h1>
+      <p class="sub">I'll DM you our live-baked 100% eggless cake catalogue + 2-hour Vadodara delivery link.</p>
+    </div>
+    <div class="footer"><span>@cakeconnection.in</span><span>cakeconnection.in</span></div>
+  </section>
+
+</body>
+</html>
