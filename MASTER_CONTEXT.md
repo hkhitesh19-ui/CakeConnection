@@ -107,3 +107,11 @@ Installed in `.agents/skills/` and global config:
 - **Dead Supabase DNS Delays:** Removed dead cloud URLs from `.env.local` and `.env.production`. Response times dropped to ~120ms.
 - **Git Deployment Migration:** Moved from 141MB manual tar archives to automated Git-based pull & PM2 zero-downtime deployment.
 - **Cloudflare Integration:** Fully mapped DNS, SSL Full mode, and reverse proxy topology documented.
+- **Listing vs Detail Price Mismatch Fixed:** `src/app/cakes/page.tsx` now uses `v.price` directly instead of `compareAtPrice` (+15% auto-markup), ensuring 100% price parity across all pages.
+- **Order Email Localhost Leaks Fixed (Runtime Auto-Switch):** `src/app/api/order/send-invoice/route.ts` updated to use `SITE_URL` (server-side runtime evaluation). Local dev uses `http://localhost:3000`, VPS automatically uses `https://www.cakeconnection.in`. Build-time baking completely eliminated.
+
+---
+
+## 8. Strict Production Coding Rules (Prevention of Future Regressions)
+1. **Dynamic URL Rule for Server Code:** Never use `NEXT_PUBLIC_*` environment variables for backend links (emails, PDFs, invoices, webhooks). Always use `process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in'`.
+2. **Catalog Price Rule:** On listing pages and cards, always display `v.price` for customer-facing prices. Never display `compareAtPrice` as the main selling price.
