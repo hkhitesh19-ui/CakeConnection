@@ -18,7 +18,7 @@ if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('200.97.170.53', username='root', password='Nilsky@202627')
+ssh.connect('187.127.170.36', username='root', password='Nilsky@202627')
 stdin, stdout, stderr = ssh.exec_command('/var/www/CakeConnection/deploy.sh')
 for line in iter(stdout.readline, ''):
     print(line, end='', flush=True)

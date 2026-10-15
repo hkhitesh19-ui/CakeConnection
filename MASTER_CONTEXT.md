@@ -38,10 +38,12 @@
 - **Protection:** Real VPS IP masking, DDoS mitigation, Bot Fight Mode, edge asset caching.
 
 ### B. Hostinger VPS (Origin Server)
-- **IP Address:** `200.97.170.53` (Port 22 SSH)
-- **User / Credentials:** `root` / Stored in `.env.vps`
-- **Web Server:** Nginx (Proxy passes `cakeconnection.in:80` ➔ `http://127.0.0.1:3001`)
-- **Process Manager:** PM2 (App Name: `cakeconnection`, Process ID 5, Cluster mode on Port 3001)
+- **Hostname / Location:** `srv2064145.hstgr.cloud` / Mumbai 2, India
+- **IP Address:** `187.127.170.36` (Port 22 SSH)
+- **User / Credentials:** `root` / Stored securely in `CREDENTIALS_AND_SECRETS_VAULT.md` & `.env.vps`
+- **Web Server:** Nginx (Proxy passes `cakeconnection.in:80/443` ➔ `http://127.0.0.1:3001`)
+- **Process Manager:** PM2 (App Name: `cakeconnection`, Process ID 1, PID 14612, Port 3001)
+- **Database Engine:** Native PostgreSQL 14 (`127.0.0.1:5432`, DB: `cakeconnection`, User: `postgres`)
 - **Production Git Root:** `/var/www/CakeConnection`
 - **Next.js App Root:** `/var/www/CakeConnection/next-app`
 - **Automated Deploy Script:** `/var/www/CakeConnection/deploy.sh`
@@ -92,7 +94,10 @@ Installed in `.agents/skills/` and global config:
 ---
 
 ## 6. Key Files & Reference Documentation
-- `GITHUB_VPS_DEPLOYMENT_GUIDE.md` — Complete technical deployment manual.
+- `CAKECONNECTION_VPS_DEPLOYMENT_GUIDE.md` — Full technical operations guide (PostgreSQL 14, Nginx, PM2, and Cloudflare).
+- `CREDENTIALS_AND_SECRETS_VAULT.md` — Confidential master credentials vault (local-only, ignored in `.gitignore`).
+- `.env.cakeconnection.production` — Production environment reference template.
+- `GITHUB_VPS_DEPLOYMENT_GUIDE.md` — Complete automated Git-based deployment manual.
 - `next-app/.env.vps` — Master credentials file (VPS, GitHub, Cloudflare, Database). Protected by `.gitignore`.
 - `next-app/.env.production` — Production runtime environment for Next.js.
 - `next-app/src/lib/serverProductStore.ts` — Server-side persistent storage engine.

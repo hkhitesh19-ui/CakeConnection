@@ -16,7 +16,7 @@ This guide documents the automated CI/CD pipeline connecting the GitHub reposito
 | **Cloudflare Nameservers** | `wilson.ns.cloudflare.com`<br>`athena.ns.cloudflare.com` | Active Anycast DNS |
 | **Cloudflare Proxy (CDN)** | Enabled (Proxied 🟧) | Masking real VPS IP (`104.21.17.209`, etc.) |
 | **Cloudflare SSL/TLS Mode** | Full (or Flexible) | Provides free auto-renewing HTTPS certificate |
-| **Hostinger VPS IP** | `200.97.170.53` | Hostinger Linux VPS (Origin Server) |
+| **Hostinger VPS IP** | `187.127.170.36` | Hostinger KVM 1 Linux VPS (Origin Server) |
 | **SSH User / Port** | `root` / Port `22` | Standard SSH Access |
 | **VPS Root Password** | Stored securely in `.env.vps` | Used for SSH / SFTP authentication |
 | **GitHub Repo** | `https://github.com/hkhitesh19-ui/CakeConnection.git` | Public Repository |

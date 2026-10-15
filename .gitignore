@@ -8,4 +8,5 @@ build/
 *_key.pub
 *.tar.gz
 graphify-out/
+CREDENTIALS_AND_SECRETS_VAULT.md
 
