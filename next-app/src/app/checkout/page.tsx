@@ -381,12 +381,96 @@ export default function CheckoutPage() {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
+    try {
+      const saved = localStorage.getItem('cakeconnection_saved_delivery_info');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setForm((prev) => ({
+          ...prev,
+          fullName: parsed.fullName || prev.fullName,
+          email: parsed.email || prev.email,
+          phone: parsed.phone || prev.phone,
+          receiverName: parsed.receiverName || prev.receiverName,
+          senderWhatsApp: parsed.senderWhatsApp || prev.senderWhatsApp,
+          senderCountryCode: parsed.senderCountryCode || prev.senderCountryCode || '+91',
+          senderPhone: parsed.senderPhone || prev.senderPhone,
+          addressLine1: parsed.addressLine1 || prev.addressLine1,
+          addressLine2: parsed.addressLine2 || prev.addressLine2,
+          deliveryArea: parsed.deliveryArea || prev.deliveryArea,
+          pincode: parsed.pincode || prev.pincode,
+          city: parsed.city || 'Vadodara',
+          state: parsed.state || 'Gujarat',
+          saveAddress: true,
+        }));
+        setHasSavedDetails(true);
+      }
+    } catch (e) {
+      console.warn('Failed to load saved delivery info:', e);
+    }
   }, []);
+
+  const saveFormDataToStorage = () => {
+    if (form.saveAddress) {
+      try {
+        const toSave = {
+          fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          receiverName: form.receiverName,
+          senderWhatsApp: form.senderWhatsApp,
+          senderCountryCode: form.senderCountryCode,
+          senderPhone: form.senderPhone,
+          addressLine1: form.addressLine1,
+          addressLine2: form.addressLine2,
+          deliveryArea: form.deliveryArea,
+          city: form.city,
+          state: form.state,
+          pincode: form.pincode,
+        };
+        localStorage.setItem('cakeconnection_saved_delivery_info', JSON.stringify(toSave));
+        setHasSavedDetails(true);
+      } catch (e) {
+        console.warn('Failed to save delivery info:', e);
+      }
+    } else {
+      try {
+        localStorage.removeItem('cakeconnection_saved_delivery_info');
+        setHasSavedDetails(false);
+      } catch {}
+    }
+  };
+
+  const handleClearSavedDetails = () => {
+    try {
+      localStorage.removeItem('cakeconnection_saved_delivery_info');
+    } catch {}
+    setForm({
+      fullName: '',
+      email: '',
+      phone: '',
+      receiverName: '',
+      senderWhatsApp: '',
+      senderCountryCode: '+91',
+      senderPhone: '',
+      addressLine1: '',
+      addressLine2: '',
+      deliveryArea: '',
+      city: 'Vadodara',
+      state: 'Gujarat',
+      pincode: '',
+      saveAddress: true,
+      paymentMethod: 'razorpay',
+      agreeTerms: false,
+    });
+    setHasSavedDetails(false);
+    addToast({ type: 'info', message: 'Saved details cleared. You can now enter fresh details.' });
+  };
 
   const [currentStep, setCurrentStep] = useState(1);
   const [isPlacing, setIsPlacing] = useState(false);
   const [orderSuccessData, setOrderSuccessData] = useState<OrderSuccessData | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [hasSavedDetails, setHasSavedDetails] = useState(false);
 
   const [form, setForm] = useState<FormData>({
     fullName: '',
@@ -535,6 +619,7 @@ export default function CheckoutPage() {
         return;
       }
     }
+      saveFormDataToStorage();
     setCurrentStep(2);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -545,6 +630,7 @@ export default function CheckoutPage() {
       alert('Please check the "I agree to the Terms & Conditions" box before placing the order.');
       return;
     }
+    saveFormDataToStorage();
     setIsPlacing(true);
     
     try {
@@ -874,20 +960,41 @@ export default function CheckoutPage() {
                      ═══════════════════════════════════════════ */}
                   {currentStep === 1 && (
                     <motion.div key="step1" variants={slideVariants} initial="enter" animate="center" exit="exit" className="space-y-5">
-                      <h2 className="font-display text-xl font-semibold text-text-primary flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-brand-rose" />
-                        Delivery Information
-                      </h2>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <h2 className="font-display text-xl font-semibold text-text-primary flex items-center gap-2">
+                          <MapPin className="h-5 w-5 text-brand-rose" />
+                          Delivery Information
+                        </h2>
+                        {hasSavedDetails && (
+                          <button
+                            type="button"
+                            onClick={handleClearSavedDetails}
+                            className="text-xs text-brand-rose hover:text-brand-rose-dark font-medium underline cursor-pointer text-left sm:text-right"
+                          >
+                            Clear / Enter New Address
+                          </button>
+                        )}
+                      </div>
+
+                      {hasSavedDetails && (
+                        <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800">
+                          <span className="flex items-center gap-1.5 font-medium">
+                            <Check className="h-4 w-4 text-emerald-600 shrink-0" />
+                            Details auto-filled from your previous order!
+                          </span>
+                          <span className="text-[11px] text-emerald-600 font-semibold">1-Click Fast Checkout</span>
+                        </div>
+                      )}
 
                       <div className="rounded-2xl bg-surface-secondary border border-border-secondary p-3.5 sm:p-4 space-y-3">
                         {/* Sender Name & Email */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <FormInput label="Sender's Name" required placeholder="John Doe" value={form.fullName} onChange={(e) => updateField('fullName', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Sender's Name" required placeholder="John Doe" autoComplete="name" value={form.fullName} onChange={(e) => updateField('fullName', (e.target as HTMLInputElement).value)} />
                             {formErrors.fullName && <p className="text-xs text-brand-red mt-1">{formErrors.fullName}</p>}
                           </div>
                           <div>
-                            <FormInput label="Sender's Email Address" required placeholder="john@example.com" type="email" value={form.email} onChange={(e) => updateField('email', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Sender's Email Address" required placeholder="john@example.com" type="email" autoComplete="email" value={form.email} onChange={(e) => updateField('email', (e.target as HTMLInputElement).value)} />
                             {formErrors.email && <p className="text-xs text-brand-red mt-1">{formErrors.email}</p>}
                           </div>
                         </div>
@@ -910,7 +1017,7 @@ export default function CheckoutPage() {
                                   onChange={(e) => updateField('senderWhatsApp', e.target.value)}
                                   placeholder="98765 43210"
                                   className="w-full rounded-xl bg-surface-secondary border border-border-secondary px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-brand-rose/50 transition-colors"
-                                  id="sender-whatsapp-input"
+                                  id="sender-whatsapp-input" autoComplete="tel"
                                 />
                               </div>
                             </div>
@@ -918,7 +1025,7 @@ export default function CheckoutPage() {
                           </div>
 
                           <div>
-                            <FormInput label="Sender's Calling Number (Optional)" placeholder="98765 43210" type="tel" value={form.senderPhone} onChange={(e) => updateField('senderPhone', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Sender's Calling Number (Optional)" placeholder="98765 43210" type="tel" autoComplete="tel" value={form.senderPhone} onChange={(e) => updateField('senderPhone', (e.target as HTMLInputElement).value)} />
                             {formErrors.senderPhone && <p className="text-xs text-brand-red mt-1">{formErrors.senderPhone}</p>}
                           </div>
                         </div>
@@ -926,11 +1033,11 @@ export default function CheckoutPage() {
                         {/* Receiver Name & Phone */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-border-secondary/30 pt-3">
                           <div>
-                            <FormInput label="Receiver's Name" required placeholder="Jane Doe" value={form.receiverName} onChange={(e) => updateField('receiverName', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Receiver's Name" required placeholder="Jane Doe" autoComplete="name" value={form.receiverName} onChange={(e) => updateField('receiverName', (e.target as HTMLInputElement).value)} />
                             {formErrors.receiverName && <p className="text-xs text-brand-red mt-1">{formErrors.receiverName}</p>}
                           </div>
                           <div>
-                            <FormInput label="Receiver's Calling Number" required placeholder="98765 43210" type="tel" value={form.phone} onChange={(e) => updateField('phone', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Receiver's Calling Number" required placeholder="98765 43210" type="tel" autoComplete="tel" value={form.phone} onChange={(e) => updateField('phone', (e.target as HTMLInputElement).value)} />
                             {formErrors.phone && <p className="text-xs text-brand-red mt-1">{formErrors.phone}</p>}
                           </div>
                         </div>
@@ -974,7 +1081,7 @@ export default function CheckoutPage() {
                         {/* Delivery Address */}
                         <div className="border-t border-border-secondary/30 pt-3">
                           <div>
-                            <FormInput label="Delivery Address" required placeholder="Flat / House No, Building, Society, Street" value={form.addressLine1} onChange={(e) => updateField('addressLine1', (e.target as HTMLInputElement).value)} />
+                            <FormInput label="Delivery Address" required placeholder="Flat / House No, Building, Society, Street" autoComplete="street-address" value={form.addressLine1} onChange={(e) => updateField('addressLine1', (e.target as HTMLInputElement).value)} />
                             {formErrors.addressLine1 && <p className="text-xs text-brand-red mt-1">{formErrors.addressLine1}</p>}
                           </div>
                         </div>
