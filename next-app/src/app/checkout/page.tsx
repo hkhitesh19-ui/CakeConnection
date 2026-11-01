@@ -692,7 +692,7 @@ export default function CheckoutPage() {
             customer: {
               name: orderPayload.customer_name,
               email: orderPayload.customer_email,
-              phone: orderPayload.customer_phone,
+              phone: senderWhatsApp || orderPayload.customer_phone,
               address: `${orderPayload.delivery_address.addressLine1}, ${orderPayload.delivery_address.deliveryArea || ''}, ${orderPayload.delivery_address.city}, ${orderPayload.delivery_address.state} - ${orderPayload.delivery_address.pincode}`
             },
             sender: {

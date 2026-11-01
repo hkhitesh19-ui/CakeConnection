@@ -816,18 +816,250 @@ function generateAdminEmailHTML(orderDetails: any) {
   `;
 }
 
+// ── Helpers for Official WhatsApp Notification Dispatch (+91 72038 24012) ──
+function cleanWhatsAppNumber(phone?: string): string | null {
+  if (!phone) return null;
+  const digits = String(phone).replace(/[^0-9]/g, '');
+  if (!digits) return null;
+  if (digits.length === 10) return `91${digits}`;
+  if (digits.length === 12 && digits.startsWith('91')) return digits;
+  if (digits.length === 11 && digits.startsWith('0')) return `91${digits.slice(1)}`;
+  if (digits.length >= 10 && digits.length <= 15) return digits;
+  return null;
+}
+
+export async function sendOrderWhatsAppNotification(orderDetails: any): Promise<{
+  customerSent: boolean;
+  adminSent: boolean;
+  error?: string;
+}> {
+  try {
+    const evoUrl = (
+      process.env.EVOLUTION_API_URL ||
+      process.env.NEXT_PUBLIC_EVOLUTION_API_URL ||
+      'http://127.0.0.1:8080'
+    ).replace(/\/$/, '');
+    const evoKey = process.env.EVOLUTION_API_KEY || 'Evo_Api_Key_Secure_998877!';
+    const instanceName = process.env.EVOLUTION_CAKE_INSTANCE || 'CP_917203824012_cmtymavf_mvtr2bjd';
+
+    // 1. Resolve Customer WhatsApp Number (Customer / Sender who ordered)
+    const rawNumber =
+      orderDetails.sender?.whatsapp ||
+      orderDetails.customer?.phone ||
+      orderDetails.customer_phone ||
+      orderDetails.sender?.phone ||
+      orderDetails.phone ||
+      '';
+
+    const customerNumber = cleanWhatsAppNumber(rawNumber);
+    const orderId = orderDetails.id || orderDetails.orderNumber || orderDetails.order_number || 'CC-ORDER';
+    const customerName = orderDetails.customer?.name || orderDetails.sender?.fullName || orderDetails.sender?.name || 'Valued Customer';
+    const totalAmount = orderDetails.totalAmount ?? orderDetails.total ?? 0;
+    const paymentMode =
+      orderDetails.paymentMethod === 'cod' || /cod/i.test(orderDetails.paymentStatus || '')
+        ? 'Cash on Delivery (Pending)'
+        : 'Paid Online (Verified)';
+    const deliveryDateFormatted = formatDeliveryDate(orderDetails.deliveryDate);
+    const timeSlotFormatted = formatTimeSlotSummary(orderDetails.deliverySlot);
+
+    // 2. Build Ordered Items List
+    const products = orderDetails.products || orderDetails.items || [];
+    let itemsText = '';
+    if (Array.isArray(products) && products.length > 0) {
+      itemsText = products
+        .map((item: any, idx: number) => {
+          const name = item.name || 'Delicious Cake';
+          const weight = item.variantName && !/default|standard/i.test(item.variantName) ? ` (${item.variantName})` : '';
+          const qty = item.quantity && item.quantity > 1 ? ` x ${item.quantity}` : '';
+          const msg = item.customMessage && item.customMessage.trim() ? `\n   ↳ _Name on cake: "${item.customMessage.trim()}"_` : '';
+          return `${idx + 1}. ${name}${weight}${qty}${msg}`;
+        })
+        .join('\n');
+    } else {
+      itemsText = '• Fresh Bakery Item';
+    }
+
+    // 3. Resolve Recipient & Delivery Address
+    const receiverName = orderDetails.receiver?.fullName || orderDetails.receiver?.name || orderDetails.customer?.name || 'Recipient';
+    const receiverPhone = orderDetails.receiver?.callingPhone || orderDetails.receiver?.phone || 'N/A';
+
+    let addrText = '';
+    if (typeof orderDetails.deliveryAddress === 'string') {
+      addrText = orderDetails.deliveryAddress;
+    } else if (orderDetails.deliveryAddress && typeof orderDetails.deliveryAddress === 'object') {
+      const da = orderDetails.deliveryAddress;
+      const parts = [da.address || da.addressLine1, da.landmark, da.area || da.deliveryArea, da.city || 'Vadodara', da.pincode].filter(Boolean);
+      addrText = parts.join(', ');
+    } else if (orderDetails.receiver?.addressLine1) {
+      const parts = [
+        orderDetails.receiver.addressLine1,
+        orderDetails.receiver.addressLine2,
+        orderDetails.receiver.deliveryArea,
+        'Vadodara',
+        orderDetails.receiver.pincode,
+      ].filter(Boolean);
+      addrText = parts.join(', ');
+    }
+    if (!addrText) addrText = 'Vadodara, Gujarat';
+
+    // 4. Compose Polite & Professional WhatsApp Message for Customer
+    const customerMessage = [
+      `🎂 *Cake Connection - Order Confirmed!* 🎉`,
+      ``,
+      `Namaste *${customerName}* ji, aapka order successfully confirm ho gaya hai! Thank you for choosing Cake Connection.`,
+      ``,
+      `🧾 *Order Details:*`,
+      `• *Order ID:* #${orderId}`,
+      `• *Delivery Date:* ${deliveryDateFormatted}`,
+      `• *Time Slot:* ${timeSlotFormatted}`,
+      `• *Payment Mode:* ${paymentMode}`,
+      `• *Total Amount:* ₹${totalAmount}`,
+      ``,
+      `📦 *Ordered Items:*`,
+      itemsText,
+      ``,
+      `📍 *Delivery Details:*`,
+      `• *Recipient:* ${receiverName} (${receiverPhone})`,
+      `• *Address:* ${addrText}`,
+      ``,
+      `ℹ️ *Delivery & Surprise Policy:*`,
+      `• Order dispatch hone se pehle aapko WhatsApp par pickup-time product photo mil jayegi.`,
+      `• Yeh Surprise Delivery hai, isliye delivery boy recipient ke paas pahunchne tak sender ka naam disclose nahi karega.`,
+      `• Kisi bhi query ya changes ke liye, aap direct isi WhatsApp chat par message kar sakte hain.`,
+      ``,
+      `Thank you for ordering with Cake Connection! ❤️`,
+      `_Spreading Sweetness Across Vadodara_ 🍰✨`,
+      `📞 Support: +91 72038 24012`,
+    ].join('\n');
+
+    // Helper to send text via Evolution API with internal fallback
+    const postEvolution = async (number: string, text: string) => {
+      const endpoints = [
+        `${evoUrl}/message/sendText/${instanceName}`,
+        `http://187.127.170.36:8080/message/sendText/${instanceName}`,
+      ];
+
+      for (const endpoint of endpoints) {
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              apikey: evoKey,
+            },
+            body: JSON.stringify({ number, text }),
+            signal: AbortSignal.timeout(8000),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            return data;
+          }
+        } catch (endpointErr: any) {
+          console.warn(`Evolution endpoint ${endpoint} failed, trying next:`, endpointErr.message);
+        }
+      }
+      return null;
+    };
+
+    let customerSent = false;
+    let adminSent = false;
+
+    // Send WhatsApp to Customer
+    if (customerNumber) {
+      try {
+        const evoRes = await postEvolution(customerNumber, customerMessage);
+        if (evoRes?.key?.id || evoRes?.status === 'PENDING' || evoRes?.status === 'SUCCESS') {
+          customerSent = true;
+          console.log(`WhatsApp confirmation sent to customer (${customerNumber}) for order #${orderId}`);
+        } else {
+          console.warn(`Evolution response for customer ${customerNumber}:`, evoRes);
+        }
+      } catch (err: any) {
+        console.error(`Evolution customer send error (${customerNumber}):`, err.message);
+      }
+    } else {
+      console.warn('No valid customer WhatsApp phone found for order:', orderId);
+    }
+
+    // Send WhatsApp Alert to Store Official Number (+91 72038 24012)
+    const officialAdminNumber = '917203824012';
+    if (customerNumber !== officialAdminNumber) {
+      try {
+        const adminOrderAlert = [
+          `🚨 *NEW ORDER RECEIVED - Cake Connection* 🚨`,
+          ``,
+          `• *Order ID:* #${orderId}`,
+          `• *Customer:* ${customerName} (WA: ${customerNumber || 'N/A'})`,
+          `• *Delivery Date:* ${deliveryDateFormatted}`,
+          `• *Slot:* ${timeSlotFormatted}`,
+          `• *Total:* ₹${totalAmount} (${paymentMode})`,
+          ``,
+          `📦 *Items:*`,
+          itemsText,
+          ``,
+          `📍 *Recipient:* ${receiverName} (${receiverPhone})`,
+          `🏠 *Address:* ${addrText}`,
+        ].join('\n');
+
+        const adminRes = await postEvolution(officialAdminNumber, adminOrderAlert);
+        if (adminRes?.key?.id || adminRes?.status === 'PENDING' || adminRes?.status === 'SUCCESS') {
+          adminSent = true;
+          console.log(`WhatsApp admin alert sent to official number for order #${orderId}`);
+        }
+      } catch (err: any) {
+        console.error('Evolution admin send error:', err.message);
+      }
+    } else {
+      adminSent = customerSent;
+    }
+
+    return { customerSent, adminSent };
+  } catch (error: any) {
+    console.error('WhatsApp notification dispatcher exception:', error.message);
+    return { customerSent: false, adminSent: false, error: error.message };
+  }
+}
+
 export async function POST(req: Request) {
   try {
-    const orderDetails = await req.json();
+    const rawOrderDetails = await req.json();
 
-    if (!orderDetails || !orderDetails.customer?.email) {
+    if (!rawOrderDetails) {
       return NextResponse.json(
-        { error: 'Invalid payload: Customer email is required.' },
+        { error: 'Invalid payload: Order details required.' },
         { status: 400 }
       );
     }
 
-    // 1. Generate Normal PDF Invoice in memory (NO Tax / NO GST)
+    // Normalize order details for complete resilience across checkout and webhook payloads
+    const orderId = rawOrderDetails.id || rawOrderDetails.orderNumber || rawOrderDetails.order_number || `ORD-${Date.now().toString().slice(-6)}`;
+    const customerEmail = rawOrderDetails.customer?.email || rawOrderDetails.sender?.email || rawOrderDetails.email || '';
+    const customerName = rawOrderDetails.customer?.name || rawOrderDetails.sender?.fullName || rawOrderDetails.sender?.name || 'Valued Customer';
+    const customerPhone = rawOrderDetails.sender?.whatsapp || rawOrderDetails.customer?.phone || rawOrderDetails.sender?.callingPhone || rawOrderDetails.sender?.phone || rawOrderDetails.phone || '';
+
+    const orderDetails = {
+      ...rawOrderDetails,
+      id: orderId,
+      customer: {
+        name: customerName,
+        email: customerEmail,
+        phone: customerPhone,
+        ...(rawOrderDetails.customer || {}),
+      },
+      sender: {
+        name: customerName,
+        fullName: customerName,
+        email: customerEmail,
+        whatsapp: customerPhone,
+        phone: customerPhone,
+        ...(rawOrderDetails.sender || {}),
+      },
+    };
+
+    // 1. Dispatch WhatsApp notification to customer & official number in parallel
+    const waPromise = sendOrderWhatsAppNotification(orderDetails);
+
+    // 2. Generate Normal PDF Invoice in memory (NO Tax / NO GST)
     let pdfBuffer: Buffer | null = null;
     try {
       pdfBuffer = await generatePDFBuffer(orderDetails);
@@ -835,14 +1067,17 @@ export async function POST(req: Request) {
       console.warn('PDF generation deferred (using HTML email):', pdfErr.message);
     }
 
-    // 2. Configure Nodemailer Transporter
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.warn('EMAIL_USER or EMAIL_PASS not configured. Simulated email dispatch completed.');
+    // 3. Configure Nodemailer Transporter
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !customerEmail) {
+      console.warn('EMAIL_USER/EMAIL_PASS not configured or email empty. Simulated email dispatch completed.');
+      const waResult = await waPromise;
       return NextResponse.json(
         {
           success: true,
-          message: 'Order received. (Email dispatch simulated; configure EMAIL_USER and EMAIL_PASS in .env.local to send live emails).',
+          message: 'Order received. WhatsApp notification dispatched; Email dispatch simulated.',
           emailSent: false,
+          whatsappCustomerSent: waResult.customerSent,
+          whatsappAdminSent: waResult.adminSent,
         },
         { status: 200 }
       );
@@ -861,11 +1096,11 @@ export async function POST(req: Request) {
       },
     });
 
-    // 3. Generate HTML Content
+    // 4. Generate HTML Content
     const customerHtml = generateCustomerEmailHTML(orderDetails);
     const adminHtml = generateAdminEmailHTML(orderDetails);
 
-    // 4. Attachments — generate independent buffer copies for each email to avoid stream consumption issues
+    // 5. Attachments — generate independent buffer copies for each email to avoid stream consumption issues
     const cleanId = (orderDetails.id || 'CC-ORDER').replace(/[^a-zA-Z0-9_-]/g, '');
     const getInvoiceAttachments = () => {
       if (!pdfBuffer || pdfBuffer.length === 0) return [];
@@ -881,7 +1116,7 @@ export async function POST(req: Request) {
     // Customer Email Options
     const customerMailOptions: any = {
       from: `"Cake Connection Orders" <${process.env.EMAIL_USER}>`,
-      to: orderDetails.customer.email,
+      to: customerEmail,
       subject: `Order Confirmation - Invoice #${orderDetails.id || 'N/A'} | Cake Connection`,
       html: customerHtml,
       attachments: getInvoiceAttachments(),
@@ -891,7 +1126,7 @@ export async function POST(req: Request) {
     const adminMailOptions: any = {
       from: `"Cake Connection System" <${process.env.EMAIL_USER}>`,
       to: 'Order.CakeConnection@gmail.com',
-      subject: `🚨 [NEW ORDER #${orderDetails.id}] ₹${orderDetails.totalAmount || 0} - ${orderDetails.receiver?.name || orderDetails.customer?.name} | Slot: ${orderDetails.deliverySlot || 'Standard'}`,
+      subject: `🚨 [NEW ORDER #${orderDetails.id}] ₹${orderDetails.totalAmount || 0} - ${orderDetails.receiver?.name || customerName} | Slot: ${orderDetails.deliverySlot || 'Standard'}`,
       html: adminHtml,
       attachments: getInvoiceAttachments(),
     };
@@ -920,14 +1155,18 @@ export async function POST(req: Request) {
       if (!emailError) emailError = adminErr.message;
     }
 
+    const waResult = await waPromise;
+
     return NextResponse.json(
       {
         success: true,
         message: customerSent && adminSent
-          ? 'Normal Invoice generated; customer and admin emails dispatched successfully.'
-          : 'Invoice processed with partial or simulated email dispatch.',
+          ? 'Normal Invoice generated; customer and admin emails & WhatsApp dispatched successfully.'
+          : 'Invoice processed with partial email and WhatsApp dispatch.',
         customerSent,
         adminSent,
+        whatsappCustomerSent: waResult.customerSent,
+        whatsappAdminSent: waResult.adminSent,
         warning: emailError,
       },
       { status: 200 }
