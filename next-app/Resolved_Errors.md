@@ -81,3 +81,21 @@ Fixed `ProductDetailClient.tsx` by defining the `ProductDetailClientProps` inter
 
 **Prevention:**
 Ensure client components accept and utilize data passed from server components instead of independently re-fetching. Check prop interfaces to guarantee the data pipeline isn't broken midway.
+
+---
+
+## 6. Razorpay Premature Order Placement & Test Mode Incompatibility
+**Date:** November 1, 2026
+**Issue:** 
+Customers were unable to make online payments via Razorpay (UPI/cards failing), and orders were getting placed in the database without payment.
+
+**Root Cause:**
+1. Production environment had test credentials (`rzp_test_...`), which blocks real UPI (Google Pay, PhonePe, Paytm) and real debit/credit cards.
+2. Checkout architecture in `src/app/checkout/page.tsx` called `/api/orders` in Step 1 *before* launching the Razorpay modal. When customers cancelled the modal or payment failed, the order had already been inserted into the database with `payment_status: pending`.
+
+**Resolution:**
+1. Upgraded to verified Razorpay Live credentials (`rzp_live_TusWhJuT6r5IPQ`) in `.env.production`, `.env.vps`, and live VPS.
+2. Refactored checkout flow: The frontend calls `/api/payments/create-order` first to open the Razorpay modal. Only after successful payment verification via `/api/payments/verify` is the confirmed order saved to the database. If the payment is dismissed or fails, no false order is generated and the user's cart remains preserved.
+
+**Prevention:**
+Never commit orders to the database before receiving cryptographic payment verification signatures. Always ensure production environments run live payment gateway credentials.

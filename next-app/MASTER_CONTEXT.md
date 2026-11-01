@@ -107,3 +107,4 @@ Installed in `.agents/skills/` and global config:
 - **Dead Supabase DNS Delays:** Removed dead cloud URLs from `.env.local` and `.env.production`. Response times dropped to ~120ms.
 - **Git Deployment Migration:** Moved from 141MB manual tar archives to automated Git-based pull & PM2 zero-downtime deployment.
 - **Cloudflare Integration:** Fully mapped DNS, SSL Full mode, and reverse proxy topology documented.
+- **Razorpay Live Gateway & Verified Order Pipeline:** Replaced sandbox keys with active live credentials (`rzp_live_...`). Refactored checkout so database orders are only recorded after cryptographic signature verification, preventing empty/unpaid pending orders from entering the system.

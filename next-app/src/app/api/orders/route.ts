@@ -113,6 +113,8 @@ export async function POST(request: Request) {
       order_status: body.order_status || 'pending',
       delivery_date: body.delivery_date || new Date().toISOString().split('T')[0],
       delivery_slot: body.delivery_slot || 'Standard (09:00 AM - 09:00 PM)',
+      razorpay_order_id: body.razorpay_order_id || null,
+      razorpay_payment_id: body.razorpay_payment_id || null,
       special_instructions: body.special_instructions || null,
       coupon_code: body.coupon_code || null,
     };

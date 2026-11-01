@@ -656,33 +656,20 @@ export default function CheckoutPage() {
         }
       };
 
-      // If Razorpay is selected, create order first then open Razorpay modal
+      // If Razorpay is selected, create Razorpay order first -> verify payment -> then save confirmed order to DB
       if (form.paymentMethod === 'razorpay') {
-        // Step 1: Create order in database with payment_status: 'pending'
-        const orderResponse = await fetch('/api/orders', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(orderPayload),
-        });
-        const orderResult = await orderResponse.json();
+        const orderNumber = `ORD-${Date.now().toString().slice(-6)}`;
 
-        if (!orderResult.success) {
-          addToast({ type: 'error', message: orderResult.message || 'Failed to create order.' });
-          alert('Failed to create order: ' + (orderResult.message || 'Unknown error'));
-          setIsPlacing(false);
-          return;
-        }
-
-        // Step 2: Create Razorpay order
         try {
+          // Step 1: Create Razorpay Order on server
           const paymentResponse = await fetch('/api/payments/create-order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               amount: Math.round(finalTotal * 100), // Amount in paise
-              receipt: orderResult.data.order_number,
+              receipt: orderNumber,
               notes: {
-                order_number: orderResult.data.order_number,
+                order_number: orderNumber,
                 customer_name: form.fullName,
                 customer_email: form.email,
               },
@@ -690,50 +677,15 @@ export default function CheckoutPage() {
           });
           const paymentResult = await paymentResponse.json();
 
-          if (paymentResult.success && paymentResult.data?.orderId) {
-            const razorpayKeyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.VITE_RAZORPAY_KEY_ID;
-            
-            // Check if key is a placeholder or missing
-            if (!razorpayKeyId || razorpayKeyId.includes('YOUR_RAZORPAY')) {
-              console.warn('Razorpay keys not configured. Simulating successful payment for testing.');
-              addToast({ type: 'info', message: 'Test Mode: Simulating Razorpay Payment...' });
-              
-              // Simulate API delay
-              await new Promise((resolve) => setTimeout(resolve, 1500));
-              
-              // Directly call verify endpoint (mock)
-              const verifyResponse = await fetch('/api/payments/verify', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  razorpay_order_id: paymentResult.data.orderId,
-                  razorpay_payment_id: 'pay_mock_' + Date.now(),
-                  razorpay_signature: 'mock_signature',
-                  order_number: orderResult.data.order_number,
-                }),
-              });
-              const verifyResult = await verifyResponse.json();
-              if (verifyResult.success) {
-                const successData: OrderSuccessData = {
-                  orderNumber: orderResult.data.order_number,
-                  deliveryDate,
-                  deliverySlot: finalDeliverySlot,
-                  senderWhatsApp,
-                  total: finalTotal,
-                };
-                setOrderSuccessData(successData);
-                clearCart();
-                dispatchInvoice(orderResult.data.order_number);
-                addToast({ type: 'success', message: 'Test Payment successful! Order placed.' });
-              } else {
-                addToast({ type: 'error', message: 'Payment verification failed.' });
-              }
-              setIsPlacing(false);
-              return;
-            }
+          if (!paymentResult.success || !paymentResult.data?.orderId) {
+            addToast({ type: 'error', message: paymentResult.message || 'Failed to initialize payment gateway. Please try again.' });
+            setIsPlacing(false);
+            return;
+          }
 
-            // Step 3: Load Razorpay script dynamically
-            if (typeof window !== 'undefined') {
+          // Step 2: Load Razorpay checkout script if not present
+          if (typeof window !== 'undefined') {
+            if (!(window as any).Razorpay) {
               const res = await new Promise((resolve) => {
                 const script = document.createElement('script');
                 script.src = 'https://checkout.razorpay.com/v1/checkout.js';
@@ -743,72 +695,99 @@ export default function CheckoutPage() {
               });
 
               if (!res || !(window as any).Razorpay) {
-                addToast({ type: 'error', message: 'Failed to load payment gateway. Please try again.' });
+                addToast({ type: 'error', message: 'Failed to load payment gateway. Please check your connection and try again.' });
                 setIsPlacing(false);
                 return;
               }
+            }
 
-              const options = {
-                key: razorpayKeyId,
-                amount: Math.round(finalTotal * 100),
-                currency: 'INR',
-                name: 'Cake Connection',
-                description: `Order #${orderResult.data.order_number}`,
-                order_id: paymentResult.data.orderId,
-                handler: async (response: any) => {
-                  // Step 4: Verify payment
-                  try {
-                    const verifyResponse = await fetch('/api/payments/verify', {
+            const razorpayKeyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_live_TusWhJuT6r5IPQ';
+
+            const options = {
+              key: razorpayKeyId,
+              amount: Math.round(finalTotal * 100),
+              currency: 'INR',
+              name: 'Cake Connection',
+              description: `Order #${orderNumber}`,
+              order_id: paymentResult.data.orderId,
+              handler: async (response: any) => {
+                // Step 3: Verify payment on server
+                try {
+                  const verifyResponse = await fetch('/api/payments/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      razorpay_order_id: response.razorpay_order_id,
+                      razorpay_payment_id: response.razorpay_payment_id,
+                      razorpay_signature: response.razorpay_signature,
+                      order_number: orderNumber,
+                    }),
+                  });
+                  const verifyResult = await verifyResponse.json();
+
+                  if (verifyResult.success) {
+                    // Step 4: ONLY after payment is verified, create confirmed order in DB
+                    const confirmedOrderPayload = {
+                      ...orderPayload,
+                      order_number: orderNumber,
+                      payment_status: 'paid',
+                      order_status: 'confirmed',
+                      razorpay_order_id: response.razorpay_order_id,
+                      razorpay_payment_id: response.razorpay_payment_id,
+                    };
+
+                    const orderResponse = await fetch('/api/orders', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({
-                        razorpay_order_id: response.razorpay_order_id,
-                        razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_signature: response.razorpay_signature,
-                        order_number: orderResult.data.order_number,
-                      }),
+                      body: JSON.stringify(confirmedOrderPayload),
                     });
-                    const verifyResult = await verifyResponse.json();
-                    if (verifyResult.success) {
-                      const successData: OrderSuccessData = {
-                        orderNumber: orderResult.data.order_number,
-                        deliveryDate,
-                        deliverySlot: finalDeliverySlot,
-                        senderWhatsApp,
-                        total: finalTotal,
-                      };
-                      setOrderSuccessData(successData);
-                      clearCart();
-                      dispatchInvoice(orderResult.data.order_number);
-                      addToast({ type: 'success', message: 'Payment successful! Order placed.' });
-                    } else {
-                      addToast({ type: 'error', message: 'Payment verification failed. Please contact support.' });
-                    }
-                  } catch {
-                    addToast({ type: 'error', message: 'Payment verification error. Please contact support.' });
+                    const orderResult = await orderResponse.json();
+                    const finalOrderNumber = orderResult.data?.order_number || orderNumber;
+
+                    const successData: OrderSuccessData = {
+                      orderNumber: finalOrderNumber,
+                      deliveryDate,
+                      deliverySlot: finalDeliverySlot,
+                      senderWhatsApp,
+                      total: finalTotal,
+                    };
+                    setOrderSuccessData(successData);
+                    clearCart();
+                    dispatchInvoice(finalOrderNumber);
+                    addToast({ type: 'success', message: 'Payment successful! Order placed.' });
+                  } else {
+                    addToast({ type: 'error', message: 'Payment verification failed. Please contact support.' });
                   }
+                } catch {
+                  addToast({ type: 'error', message: 'Payment verification error. If money was deducted, please contact support on WhatsApp.' });
+                } finally {
                   setIsPlacing(false);
+                }
+              },
+              prefill: {
+                name: form.fullName,
+                email: form.email,
+                contact: form.phone,
+              },
+              theme: { color: '#D81B60' },
+              modal: {
+                ondismiss: () => {
+                  setIsPlacing(false);
+                  addToast({ type: 'info', message: 'Payment cancelled. Your cart is preserved, you can retry anytime.' });
                 },
-                prefill: {
-                  name: form.fullName,
-                  email: form.email,
-                  contact: form.phone,
-                },
-                theme: { color: '#D81B60' },
-                modal: {
-                  ondismiss: () => {
-                    setIsPlacing(false);
-                    addToast({ type: 'info', message: 'Payment cancelled. Your order is saved and you can retry.' });
-                  },
-                },
-              };
-              const rzp = new (window as any).Razorpay(options);
-              rzp.open();
-              return; // Don't set isPlacing to false here, Razorpay modal handles it
-            }
+              },
+            };
+
+            const rzp = new (window as any).Razorpay(options);
+            rzp.on('payment.failed', function (resp: any) {
+              setIsPlacing(false);
+              addToast({ type: 'error', message: resp?.error?.description || 'Payment was declined.' });
+            });
+            rzp.open();
+            return;
           }
         } catch (error) {
-          console.warn('Razorpay integration failed:', error);
+          console.warn('Razorpay integration error:', error);
           alert('Failed to initialize payment gateway.');
           setIsPlacing(false);
           return;
