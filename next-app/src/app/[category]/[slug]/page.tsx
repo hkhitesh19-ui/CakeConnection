@@ -1,9 +1,13 @@
 import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import ProductDetailClient from '@/components/product/ProductDetailClient';
-import { getProductBySlug, getRelatedProducts, getProductsByCategory } from '@/lib/db';
+import { getProductBySlug, getProductsByCategory } from '@/lib/db';
+import { getMergedProductBySlug, getMergedProductsByCategory } from '@/lib/serverProductStore';
 import { siteConfig } from '@/config/site.config';
 import { generateProductSchema } from '@/lib/seo/schema';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -14,7 +18,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const resolvedParams = await params;
-  const product = await getProductBySlug(resolvedParams.slug);
+  const product = getMergedProductBySlug(resolvedParams.slug) || (await getProductBySlug(resolvedParams.slug));
 
   if (!product) {
     return {
@@ -61,18 +65,16 @@ export async function generateMetadata(
 
 export default async function ProductPage({ params }: Props) {
   const resolvedParams = await params;
-  const product = await getProductBySlug(resolvedParams.slug);
+  const product = getMergedProductBySlug(resolvedParams.slug) || (await getProductBySlug(resolvedParams.slug));
 
   if (!product) {
     notFound();
   }
 
   // Fetch 3 Cakes, 3 Flowers, and 3 Combos for "You Might Also Like" section
-  const [allCakes, allFlowers, allCombos] = await Promise.all([
-    getProductsByCategory('cakes'),
-    getProductsByCategory('flowers'),
-    getProductsByCategory('combos'),
-  ]);
+  const allCakes = getMergedProductsByCategory('cakes');
+  const allFlowers = getMergedProductsByCategory('flowers');
+  const allCombos = getMergedProductsByCategory('combos');
 
   const cakes3 = allCakes.filter(p => p.id !== product.id).slice(0, 3);
   const flowers3 = allFlowers.filter(p => p.id !== product.id).slice(0, 3);
@@ -81,7 +83,7 @@ export default async function ProductPage({ params }: Props) {
 
   // ✅ Server-side ProductSchema JSON-LD for Google rich results (price + rating in SERP)
   const lowestVariantPrice = product.variants?.length
-    ? Math.min(...product.variants.map(v => v.price)).toString()
+    ? Math.min(...product.variants.map((v: any) => v.price)).toString()
     : '0';
 
   const productSchema = generateProductSchema({
@@ -108,4 +110,3 @@ export default async function ProductPage({ params }: Props) {
     </>
   );
 }
-

@@ -41,5 +41,3896 @@
     "isNewArrival": false,
     "isBestseller": true,
     "updatedAt": "2026-10-11T16:20:02.048Z"
+  },
+  "real-cake-148": {
+    "id": "real-cake-148",
+    "name": "Premium Rasmalai Cake",
+    "slug": "premium-rasmalai-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/premium-rasmalai-cake.jpeg",
+        "alt": "Premium Rasmalai Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-premium-rasmalai-cake-500g",
+        "weight": "500g",
+        "price": 1049,
+        "compareAtPrice": 699,
+        "sku": "CK-premium-rasmalai-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-rasmalai-cake-1kg",
+        "weight": "1kg",
+        "price": 1899,
+        "compareAtPrice": 1249,
+        "sku": "CK-premium-rasmalai-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-rasmalai-cake-15kg",
+        "weight": "1.5kg",
+        "price": 2699,
+        "compareAtPrice": 1799,
+        "sku": "CK-premium-rasmalai-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-rasmalai-cake-2kg",
+        "weight": "2kg",
+        "price": 3399,
+        "compareAtPrice": 2349,
+        "sku": "CK-premium-rasmalai-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 1049,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "rasmalai",
+    "description": "Freshly baked Premium Rasmalai Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Premium Rasmalai Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "rasmalai",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:29:43.697Z"
+  },
+  "real-cake-155": {
+    "id": "real-cake-155",
+    "name": "Red Velvet Cake",
+    "slug": "red-velvet-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/red-velvet-cake.png",
+        "alt": "Red Velvet Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-red-velvet-cake-500g",
+        "weight": "500g",
+        "price": 699,
+        "compareAtPrice": 649,
+        "sku": "CK-red-velvet-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-velvet-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-red-velvet-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-velvet-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1799,
+        "compareAtPrice": 1649,
+        "sku": "CK-red-velvet-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-velvet-cake-2kg",
+        "weight": "2kg",
+        "price": 2499,
+        "compareAtPrice": 2149,
+        "sku": "CK-red-velvet-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 699,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "red-velvet",
+    "description": "Freshly baked Red Velvet Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Red Velvet Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "red-velvet",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:31:27.305Z"
+  },
+  "real-cake-162": {
+    "id": "real-cake-162",
+    "name": "Royal Casatta Cake",
+    "slug": "royal-casatta-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/royal-casatta-cake.jpg",
+        "alt": "Royal Casatta Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-royal-casatta-cake-500g",
+        "weight": "500g",
+        "price": 799,
+        "compareAtPrice": 649,
+        "sku": "CK-royal-casatta-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-casatta-cake-1kg",
+        "weight": "1kg",
+        "price": 1498,
+        "compareAtPrice": 1149,
+        "sku": "CK-royal-casatta-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-casatta-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1999,
+        "compareAtPrice": 1649,
+        "sku": "CK-royal-casatta-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-casatta-cake-2kg",
+        "weight": "2kg",
+        "price": 2499,
+        "compareAtPrice": 2149,
+        "sku": "CK-royal-casatta-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 799,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Royal Casatta Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Royal Casatta Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:32:18.251Z"
+  },
+  "real-cake-160": {
+    "id": "real-cake-160",
+    "name": "Roasted Choco Almonds Nutty Cake",
+    "slug": "roasted-choco-almonds-nutty-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/roasted-choco-almonds-nutty-cake.png",
+        "alt": "Roasted Choco Almonds Nutty Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-roasted-choco-almonds-nutty-cake-500g",
+        "weight": "500g",
+        "price": 999,
+        "compareAtPrice": 649,
+        "sku": "CK-roasted-choco-almonds-nutty-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-nutty-cake-1kg",
+        "weight": "1kg",
+        "price": 1999,
+        "compareAtPrice": 1149,
+        "sku": "CK-roasted-choco-almonds-nutty-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-nutty-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-roasted-choco-almonds-nutty-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-nutty-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-roasted-choco-almonds-nutty-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 999,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Roasted Choco Almonds Nutty Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Nutty Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:33:03.627Z"
+  },
+  "real-cake-159": {
+    "id": "real-cake-159",
+    "name": "Roasted Choco Almonds Cake",
+    "slug": "roasted-choco-almonds-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/roasted-choco-almonds-cake.png",
+        "alt": "Roasted Choco Almonds Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-roasted-choco-almonds-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-roasted-choco-almonds-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-roasted-choco-almonds-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1499,
+        "compareAtPrice": 1649,
+        "sku": "CK-roasted-choco-almonds-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-roasted-choco-almonds-cake-2kg",
+        "weight": "2kg",
+        "price": 1999,
+        "compareAtPrice": 2149,
+        "sku": "CK-roasted-choco-almonds-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Roasted Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:33:31.340Z"
+  },
+  "real-cake-165": {
+    "id": "real-cake-165",
+    "name": "Royal Choco Truffle Cake 2",
+    "slug": "royal-choco-truffle-cake-2",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/royal-choco-truffle-cake-2-5-hours.jpg",
+        "alt": "Royal Choco Truffle Cake 2"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-royal-choco-truffle-cake-2-500g",
+        "weight": "500g",
+        "price": 699,
+        "compareAtPrice": 649,
+        "sku": "CK-royal-choco-truffle-cake-2-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-cake-2-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-royal-choco-truffle-cake-2-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-cake-2-15kg",
+        "weight": "1.5kg",
+        "price": 1999,
+        "compareAtPrice": 1649,
+        "sku": "CK-royal-choco-truffle-cake-2-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-cake-2-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-royal-choco-truffle-cake-2-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 699,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Royal Choco Truffle Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Royal Choco Truffle Cake 2",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:34:06.143Z"
+  },
+  "real-cake-172": {
+    "id": "real-cake-172",
+    "name": "Royal Red Velvet Cream Cake",
+    "slug": "royal-red-velvet-cream-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/royal-red-velvet-cream-cake.png",
+        "alt": "Royal Red Velvet Cream Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-royal-red-velvet-cream-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-royal-red-velvet-cream-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-red-velvet-cream-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-royal-red-velvet-cream-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-red-velvet-cream-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-royal-red-velvet-cream-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-red-velvet-cream-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-royal-red-velvet-cream-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "red-velvet",
+    "description": "Freshly baked Royal Red Velvet Cream Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Royal Red Velvet Cream Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "red-velvet",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:34:40.619Z"
+  },
+  "real-cake-173": {
+    "id": "real-cake-173",
+    "name": "Safari Animal Theme Cake",
+    "slug": "safari-animal-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/safari-animal-theme-cake.jpeg",
+        "alt": "Safari Animal Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-safari-animal-theme-cake-500g",
+        "weight": "500g",
+        "price": 699,
+        "compareAtPrice": 649,
+        "sku": "CK-safari-animal-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-safari-animal-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-safari-animal-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-safari-animal-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-safari-animal-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-safari-animal-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-safari-animal-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 699,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Safari Animal Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Safari Animal Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:34:56.129Z"
+  },
+  "real-cake-180": {
+    "id": "real-cake-180",
+    "name": "Super Dad Birthday Cake",
+    "slug": "super-dad-birthday-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/super-dad-birthday-cake.jpeg",
+        "alt": "Super Dad Birthday Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-super-dad-birthday-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-super-dad-birthday-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-super-dad-birthday-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-super-dad-birthday-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-super-dad-birthday-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-super-dad-birthday-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-super-dad-birthday-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-super-dad-birthday-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Super Dad Birthday Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Super Dad Birthday Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:35:06.624Z"
+  },
+  "real-cake-186": {
+    "id": "real-cake-186",
+    "name": "Tom And Jerry Cartoon Cake",
+    "slug": "tom-and-jerry-cartoon-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/tom-and-jerry-cartoon-cake.jpeg",
+        "alt": "Tom And Jerry Cartoon Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-tom-and-jerry-cartoon-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-tom-and-jerry-cartoon-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-tom-and-jerry-cartoon-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-tom-and-jerry-cartoon-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-tom-and-jerry-cartoon-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-tom-and-jerry-cartoon-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-tom-and-jerry-cartoon-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-tom-and-jerry-cartoon-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Tom And Jerry Cartoon Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Tom And Jerry Cartoon Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:35:14.473Z"
+  },
+  "real-cake-153": {
+    "id": "real-cake-153",
+    "name": "Red Rose Anniversary Cake",
+    "slug": "red-rose-anniversary-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/red-rose-anniversary-cake.jpg",
+        "alt": "Red Rose Anniversary Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-red-rose-anniversary-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-red-rose-anniversary-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-rose-anniversary-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-red-rose-anniversary-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-rose-anniversary-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-red-rose-anniversary-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-red-rose-anniversary-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-red-rose-anniversary-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Red Rose Anniversary Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Red Rose Anniversary Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:35:26.831Z"
+  },
+  "real-cake-157": {
+    "id": "real-cake-157",
+    "name": "Rich Choco Truffle Temptation Cake",
+    "slug": "rich-choco-truffle-temptation-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/rich-choco-truffle-temptation-cake.jpeg",
+        "alt": "Rich Choco Truffle Temptation Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-rich-choco-truffle-temptation-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-rich-choco-truffle-temptation-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-choco-truffle-temptation-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-rich-choco-truffle-temptation-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-choco-truffle-temptation-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-rich-choco-truffle-temptation-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-choco-truffle-temptation-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-rich-choco-truffle-temptation-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Rich Choco Truffle Temptation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Rich Choco Truffle Temptation Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:35:37.655Z"
+  },
+  "real-cake-158": {
+    "id": "real-cake-158",
+    "name": "Rich Dutch Choco Truffle Cake",
+    "slug": "rich-dutch-choco-truffle-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/rich-dutch-choco-truffle-cake.jpg",
+        "alt": "Rich Dutch Choco Truffle Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-rich-dutch-choco-truffle-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-rich-dutch-choco-truffle-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-dutch-choco-truffle-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-rich-dutch-choco-truffle-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-dutch-choco-truffle-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-rich-dutch-choco-truffle-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rich-dutch-choco-truffle-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-rich-dutch-choco-truffle-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Rich Dutch Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Rich Dutch Choco Truffle Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:35:44.280Z"
+  },
+  "real-cake-146": {
+    "id": "real-cake-146",
+    "name": "Premium Overloaded Cake",
+    "slug": "premium-overloaded-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/premium-overloaded-cake.jpg",
+        "alt": "Premium Overloaded Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-premium-overloaded-cake-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-premium-overloaded-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-overloaded-cake-1kg",
+        "weight": "1kg",
+        "price": 1249,
+        "compareAtPrice": 1149,
+        "sku": "CK-premium-overloaded-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-overloaded-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1499,
+        "compareAtPrice": 1649,
+        "sku": "CK-premium-overloaded-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-overloaded-cake-2kg",
+        "weight": "2kg",
+        "price": 1999,
+        "compareAtPrice": 2149,
+        "sku": "CK-premium-overloaded-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Premium Overloaded Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Premium Overloaded Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:36:19.835Z"
+  },
+  "real-cake-145": {
+    "id": "real-cake-145",
+    "name": "Premium Dark Choco Chips Cake",
+    "slug": "premium-dark-choco-chips-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/premium-dark-choco-chips-cake.png",
+        "alt": "Premium Dark Choco Chips Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-premium-dark-choco-chips-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-premium-dark-choco-chips-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-dark-choco-chips-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-premium-dark-choco-chips-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-dark-choco-chips-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-premium-dark-choco-chips-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-premium-dark-choco-chips-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-premium-dark-choco-chips-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Premium Dark Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Premium Dark Choco Chips Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:36:28.129Z"
+  },
+  "real-cake-142": {
+    "id": "real-cake-142",
+    "name": "Pinky Blackforest Cake",
+    "slug": "pinky-blackforest-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/pinky-blackforest.jpeg",
+        "alt": "Pinky Blackforest Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-pinky-blackforest-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-pinky-blackforest-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-pinky-blackforest-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-pinky-blackforest-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-pinky-blackforest-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-pinky-blackforest-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-pinky-blackforest-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-pinky-blackforest-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "black-forest",
+    "description": "Freshly baked Pinky Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Pinky Blackforest Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "black-forest",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:36:41.685Z"
+  },
+  "real-cake-139": {
+    "id": "real-cake-139",
+    "name": "Pink Forest Strawberry Choco Cake Special",
+    "slug": "pink-forest-strawberry-choco-cake-special",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/pink-forest-strawberry-choco-cake-special.jpeg",
+        "alt": "Pink Forest Strawberry Choco Cake Special"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-pink-forest-strawberry-choco-cake-special-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-pink-forest-strawberry-choco-cake-special-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-pink-forest-strawberry-choco-cake-special-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-pink-forest-strawberry-choco-cake-special-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-pink-forest-strawberry-choco-cake-special-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-pink-forest-strawberry-choco-cake-special-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-pink-forest-strawberry-choco-cake-special-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-pink-forest-strawberry-choco-cake-special-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Pink Forest Strawberry Choco Cake Special in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Pink Forest Strawberry Choco Cake Special",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:36:47.225Z"
+  },
+  "real-cake-134": {
+    "id": "real-cake-134",
+    "name": "Over Loaded Chocolate Cake",
+    "slug": "over-loaded-chocolate-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/over-loaded-chocolate-cake.jpeg",
+        "alt": "Over Loaded Chocolate Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-over-loaded-chocolate-cake-500g",
+        "weight": "500g",
+        "price": 799,
+        "compareAtPrice": 649,
+        "sku": "CK-over-loaded-chocolate-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-over-loaded-chocolate-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-over-loaded-chocolate-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-over-loaded-chocolate-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1849,
+        "compareAtPrice": 1649,
+        "sku": "CK-over-loaded-chocolate-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-over-loaded-chocolate-cake-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-over-loaded-chocolate-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 799,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Over Loaded Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Over Loaded Chocolate Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:37:11.271Z"
+  },
+  "real-cake-128": {
+    "id": "real-cake-128",
+    "name": "No Cream Dutch Truffle Cake",
+    "slug": "no-cream-dutch-truffle-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/no-cream-dutch-truffle.jpg",
+        "alt": "No Cream Dutch Truffle Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-no-cream-dutch-truffle-cake-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-no-cream-dutch-truffle-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-no-cream-dutch-truffle-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-no-cream-dutch-truffle-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-no-cream-dutch-truffle-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1899,
+        "compareAtPrice": 1649,
+        "sku": "CK-no-cream-dutch-truffle-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-no-cream-dutch-truffle-cake-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-no-cream-dutch-truffle-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked No Cream Dutch Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless No Cream Dutch Truffle Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:38:10.770Z"
+  },
+  "real-cake-125": {
+    "id": "real-cake-125",
+    "name": "Mom Cake",
+    "slug": "mom-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/mom-cake.jpg",
+        "alt": "Mom Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-mom-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-mom-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-mom-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-mom-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-mom-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-mom-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-mom-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-mom-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Mom Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Mom Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:38:16.739Z"
+  },
+  "real-cake-105": {
+    "id": "real-cake-105",
+    "name": "I Love You Heart Cake",
+    "slug": "i-love-you-heart-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/i-love-you-heart-cake.jpg",
+        "alt": "I Love You Heart Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-i-love-you-heart-cake-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-i-love-you-heart-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-you-heart-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-i-love-you-heart-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-you-heart-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1749,
+        "compareAtPrice": 1649,
+        "sku": "CK-i-love-you-heart-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-you-heart-cake-2kg",
+        "weight": "2kg",
+        "price": 2199,
+        "compareAtPrice": 2149,
+        "sku": "CK-i-love-you-heart-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked I Love You Heart Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless I Love You Heart Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:38:51.251Z"
+  },
+  "real-cake-110": {
+    "id": "real-cake-110",
+    "name": "Lovely Choco Vanilla Swirl Cake",
+    "slug": "lovely-choco-vanilla-swirl-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/lovely-choco-vanilla-swirl-cake.jpg",
+        "alt": "Lovely Choco Vanilla Swirl Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-lovely-choco-vanilla-swirl-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-lovely-choco-vanilla-swirl-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-lovely-choco-vanilla-swirl-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-lovely-choco-vanilla-swirl-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-lovely-choco-vanilla-swirl-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-lovely-choco-vanilla-swirl-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-lovely-choco-vanilla-swirl-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-lovely-choco-vanilla-swirl-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Lovely Choco Vanilla Swirl Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Lovely Choco Vanilla Swirl Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:39:12.035Z"
+  },
+  "real-cake-101": {
+    "id": "real-cake-101",
+    "name": "I Love Dad Mustache Cake",
+    "slug": "i-love-dad-mustache-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/i-love-dad-mustache-cake.jpeg",
+        "alt": "I Love Dad Mustache Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-i-love-dad-mustache-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-i-love-dad-mustache-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-dad-mustache-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-i-love-dad-mustache-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-dad-mustache-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-i-love-dad-mustache-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-dad-mustache-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-i-love-dad-mustache-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked I Love Dad Mustache Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless I Love Dad Mustache Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:39:22.181Z"
+  },
+  "real-cake-102": {
+    "id": "real-cake-102",
+    "name": "I Love Papa Special Cake",
+    "slug": "i-love-papa-special-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/i-love-papa-special-cake.jpeg",
+        "alt": "I Love Papa Special Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-i-love-papa-special-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-i-love-papa-special-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-papa-special-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-i-love-papa-special-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-papa-special-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-i-love-papa-special-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-i-love-papa-special-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-i-love-papa-special-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked I Love Papa Special Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless I Love Papa Special Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:39:29.502Z"
+  },
+  "real-cake-97": {
+    "id": "real-cake-97",
+    "name": "Gulabjamun Cake",
+    "slug": "gulabjamun-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/gulabjamun-cake.png",
+        "alt": "Gulabjamun Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-gulabjamun-cake-500g",
+        "weight": "500g",
+        "price": 799,
+        "compareAtPrice": 649,
+        "sku": "CK-gulabjamun-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-gulabjamun-cake-1kg",
+        "weight": "1kg",
+        "price": 1399,
+        "compareAtPrice": 1149,
+        "sku": "CK-gulabjamun-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gulabjamun-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1999,
+        "compareAtPrice": 1649,
+        "sku": "CK-gulabjamun-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gulabjamun-cake-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-gulabjamun-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 799,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Gulabjamun Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Gulabjamun Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:39:50.174Z"
+  },
+  "real-cake-90": {
+    "id": "real-cake-90",
+    "name": "Galaxy Space Theme Cake",
+    "slug": "galaxy-space-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/galaxy-space-theme-cake.jpeg",
+        "alt": "Galaxy Space Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-galaxy-space-theme-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-galaxy-space-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-galaxy-space-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-galaxy-space-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-galaxy-space-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-galaxy-space-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-galaxy-space-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-galaxy-space-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Galaxy Space Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Galaxy Space Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:39:58.320Z"
+  },
+  "real-cake-93": {
+    "id": "real-cake-93",
+    "name": "Gems Blackforest Cake",
+    "slug": "gems-blackforest-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/gems-blackforest.jpg",
+        "alt": "Gems Blackforest Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-gems-blackforest-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-gems-blackforest-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-blackforest-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-gems-blackforest-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-blackforest-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-gems-blackforest-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-blackforest-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-gems-blackforest-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "black-forest",
+    "description": "Freshly baked Gems Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Gems Blackforest Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "black-forest",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:40:22.011Z"
+  },
+  "real-cake-91": {
+    "id": "real-cake-91",
+    "name": "Gems And Kitkat Carnival Cake",
+    "slug": "gems-and-kitkat-carnival-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/gems-and-kitkat-carnival-cake.jpg",
+        "alt": "Gems And Kitkat Carnival Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-gems-and-kitkat-carnival-cake-500g",
+        "weight": "500g",
+        "price": 999,
+        "compareAtPrice": 699,
+        "sku": "CK-gems-and-kitkat-carnival-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-and-kitkat-carnival-cake-1kg",
+        "weight": "1kg",
+        "price": 1899,
+        "compareAtPrice": 1249,
+        "sku": "CK-gems-and-kitkat-carnival-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-and-kitkat-carnival-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1599,
+        "compareAtPrice": 1799,
+        "sku": "CK-gems-and-kitkat-carnival-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-and-kitkat-carnival-cake-2kg",
+        "weight": "2kg",
+        "price": 2099,
+        "compareAtPrice": 2349,
+        "sku": "CK-gems-and-kitkat-carnival-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 999,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Gems And Kitkat Carnival Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Gems And Kitkat Carnival Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:40:23.240Z"
+  },
+  "real-cake-94": {
+    "id": "real-cake-94",
+    "name": "Gems Chocolate Cake",
+    "slug": "gems-chocolate-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/gems-chocolate-cake.jpg",
+        "alt": "Gems Chocolate Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-gems-chocolate-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-gems-chocolate-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-chocolate-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-gems-chocolate-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-chocolate-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-gems-chocolate-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-gems-chocolate-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-gems-chocolate-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Gems Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Gems Chocolate Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:40:30.870Z"
+  },
+  "real-cake-87": {
+    "id": "real-cake-87",
+    "name": "Full Choco Chips Cake",
+    "slug": "full-choco-chips-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/full-choco-chips-cake.jpg",
+        "alt": "Full Choco Chips Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-full-choco-chips-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-full-choco-chips-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-full-choco-chips-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-full-choco-chips-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-full-choco-chips-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-full-choco-chips-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-full-choco-chips-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-full-choco-chips-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Full Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Full Choco Chips Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:40:47.251Z"
+  },
+  "real-cake-84": {
+    "id": "real-cake-84",
+    "name": "Fresh Pineaple Cake",
+    "slug": "fresh-pineaple-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/fresh-pineaple-cake.jpeg",
+        "alt": "Fresh Pineaple Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-fresh-pineaple-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-fresh-pineaple-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-pineaple-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-fresh-pineaple-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-pineaple-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-fresh-pineaple-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-pineaple-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-fresh-pineaple-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Fresh Pineaple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Fresh Pineaple Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:40:54.743Z"
+  },
+  "real-cake-82": {
+    "id": "real-cake-82",
+    "name": "Fresh Mango Fruit Cake",
+    "slug": "fresh-mango-fruit-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/fresh-mango-fruit-cake.jpeg",
+        "alt": "Fresh Mango Fruit Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-fresh-mango-fruit-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-fresh-mango-fruit-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-mango-fruit-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-fresh-mango-fruit-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-mango-fruit-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-fresh-mango-fruit-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-mango-fruit-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-fresh-mango-fruit-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "fruit",
+    "description": "Freshly baked Fresh Mango Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Fresh Mango Fruit Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "fruit",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:41:00.560Z"
+  },
+  "real-cake-81": {
+    "id": "real-cake-81",
+    "name": "Fresh Fruit Pineapple Cake",
+    "slug": "fresh-fruit-pineapple-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/fresh-fruit-pineapple-cake.jpg",
+        "alt": "Fresh Fruit Pineapple Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-fresh-fruit-pineapple-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-fresh-fruit-pineapple-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-fruit-pineapple-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-fresh-fruit-pineapple-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-fruit-pineapple-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-fresh-fruit-pineapple-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-fresh-fruit-pineapple-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-fresh-fruit-pineapple-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "fruit",
+    "description": "Freshly baked Fresh Fruit Pineapple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Fresh Fruit Pineapple Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "fruit",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:46:17.202Z"
+  },
+  "real-cake-75": {
+    "id": "real-cake-75",
+    "name": "Exotic Rasmalai Pista Cake",
+    "slug": "exotic-rasmalai-pista-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/exotic-rasmalai-pista-cake.jpg",
+        "alt": "Exotic Rasmalai Pista Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-exotic-rasmalai-pista-cake-500g",
+        "weight": "500g",
+        "price": 799,
+        "compareAtPrice": 699,
+        "sku": "CK-exotic-rasmalai-pista-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-rasmalai-pista-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1249,
+        "sku": "CK-exotic-rasmalai-pista-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-rasmalai-pista-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1799,
+        "compareAtPrice": 1799,
+        "sku": "CK-exotic-rasmalai-pista-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-rasmalai-pista-cake-2kg",
+        "weight": "2kg",
+        "price": 2299,
+        "compareAtPrice": 2349,
+        "sku": "CK-exotic-rasmalai-pista-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 799,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "rasmalai",
+    "description": "Freshly baked Exotic Rasmalai Pista Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Exotic Rasmalai Pista Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "rasmalai",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:41:34.049Z"
+  },
+  "real-cake-74": {
+    "id": "real-cake-74",
+    "name": "Exotic Fresh Fruit Cake",
+    "slug": "exotic-fresh-fruit-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/exotic-fresh-fruit-cake.jpg",
+        "alt": "Exotic Fresh Fruit Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-exotic-fresh-fruit-cake-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-exotic-fresh-fruit-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-fresh-fruit-cake-1kg",
+        "weight": "1kg",
+        "price": 1399,
+        "compareAtPrice": 1149,
+        "sku": "CK-exotic-fresh-fruit-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-fresh-fruit-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1799,
+        "compareAtPrice": 1649,
+        "sku": "CK-exotic-fresh-fruit-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-exotic-fresh-fruit-cake-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-exotic-fresh-fruit-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "fruit",
+    "description": "Freshly baked Exotic Fresh Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Exotic Fresh Fruit Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "fruit",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:42:09.134Z"
+  },
+  "real-cake-65": {
+    "id": "real-cake-65",
+    "name": "Crunchy Butterscotch Praline Cake",
+    "slug": "crunchy-butterscotch-praline-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/crunchy-butterscotch-praline-cake.jpg",
+        "alt": "Crunchy Butterscotch Praline Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-crunchy-butterscotch-praline-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-crunchy-butterscotch-praline-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-crunchy-butterscotch-praline-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-crunchy-butterscotch-praline-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-crunchy-butterscotch-praline-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-crunchy-butterscotch-praline-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-crunchy-butterscotch-praline-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-crunchy-butterscotch-praline-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "butterscotch",
+    "description": "Freshly baked Crunchy Butterscotch Praline Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Crunchy Butterscotch Praline Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "butterscotch",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:42:23.694Z"
+  },
+  "real-cake-69": {
+    "id": "real-cake-69",
+    "name": "Double Choco Chips Truffle Cake",
+    "slug": "double-choco-chips-truffle-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/double-choco-chips-truffle-cake.png",
+        "alt": "Double Choco Chips Truffle Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-double-choco-chips-truffle-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-double-choco-chips-truffle-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-double-choco-chips-truffle-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-double-choco-chips-truffle-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-double-choco-chips-truffle-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-double-choco-chips-truffle-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-double-choco-chips-truffle-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-double-choco-chips-truffle-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Double Choco Chips Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Double Choco Chips Truffle Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:42:28.981Z"
+  },
+  "real-cake-58": {
+    "id": "real-cake-58",
+    "name": "Chocolate Velvet1 Cake",
+    "slug": "chocolate-velvet1-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/chocolate-velvet1.jpg",
+        "alt": "Chocolate Velvet1 Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-chocolate-velvet1-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-chocolate-velvet1-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-velvet1-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-chocolate-velvet1-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-velvet1-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-chocolate-velvet1-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-velvet1-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-chocolate-velvet1-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Chocolate Velvet1 Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Chocolate Velvet1 Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:42:43.776Z"
+  },
+  "real-cake-51": {
+    "id": "real-cake-51",
+    "name": "Choco Truffle Cake",
+    "slug": "choco-truffle-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-truffle-cake-1790271128595-538.png",
+        "alt": "Choco Truffle Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-truffle-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-truffle-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-truffle-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-truffle-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-truffle-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-truffle-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-truffle-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-truffle-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Truffle Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:42:53.963Z"
+  },
+  "real-cake-55": {
+    "id": "real-cake-55",
+    "name": "Chocolate Delight Sensation Cake",
+    "slug": "chocolate-delight-sensation-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/chocolate-delight-sensation-cake.png",
+        "alt": "Chocolate Delight Sensation Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-chocolate-delight-sensation-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-chocolate-delight-sensation-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-delight-sensation-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-chocolate-delight-sensation-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-delight-sensation-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-chocolate-delight-sensation-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-chocolate-delight-sensation-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-chocolate-delight-sensation-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Chocolate Delight Sensation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Chocolate Delight Sensation Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:43:01.432Z"
+  },
+  "real-cake-47": {
+    "id": "real-cake-47",
+    "name": "Choco Love Special Cake Design 4",
+    "slug": "choco-love-special-cake-design-4",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-love-special-cake-design-4.jpg",
+        "alt": "Choco Love Special Cake Design 4"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-love-special-cake-design-4-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-love-special-cake-design-4-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-4-1kg",
+        "weight": "1kg",
+        "price": 1499,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-love-special-cake-design-4-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-4-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-love-special-cake-design-4-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-4-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-love-special-cake-design-4-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Love Special Cake Design 4 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Love Special Cake Design 4",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:03.547Z"
+  },
+  "real-cake-45": {
+    "id": "real-cake-45",
+    "name": "Choco Love Special Cake Design 2",
+    "slug": "choco-love-special-cake-design-2",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-love-special-cake-design-2.jpg",
+        "alt": "Choco Love Special Cake Design 2"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-love-special-cake-design-2-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-love-special-cake-design-2-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-2-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-love-special-cake-design-2-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-2-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-love-special-cake-design-2-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-2-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-love-special-cake-design-2-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Love Special Cake Design 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Love Special Cake Design 2",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:01.805Z"
+  },
+  "real-cake-46": {
+    "id": "real-cake-46",
+    "name": "Choco Love Special Cake Design 3",
+    "slug": "choco-love-special-cake-design-3",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-love-special-cake-design-3.jpeg",
+        "alt": "Choco Love Special Cake Design 3"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-love-special-cake-design-3-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-love-special-cake-design-3-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-3-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-love-special-cake-design-3-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-3-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-love-special-cake-design-3-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-special-cake-design-3-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-love-special-cake-design-3-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Love Special Cake Design 3 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Love Special Cake Design 3",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:02.704Z"
+  },
+  "real-cake-48": {
+    "id": "real-cake-48",
+    "name": "Choco Love Stick Cake",
+    "slug": "choco-love-stick-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-love-stick-cake-5-hours.jpg",
+        "alt": "Choco Love Stick Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-love-stick-cake-500g",
+        "weight": "500g",
+        "price": 999,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-love-stick-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-stick-cake-1kg",
+        "weight": "1kg",
+        "price": 1899,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-love-stick-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-stick-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-love-stick-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-stick-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-love-stick-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 999,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Love Stick Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Love Stick Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:04.536Z"
+  },
+  "real-cake-43": {
+    "id": "real-cake-43",
+    "name": "Choco Love Romantic Cake Design 1",
+    "slug": "choco-love-romantic-cake-design-1",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-love-romantic-cake-design-1.png",
+        "alt": "Choco Love Romantic Cake Design 1"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-love-romantic-cake-design-1-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-love-romantic-cake-design-1-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-romantic-cake-design-1-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-love-romantic-cake-design-1-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-romantic-cake-design-1-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-love-romantic-cake-design-1-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-love-romantic-cake-design-1-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-love-romantic-cake-design-1-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Love Romantic Cake Design 1 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Love Romantic Cake Design 1",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:19.095Z"
+  },
+  "real-cake-37": {
+    "id": "real-cake-37",
+    "name": "Choco Almonds Cake",
+    "slug": "choco-almonds-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-almonds.jpeg",
+        "alt": "Choco Almonds Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-almonds-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-almonds-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-almonds-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-almonds-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-almonds-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-almonds-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-almonds-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-almonds-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Almonds Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:30.164Z"
+  },
+  "real-cake-38": {
+    "id": "real-cake-38",
+    "name": "Choco Caramel Cake",
+    "slug": "choco-caramel-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/choco-caramel-cake.jpeg",
+        "alt": "Choco Caramel Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-choco-caramel-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-choco-caramel-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-caramel-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-choco-caramel-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-caramel-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-choco-caramel-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-choco-caramel-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-choco-caramel-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Choco Caramel Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Choco Caramel Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:35.923Z"
+  },
+  "real-cake-34": {
+    "id": "real-cake-34",
+    "name": "Car Theme Cake",
+    "slug": "car-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/car-theme.jpeg",
+        "alt": "Car Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-car-theme-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-car-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-car-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-car-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-car-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-car-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-car-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-car-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Car Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Car Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:42.520Z"
+  },
+  "real-cake-31": {
+    "id": "real-cake-31",
+    "name": "Blueberry Dom Shape Exotic Cake",
+    "slug": "blueberry-dom-shape-exotic-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/blueberry-dom-shape-exotic-cake.jpeg",
+        "alt": "Blueberry Dom Shape Exotic Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-blueberry-dom-shape-exotic-cake-500g",
+        "weight": "500g",
+        "price": 749,
+        "compareAtPrice": 649,
+        "sku": "CK-blueberry-dom-shape-exotic-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-blueberry-dom-shape-exotic-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-blueberry-dom-shape-exotic-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-blueberry-dom-shape-exotic-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-blueberry-dom-shape-exotic-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-blueberry-dom-shape-exotic-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-blueberry-dom-shape-exotic-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 749,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "fruit",
+    "description": "Freshly baked Blueberry Dom Shape Exotic Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Blueberry Dom Shape Exotic Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "fruit",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:44:50.442Z"
+  },
+  "real-cake-25": {
+    "id": "real-cake-25",
+    "name": "Belgium Supreme Cake",
+    "slug": "belgium-supreme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/belgium-supreme-cake.jpeg",
+        "alt": "Belgium Supreme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-belgium-supreme-cake-500g",
+        "weight": "500g",
+        "price": 799,
+        "compareAtPrice": 699,
+        "sku": "CK-belgium-supreme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-cake-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1249,
+        "sku": "CK-belgium-supreme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1599,
+        "compareAtPrice": 1799,
+        "sku": "CK-belgium-supreme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-cake-2kg",
+        "weight": "2kg",
+        "price": 2099,
+        "compareAtPrice": 2349,
+        "sku": "CK-belgium-supreme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 799,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Belgium Supreme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Belgium Supreme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:45:33.363Z"
+  },
+  "real-cake-26": {
+    "id": "real-cake-26",
+    "name": "Belgium Supreme Kitkat Cake",
+    "slug": "belgium-supreme-kitkat-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/belgium-supreme-kitkat-cake.jpeg",
+        "alt": "Belgium Supreme Kitkat Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-belgium-supreme-kitkat-cake-500g",
+        "weight": "500g",
+        "price": 999,
+        "compareAtPrice": 699,
+        "sku": "CK-belgium-supreme-kitkat-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-kitkat-cake-1kg",
+        "weight": "1kg",
+        "price": 1899,
+        "compareAtPrice": 1249,
+        "sku": "CK-belgium-supreme-kitkat-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-kitkat-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1599,
+        "compareAtPrice": 1799,
+        "sku": "CK-belgium-supreme-kitkat-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-belgium-supreme-kitkat-cake-2kg",
+        "weight": "2kg",
+        "price": 2099,
+        "compareAtPrice": 2349,
+        "sku": "CK-belgium-supreme-kitkat-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 999,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Belgium Supreme Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Belgium Supreme Kitkat Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:45:23.303Z"
+  },
+  "real-cake-23": {
+    "id": "real-cake-23",
+    "name": "Beautiful Kitkat Cake",
+    "slug": "beautiful-kitkat-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/beautiful-kitkat-cake.jfif",
+        "alt": "Beautiful Kitkat Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-beautiful-kitkat-cake-500g",
+        "weight": "500g",
+        "price": 999,
+        "compareAtPrice": 699,
+        "sku": "CK-beautiful-kitkat-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-beautiful-kitkat-cake-1kg",
+        "weight": "1kg",
+        "price": 1899,
+        "compareAtPrice": 1249,
+        "sku": "CK-beautiful-kitkat-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-beautiful-kitkat-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1599,
+        "compareAtPrice": 1799,
+        "sku": "CK-beautiful-kitkat-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-beautiful-kitkat-cake-2kg",
+        "weight": "2kg",
+        "price": 2099,
+        "compareAtPrice": 2349,
+        "sku": "CK-beautiful-kitkat-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 999,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Beautiful Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Beautiful Kitkat Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": true,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:45:46.356Z"
+  },
+  "real-cake-20": {
+    "id": "real-cake-20",
+    "name": "Barbie Doll Theme Cake",
+    "slug": "barbie-doll-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/barbie-doll-theme-cake.jpeg",
+        "alt": "Barbie Doll Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-barbie-doll-theme-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-barbie-doll-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-barbie-doll-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-barbie-doll-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-barbie-doll-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-barbie-doll-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-barbie-doll-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-barbie-doll-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Barbie Doll Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Barbie Doll Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": true,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:45:57.337Z"
+  },
+  "real-cake-18": {
+    "id": "real-cake-18",
+    "name": "Avengers Superhero Theme Cake",
+    "slug": "avengers-superhero-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/avengers-superhero-theme-cake.jpeg",
+        "alt": "Avengers Superhero Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-avengers-superhero-theme-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-avengers-superhero-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-avengers-superhero-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-avengers-superhero-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-avengers-superhero-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-avengers-superhero-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-avengers-superhero-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-avengers-superhero-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Avengers Superhero Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Avengers Superhero Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": true,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:45:58.595Z"
+  },
+  "real-cake-17": {
+    "id": "real-cake-17",
+    "name": "Anniversary Cake",
+    "slug": "anniversary-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/anniversary-cake.jpeg",
+        "alt": "Anniversary Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-anniversary-cake-500g",
+        "weight": "500g",
+        "price": 649,
+        "compareAtPrice": 649,
+        "sku": "CK-anniversary-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-anniversary-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-anniversary-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-anniversary-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-anniversary-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-anniversary-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-anniversary-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 649,
+    "category": "cakes",
+    "subcategory": "special",
+    "flavour": "chocolate",
+    "description": "Freshly baked Anniversary Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Anniversary Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "special",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": true,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:46:04.364Z"
+  },
+  "real-cake-137": {
+    "id": "real-cake-137",
+    "name": "Peppa Pig Theme Cake",
+    "slug": "peppa-pig-theme-cake",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/peppa-pig-theme.jpeg",
+        "alt": "Peppa Pig Theme Cake"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-peppa-pig-theme-cake-500g",
+        "weight": "500g",
+        "price": 599,
+        "compareAtPrice": 649,
+        "sku": "CK-peppa-pig-theme-cake-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-peppa-pig-theme-cake-1kg",
+        "weight": "1kg",
+        "price": 999,
+        "compareAtPrice": 1149,
+        "sku": "CK-peppa-pig-theme-cake-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-peppa-pig-theme-cake-15kg",
+        "weight": "1.5kg",
+        "price": 1449,
+        "compareAtPrice": 1649,
+        "sku": "CK-peppa-pig-theme-cake-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-peppa-pig-theme-cake-2kg",
+        "weight": "2kg",
+        "price": 1899,
+        "compareAtPrice": 2149,
+        "sku": "CK-peppa-pig-theme-cake-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 599,
+    "category": "cakes",
+    "subcategory": "theme",
+    "flavour": "chocolate",
+    "description": "Freshly baked Peppa Pig Theme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Peppa Pig Theme Cake",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "theme",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:46:17.205Z"
+  },
+  "real-cake-151": {
+    "id": "real-cake-151",
+    "name": "Rasmalai Cake 2",
+    "slug": "rasmalai-cake-2",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/rasmalai-cake-2.jpg",
+        "alt": "Rasmalai Cake 2"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-rasmalai-cake-2-500g",
+        "weight": "500g",
+        "price": 899,
+        "compareAtPrice": 699,
+        "sku": "CK-rasmalai-cake-2-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-rasmalai-cake-2-1kg",
+        "weight": "1kg",
+        "price": 1699,
+        "compareAtPrice": 1249,
+        "sku": "CK-rasmalai-cake-2-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rasmalai-cake-2-15kg",
+        "weight": "1.5kg",
+        "price": 2499,
+        "compareAtPrice": 1799,
+        "sku": "CK-rasmalai-cake-2-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-rasmalai-cake-2-2kg",
+        "weight": "2kg",
+        "price": 2999,
+        "compareAtPrice": 2349,
+        "sku": "CK-rasmalai-cake-2-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 899,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "rasmalai",
+    "description": "Freshly baked Rasmalai Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Rasmalai Cake 2",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "rasmalai",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": false,
+    "updatedAt": "2026-11-02T02:46:17.208Z"
+  },
+  "real-cake-166": {
+    "id": "real-cake-166",
+    "name": "Royal Choco Truffle Celebration Cake 2",
+    "slug": "royal-choco-truffle-celebration-cake-2",
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/cakes/royal-choco-truffle-celebration-cake-2.jpg",
+        "alt": "Royal Choco Truffle Celebration Cake 2"
+      }
+    ],
+    "variants": [
+      {
+        "id": "v-royal-choco-truffle-celebration-cake-2-500g",
+        "weight": "500g",
+        "price": 699,
+        "compareAtPrice": 649,
+        "sku": "CK-royal-choco-truffle-celebration-cake-2-500G",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-celebration-cake-2-1kg",
+        "weight": "1kg",
+        "price": 1299,
+        "compareAtPrice": 1149,
+        "sku": "CK-royal-choco-truffle-celebration-cake-2-1KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-celebration-cake-2-15kg",
+        "weight": "1.5kg",
+        "price": 1999,
+        "compareAtPrice": 1649,
+        "sku": "CK-royal-choco-truffle-celebration-cake-2-1.5KG",
+        "stock": 100000
+      },
+      {
+        "id": "v-royal-choco-truffle-celebration-cake-2-2kg",
+        "weight": "2kg",
+        "price": 2399,
+        "compareAtPrice": 2149,
+        "sku": "CK-royal-choco-truffle-celebration-cake-2-2KG",
+        "stock": 100000
+      }
+    ],
+    "price": 699,
+    "category": "cakes",
+    "subcategory": "bestseller",
+    "flavour": "chocolate",
+    "description": "Freshly baked Royal Choco Truffle Celebration Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
+    "shortDescription": "Delicious 100% eggless Royal Choco Truffle Celebration Cake 2",
+    "tags": [
+      "live-cake",
+      "eggless",
+      "chocolate",
+      "bestseller",
+      "vadodara"
+    ],
+    "deliveryOptions": [
+      "2hr",
+      "same-day"
+    ],
+    "isFeatured": false,
+    "isNewArrival": false,
+    "isBestseller": true,
+    "updatedAt": "2026-11-02T02:46:17.212Z"
+  },
+  "real-cake-4": {
+    "id": "real-cake-4",
+    "isDeleted": true,
+    "updatedAt": "2026-11-03T01:13:41.950Z"
   }
 }

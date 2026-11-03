@@ -74,3 +74,24 @@ Next.js me `NEXT_PUBLIC_*` prefix wale environment variables (jaise `NEXT_PUBLIC
 3. VPS production ke liye `.env.production` me `SITE_URL=https://www.cakeconnection.in`.
 4. Server API routes runtime pe dynamic environment read karte hain, isliye kabhi bhi code me manual domain switch karne ki zarurat nahi hoti.
 
+
+
+---
+
+## 6. Admin Panel Price Updates Not Reflecting on Main Website (Static Bundle Isolation)
+**Error Signature:**
+Admin Panel (`/admin/cakes`) par jab bhi admin kisi cake ke prices change karke Save karta tha, toh changes server par `products-store.json` me save ho jate the aur Admin Panel me naye price dikhte the. Lekin main customer website (`/cakes` aur product pages) par hamesha purane prices hi display hote rehte the.
+
+**Root Cause:**
+1. Next.js production build (`npm run build`) ke time client components (jaise `cakes/page.tsx` aur home carousels) static mock data array `allProducts` (from `@/data/products.ts`) ko JavaScript client bundle me hardcode (bake) kar lete the.
+2. `useProducts` hook client browser me run hota tha aur bina kisi network request ke browser memory se hi static `allProducts` filter karke render kar deta tha.
+3. Server par `products-store.json` update hone ke baad bhi client browser kabhi server se fresh products mangta hi nahi tha.
+
+**Technical Term:**
+**Client-Side Dynamic Revalidation (Stale-While-Revalidate / SWR Hydration)** vs **Build-Time Static Bundle Freezing**.
+
+**Resolution & Permanent SOP:**
+1. **Public Dynamic API Created:** `src/app/api/products/route.ts` (`export const dynamic = 'force-dynamic';`) jo server-side `serverProductStore.ts` se merged live catalog (`products-store.json` + base catalog) return karta hai.
+2. **Dynamic Client Hook:** `src/hooks/useProducts.ts` ab `/api/products` se dynamic live prices fetch karta hai (`cache: 'no-store'`). Zero-flicker ke liye initial state instant load hoti hai aur background me dynamic live prices se hydrate ho jati hai.
+3. **Dynamic Product Detail Page:** `src/app/[category]/[slug]/page.tsx` me `getMergedProductBySlug` direct server-side evaluate hota hai with `force-dynamic`.
+4. **Outcome:** Ab jab bhi Admin Panel par koi bhi price, weight variant ya stock edit hoga, main website par wo **instantly live** reflect hoga bina kisi manual redeployment ya server rebuild ke.

@@ -120,3 +120,6 @@ Installed in `.agents/skills/` and global config:
 ## 8. Strict Production Coding Rules (Prevention of Future Regressions)
 1. **Dynamic URL Rule for Server Code:** Never use `NEXT_PUBLIC_*` environment variables for backend links (emails, PDFs, invoices, webhooks). Always use `process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in'`.
 2. **Catalog Price Rule:** On listing pages and cards, always display `v.price` for customer-facing prices. Never display `compareAtPrice` as the main selling price.
+- **Admin Price Changes Not Reflecting on Live Website Fixed:** Converted catalog fetching from static bundle imports to live dynamic SWR hydration (`/api/products` + `useProducts.ts` + `force-dynamic` detail pages). Admin price changes now reflect instantly on live website with zero deployment delay.
+
+3. **Dynamic Catalog Hydration Rule:** Client components must never rely solely on build-time bundled mock arrays for catalog data. Always fetch live data via `/api/products` to reflect real-time admin changes dynamically.

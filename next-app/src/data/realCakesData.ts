@@ -161,59 +161,6 @@ export const realCakeProducts: Product[] = [
     "updatedAt": "2026-09-26"
   },
   {
-    "id": "real-cake-4",
-    "slug": "choco-chips-cake-15kg",
-    "name": "Choco Chips Cake (1.5kg)",
-    "description": "Freshly baked Choco Chips Cake (1.5kg) in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
-    "shortDescription": "Delicious 100% eggless Choco Chips Cake (1.5kg)",
-    "category": "cakes",
-    "subcategory": "tier-cakes",
-    "images": [
-      {
-        "url": "/images/cakes/15kg-choco-chips-cake.jpeg",
-        "alt": "Choco Chips Cake (1.5kg)"
-      }
-    ],
-    "variants": [
-      {
-        "id": "v-choco-chips-cake-15kg-15kg",
-        "weight": "1.5kg",
-        "price": 1499,
-        "compareAtPrice": 1649,
-        "sku": "CK-choco-chips-cake-15kg-1.5KG",
-        "stock": 100000
-      },
-      {
-        "id": "v-choco-chips-cake-15kg-2kg",
-        "weight": "2kg",
-        "price": 1999,
-        "compareAtPrice": 2199,
-        "sku": "CK-choco-chips-cake-15kg-2KG",
-        "stock": 100000
-      }
-    ],
-    "flavour": "chocolate",
-    "tags": [
-      "live-cake",
-      "eggless",
-      "chocolate",
-      "tier-cakes",
-      "vadodara"
-    ],
-    "deliveryOptions": [
-      "2hr",
-      "same-day"
-    ],
-    "isAvailable": true,
-    "isFeatured": true,
-    "isNewArrival": false,
-    "isBestseller": true,
-    "rating": 4.7,
-    "reviewCount": 80,
-    "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
-  },
-  {
     "id": "real-cake-5",
     "slug": "chocolate-velvet-15kg-cake",
     "name": "Chocolate Velvet (1.5kg) Cake",
@@ -496,7 +443,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-safari-animal-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 699,
         "compareAtPrice": 649,
         "sku": "CK-safari-animal-theme-cake-500G",
         "stock": 100000
@@ -545,7 +492,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 213,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:34:56.129Z"
   },
   {
     "id": "real-cake-17",
@@ -565,7 +512,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-anniversary-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-anniversary-cake-500G",
         "stock": 100000
@@ -614,7 +561,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 171,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:46:04.364Z"
   },
   {
     "id": "real-cake-18",
@@ -634,7 +581,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-avengers-superhero-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-avengers-superhero-theme-cake-500G",
         "stock": 100000
@@ -683,7 +630,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 178,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:45:58.595Z"
   },
   {
     "id": "real-cake-20",
@@ -703,7 +650,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-barbie-doll-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-barbie-doll-theme-cake-500G",
         "stock": 100000
@@ -752,7 +699,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 192,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:45:57.337Z"
   },
   {
     "id": "real-cake-22",
@@ -841,7 +788,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-beautiful-kitkat-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 999,
         "compareAtPrice": 699,
         "sku": "CK-beautiful-kitkat-cake-500G",
         "stock": 100000
@@ -849,7 +796,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-beautiful-kitkat-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1899,
         "compareAtPrice": 1249,
         "sku": "CK-beautiful-kitkat-cake-1KG",
         "stock": 100000
@@ -890,7 +837,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 213,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:45:46.356Z"
   },
   {
     "id": "real-cake-25",
@@ -910,7 +857,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-belgium-supreme-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 799,
         "compareAtPrice": 699,
         "sku": "CK-belgium-supreme-cake-500G",
         "stock": 100000
@@ -918,7 +865,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-belgium-supreme-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1299,
         "compareAtPrice": 1249,
         "sku": "CK-belgium-supreme-cake-1KG",
         "stock": 100000
@@ -959,7 +906,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 227,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:45:33.363Z"
   },
   {
     "id": "real-cake-26",
@@ -979,7 +926,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-belgium-supreme-kitkat-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 999,
         "compareAtPrice": 699,
         "sku": "CK-belgium-supreme-kitkat-cake-500G",
         "stock": 100000
@@ -987,7 +934,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-belgium-supreme-kitkat-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1899,
         "compareAtPrice": 1249,
         "sku": "CK-belgium-supreme-kitkat-cake-1KG",
         "stock": 100000
@@ -1028,7 +975,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 234,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:45:23.303Z"
   },
   {
     "id": "real-cake-28",
@@ -1186,7 +1133,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-blueberry-dom-shape-exotic-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-blueberry-dom-shape-exotic-cake-500G",
         "stock": 100000
@@ -1235,7 +1182,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 269,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:50.442Z"
   },
   {
     "id": "real-cake-33",
@@ -1324,7 +1271,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-car-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-car-theme-cake-500G",
         "stock": 100000
@@ -1373,7 +1320,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 290,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:42.520Z"
   },
   {
     "id": "real-cake-35",
@@ -1462,7 +1409,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-almonds-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-choco-almonds-cake-500G",
         "stock": 100000
@@ -1511,7 +1458,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 311,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:30.164Z"
   },
   {
     "id": "real-cake-38",
@@ -1531,7 +1478,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-caramel-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-choco-caramel-cake-500G",
         "stock": 100000
@@ -1580,7 +1527,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 318,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:35.923Z"
   },
   {
     "id": "real-cake-40",
@@ -1738,7 +1685,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-special-cake-design-3-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-choco-love-special-cake-design-3-500G",
         "stock": 100000
@@ -1787,7 +1734,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 374,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:02.704Z"
   },
   {
     "id": "real-cake-43",
@@ -1807,7 +1754,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-romantic-cake-design-1-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-choco-love-romantic-cake-design-1-500G",
         "stock": 100000
@@ -1856,7 +1803,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 353,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:19.095Z"
   },
   {
     "id": "real-cake-45",
@@ -1876,7 +1823,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-special-cake-design-2-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-choco-love-special-cake-design-2-500G",
         "stock": 100000
@@ -1925,7 +1872,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 367,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:01.805Z"
   },
   {
     "id": "real-cake-47",
@@ -1945,7 +1892,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-special-cake-design-4-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-choco-love-special-cake-design-4-500G",
         "stock": 100000
@@ -1953,7 +1900,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-special-cake-design-4-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1499,
         "compareAtPrice": 1149,
         "sku": "CK-choco-love-special-cake-design-4-1KG",
         "stock": 100000
@@ -1994,7 +1941,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 381,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:03.547Z"
   },
   {
     "id": "real-cake-48",
@@ -2014,7 +1961,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-stick-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 999,
         "compareAtPrice": 649,
         "sku": "CK-choco-love-stick-cake-500G",
         "stock": 100000
@@ -2022,7 +1969,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-love-stick-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1899,
         "compareAtPrice": 1149,
         "sku": "CK-choco-love-stick-cake-1KG",
         "stock": 100000
@@ -2063,7 +2010,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 388,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:44:04.536Z"
   },
   {
     "id": "real-cake-157",
@@ -2083,7 +2030,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rich-choco-truffle-temptation-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-rich-choco-truffle-temptation-cake-500G",
         "stock": 100000
@@ -2132,7 +2079,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 101,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:35:37.655Z"
   },
   {
     "id": "real-cake-51",
@@ -2152,7 +2099,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-choco-truffle-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-choco-truffle-cake-500G",
         "stock": 100000
@@ -2201,7 +2148,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 59,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:42:53.963Z"
   },
   {
     "id": "real-cake-70",
@@ -2343,7 +2290,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-chocolate-delight-sensation-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-chocolate-delight-sensation-cake-500G",
         "stock": 100000
@@ -2392,7 +2339,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 87,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:43:01.432Z"
   },
   {
     "id": "real-cake-94",
@@ -2412,7 +2359,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gems-chocolate-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-gems-chocolate-cake-500G",
         "stock": 100000
@@ -2461,7 +2408,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 360,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:40:30.870Z"
   },
   {
     "id": "real-cake-58",
@@ -2481,7 +2428,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-chocolate-velvet1-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-chocolate-velvet1-cake-500G",
         "stock": 100000
@@ -2530,7 +2477,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 108,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:42:43.776Z"
   },
   {
     "id": "real-cake-59",
@@ -2826,7 +2773,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-crunchy-butterscotch-praline-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-crunchy-butterscotch-praline-cake-500G",
         "stock": 100000
@@ -2875,7 +2822,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 157,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:42:23.694Z"
   },
   {
     "id": "real-cake-67",
@@ -2964,7 +2911,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-double-choco-chips-truffle-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-double-choco-chips-truffle-cake-500G",
         "stock": 100000
@@ -3013,7 +2960,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 185,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:42:28.981Z"
   },
   {
     "id": "real-cake-71",
@@ -3171,7 +3118,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-fresh-fruit-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-exotic-fresh-fruit-cake-500G",
         "stock": 100000
@@ -3179,7 +3126,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-fresh-fruit-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1399,
         "compareAtPrice": 1149,
         "sku": "CK-exotic-fresh-fruit-cake-1KG",
         "stock": 100000
@@ -3187,7 +3134,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-fresh-fruit-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1799,
         "compareAtPrice": 1649,
         "sku": "CK-exotic-fresh-fruit-cake-1.5KG",
         "stock": 100000
@@ -3195,7 +3142,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-fresh-fruit-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-exotic-fresh-fruit-cake-2KG",
         "stock": 100000
@@ -3220,7 +3167,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 220,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:42:09.134Z"
   },
   {
     "id": "real-cake-75",
@@ -3240,7 +3187,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-rasmalai-pista-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 799,
         "compareAtPrice": 699,
         "sku": "CK-exotic-rasmalai-pista-cake-500G",
         "stock": 100000
@@ -3248,7 +3195,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-rasmalai-pista-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1299,
         "compareAtPrice": 1249,
         "sku": "CK-exotic-rasmalai-pista-cake-1KG",
         "stock": 100000
@@ -3256,7 +3203,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-rasmalai-pista-cake-15kg",
         "weight": "1.5kg",
-        "price": 1599,
+        "price": 1799,
         "compareAtPrice": 1799,
         "sku": "CK-exotic-rasmalai-pista-cake-1.5KG",
         "stock": 100000
@@ -3264,7 +3211,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-exotic-rasmalai-pista-cake-2kg",
         "weight": "2kg",
-        "price": 2099,
+        "price": 2299,
         "compareAtPrice": 2349,
         "sku": "CK-exotic-rasmalai-pista-cake-2KG",
         "stock": 100000
@@ -3289,7 +3236,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 227,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:41:34.049Z"
   },
   {
     "id": "real-cake-77",
@@ -3447,7 +3394,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-fresh-fruit-pineapple-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-fresh-fruit-pineapple-cake-500G",
         "stock": 100000
@@ -3496,7 +3443,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 269,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:46:17.202Z"
   },
   {
     "id": "real-cake-82",
@@ -3516,7 +3463,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-fresh-mango-fruit-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-fresh-mango-fruit-cake-500G",
         "stock": 100000
@@ -3565,7 +3512,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 276,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:41:00.560Z"
   },
   {
     "id": "real-cake-83",
@@ -3654,7 +3601,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-fresh-pineaple-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-fresh-pineaple-cake-500G",
         "stock": 100000
@@ -3703,7 +3650,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 290,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:40:54.743Z"
   },
   {
     "id": "real-cake-85",
@@ -3861,7 +3808,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-full-choco-chips-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-full-choco-chips-cake-500G",
         "stock": 100000
@@ -3910,7 +3857,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 311,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:40:47.251Z"
   },
   {
     "id": "real-cake-89",
@@ -3999,7 +3946,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-galaxy-space-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-galaxy-space-theme-cake-500G",
         "stock": 100000
@@ -4048,7 +3995,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 332,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:39:58.320Z"
   },
   {
     "id": "real-cake-91",
@@ -4068,7 +4015,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gems-and-kitkat-carnival-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 999,
         "compareAtPrice": 699,
         "sku": "CK-gems-and-kitkat-carnival-cake-500G",
         "stock": 100000
@@ -4076,7 +4023,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gems-and-kitkat-carnival-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1899,
         "compareAtPrice": 1249,
         "sku": "CK-gems-and-kitkat-carnival-cake-1KG",
         "stock": 100000
@@ -4117,7 +4064,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 339,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:40:23.240Z"
   },
   {
     "id": "real-cake-93",
@@ -4137,7 +4084,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gems-blackforest-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-gems-blackforest-cake-500G",
         "stock": 100000
@@ -4186,7 +4133,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 353,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:40:22.011Z"
   },
   {
     "id": "real-cake-97",
@@ -4206,7 +4153,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gulabjamun-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 799,
         "compareAtPrice": 649,
         "sku": "CK-gulabjamun-cake-500G",
         "stock": 100000
@@ -4214,7 +4161,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gulabjamun-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1399,
         "compareAtPrice": 1149,
         "sku": "CK-gulabjamun-cake-1KG",
         "stock": 100000
@@ -4222,7 +4169,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gulabjamun-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1999,
         "compareAtPrice": 1649,
         "sku": "CK-gulabjamun-cake-1.5KG",
         "stock": 100000
@@ -4230,7 +4177,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-gulabjamun-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-gulabjamun-cake-2KG",
         "stock": 100000
@@ -4255,7 +4202,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 381,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:39:50.174Z"
   },
   {
     "id": "real-cake-98",
@@ -4344,7 +4291,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-dad-mustache-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-i-love-dad-mustache-cake-500G",
         "stock": 100000
@@ -4393,7 +4340,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 59,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:39:22.181Z"
   },
   {
     "id": "real-cake-102",
@@ -4413,7 +4360,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-papa-special-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-i-love-papa-special-cake-500G",
         "stock": 100000
@@ -4462,7 +4409,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 66,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:39:29.502Z"
   },
   {
     "id": "real-cake-105",
@@ -4482,7 +4429,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-you-heart-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-i-love-you-heart-cake-500G",
         "stock": 100000
@@ -4490,7 +4437,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-you-heart-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-i-love-you-heart-cake-1KG",
         "stock": 100000
@@ -4498,7 +4445,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-you-heart-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1749,
         "compareAtPrice": 1649,
         "sku": "CK-i-love-you-heart-cake-1.5KG",
         "stock": 100000
@@ -4506,7 +4453,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-i-love-you-heart-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2199,
         "compareAtPrice": 2149,
         "sku": "CK-i-love-you-heart-cake-2KG",
         "stock": 100000
@@ -4531,7 +4478,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 87,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:38:51.251Z"
   },
   {
     "id": "real-cake-106",
@@ -4673,7 +4620,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-lovely-choco-vanilla-swirl-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-lovely-choco-vanilla-swirl-cake-500G",
         "stock": 100000
@@ -4722,7 +4669,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 122,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:39:12.035Z"
   },
   {
     "id": "real-cake-112",
@@ -5288,7 +5235,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-mom-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-mom-cake-500G",
         "stock": 100000
@@ -5337,7 +5284,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 227,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:38:16.739Z"
   },
   {
     "id": "real-cake-126",
@@ -5426,7 +5373,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-no-cream-dutch-truffle-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-no-cream-dutch-truffle-cake-500G",
         "stock": 100000
@@ -5434,7 +5381,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-no-cream-dutch-truffle-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-no-cream-dutch-truffle-cake-1KG",
         "stock": 100000
@@ -5442,7 +5389,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-no-cream-dutch-truffle-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1899,
         "compareAtPrice": 1649,
         "sku": "CK-no-cream-dutch-truffle-cake-1.5KG",
         "stock": 100000
@@ -5450,7 +5397,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-no-cream-dutch-truffle-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-no-cream-dutch-truffle-cake-2KG",
         "stock": 100000
@@ -5475,7 +5422,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 248,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:38:10.770Z"
   },
   {
     "id": "real-cake-131",
@@ -5702,7 +5649,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-over-loaded-chocolate-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 799,
         "compareAtPrice": 649,
         "sku": "CK-over-loaded-chocolate-cake-500G",
         "stock": 100000
@@ -5710,7 +5657,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-over-loaded-chocolate-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-over-loaded-chocolate-cake-1KG",
         "stock": 100000
@@ -5718,7 +5665,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-over-loaded-chocolate-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1849,
         "compareAtPrice": 1649,
         "sku": "CK-over-loaded-chocolate-cake-1.5KG",
         "stock": 100000
@@ -5726,7 +5673,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-over-loaded-chocolate-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-over-loaded-chocolate-cake-2KG",
         "stock": 100000
@@ -5751,7 +5698,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 290,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:37:11.271Z"
   },
   {
     "id": "real-cake-137",
@@ -5771,7 +5718,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-peppa-pig-theme-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-peppa-pig-theme-cake-500G",
         "stock": 100000
@@ -5820,7 +5767,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 311,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:46:17.205Z"
   },
   {
     "id": "real-cake-138",
@@ -5909,7 +5856,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-pink-forest-strawberry-choco-cake-special-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-pink-forest-strawberry-choco-cake-special-500G",
         "stock": 100000
@@ -5958,7 +5905,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 325,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:36:47.225Z"
   },
   {
     "id": "real-cake-142",
@@ -5978,7 +5925,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-pinky-blackforest-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-pinky-blackforest-cake-500G",
         "stock": 100000
@@ -6027,7 +5974,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 346,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:36:41.685Z"
   },
   {
     "id": "real-cake-143",
@@ -6185,7 +6132,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-dark-choco-chips-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-premium-dark-choco-chips-cake-500G",
         "stock": 100000
@@ -6234,7 +6181,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 367,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:36:28.129Z"
   },
   {
     "id": "real-cake-146",
@@ -6254,7 +6201,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-overloaded-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 749,
         "compareAtPrice": 649,
         "sku": "CK-premium-overloaded-cake-500G",
         "stock": 100000
@@ -6262,7 +6209,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-overloaded-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1249,
         "compareAtPrice": 1149,
         "sku": "CK-premium-overloaded-cake-1KG",
         "stock": 100000
@@ -6270,7 +6217,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-overloaded-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1499,
         "compareAtPrice": 1649,
         "sku": "CK-premium-overloaded-cake-1.5KG",
         "stock": 100000
@@ -6278,7 +6225,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-overloaded-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 1999,
         "compareAtPrice": 2149,
         "sku": "CK-premium-overloaded-cake-2KG",
         "stock": 100000
@@ -6303,7 +6250,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 374,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:36:19.835Z"
   },
   {
     "id": "real-cake-148",
@@ -6323,7 +6270,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-rasmalai-cake-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 1049,
         "compareAtPrice": 699,
         "sku": "CK-premium-rasmalai-cake-500G",
         "stock": 100000
@@ -6331,7 +6278,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-rasmalai-cake-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1899,
         "compareAtPrice": 1249,
         "sku": "CK-premium-rasmalai-cake-1KG",
         "stock": 100000
@@ -6339,7 +6286,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-rasmalai-cake-15kg",
         "weight": "1.5kg",
-        "price": 1599,
+        "price": 2699,
         "compareAtPrice": 1799,
         "sku": "CK-premium-rasmalai-cake-1.5KG",
         "stock": 100000
@@ -6347,7 +6294,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-premium-rasmalai-cake-2kg",
         "weight": "2kg",
-        "price": 2099,
+        "price": 3399,
         "compareAtPrice": 2349,
         "sku": "CK-premium-rasmalai-cake-2KG",
         "stock": 100000
@@ -6372,7 +6319,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 388,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:29:43.697Z"
   },
   {
     "id": "real-cake-150",
@@ -6461,7 +6408,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rasmalai-cake-2-500g",
         "weight": "500g",
-        "price": 599,
+        "price": 899,
         "compareAtPrice": 699,
         "sku": "CK-rasmalai-cake-2-500G",
         "stock": 100000
@@ -6469,7 +6416,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rasmalai-cake-2-1kg",
         "weight": "1kg",
-        "price": 1099,
+        "price": 1699,
         "compareAtPrice": 1249,
         "sku": "CK-rasmalai-cake-2-1KG",
         "stock": 100000
@@ -6477,7 +6424,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rasmalai-cake-2-15kg",
         "weight": "1.5kg",
-        "price": 1599,
+        "price": 2499,
         "compareAtPrice": 1799,
         "sku": "CK-rasmalai-cake-2-1.5KG",
         "stock": 100000
@@ -6485,7 +6432,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rasmalai-cake-2-2kg",
         "weight": "2kg",
-        "price": 2099,
+        "price": 2999,
         "compareAtPrice": 2349,
         "sku": "CK-rasmalai-cake-2-2KG",
         "stock": 100000
@@ -6510,7 +6457,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 59,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:46:17.208Z"
   },
   {
     "id": "real-cake-153",
@@ -6530,7 +6477,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-red-rose-anniversary-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-red-rose-anniversary-cake-500G",
         "stock": 100000
@@ -6579,7 +6526,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 73,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:35:26.831Z"
   },
   {
     "id": "real-cake-155",
@@ -6599,7 +6546,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-red-velvet-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 699,
         "compareAtPrice": 649,
         "sku": "CK-red-velvet-cake-500G",
         "stock": 100000
@@ -6607,7 +6554,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-red-velvet-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-red-velvet-cake-1KG",
         "stock": 100000
@@ -6615,7 +6562,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-red-velvet-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1799,
         "compareAtPrice": 1649,
         "sku": "CK-red-velvet-cake-1.5KG",
         "stock": 100000
@@ -6623,7 +6570,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-red-velvet-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2499,
         "compareAtPrice": 2149,
         "sku": "CK-red-velvet-cake-2KG",
         "stock": 100000
@@ -6648,7 +6595,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 87,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:31:27.305Z"
   },
   {
     "id": "real-cake-158",
@@ -6668,7 +6615,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-rich-dutch-choco-truffle-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 649,
         "compareAtPrice": 649,
         "sku": "CK-rich-dutch-choco-truffle-cake-500G",
         "stock": 100000
@@ -6717,7 +6664,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 108,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:35:44.280Z"
   },
   {
     "id": "real-cake-159",
@@ -6737,7 +6684,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-roasted-choco-almonds-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-roasted-choco-almonds-cake-500G",
         "stock": 100000
@@ -6753,7 +6700,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-roasted-choco-almonds-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1499,
         "compareAtPrice": 1649,
         "sku": "CK-roasted-choco-almonds-cake-1.5KG",
         "stock": 100000
@@ -6761,7 +6708,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-roasted-choco-almonds-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 1999,
         "compareAtPrice": 2149,
         "sku": "CK-roasted-choco-almonds-cake-2KG",
         "stock": 100000
@@ -6786,7 +6733,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.6,
     "reviewCount": 115,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:33:31.340Z"
   },
   {
     "id": "real-cake-160",
@@ -6806,7 +6753,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-roasted-choco-almonds-nutty-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 999,
         "compareAtPrice": 649,
         "sku": "CK-roasted-choco-almonds-nutty-cake-500G",
         "stock": 100000
@@ -6814,7 +6761,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-roasted-choco-almonds-nutty-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1999,
         "compareAtPrice": 1149,
         "sku": "CK-roasted-choco-almonds-nutty-cake-1KG",
         "stock": 100000
@@ -6855,7 +6802,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 122,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:33:03.627Z"
   },
   {
     "id": "real-cake-161",
@@ -6944,7 +6891,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-casatta-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 799,
         "compareAtPrice": 649,
         "sku": "CK-royal-casatta-cake-500G",
         "stock": 100000
@@ -6952,7 +6899,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-casatta-cake-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1498,
         "compareAtPrice": 1149,
         "sku": "CK-royal-casatta-cake-1KG",
         "stock": 100000
@@ -6960,7 +6907,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-casatta-cake-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1999,
         "compareAtPrice": 1649,
         "sku": "CK-royal-casatta-cake-1.5KG",
         "stock": 100000
@@ -6968,7 +6915,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-casatta-cake-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2499,
         "compareAtPrice": 2149,
         "sku": "CK-royal-casatta-cake-2KG",
         "stock": 100000
@@ -6993,7 +6940,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 136,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:32:18.251Z"
   },
   {
     "id": "real-cake-166",
@@ -7013,7 +6960,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-celebration-cake-2-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 699,
         "compareAtPrice": 649,
         "sku": "CK-royal-choco-truffle-celebration-cake-2-500G",
         "stock": 100000
@@ -7021,7 +6968,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-celebration-cake-2-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-royal-choco-truffle-celebration-cake-2-1KG",
         "stock": 100000
@@ -7029,7 +6976,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-celebration-cake-2-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1999,
         "compareAtPrice": 1649,
         "sku": "CK-royal-choco-truffle-celebration-cake-2-1.5KG",
         "stock": 100000
@@ -7037,7 +6984,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-celebration-cake-2-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-royal-choco-truffle-celebration-cake-2-2KG",
         "stock": 100000
@@ -7062,7 +7009,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 164,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:46:17.212Z"
   },
   {
     "id": "real-cake-165",
@@ -7082,7 +7029,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-cake-2-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 699,
         "compareAtPrice": 649,
         "sku": "CK-royal-choco-truffle-cake-2-500G",
         "stock": 100000
@@ -7090,7 +7037,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-cake-2-1kg",
         "weight": "1kg",
-        "price": 999,
+        "price": 1299,
         "compareAtPrice": 1149,
         "sku": "CK-royal-choco-truffle-cake-2-1KG",
         "stock": 100000
@@ -7098,7 +7045,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-cake-2-15kg",
         "weight": "1.5kg",
-        "price": 1449,
+        "price": 1999,
         "compareAtPrice": 1649,
         "sku": "CK-royal-choco-truffle-cake-2-1.5KG",
         "stock": 100000
@@ -7106,7 +7053,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-choco-truffle-cake-2-2kg",
         "weight": "2kg",
-        "price": 1899,
+        "price": 2399,
         "compareAtPrice": 2149,
         "sku": "CK-royal-choco-truffle-cake-2-2KG",
         "stock": 100000
@@ -7131,7 +7078,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.8,
     "reviewCount": 157,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:34:06.143Z"
   },
   {
     "id": "real-cake-168",
@@ -7289,7 +7236,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-royal-red-velvet-cream-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-royal-red-velvet-cream-cake-500G",
         "stock": 100000
@@ -7338,7 +7285,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 206,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:34:40.619Z"
   },
   {
     "id": "real-cake-178",
@@ -7427,7 +7374,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-super-dad-birthday-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-super-dad-birthday-cake-500G",
         "stock": 100000
@@ -7476,7 +7423,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.7,
     "reviewCount": 262,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:35:06.624Z"
   },
   {
     "id": "real-cake-182",
@@ -7634,7 +7581,7 @@ export const realCakeProducts: Product[] = [
       {
         "id": "v-tom-and-jerry-cartoon-cake-500g",
         "weight": "500g",
-        "price": 549,
+        "price": 599,
         "compareAtPrice": 649,
         "sku": "CK-tom-and-jerry-cartoon-cake-500G",
         "stock": 100000
@@ -7683,7 +7630,7 @@ export const realCakeProducts: Product[] = [
     "rating": 4.9,
     "reviewCount": 304,
     "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
+    "updatedAt": "2026-11-02T02:35:14.473Z"
   },
   {
     "id": "real-cake-191",

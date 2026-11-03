@@ -421,3 +421,27 @@ export async function deleteProductPermanent(productId: string): Promise<boolean
     return false;
   }
 }
+
+/**
+ * Get single merged product by slug
+ */
+export function getMergedProductBySlug(slug: string): any | undefined {
+  const all = getMergedProductsList();
+  return all.find((p) => p.slug === slug || p.id === slug);
+}
+
+/**
+ * Get single merged product by ID
+ */
+export function getMergedProductById(id: string): any | undefined {
+  const all = getMergedProductsList();
+  return all.find((p) => p.id === id);
+}
+
+/**
+ * Get merged products by category
+ */
+export function getMergedProductsByCategory(category: string): any[] {
+  const all = getMergedProductsList();
+  return all.filter((p) => p.category === category);
+}
