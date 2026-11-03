@@ -11,9 +11,9 @@ export default function OrganizationSchema() {
         "url": "https://cakeconnection.in",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://cakeconnection.in/logo.png",
-          "width": 300,
-          "height": 174
+          "url": "https://cakeconnection.in/favicon-512x512.png",
+          "width": 512,
+          "height": 512
         },
         "image": "https://cakeconnection.in/og-image.jpg",
         "description": "Vadodara's premier FSSAI Certified, 100% Pure Veg & Eggless Live Cake bakery and online gift store. Established in 2013 under Head Chef Mr. Bipul Singh's expertise. Shop open till 12:00 AM Midnight for live cake self-pickup, with express delivery across Vadodara.",
