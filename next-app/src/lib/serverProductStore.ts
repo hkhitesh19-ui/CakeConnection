@@ -157,14 +157,17 @@ export function getMergedProductsList(): any[] {
   const deletedIds = new Set<string>();
 
   Object.values(overrides).forEach((ov) => {
-    if (ov.isDeleted) deletedIds.add(ov.id);
+    if (ov.isDeleted) {
+      if (ov.id) deletedIds.add(ov.id);
+      if (ov.slug) deletedIds.add(ov.slug);
+    }
   });
 
   // Start with allProducts
   const mergedMap = new Map<string, any>();
 
   allProducts.forEach((p) => {
-    if (deletedIds.has(p.id)) return;
+    if (deletedIds.has(p.id) || (p.slug && deletedIds.has(p.slug))) return;
     const ov = overrides[p.id];
     if (!ov) {
       mergedMap.set(p.id, { ...p });
@@ -397,19 +400,28 @@ export async function saveProductUpdate(input: ProductUpdateInput): Promise<{ su
 export async function deleteProductPermanent(productId: string): Promise<boolean> {
   try {
     const overrides = getProductOverrides();
-    overrides[productId] = {
-      ...(overrides[productId] || { id: productId }),
+    let target = allProducts.find((p) => p.id === productId || p.slug === productId);
+    if (!target) {
+      target = realCakeProducts.find((p) => p.id === productId || p.slug === productId);
+    }
+    const targetId = target ? target.id : productId;
+    const targetSlug = target ? target.slug : undefined;
+
+    overrides[targetId] = {
+      ...(overrides[targetId] || { id: targetId }),
       isDeleted: true,
+      slug: targetSlug || overrides[targetId]?.slug,
+      name: target?.name || overrides[targetId]?.name,
       updatedAt: new Date().toISOString(),
     };
     saveProductOverrides(overrides);
 
     // Remove from in-memory allProducts
-    const idx = allProducts.findIndex((p) => p.id === productId);
+    const idx = allProducts.findIndex((p) => p.id === targetId || p.slug === productId);
     if (idx !== -1) allProducts.splice(idx, 1);
 
     // Remove from in-memory realCakeProducts & update file
-    const realIdx = realCakeProducts.findIndex((p) => p.id === productId);
+    const realIdx = realCakeProducts.findIndex((p) => p.id === targetId || p.slug === productId);
     if (realIdx !== -1) {
       realCakeProducts.splice(realIdx, 1);
       const realPath = getRealCakesFilePath();
@@ -424,7 +436,7 @@ export async function deleteProductPermanent(productId: string): Promise<boolean
 
     // Try Supabase delete non-blocking
     if (isSupabaseConfigured()) {
-      Promise.resolve(supabase.from('products').delete().eq('id', productId)).catch(() => {});
+      Promise.resolve(supabase.from('products').delete().eq('id', targetId)).catch(() => {});
     }
 
     return true;

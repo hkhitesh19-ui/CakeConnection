@@ -690,74 +690,6 @@ export const realCakeProducts: Product[] = [
     "updatedAt": "2026-11-02T02:45:57.337Z"
   },
   {
-    "id": "real-cake-22",
-    "slug": "beautiful-blackforest-cake",
-    "name": "Beautiful Blackforest Cake",
-    "description": "Freshly baked Beautiful Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
-    "shortDescription": "Delicious 100% eggless Beautiful Blackforest Cake",
-    "category": "cakes",
-    "subcategory": "",
-    "images": [
-      {
-        "url": "/images/cakes/beautiful-blackforest.jpeg",
-        "alt": "Beautiful Blackforest Cake"
-      }
-    ],
-    "variants": [
-      {
-        "id": "v-beautiful-blackforest-cake-500g",
-        "weight": "500g",
-        "price": 549,
-        "compareAtPrice": 649,
-        "sku": "CK-beautiful-blackforest-cake-500G",
-        "stock": 100000
-      },
-      {
-        "id": "v-beautiful-blackforest-cake-1kg",
-        "weight": "1kg",
-        "price": 999,
-        "compareAtPrice": 1149,
-        "sku": "CK-beautiful-blackforest-cake-1KG",
-        "stock": 100000
-      },
-      {
-        "id": "v-beautiful-blackforest-cake-15kg",
-        "weight": "1.5kg",
-        "price": 1449,
-        "compareAtPrice": 1649,
-        "sku": "CK-beautiful-blackforest-cake-1.5KG",
-        "stock": 100000
-      },
-      {
-        "id": "v-beautiful-blackforest-cake-2kg",
-        "weight": "2kg",
-        "price": 1899,
-        "compareAtPrice": 2149,
-        "sku": "CK-beautiful-blackforest-cake-2KG",
-        "stock": 100000
-      }
-    ],
-    "flavour": "black-forest",
-    "tags": [
-      "live-cake",
-      "eggless",
-      "black-forest",
-      "bestseller",
-      "vadodara"
-    ],
-    "deliveryOptions": [
-      "same-day"
-    ],
-    "isAvailable": true,
-    "isFeatured": false,
-    "isNewArrival": true,
-    "isBestseller": false,
-    "rating": 4.9,
-    "reviewCount": 206,
-    "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
-  },
-  {
     "id": "real-cake-23",
     "slug": "beautiful-kitkat-cake",
     "name": "Beautiful Kitkat Cake",
@@ -5090,50 +5022,6 @@ export const realCakeProducts: Product[] = [
     "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 206,
-    "createdAt": "2026-06-01",
-    "updatedAt": "2026-09-26"
-  },
-  {
-    "id": "real-cake-123",
-    "slug": "minion-theme-birthday-cake",
-    "name": "Minion Theme Birthday Cake",
-    "description": "Freshly baked Minion Theme Birthday Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
-    "shortDescription": "Delicious 100% eggless Minion Theme Birthday Cake",
-    "category": "cakes",
-    "subcategory": "mini",
-    "images": [
-      {
-        "url": "/images/cakes/minion-theme-birthday-cake.jpeg",
-        "alt": "Minion Theme Birthday Cake"
-      }
-    ],
-    "variants": [
-      {
-        "id": "v-minion-theme-birthday-cake-250g",
-        "weight": "250g",
-        "price": 299,
-        "compareAtPrice": 349,
-        "sku": "CK-minion-theme-birthday-cake-250G",
-        "stock": 100000
-      }
-    ],
-    "flavour": "chocolate",
-    "tags": [
-      "live-cake",
-      "eggless",
-      "chocolate",
-      "mini",
-      "vadodara"
-    ],
-    "deliveryOptions": [
-      "same-day"
-    ],
-    "isAvailable": true,
-    "isFeatured": false,
-    "isNewArrival": false,
-    "isBestseller": false,
-    "rating": 4.6,
-    "reviewCount": 213,
     "createdAt": "2026-06-01",
     "updatedAt": "2026-09-26"
   },

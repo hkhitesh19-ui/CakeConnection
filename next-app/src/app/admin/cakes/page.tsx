@@ -31,6 +31,7 @@ import {
   Camera,
   Star,
   Zap,
+  Trash2,
 } from 'lucide-react';
 
 interface ProductVariant {
@@ -330,6 +331,40 @@ export default function CakesQuickPricingPage() {
       delete next[productId];
       return next;
     });
+  };
+
+  // Delete a single product permanently
+  const handleDeleteProduct = async (p: Product) => {
+    if (
+      !window.confirm(
+        `Are you sure you want to permanently delete "${p.name}"?\n\nThis will remove it from the catalog and website permanently.`
+      )
+    ) {
+      return;
+    }
+
+    setSavingId(p.id);
+    try {
+      const res = await fetch(`/api/admin/products?id=${encodeURIComponent(p.id)}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setProducts((prev) => prev.filter((item) => item.id !== p.id));
+        setEdits((prev) => {
+          const next = { ...prev };
+          delete next[p.id];
+          return next;
+        });
+      } else {
+        alert(data.message || 'Failed to delete product');
+      }
+    } catch (err: any) {
+      console.error('Error deleting product:', err);
+      alert('Network error while deleting product');
+    } finally {
+      setSavingId(null);
+    }
   };
 
   // Save a single product
@@ -1161,6 +1196,16 @@ export default function CakesQuickPricingPage() {
 
                       <button
                         type="button"
+                        onClick={() => handleDeleteProduct(product)}
+                        disabled={isSaving}
+                        className="p-2 text-gray-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer"
+                        title={`Delete "${product.name}" permanently`}
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
                         onClick={() => handleSaveProduct(product)}
                         disabled={isSaving}
                         className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-xs ${
@@ -1352,6 +1397,16 @@ export default function CakesQuickPricingPage() {
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
                           </Link>
+
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteProduct(product)}
+                            disabled={isSaving}
+                            className="p-1.5 text-gray-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 cursor-pointer transition-colors"
+                            title={`Delete "${product.name}" permanently`}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
                         </div>
                       </td>
                     </tr>

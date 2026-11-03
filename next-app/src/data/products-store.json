@@ -3877,5 +3877,19 @@
     "deliveryOptions": [
       "same-day"
     ]
+  },
+  "real-cake-22": {
+    "id": "real-cake-22",
+    "name": "Beautiful Blackforest Cake",
+    "slug": "beautiful-blackforest-cake",
+    "isDeleted": true,
+    "updatedAt": "2026-11-03T04:25:14.000Z"
+  },
+  "real-cake-123": {
+    "id": "real-cake-123",
+    "name": "Minion Theme Birthday Cake",
+    "slug": "minion-theme-birthday-cake",
+    "isDeleted": true,
+    "updatedAt": "2026-11-03T04:25:14.000Z"
   }
 }

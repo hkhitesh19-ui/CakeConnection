@@ -127,3 +127,19 @@ Kabhi bhi kisi bhi task, bug-fix, ya feature ko "DONE / HO GAYA" bolne se pehle 
    - Rendered frontend component code, active query params, fallback branches, aur live server HTML/DOM me verify karein ki customer ko screen par wahi dikh raha hai jo hona chahiye.
    - Check karein ki koi hardcoded fallback (`mockData`, `fallbackProducts`, default ternary fallback) actual database selection ko override toh nahi kar raha.
    - Jab tak dono layers (Backend + Frontend DOM) 100% physically match na karein, tab tak task ko "Done" report nahi karna hai.
+
+
+---
+
+## 9. Product Deletion Not Reflecting & Missing Delete Button in Admin Cakes Quick Edit
+**Error Signature:**
+Admin ne products (jaise "Minion Theme Birthday Cake" `real-cake-123` aur "Beautiful Blackforest Cake" `real-cake-22`) delete kiye the, lekin wo website (`/cakes`) par abhi bhi active dikh rahe the.
+
+**Root Causes:**
+1. **Missing UI Delete Button:** `/admin/cakes` (Cakes Quick Edit) page par cake card ya table row me koi bhi Delete button tha hi nahi. Admin save/reset kar sakta tha par delete trigger karne ka koi network mechanism nahi tha.
+2. **Delete Persistence on Git Pull:** `deleteProductPermanent()` VPS ke `realCakesData.ts` file me se product physically remove karta tha, lekin agar git pull ho ya `products-store.json` me slug match na kare, toh catalog dobara restore ho sakta tha.
+
+**Resolution:**
+1. `/admin/cakes/page.tsx` me Card View aur Table View dono me `Trash2` icon ke sath `handleDeleteProduct` add kiya gaya with browser confirmation dialog (`window.confirm`) aur instant API DELETE call (`/api/admin/products?id=...`).
+2. `src/lib/serverProductStore.ts` ke `getMergedProductsList()` me `deletedIds` ko strictly evaluate kiya gaya: agar product ka ID ya Slug `isDeleted: true` hai, wo `allProducts` aur `realCakeProducts` dono se completely exclude hoga.
+3. `products-store.json` aur `realCakesData.ts` me deleted products (`real-cake-22`, `real-cake-123`) ko permanently prune kiya gaya.
