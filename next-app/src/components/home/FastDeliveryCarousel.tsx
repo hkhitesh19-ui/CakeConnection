@@ -31,15 +31,11 @@ export default function FastDeliveryCarousel({
   const filteredProducts = allProducts.filter((p) => {
     if (!p.isAvailable) return false;
     
-    const inDelivery = Array.isArray(p.deliveryOptions) 
+    const inDelivery = Array.isArray(p.deliveryOptions)
       ? p.deliveryOptions.some(d => /2\s*hr|2\s*hour|superfast|express/i.test(d))
       : false;
-      
-    const inSubcat = typeof p.subcategory === 'string' 
-      ? /2\s*hr|2\s*hour|superfast|express/i.test(p.subcategory)
-      : false;
 
-    return inDelivery || inSubcat;
+    return inDelivery;
   }).slice(0, 12);
 
   const products = filteredProducts.length > 0 ? filteredProducts : mockProducts;

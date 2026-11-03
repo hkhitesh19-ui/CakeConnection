@@ -42,13 +42,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 59,
     "createdAt": "2026-06-01",
@@ -95,13 +94,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 66,
     "createdAt": "2026-06-01",
@@ -148,13 +146,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 73,
     "createdAt": "2026-06-01",
@@ -201,13 +198,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 87,
     "createdAt": "2026-06-01",
@@ -254,13 +250,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 94,
     "createdAt": "2026-06-01",
@@ -307,13 +302,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": true,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 101,
     "createdAt": "2026-06-01",
@@ -360,7 +354,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -413,7 +406,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -482,7 +474,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -551,7 +542,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -620,7 +610,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -689,7 +678,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -708,7 +696,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Beautiful Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Beautiful Blackforest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/beautiful-blackforest.jpeg",
@@ -758,7 +746,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -777,7 +764,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Beautiful Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Beautiful Kitkat Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/beautiful-kitkat-cake.jfif",
@@ -827,13 +814,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": true,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 213,
     "createdAt": "2026-06-01",
@@ -846,7 +832,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Belgium Supreme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Belgium Supreme Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/belgium-supreme-cake.jpeg",
@@ -896,7 +882,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -915,7 +900,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Belgium Supreme Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Belgium Supreme Kitkat Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/belgium-supreme-kitkat-cake.jpeg",
@@ -965,13 +950,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 234,
     "createdAt": "2026-06-01",
@@ -1034,7 +1018,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1103,13 +1086,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 255,
     "createdAt": "2026-06-01",
@@ -1122,7 +1104,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Blueberry Dom Shape Exotic Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Blueberry Dom Shape Exotic Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/blueberry-dom-shape-exotic-cake.jpeg",
@@ -1172,7 +1154,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1191,7 +1172,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Butterscotch 1 Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Butterscotch 1 Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/butterscotch-1.jpeg",
@@ -1241,7 +1222,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1310,7 +1290,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1329,7 +1308,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Cassata Flavour Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Cassata Flavour Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/cassata-flavour.jpeg",
@@ -1379,7 +1358,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1398,7 +1376,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Almonds Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/choco-almonds.jpeg",
@@ -1448,7 +1426,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1467,7 +1444,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Choco Caramel Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Caramel Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/choco-caramel-cake.jpeg",
@@ -1517,7 +1494,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1536,7 +1512,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Chips Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/choco-chips.jpg",
@@ -1586,7 +1562,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1655,7 +1630,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1724,7 +1698,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1793,7 +1766,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1862,7 +1834,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -1931,7 +1902,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2000,7 +1970,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2019,7 +1988,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Rich Choco Truffle Temptation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rich Choco Truffle Temptation Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/rich-choco-truffle-temptation-cake.jpeg",
@@ -2069,13 +2038,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 101,
     "createdAt": "2026-06-01",
@@ -2088,7 +2056,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/choco-truffle-cake-1790271128595-538.png",
@@ -2138,13 +2106,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 59,
     "createdAt": "2026-06-01",
@@ -2191,7 +2158,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2210,7 +2176,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Choco Vanilla Dual Flavour Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Vanilla Dual Flavour Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/choco-vanilla-dual-flavour-cake.jpeg",
@@ -2260,7 +2226,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2279,7 +2244,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Chocolate Delight Sensation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Chocolate Delight Sensation Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/chocolate-delight-sensation-cake.png",
@@ -2329,7 +2294,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2348,7 +2312,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Gems Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems Chocolate Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/gems-chocolate-cake.jpg",
@@ -2398,7 +2362,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2417,7 +2380,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Chocolate Velvet1 Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Chocolate Velvet1 Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/chocolate-velvet1.jpg",
@@ -2467,7 +2430,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2486,7 +2448,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Classic Choco Vanilla Dual Flavour Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Classic Choco Vanilla Dual Flavour Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/classic-choco-vanilla-dual-flavour-cake.png",
@@ -2536,7 +2498,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2555,7 +2516,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Vanilla Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Vanilla Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/vanilla-cake.jpeg",
@@ -2605,7 +2566,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2624,7 +2584,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Colourful Choco Vanilla Fiesta Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Colourful Choco Vanilla Fiesta Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/colourful-choco-vanilla-fiesta-cake.jpg",
@@ -2674,7 +2634,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2693,7 +2652,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Crispy Choco Flakes Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Crispy Choco Flakes Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/crispy-choco-flakes-truffle-cake.png",
@@ -2743,13 +2702,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.7,
     "reviewCount": 150,
     "createdAt": "2026-06-01",
@@ -2762,7 +2720,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Crunchy Butterscotch Praline Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Crunchy Butterscotch Praline Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/crunchy-butterscotch-praline-cake.jpg",
@@ -2812,7 +2770,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2831,7 +2788,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Dot Design Choco Vanilla Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Dot Design Choco Vanilla Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/dot-design-choco-vanilla.jpg",
@@ -2881,7 +2838,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -2900,7 +2856,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Double Choco Chips Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Double Choco Chips Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/double-choco-chips-truffle-cake.png",
@@ -2950,13 +2906,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 185,
     "createdAt": "2026-06-01",
@@ -2969,7 +2924,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Dutch Truffle Cake Less Cream in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Dutch Truffle Cake Less Cream",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/dutch-truffle-cake-less-cream.jpeg",
@@ -3019,13 +2974,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 199,
     "createdAt": "2026-06-01",
@@ -3038,7 +2992,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Exotic Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Exotic Blackforest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/exotic-blackforest.jpg",
@@ -3088,7 +3042,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3107,7 +3060,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Exotic Fresh Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Exotic Fresh Fruit Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/exotic-fresh-fruit-cake.jpg",
@@ -3157,7 +3110,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3176,7 +3128,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Exotic Rasmalai Pista Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Exotic Rasmalai Pista Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/exotic-rasmalai-pista-cake.jpg",
@@ -3226,7 +3178,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3245,7 +3196,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Ferrero Rocher Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Ferrero Rocher Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/ferrero-rocher.jpeg",
@@ -3295,7 +3246,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3314,7 +3264,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Flowery Choco Vanilla Floral Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Flowery Choco Vanilla Floral Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/flowery-choco-vanilla-floral-cake.jpeg",
@@ -3364,7 +3314,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3383,7 +3332,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Fruit Pineapple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Fruit Pineapple Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-fruit-pineapple-cake.jpg",
@@ -3433,7 +3382,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3452,7 +3400,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Mango Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Mango Fruit Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-mango-fruit-cake.jpeg",
@@ -3502,7 +3450,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3521,7 +3468,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Mix Fruit Garden Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Mix Fruit Garden Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-mix-fruit-garden-cake.png",
@@ -3571,7 +3518,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3590,7 +3536,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Pineaple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Pineaple Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-pineaple-cake.jpeg",
@@ -3640,7 +3586,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3659,7 +3604,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Pineapple Delight Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Pineapple Delight Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-pineapple-delight-cake.png",
@@ -3709,7 +3654,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3728,7 +3672,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Fresh Strawberry Swirl Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Strawberry Swirl Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/fresh-strawberry-swirl-cake.jpeg",
@@ -3778,7 +3722,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3797,7 +3740,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Full Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Full Choco Chips Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/full-choco-chips-cake.jpg",
@@ -3847,7 +3790,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -3866,7 +3808,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Full Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Full Kitkat Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/full-kitkat-cake.jpeg",
@@ -3916,13 +3858,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 325,
     "createdAt": "2026-06-01",
@@ -3985,7 +3926,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4004,7 +3944,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Gems And Kitkat Carnival Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems And Kitkat Carnival Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/gems-and-kitkat-carnival-cake.jpg",
@@ -4054,13 +3994,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 339,
     "createdAt": "2026-06-01",
@@ -4073,7 +4012,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Gems Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems Blackforest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/gems-blackforest.jpg",
@@ -4123,7 +4062,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4142,7 +4080,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Gulabjamun Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gulabjamun Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/gulabjamun-cake.png",
@@ -4192,7 +4130,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4261,13 +4198,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 388,
     "createdAt": "2026-06-01",
@@ -4330,7 +4266,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4399,7 +4334,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4468,7 +4402,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4487,7 +4420,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Less Creamy Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Less Creamy Choco Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/less-creamy-choco-truffle-cake-1790340695882-690.png",
@@ -4537,13 +4470,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 94,
     "createdAt": "2026-06-01",
@@ -4590,7 +4522,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4659,7 +4590,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4678,7 +4608,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Luxury Chocolate Velvet Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Luxury Chocolate Velvet Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/luxury-chocolate-velvet-cake.png",
@@ -4728,7 +4658,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4797,7 +4726,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4866,7 +4794,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4885,7 +4812,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Micky Mouse Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Micky Mouse Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/micky-mouse-15-minutes.jpeg",
@@ -4935,7 +4862,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -4980,13 +4906,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 178,
     "createdAt": "2026-06-01",
@@ -5025,7 +4950,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5070,7 +4994,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5115,13 +5038,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 199,
     "createdAt": "2026-06-01",
@@ -5160,7 +5082,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5205,7 +5126,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5274,7 +5194,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5343,7 +5262,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5362,7 +5280,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked No Cream Dutch Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless No Cream Dutch Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/no-cream-dutch-truffle.jpg",
@@ -5412,13 +5330,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.7,
     "reviewCount": 248,
     "createdAt": "2026-06-01",
@@ -5431,7 +5348,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Oreo Kitkat Crunch Cake Design 1 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Oreo Kitkat Crunch Cake Design 1",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/oreo-kitkat-crunch-cake-design-1.jpg",
@@ -5481,13 +5398,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 269,
     "createdAt": "2026-06-01",
@@ -5500,7 +5416,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Oreo Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Oreo Kitkat Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/oreo-kitkat-cake.jpg",
@@ -5550,13 +5466,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 262,
     "createdAt": "2026-06-01",
@@ -5569,7 +5484,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Oreo Kitkat Crunch Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Oreo Kitkat Crunch Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/oreo-kitkat-crunch-cake.jpg",
@@ -5619,13 +5534,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 283,
     "createdAt": "2026-06-01",
@@ -5638,7 +5552,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Over Loaded Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Over Loaded Chocolate Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/over-loaded-chocolate-cake.jpeg",
@@ -5688,7 +5602,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5757,7 +5670,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5776,7 +5688,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Pineapple Flavour Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Pineapple Flavour Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/pineapple-flavour.jpeg",
@@ -5826,7 +5738,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5845,7 +5756,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Pink Forest Strawberry Choco Cake Special in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Pink Forest Strawberry Choco Cake Special",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/pink-forest-strawberry-choco-cake-special.jpeg",
@@ -5895,7 +5806,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5914,7 +5824,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Pinky Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Pinky Blackforest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/pinky-blackforest.jpeg",
@@ -5964,7 +5874,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -5983,7 +5892,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Premium Black Forest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Black Forest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/premium-black-forest-cake.png",
@@ -6033,13 +5942,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.6,
     "reviewCount": 353,
     "createdAt": "2026-06-01",
@@ -6052,7 +5960,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Premium Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Blackforest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/premium-blackforest.jpeg",
@@ -6102,7 +6010,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6121,7 +6028,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Premium Dark Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Dark Choco Chips Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/premium-dark-choco-chips-cake.png",
@@ -6171,7 +6078,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6190,7 +6096,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Premium Overloaded Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Overloaded Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/premium-overloaded-cake.jpg",
@@ -6240,7 +6146,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6259,7 +6164,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Premium Rasmalai Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Rasmalai Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/premium-rasmalai-cake.jpeg",
@@ -6309,7 +6214,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6378,7 +6282,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6397,7 +6300,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Rasmalai Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rasmalai Cake 2",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/rasmalai-cake-2.jpg",
@@ -6447,7 +6350,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6516,7 +6418,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6535,7 +6436,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Red Velvet Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Red Velvet Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/red-velvet-cake.png",
@@ -6585,7 +6486,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6604,7 +6504,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Rich Dutch Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rich Dutch Choco Truffle Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/rich-dutch-choco-truffle-cake.jpg",
@@ -6654,13 +6554,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 108,
     "createdAt": "2026-06-01",
@@ -6673,7 +6572,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Roasted Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/roasted-choco-almonds-cake.png",
@@ -6723,7 +6622,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6742,7 +6640,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Roasted Choco Almonds Nutty Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Nutty Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/roasted-choco-almonds-nutty-cake.png",
@@ -6792,7 +6690,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6811,7 +6708,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Black Forest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Black Forest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-black-forest-cake.png",
@@ -6861,13 +6758,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 129,
     "createdAt": "2026-06-01",
@@ -6880,7 +6776,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Casatta Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Casatta Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-casatta-cake.jpg",
@@ -6930,7 +6826,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -6949,7 +6844,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Choco Truffle Celebration Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Choco Truffle Celebration Cake 2",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-choco-truffle-celebration-cake-2.jpg",
@@ -6999,13 +6894,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.9,
     "reviewCount": 164,
     "createdAt": "2026-06-01",
@@ -7018,7 +6912,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Choco Truffle Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Choco Truffle Cake 2",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-choco-truffle-cake-2-5-hours.jpg",
@@ -7068,13 +6962,12 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "rating": 4.8,
     "reviewCount": 157,
     "createdAt": "2026-06-01",
@@ -7087,7 +6980,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Chocolate Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-chocolate-cake-1790271308576-291.png",
@@ -7137,7 +7030,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7156,7 +7048,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Dutch Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Dutch Chocolate Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-dutch-chocolate-cake.jpg",
@@ -7206,7 +7098,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7225,7 +7116,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Royal Red Velvet Cream Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Red Velvet Cream Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/royal-red-velvet-cream-cake.png",
@@ -7275,7 +7166,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7294,7 +7184,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Straberry Flavour Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Straberry Flavour Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/straberry-flavour-cake-1790268973695-818.png",
@@ -7344,7 +7234,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7413,7 +7302,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7432,7 +7320,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Swiss Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Swiss Chocolate Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/swiss-chocolate-cake-1790271294499-444.png",
@@ -7482,7 +7370,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7501,7 +7388,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked Swiss Chocolate Delicacy Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Swiss Chocolate Delicacy Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/swiss-chocolate-delicacy-cake.jpeg",
@@ -7551,7 +7438,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7620,7 +7506,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,
@@ -7639,7 +7524,7 @@ export const realCakeProducts: Product[] = [
     "description": "Freshly baked White Forest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless White Forest Cake",
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "images": [
       {
         "url": "/images/cakes/white-forest-cake.jpeg",
@@ -7689,7 +7574,6 @@ export const realCakeProducts: Product[] = [
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isAvailable": true,

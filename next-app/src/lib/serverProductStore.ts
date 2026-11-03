@@ -188,7 +188,7 @@ export function getMergedProductsList(): any[] {
       isBestseller: ov.isBestseller !== undefined ? ov.isBestseller : (p.isBestseller ?? false),
       isFeatured: ov.isFeatured !== undefined ? ov.isFeatured : (p.isFeatured ?? false),
       isNewArrival: ov.isNewArrival !== undefined ? ov.isNewArrival : (p.isNewArrival ?? false),
-      deliveryOptions: ov.deliveryOptions && ov.deliveryOptions.length > 0 ? ov.deliveryOptions : (p.deliveryOptions || ['2hr', 'same-day']),
+      deliveryOptions: ov.deliveryOptions && ov.deliveryOptions.length > 0 ? ov.deliveryOptions : (p.deliveryOptions || ['same-day']),
       updatedAt: ov.updatedAt || p.updatedAt,
     });
   });

@@ -34,12 +34,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-10-11T16:20:02.048Z"
   },
   "real-cake-148": {
@@ -89,7 +88,7 @@
     ],
     "price": 1049,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "rasmalai",
     "description": "Freshly baked Premium Rasmalai Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Rasmalai Cake",
@@ -101,7 +100,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -156,7 +154,7 @@
     ],
     "price": 699,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "red-velvet",
     "description": "Freshly baked Red Velvet Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Red Velvet Cake",
@@ -168,7 +166,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -223,7 +220,7 @@
     ],
     "price": 799,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Royal Casatta Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Casatta Cake",
@@ -235,7 +232,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -290,7 +286,7 @@
     ],
     "price": 999,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Roasted Choco Almonds Nutty Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Nutty Cake",
@@ -302,7 +298,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -357,7 +352,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Roasted Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Roasted Choco Almonds Cake",
@@ -369,7 +364,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -424,7 +418,7 @@
     ],
     "price": 699,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Royal Choco Truffle Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Choco Truffle Cake 2",
@@ -436,12 +430,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:34:06.143Z"
   },
   "real-cake-172": {
@@ -491,7 +484,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "red-velvet",
     "description": "Freshly baked Royal Red Velvet Cream Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Red Velvet Cream Cake",
@@ -503,7 +496,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -570,7 +562,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -637,7 +628,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -704,7 +694,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -771,7 +760,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -826,7 +814,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Rich Choco Truffle Temptation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rich Choco Truffle Temptation Cake",
@@ -838,12 +826,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:35:37.655Z"
   },
   "real-cake-158": {
@@ -893,7 +880,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Rich Dutch Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rich Dutch Choco Truffle Cake",
@@ -905,12 +892,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:35:44.280Z"
   },
   "real-cake-146": {
@@ -960,7 +946,7 @@
     ],
     "price": 749,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Premium Overloaded Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Overloaded Cake",
@@ -972,7 +958,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1027,7 +1012,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Premium Dark Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Premium Dark Choco Chips Cake",
@@ -1039,7 +1024,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1094,7 +1078,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "black-forest",
     "description": "Freshly baked Pinky Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Pinky Blackforest Cake",
@@ -1106,7 +1090,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1161,7 +1144,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Pink Forest Strawberry Choco Cake Special in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Pink Forest Strawberry Choco Cake Special",
@@ -1173,7 +1156,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1228,7 +1210,7 @@
     ],
     "price": 799,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Over Loaded Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Over Loaded Chocolate Cake",
@@ -1240,7 +1222,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1295,7 +1276,7 @@
     ],
     "price": 749,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked No Cream Dutch Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless No Cream Dutch Truffle Cake",
@@ -1307,12 +1288,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:38:10.770Z"
   },
   "real-cake-125": {
@@ -1374,7 +1354,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1441,7 +1420,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1508,7 +1486,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1575,7 +1552,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1642,7 +1618,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1697,7 +1672,7 @@
     ],
     "price": 799,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Gulabjamun Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gulabjamun Cake",
@@ -1709,7 +1684,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1776,7 +1750,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1831,7 +1804,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "black-forest",
     "description": "Freshly baked Gems Blackforest Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems Blackforest Cake",
@@ -1843,7 +1816,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -1898,7 +1870,7 @@
     ],
     "price": 999,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Gems And Kitkat Carnival Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems And Kitkat Carnival Cake",
@@ -1910,12 +1882,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:40:23.240Z"
   },
   "real-cake-94": {
@@ -1965,7 +1936,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Gems Chocolate Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Gems Chocolate Cake",
@@ -1977,7 +1948,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2032,7 +2002,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Full Choco Chips Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Full Choco Chips Cake",
@@ -2044,7 +2014,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2099,7 +2068,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Fresh Pineaple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Pineaple Cake",
@@ -2111,7 +2080,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2166,7 +2134,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "fruit",
     "description": "Freshly baked Fresh Mango Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Mango Fruit Cake",
@@ -2178,7 +2146,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2233,7 +2200,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "fruit",
     "description": "Freshly baked Fresh Fruit Pineapple Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Fresh Fruit Pineapple Cake",
@@ -2245,7 +2212,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2300,7 +2266,7 @@
     ],
     "price": 799,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "rasmalai",
     "description": "Freshly baked Exotic Rasmalai Pista Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Exotic Rasmalai Pista Cake",
@@ -2312,7 +2278,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2367,7 +2332,7 @@
     ],
     "price": 749,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "fruit",
     "description": "Freshly baked Exotic Fresh Fruit Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Exotic Fresh Fruit Cake",
@@ -2379,7 +2344,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2434,7 +2398,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "butterscotch",
     "description": "Freshly baked Crunchy Butterscotch Praline Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Crunchy Butterscotch Praline Cake",
@@ -2446,7 +2410,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2501,7 +2464,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Double Choco Chips Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Double Choco Chips Truffle Cake",
@@ -2513,12 +2476,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:42:28.981Z"
   },
   "real-cake-58": {
@@ -2568,7 +2530,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Chocolate Velvet1 Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Chocolate Velvet1 Cake",
@@ -2580,7 +2542,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2635,7 +2596,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Choco Truffle Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Truffle Cake",
@@ -2647,12 +2608,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:42:53.963Z"
   },
   "real-cake-55": {
@@ -2702,7 +2662,7 @@
     ],
     "price": 599,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Chocolate Delight Sensation Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Chocolate Delight Sensation Cake",
@@ -2714,7 +2674,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2781,7 +2740,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2848,7 +2806,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2915,7 +2872,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -2982,7 +2938,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3049,7 +3004,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3104,7 +3058,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Choco Almonds Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Almonds Cake",
@@ -3116,7 +3070,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3171,7 +3124,7 @@
     ],
     "price": 649,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Choco Caramel Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Choco Caramel Cake",
@@ -3183,7 +3136,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3250,7 +3202,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3305,7 +3256,7 @@
     ],
     "price": 749,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "fruit",
     "description": "Freshly baked Blueberry Dom Shape Exotic Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Blueberry Dom Shape Exotic Cake",
@@ -3317,7 +3268,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3372,7 +3322,7 @@
     ],
     "price": 799,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Belgium Supreme Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Belgium Supreme Cake",
@@ -3384,7 +3334,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3439,7 +3388,7 @@
     ],
     "price": 999,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Belgium Supreme Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Belgium Supreme Kitkat Cake",
@@ -3451,12 +3400,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:45:23.303Z"
   },
   "real-cake-23": {
@@ -3506,7 +3454,7 @@
     ],
     "price": 999,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Beautiful Kitkat Cake in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Beautiful Kitkat Cake",
@@ -3518,12 +3466,11 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": true,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:45:46.356Z"
   },
   "real-cake-20": {
@@ -3585,7 +3532,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3652,7 +3598,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3719,7 +3664,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3786,7 +3730,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3841,7 +3784,7 @@
     ],
     "price": 899,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "rasmalai",
     "description": "Freshly baked Rasmalai Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Rasmalai Cake 2",
@@ -3853,7 +3796,6 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
@@ -3908,7 +3850,7 @@
     ],
     "price": 699,
     "category": "cakes",
-    "subcategory": "bestseller",
+    "subcategory": "",
     "flavour": "chocolate",
     "description": "Freshly baked Royal Choco Truffle Celebration Cake 2 in Vadodara. Made with premium ingredients, 100% eggless live cake bakery with same-day express delivery.",
     "shortDescription": "Delicious 100% eggless Royal Choco Truffle Celebration Cake 2",
@@ -3920,17 +3862,20 @@
       "vadodara"
     ],
     "deliveryOptions": [
-      "2hr",
       "same-day"
     ],
     "isFeatured": false,
     "isNewArrival": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "updatedAt": "2026-11-02T02:46:17.212Z"
   },
   "real-cake-4": {
     "id": "real-cake-4",
     "isDeleted": true,
-    "updatedAt": "2026-11-03T01:13:41.950Z"
+    "updatedAt": "2026-11-03T01:13:41.950Z",
+    "isBestseller": false,
+    "deliveryOptions": [
+      "same-day"
+    ]
   }
 }

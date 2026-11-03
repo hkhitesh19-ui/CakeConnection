@@ -227,10 +227,10 @@ export default function CakesQuickPricingPage() {
     if (edits[p.id]) return edits[p.id];
     const initial250 = getWeightPrice(p, '250g');
     const origPhoto = !p.images || !Array.isArray(p.images) || p.images.length === 0 ? '' : (typeof p.images[0] === 'string' ? p.images[0] : p.images[0]?.url || '');
-    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? (typeof p.subcategory === 'string' && p.subcategory.toLowerCase().includes('bestseller')));
+    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? false);
     const orig2hr = Array.isArray(p.delivery_options || p.deliveryOptions)
       ? (p.delivery_options || p.deliveryOptions)!.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d))
-      : true;
+      : false;
 
     return {
       name: p.name || '',
@@ -304,10 +304,10 @@ export default function CakesQuickPricingPage() {
     const orig2kg = getWeightPrice(p, '2kg');
     const origAvail = p.is_available ?? p.isAvailable ?? true;
     const origPhoto = !p.images || !Array.isArray(p.images) || p.images.length === 0 ? '' : (typeof p.images[0] === 'string' ? p.images[0] : p.images[0]?.url || '');
-    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? (typeof p.subcategory === 'string' && p.subcategory.toLowerCase().includes('bestseller')));
+    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? false);
     const orig2hr = Array.isArray(p.delivery_options || p.deliveryOptions)
       ? (p.delivery_options || p.deliveryOptions)!.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d))
-      : true;
+      : false;
 
     return (
       current.name !== p.name ||

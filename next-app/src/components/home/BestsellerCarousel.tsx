@@ -25,7 +25,7 @@ export default function BestsellerCarousel({
   const addToast = useUIStore((s) => s.addToast);
 
   const availableProducts = allProducts.filter((p) => p.isAvailable);
-  const bestsellers = availableProducts.filter((p) => p.isBestseller || p.subcategory?.toLowerCase().includes('bestseller'));
+  const bestsellers = availableProducts.filter((p) => !!p.isBestseller);
   const products = (bestsellers.length > 0 ? bestsellers : availableProducts).slice(0, 12);
 
   const scroll = (direction: 'left' | 'right') => {
