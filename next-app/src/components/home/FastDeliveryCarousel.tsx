@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, Star, ShoppingCart, Check } from 'lucide-rea
 import { Container } from '@/components/ui';
 import { useCartStore, useUIStore } from '@/stores';
 import { useProducts } from '@/hooks/useProducts';
-import { cakeProducts } from '@/data/products';
 import type { Product } from '@/types';
 
 interface FastDeliveryCarouselProps {
@@ -14,7 +13,6 @@ interface FastDeliveryCarouselProps {
   viewAllLink: string;
 }
 
-const mockProducts: Product[] = cakeProducts.slice(0, 8);
 
 export default function FastDeliveryCarousel({
   title,
@@ -28,7 +26,7 @@ export default function FastDeliveryCarousel({
   const addToast = useUIStore((s) => s.addToast);
 
   // Filter for super fast delivery options
-  const filteredProducts = allProducts.filter((p) => {
+  const products = allProducts.filter((p) => {
     if (!p.isAvailable) return false;
     
     const inDelivery = Array.isArray(p.deliveryOptions)
@@ -38,7 +36,9 @@ export default function FastDeliveryCarousel({
     return inDelivery;
   }).slice(0, 12);
 
-  const products = filteredProducts.length > 0 ? filteredProducts : mockProducts;
+  if (!loading && products.length === 0) {
+    return null;
+  }
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {

@@ -26,7 +26,11 @@ export default function BestsellerCarousel({
 
   const availableProducts = allProducts.filter((p) => p.isAvailable);
   const bestsellers = availableProducts.filter((p) => !!p.isBestseller);
-  const products = (bestsellers.length > 0 ? bestsellers : availableProducts).slice(0, 12);
+  const products = bestsellers.slice(0, 12);
+
+  if (!loading && products.length === 0) {
+    return null;
+  }
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
