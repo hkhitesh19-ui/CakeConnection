@@ -90,10 +90,12 @@ function getDeliveryIcon(iconName: string) {
   }
 }
 
-function getNext7Days(): { date: Date; label: string; shortLabel: string }[] {
+function getNext7Days(isNextDayOnly: boolean = false): { date: Date; label: string; shortLabel: string }[] {
   const days: { date: Date; label: string; shortLabel: string }[] = [];
   const today = new Date();
-  for (let i = 0; i < 7; i++) {
+  const startDay = isNextDayOnly ? 1 : 0;
+  const totalDays = isNextDayOnly ? 8 : 7;
+  for (let i = startDay; i < totalDays; i++) {
     const d = new Date(today);
     d.setDate(today.getDate() + i);
     let label: string;
@@ -398,8 +400,26 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
     slot?: boolean;
   }>({});
 
-  // ── Derived data ──
-  const deliveryDays = useMemo(() => getNext7Days(), []);
+  // ── Derived delivery options ──
+  const deliveryOpts = useMemo(() => {
+    const opts = product.deliveryOptions || (product as any).delivery_options;
+    if (Array.isArray(opts) && opts.length > 0) return opts;
+    return ['same-day'];
+  }, [product]);
+
+  // Check if this cake is strictly Next Day Delivery only
+  const isNextDayOnly = useMemo(() => {
+    const hasNext = deliveryOpts.some((d: string) => /next-day|next\s*day/i.test(d));
+    const hasSameOr2hr = deliveryOpts.some((d: string) => /same-day|same\s*day|2\s*hr|superfast|express/i.test(d));
+    return hasNext && !hasSameOr2hr;
+  }, [deliveryOpts]);
+
+  const is2hrExpress = useMemo(() => {
+    return deliveryOpts.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d));
+  }, [deliveryOpts]);
+
+  // ── Derived delivery dates (Today is excluded if Next Day Only) ──
+  const deliveryDays = useMemo(() => getNext7Days(isNextDayOnly), [isNextDayOnly]);
 
   const selectedDateString = useMemo(() => {
     if (selectedDateIndex === null || selectedDateIndex === undefined || !deliveryDays[selectedDateIndex]) return '';
@@ -412,14 +432,16 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
     return closedDates.find((c) => c.date === selectedDateString) || null;
   }, [selectedDateString, closedDates]);
 
-  // Delivery Slots directly from Admin Panel (siteStore) without redundant slots or artificial sections
+  // Delivery Slots with real-time 3 to 4 hours buffer check for same day
   const availableSlots = useMemo(() => {
     if (!selectedDateString) return [];
     
     // Check if selected date is today
     const todayStr = new Date().toISOString().split('T')[0];
     const isToday = selectedDateString === todayStr;
-    const currentHour = new Date().getHours();
+
+    // If next day only, today has 0 slots
+    if (isToday && isNextDayOnly) return [];
 
     const festivalMatch = festivalDates.find((f) => f.date === selectedDateString);
     
@@ -428,21 +450,50 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
       { label: '12:00 PM - 03:00 PM (No Fix Time)', cutoffHour: 11 },
       { label: '03:00 PM - 06:00 PM (No Fix Time)', cutoffHour: 14 },
       { label: '06:00 PM - 09:00 PM (No Fix Time)', cutoffHour: 17 },
+      { label: '09:00 PM - 12:00 AM (No Fix Time)', cutoffHour: 20 },
     ];
 
     if (festivalMatch && festivalMatch.slots && festivalMatch.slots.length > 0) {
       rawSlots = festivalMatch.slots.map((label) => ({ label }));
     }
 
-    // Filter out disabled slots if it's today and past the cutoff hour
+    // Helper to parse start hour from slot label (e.g. "10:00 AM" -> 10.0, "03:00 PM" -> 15.0)
+    const parseSlotStartHour = (label: string): number | null => {
+      const match = label.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+      if (!match) return null;
+      let h = parseInt(match[1], 10);
+      const m = parseInt(match[2], 10);
+      const ampm = match[3].toUpperCase();
+      if (ampm === 'PM' && h !== 12) h += 12;
+      if (ampm === 'AM' && h === 12) h = 0;
+      return h + m / 60;
+    };
+
+    // Filter out slots if it's today according to real-time 3 to 4 hours buffer
     if (isToday) {
+      const now = new Date();
+      // Calculate current IST time
+      const istStr = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' });
+      const [nowH, nowM] = istStr.split(':').map(Number);
+      const currentIstFloat = (isNaN(nowH) ? now.getHours() : nowH) + (isNaN(nowM) ? now.getMinutes() : nowM) / 60;
+
+      // Requirement: "realtime ke 3 to 4 hours ke baad ke available slots ke alawa hi display hone chahiye"
+      // Buffer: 2.0 hours for 2hr Express, 3.5 hours for Same Day delivery
+      const requiredBuffer = is2hrExpress ? 2.0 : 3.5;
+      const minSlotStart = currentIstFloat + requiredBuffer;
+
       rawSlots = rawSlots.filter(slot => {
-        if (slot.cutoffHour === undefined || slot.cutoffHour === null) return true;
-        return currentHour < slot.cutoffHour;
+        // Cutoff hour check if specified
+        if (slot.cutoffHour !== undefined && slot.cutoffHour !== null) {
+          if (currentIstFloat >= slot.cutoffHour) return false;
+        }
+        const startH = parseSlotStartHour(slot.label);
+        if (startH === null) return true;
+        return startH >= minSlotStart;
       });
     }
 
-    // Deduplicate & format: Direct timeslot display without Morning/Afternoon/Evening and with "(No Fix Time)" at end
+    // Deduplicate & format
     const seen = new Set<string>();
     const cleanSlots: DeliverySlot[] = [];
     rawSlots.forEach((s) => {
@@ -454,7 +505,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
     });
 
     return cleanSlots;
-  }, [selectedDateString, festivalDates, deliverySlots]);
+  }, [selectedDateString, festivalDates, deliverySlots, isNextDayOnly, is2hrExpress]);
 
   // Sync / validate selected timeslot when available slots change
   useEffect(() => {

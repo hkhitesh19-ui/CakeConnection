@@ -95,3 +95,35 @@ Admin Panel (`/admin/cakes`) par jab bhi admin kisi cake ke prices change karke 
 2. **Dynamic Client Hook:** `src/hooks/useProducts.ts` ab `/api/products` se dynamic live prices fetch karta hai (`cache: 'no-store'`). Zero-flicker ke liye initial state instant load hoti hai aur background me dynamic live prices se hydrate ho jati hai.
 3. **Dynamic Product Detail Page:** `src/app/[category]/[slug]/page.tsx` me `getMergedProductBySlug` direct server-side evaluate hota hai with `force-dynamic`.
 4. **Outcome:** Ab jab bhi Admin Panel par koi bhi price, weight variant ya stock edit hoga, main website par wo **instantly live** reflect hoga bina kisi manual redeployment ya server rebuild ke.
+
+---
+
+## 7. Premature "Task Done" Reply Without End-to-End Visual QC Check (Hidden Fallback Overrides)
+**Error Signature:**
+Admin Panel me sabhi cakes ke `Bestseller` aur `2-Hr Express` flags de-select karke Save karne ke baad, database aur API me count `0 (Zero)` ho gaya tha. Agent ne API verify karke user ko reply de diya ki "Sab De-select ho gaya", lekin live website (`cakeconnection.in`) ke homepage par wahi purane cakes abhi bhi "2 Hours Delivery" aur "Bestselling Cakes" me display ho rahe the.
+
+**Root Cause:**
+Frontend carousel components (`FastDeliveryCarousel.tsx` aur `BestsellerCarousel.tsx`) ke andar hardcoded fallback laga hua tha:
+1. `FastDeliveryCarousel`: `filteredProducts.length > 0 ? filteredProducts : mockProducts` (where `mockProducts = cakeProducts.slice(0, 8)`).
+2. `BestsellerCarousel`: `(bestsellers.length > 0 ? bestsellers : availableProducts).slice(0, 12)`.
+Jab Admin ne sabhi cakes de-select kiye aur count 0 hua, toh component ne 0 cakes dikhane ki bajaye chupke se fallback run karke catalog ke pehle 12 cakes zabardasti screen par render kar diye.
+
+**Resolution:**
+1. Components se fake fallbacks (`mockProducts`, `availableProducts`) permanently delete kiye gaye.
+2. Agar Admin ne 0 cakes select kiye hain (`products.length === 0`), component strictly `return null;` karta hai taaki koi bhi fake ya unapproved cake display na ho.
+
+---
+
+## 8. STRICT PROTOCOL: Mandatory Double Verification QC Check (End-to-End Visual Layer Verification)
+**STRICT GLOBAL RULE FOR ANTIGRAVITY & ANY DEVELOPER:**
+Kabhi bhi kisi bhi task, bug-fix, ya feature ko "DONE / HO GAYA" bolne se pehle **DOUBLE VERIFICATION QC CHECK** mandatory hai:
+
+1. **Layer 1 — Data & Backend Verification:**
+   - Database / Store (`products-store.json`) check karein.
+   - API endpoints (`/api/...`) ke response codes aur exact payloads verify karein.
+
+2. **Layer 2 — Consumer UI & Visual Layer Verification (MANDATORY):**
+   - Sirf API response dekh kar reply dena SAKHT MANA HAI.
+   - Rendered frontend component code, active query params, fallback branches, aur live server HTML/DOM me verify karein ki customer ko screen par wahi dikh raha hai jo hona chahiye.
+   - Check karein ki koi hardcoded fallback (`mockData`, `fallbackProducts`, default ternary fallback) actual database selection ko override toh nahi kar raha.
+   - Jab tak dono layers (Backend + Frontend DOM) 100% physically match na karein, tab tak task ko "Done" report nahi karna hai.

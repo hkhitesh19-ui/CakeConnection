@@ -55,14 +55,33 @@ function checkImageQueryRules(dir) {
   }
 }
 
+// Rule 4: Homepage carousels me mockProducts ya artificial fallbacks nahi hone chahiye (Issue #7/8 in Resolved_Errors.md)
+function checkCarouselFallbackRules(dir) {
+  if (!fs.existsSync(dir)) return;
+  const files = fs.readdirSync(dir, { recursive: true });
+  for (const file of files) {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isFile() && (file.endsWith('.tsx') || file.endsWith('.jsx'))) {
+      const content = fs.readFileSync(fullPath, 'utf8');
+      if (content.includes('mockProducts') && file.includes('Carousel')) {
+        console.error(`❌ REGRESSION VIOLATION in ${fullPath}:`);
+        console.error(`   Found 'mockProducts' in carousel component.`);
+        console.error(`   👉 Refer to Resolved_Errors.md #7 & #8: Carousels must strictly respect database/admin selections without fake mock fallbacks.`);
+        errorsFound++;
+      }
+    }
+  }
+}
+
 // Execute checks
 checkApiEnvRules(path.join(process.cwd(), 'src/app/api'));
 checkPricingRule();
 checkImageQueryRules(path.join(process.cwd(), 'src/components'));
+checkCarouselFallbackRules(path.join(process.cwd(), 'src/components/home'));
 
 if (errorsFound > 0) {
   console.error(`\n🚨 Build stopped! ${errorsFound} regression violation(s) found. See Resolved_Errors.md to fix.`);
   process.exit(1);
 } else {
-  console.log('✅ [Regression Guardrail] All 5 Resolved_Errors.md checks passed successfully! Safe to build/deploy.\n');
+  console.log('✅ [Regression Guardrail] All Resolved_Errors.md checks passed successfully! Safe to build/deploy.\n');
 }

@@ -528,21 +528,76 @@ export default function CheckoutPage() {
   const codCharge = form.paymentMethod === 'cod' ? 29 : 0;
   const finalTotal = subtotal + deliveryCharge + codCharge;
 
-  // Compute allowed delivery slots (checks festival overrides)
+  // Check if cart has strictly Next Day Only items
+  const hasNextDayOnlyItem = useMemo(() => {
+    return items.some((item) => {
+      const speed = (item.deliverySpeed || '').toLowerCase();
+      const options = ((item as any).deliveryOptions || []).map((d: string) => d.toLowerCase());
+      return speed.includes('next') || (options.includes('next-day') && !options.includes('same-day') && !options.includes('2hr'));
+    });
+  }, [items]);
+
+  // Ensure deliveryDate switches to tomorrow if cart has next day only item
+  useEffect(() => {
+    const todayStr = new Date().toISOString().split('T')[0];
+    if (hasNextDayOnlyItem && deliveryDate === todayStr) {
+      setDeliveryDate(getTomorrowString());
+    }
+  }, [hasNextDayOnlyItem, deliveryDate]);
+
+  // Compute allowed delivery slots with real-time 3 to 4 hours buffer
   const availableSlots = useMemo(() => {
     if (!deliveryDate) return [];
+    const todayStr = new Date().toISOString().split('T')[0];
+    const isToday = deliveryDate === todayStr;
+
+    // Next day only items have 0 slots for today
+    if (isToday && hasNextDayOnlyItem) return [];
+
     const festivalMatch = festivalDates.find((f) => f.date === deliveryDate);
-    if (festivalMatch && festivalMatch.slots && festivalMatch.slots.length > 0) {
-      return festivalMatch.slots.map((label) => ({ label: formatTimeSlotDisplay(label) }));
+    let baseSlots = festivalMatch && festivalMatch.slots && festivalMatch.slots.length > 0
+      ? festivalMatch.slots.map((label) => ({ label: formatTimeSlotDisplay(label) }))
+      : (deliverySlots && deliverySlots.length > 0 ? deliverySlots : [
+          { label: '10:00 AM - 01:00 PM (No Fix Time)', cutoffHour: 8 },
+          { label: '12:00 PM - 03:00 PM (No Fix Time)', cutoffHour: 11 },
+          { label: '03:00 PM - 06:00 PM (No Fix Time)', cutoffHour: 14 },
+          { label: '06:00 PM - 09:00 PM (No Fix Time)', cutoffHour: 17 },
+          { label: '09:00 PM - 12:00 AM (No Fix Time)', cutoffHour: 20 },
+        ]).map((s) => ({ ...s, label: formatTimeSlotDisplay(s.label) }));
+
+    if (isToday) {
+      const now = new Date();
+      const istStr = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' });
+      const [nowH, nowM] = istStr.split(':').map(Number);
+      const currentIstFloat = (isNaN(nowH) ? now.getHours() : nowH) + (isNaN(nowM) ? now.getMinutes() : nowM) / 60;
+
+      const has2hrItem = items.some((item) => (item.deliverySpeed || '').toLowerCase().includes('2hr'));
+      const requiredBuffer = has2hrItem ? 2.0 : 3.5;
+      const minSlotStart = currentIstFloat + requiredBuffer;
+
+      const parseSlotStart = (lbl: string): number | null => {
+        const match = lbl.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+        if (!match) return null;
+        let h = parseInt(match[1], 10);
+        const m = parseInt(match[2], 10);
+        const ampm = match[3].toUpperCase();
+        if (ampm === 'PM' && h !== 12) h += 12;
+        if (ampm === 'AM' && h === 12) h = 0;
+        return h + m / 60;
+      };
+
+      baseSlots = baseSlots.filter((slot: any) => {
+        if (slot.cutoffHour !== undefined && slot.cutoffHour !== null && currentIstFloat >= slot.cutoffHour) {
+          return false;
+        }
+        const startH = parseSlotStart(slot.label);
+        if (startH === null) return true;
+        return startH >= minSlotStart;
+      });
     }
-    const baseSlots = deliverySlots && deliverySlots.length > 0 ? deliverySlots : [
-      { label: '10:00 AM - 01:00 PM (No Fix Time)', cutoffHour: 8 },
-      { label: '12:00 PM - 03:00 PM (No Fix Time)', cutoffHour: 11 },
-      { label: '03:00 PM - 06:00 PM (No Fix Time)', cutoffHour: 14 },
-      { label: '06:00 PM - 09:00 PM (No Fix Time)', cutoffHour: 17 },
-    ];
-    return baseSlots.map((s) => ({ ...s, label: formatTimeSlotDisplay(s.label) }));
-  }, [deliveryDate, festivalDates, deliverySlots]);
+
+    return baseSlots;
+  }, [deliveryDate, festivalDates, deliverySlots, hasNextDayOnlyItem, items]);
 
   // Sync / validate timeslots selection when date changes
   useEffect(() => {

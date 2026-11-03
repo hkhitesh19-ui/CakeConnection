@@ -15,6 +15,7 @@ import {
   FAQ,
   FooterCTA,
   FastDeliveryCarousel,
+  CakeCategoryCarousel,
 } from '@/components/home';
 
 export const metadata: Metadata = {
@@ -37,15 +38,44 @@ export default function HomePage() {
         <HeroSection />
         <CategoriesSection />
         <ShopByOccasion />
-        <FastDeliveryCarousel
-          title="2 Hours SuperFast Delivery"
+        {/* 1. 2 Hours Superfast Delivery */}
+        <CakeCategoryCarousel
+          title="2 Hours Superfast Delivery"
+          subtitle="Fresh live cakes baked & delivered to your doorstep in 2 hours across Vadodara"
           category="cakes"
-          viewAllLink="/cakes?sort=fast"
+          filterType="2hr"
+          icon="⚡"
+          viewAllLink="/cakes?delivery=2hr"
         />
-        <BestsellerCarousel
-          title="Bestselling Cakes"
+
+        {/* 2. Best Seller Cakes */}
+        <CakeCategoryCarousel
+          title="Best Seller Cakes"
+          subtitle="Vadodara's most loved & highly rated celebration cakes"
           category="cakes"
-          viewAllLink="/cakes?sort=bestseller"
+          filterType="bestseller"
+          icon="⭐"
+          viewAllLink="/cakes?bestseller=true"
+        />
+
+        {/* 3. Same Day Delivery */}
+        <CakeCategoryCarousel
+          title="Same Day Delivery"
+          subtitle="Handcrafted fresh today with doorstep delivery across Vadodara"
+          category="cakes"
+          filterType="same-day"
+          icon="🚚"
+          viewAllLink="/cakes?delivery=same-day"
+        />
+
+        {/* 4. Next Day Delivery */}
+        <CakeCategoryCarousel
+          title="Next Day Delivery"
+          subtitle="Designer & multi-tier celebration cakes prepared fresh for tomorrow"
+          category="cakes"
+          filterType="next-day"
+          icon="📅"
+          viewAllLink="/cakes?delivery=next-day"
         />
         <DeliveryBanner />
         <BestsellerCarousel

@@ -505,6 +505,10 @@ function LeftFilterSidebar({
   onClearAll,
   activeFilterCount,
   products,
+  selectedDelivery,
+  onToggleDelivery,
+  isBestsellerFilter,
+  onToggleBestseller,
 }: {
   selectedWeights: string[];
   selectedFlavours: string[];
@@ -517,6 +521,10 @@ function LeftFilterSidebar({
   onClearAll: () => void;
   activeFilterCount: number;
   products: Product[];
+  selectedDelivery?: string;
+  onToggleDelivery?: (val: string) => void;
+  isBestsellerFilter?: boolean;
+  onToggleBestseller?: () => void;
 }) {
   const subcategories = getSubcategories(products);
 
@@ -566,6 +574,41 @@ function LeftFilterSidebar({
             </button>
           )}
         </div>
+
+        {/* 0. Delivery Speed & Bestsellers */}
+        <AccordionGroup
+          title="Delivery Speed"
+          isOpen={true}
+          onToggle={() => {}}
+          badge={(selectedDelivery ? 1 : 0) + (isBestsellerFilter ? 1 : 0)}
+        >
+          <div className="space-y-1">
+            <FilterCheckbox
+              label="⚡ 2 Hours Superfast"
+              checked={selectedDelivery === '2hr'}
+              onChange={() => onToggleDelivery && onToggleDelivery('2hr')}
+              count={products.filter((p) => (p.deliveryOptions || (p as any).delivery_options || []).some((d: string) => /2\s*hr/i.test(d))).length}
+            />
+            <FilterCheckbox
+              label="⭐ Best Seller Cakes"
+              checked={!!isBestsellerFilter}
+              onChange={() => onToggleBestseller && onToggleBestseller()}
+              count={products.filter((p) => !!p.isBestseller).length}
+            />
+            <FilterCheckbox
+              label="🚚 Same Day Delivery"
+              checked={selectedDelivery === 'same-day'}
+              onChange={() => onToggleDelivery && onToggleDelivery('same-day')}
+              count={products.filter((p) => (p.deliveryOptions || (p as any).delivery_options || []).some((d: string) => /same-day/i.test(d))).length}
+            />
+            <FilterCheckbox
+              label="📅 Next Day Delivery"
+              checked={selectedDelivery === 'next-day'}
+              onChange={() => onToggleDelivery && onToggleDelivery('next-day')}
+              count={products.filter((p) => (p.deliveryOptions || (p as any).delivery_options || []).some((d: string) => /next-day/i.test(d))).length}
+            />
+          </div>
+        </AccordionGroup>
 
         {/* 1. Cake Weight */}
         <AccordionGroup
@@ -910,6 +953,31 @@ function CakesPageContent() {
   const selectedPriceRanges = searchParams.getAll('price');
   const selectedSubcategories = searchParams.getAll('subcategory');
   const sortBy = searchParams.get('sort') || 'popular';
+  const selectedDelivery = searchParams.get('delivery') || (searchParams.get('sort') === 'fast' ? '2hr' : '');
+  const isBestsellerFilter = searchParams.get('bestseller') === 'true' || searchParams.get('sort') === 'bestseller';
+
+  const onToggleDelivery = (val: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (selectedDelivery === val) {
+      params.delete('delivery');
+      if (params.get('sort') === 'fast') params.delete('sort');
+    } else {
+      params.set('delivery', val);
+      if (val === '2hr' && params.get('sort') === 'fast') params.delete('sort');
+    }
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const onToggleBestseller = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (isBestsellerFilter) {
+      params.delete('bestseller');
+      if (params.get('sort') === 'bestseller') params.delete('sort');
+    } else {
+      params.set('bestseller', 'true');
+    }
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   // Helper to update query params
   const updateParam = useCallback(
@@ -953,7 +1021,9 @@ function CakesPageContent() {
     selectedWeights.length +
     selectedFlavours.length +
     selectedPriceRanges.length +
-    selectedSubcategories.length;
+    selectedSubcategories.length +
+    (selectedDelivery ? 1 : 0) +
+    (isBestsellerFilter ? 1 : 0);
 
   const activeWeightFilter = selectedWeights[0];
 
@@ -1014,6 +1084,31 @@ function CakesPageContent() {
           return pSubs.some((pSub) => pSub === target || pSub.includes(target) || target.includes(pSub));
         });
       });
+    }
+
+    // Delivery speed filter (?delivery=2hr | same-day | next-day)
+    if (selectedDelivery) {
+      const dNorm = selectedDelivery.toLowerCase();
+      result = result.filter((p) => {
+        const opts = Array.isArray(p.deliveryOptions || (p as any).delivery_options)
+          ? (p.deliveryOptions || (p as any).delivery_options)
+          : [];
+        if (dNorm.includes('2hr') || dNorm.includes('fast') || dNorm.includes('express')) {
+          return opts.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d));
+        }
+        if (dNorm.includes('next')) {
+          return opts.some((d: string) => /next-day|next\s*day/i.test(d));
+        }
+        if (dNorm.includes('same')) {
+          return opts.some((d: string) => /same-day|same\s*day/i.test(d));
+        }
+        return true;
+      });
+    }
+
+    // Bestseller filter (?bestseller=true)
+    if (isBestsellerFilter) {
+      result = result.filter((p) => !!p.isBestseller);
     }
 
     // Price range filter (using actual selling price v.price)

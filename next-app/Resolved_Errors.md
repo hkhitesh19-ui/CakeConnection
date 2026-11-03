@@ -1,101 +1,129 @@
-# Resolved Errors Log
+# Resolved Errors & Issues Pipeline
 
-This document tracks all major bugs/errors encountered in the project, their root causes, how they were resolved, and how to prevent them in the future.
+This document acts as a dedicated log of critical errors encountered during development and exactly how they were successfully resolved.
+
+## 1. Checkout Navigation Error
+**Error Signature:**
+`Runtime TypeError: navigate is not a function at CheckoutPage.useEffect`
+
+**Root Cause:**
+In Next.js App Router, the `useRouter()` hook from `next/navigation` returns an object containing navigation methods, rather than being a callable function directly like it was in older React Router versions.
+
+**Resolution:**
+Updated `navigate('/cart')` to `navigate.push('/cart')` inside the `f:\Cake_Connection_Website_May2026\next-app\src\app\checkout\page.tsx` file.
 
 ---
 
-## 1. Subcategory Slug Mismatch (e.g., "Father's Day")
-**Date:** June 21, 2026
-**Issue:** 
-Navigating to `http://localhost:3000/cakes?subcategory=fathers-day` showed 0 products, even though products with the "Father's Day Cakes" subcategory existed in Supabase.
+## 2. Next.js Image Unconfigured Local Patterns
+**Error Signature:**
+`Image with src "/logo.png?v=new1" is using a query string which is not configured in images.localPatterns.`
 
 **Root Cause:**
-The database stored `"Father's Day Cakes"`. When slugified by the frontend, it became `fathers-day-cakes`. The URL filter searched for exactly `fathers-day`, causing the match to fail.
+Next.js's `<Image />` component strictly prohibits arbitrary query parameters on local file paths by default to prevent unexpected caching or server rendering behavior. Attempting to force an override via `next.config.ts` (`localPatterns` array) resulted in Turbopack compilation freezing entirely due to aggressive internal caching loops.
 
 **Resolution:**
-Updated the filter logic in `src/app/cakes/page.tsx` and `src/app/flowers/page.tsx`. Added a normalization step that strips `-cakes`, `-cake`, `-flowers`, and `-flower` from the end of database slugs before comparing them to the URL parameter. This allowed `fathers-day-cakes` to perfectly match `fathers-day`.
-
-**Prevention:**
-In future architectures, separate the "Display Name" (e.g., "Father's Day Cakes") and the "URL Slug" (e.g., "fathers-day") into two distinct columns in the database. Relying on frontend runtime slugification for routing comparisons leads to fragile matches.
+The absolute best and permanent fix was entirely stripping the manual `?v=new1` cache-busting query parameter from the component itself located in `f:\Cake_Connection_Website_May2026\next-app\src\components\home\LoadingScreen.tsx`. Next.js does not need manual cache-busting on local images because it automatically generates its own optimized URLs (e.g., `/_next/image?...`) securely.
 
 ---
 
-## 2. Runtime Error: "Cannot read properties of undefined (reading 'forEach')"
-**Date:** June 21, 2026
-**Issue:** 
-The application crashed with a `TypeError: Cannot read properties of undefined (reading 'forEach')` at `getSubcategories` during page load.
+## 3. Server Connection Refusal
+**Error Signature:**
+`http://localhost:3000/ : This site can’t be reached. localhost refused to connect. ERR_CONNECTION_REFUSED`
 
 **Root Cause:**
-The custom React hook `useProducts` had a split-second initialization state during Server-Side Rendering where the `products` variable was momentarily passed as `undefined` instead of an empty array `[]` into the `getSubcategories` helper.
+Because of the complex `localPatterns` configuration added to `next.config.ts` during the previous error fix, Next.js Turbopack took an extraordinarily long time (over 84 seconds) to compile the initial chunk, ultimately freezing the local development server and dropping incoming browser requests.
 
 **Resolution:**
-Added a defensive type check (`if (!products || !Array.isArray(products)) return [];`) at the top of the `getSubcategories` function across all category pages to safely catch the empty state.
-
-**Prevention:**
-Always use defensive programming (null/undefined checks) when passing asynchronous data or React state to synchronous utility functions that expect arrays.
+1. Force-killed the frozen server process running on Port 3000.
+2. Removed the problematic `localPatterns` config completely from `f:\Cake_Connection_Website_May2026\next-app\next.config.ts`.
+3. Performed a clean cold start of the `npm run dev` server which restored full connectivity instantly.
 
 ---
 
-## 3. Next.js Slow Filesystem Warning & File Watcher Overhead
-**Date:** June 30, 2026
-**Issue:** 
-During `next dev`, a warning was thrown: `⚠ Slow filesystem detected. The benchmark took 437ms.` This occurred because the Next.js `.next` build cache was located on a slow network or external `F:` drive, causing high read/write latency.
+## 4. Price Mismatch Between Listing and Product Detail Page
+**Error Signature:**
+Live website par listing page (`/cakes`) par same cake ke 500g aur 1kg ke price (e.g., ₹649, ₹1,149) product detail page (`/cakes/[slug]`) ke price (₹549, ₹999) se alag show ho rahe the.
 
 **Root Cause:**
-By default, Next.js writes its cache into the `.next` folder in the current project directory. On a slow drive, this causes extreme slowdowns and triggers Next.js internal warnings.
+`src/app/cakes/page.tsx` ke `ProductCard` component me code `v.compareAtPrice` ko display kar raha tha (`mrp = (v.compareAtPrice && v.compareAtPrice > 0) ? v.compareAtPrice : v.price`). Database/store (`serverProductStore.ts`) me `compareAtPrice` automatically `price * 1.15` (+15% markup) calculate hota hai. Is wajah se listing cards par 15% inflated MRP dikh raha tha jabki detail page actual selling price `v.price` dikha raha tha.
 
 **Resolution:**
-Modified `next.config.ts` to redirect the build cache to a fast local SSD drive (`C:/tmp/cakeconnection-next`) using the `distDir` property. Also disabled `productionBrowserSourceMaps` and adjusted Webpack's `watchOptions` to reduce file system polling overhead. Updated the `dev-clean-start.ps1` script to wipe this new cache location on boot.
-
-**Prevention:**
-Keep the Next.js cache directory on the fastest local SSD available (preferably `C:` on Windows) by overriding `distDir` when developing off an external/slow drive.
+`src/app/cakes/page.tsx` ko update kiya gaya taaki `mrp = Number(v.price) || 0` use ho. Ab dono pages par selling price bilkul identical show hoti hai.
 
 ---
 
-## 4. Next.js ENOENT Error on Boot (Incorrect Path Join)
-**Date:** June 30, 2026
-**Issue:** 
-After fixing the slow filesystem issue, the server crashed on boot with: `Error: ENOENT: no such file or directory, mkdir 'F:\...\next-app\C:\tmp\cakeconnection-next\dev'`.
+## 5. Order Confirmation Email Localhost URL Leaks
+**Error Signature:**
+Live customer order place hone ke baad confirmation emails me product links aur summary URLs `http://localhost:3000/...` bankar jaa rahi thi.
 
 **Root Cause:**
-Used Node's `path.join("C:\\", "tmp", ...)` in `next.config.ts`. Next.js internals interpreted this as a relative path and appended it to the current working directory, resulting in an invalid hybrid path.
+Next.js me `NEXT_PUBLIC_*` prefix wale environment variables (jaise `NEXT_PUBLIC_SITE_URL`) build-time par static string replace ho jaate hain. Agar VPS par build run karte waqt environment me fallback ya `.env.local` activate ho gaya tha, toh `localhost:3000` JavaScript production bundle me hardcode ho gaya.
 
-**Resolution:**
-Replaced `path.join` with an explicit absolute string `"C:/tmp/cakeconnection-next"` (using forward slashes, which Node.js handles natively on Windows). Next.js correctly recognized it as an absolute path outside the project root.
+**Technical Term:**
+**Runtime Dynamic Environment Variable Resolution** (vs Build-Time Static Inlining / Dead-Code Replacement).
 
-**Prevention:**
-When overriding internal directory paths in `next.config.ts` for Windows environments, prefer absolute string declarations with forward slashes instead of relying on `path.join` which can sometimes be misparsed by bundlers.
+**Non-Technical Term:**
+**Automatic Environment Switcher** (Smart Mode Detection).
+
+**Resolution & Prevention SOP:**
+1. Server-side API route (`src/app/api/order/send-invoice/route.ts`) me build-time variable ki jagah server runtime variable `SITE_URL` use kiya gaya:
+   ```typescript
+   const BASE_URL = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://cakeconnection.in').replace(/\/$/, '');
+   ```
+2. Local dev ke liye `.env.local` me `SITE_URL=http://localhost:3000`.
+3. VPS production ke liye `.env.production` me `SITE_URL=https://www.cakeconnection.in`.
+4. Server API routes runtime pe dynamic environment read karte hain, isliye kabhi bhi code me manual domain switch karne ki zarurat nahi hoti.
+
+
 
 ---
 
-## 5. Mismatch Between Dynamic Slug and Rendered Product Image
-**Date:** June 30, 2026
-**Issue:** 
-Navigating to a specific product slug (e.g., `/cakes/blackforest-cake`) showed the correct title but displayed an incorrect fallback image of a different cake.
+## 6. Admin Panel Price Updates Not Reflecting on Main Website (Static Bundle Isolation)
+**Error Signature:**
+Admin Panel (`/admin/cakes`) par jab bhi admin kisi cake ke prices change karke Save karta tha, toh changes server par `products-store.json` me save ho jate the aur Admin Panel me naye price dikhte the. Lekin main customer website (`/cakes` aur product pages) par hamesha purane prices hi display hote rehte the.
 
 **Root Cause:**
-A prop-drilling disconnect. The parent server component `[category]/[slug]/page.tsx` correctly fetched the product from Supabase based on the slug and passed it as a prop. However, the child component `ProductDetailClient.tsx` lacked a prop signature for `product`, completely ignored the passed prop, and did a local re-fetch using a mock function `getProductBySlug(slug)` from `@/data/products`. Since the mock data did not have the exact slug, it returned the closest fallback product.
+1. Next.js production build (`npm run build`) ke time client components (jaise `cakes/page.tsx` aur home carousels) static mock data array `allProducts` (from `@/data/products.ts`) ko JavaScript client bundle me hardcode (bake) kar lete the.
+2. `useProducts` hook client browser me run hota tha aur bina kisi network request ke browser memory se hi static `allProducts` filter karke render kar deta tha.
+3. Server par `products-store.json` update hone ke baad bhi client browser kabhi server se fresh products mangta hi nahi tha.
 
-**Resolution:**
-Fixed `ProductDetailClient.tsx` by defining the `ProductDetailClientProps` interface to accept `{ product, relatedProducts }`. Removed all local data fetching and mock data imports from the client component, strictly relying on the server-provided data. 
+**Technical Term:**
+**Client-Side Dynamic Revalidation (Stale-While-Revalidate / SWR Hydration)** vs **Build-Time Static Bundle Freezing**.
 
-**Prevention:**
-Ensure client components accept and utilize data passed from server components instead of independently re-fetching. Check prop interfaces to guarantee the data pipeline isn't broken midway.
+**Resolution & Permanent SOP:**
+1. **Public Dynamic API Created:** `src/app/api/products/route.ts` (`export const dynamic = 'force-dynamic';`) jo server-side `serverProductStore.ts` se merged live catalog (`products-store.json` + base catalog) return karta hai.
+2. **Dynamic Client Hook:** `src/hooks/useProducts.ts` ab `/api/products` se dynamic live prices fetch karta hai (`cache: 'no-store'`). Zero-flicker ke liye initial state instant load hoti hai aur background me dynamic live prices se hydrate ho jati hai.
+3. **Dynamic Product Detail Page:** `src/app/[category]/[slug]/page.tsx` me `getMergedProductBySlug` direct server-side evaluate hota hai with `force-dynamic`.
+4. **Outcome:** Ab jab bhi Admin Panel par koi bhi price, weight variant ya stock edit hoga, main website par wo **instantly live** reflect hoga bina kisi manual redeployment ya server rebuild ke.
 
 ---
 
-## 6. Razorpay Premature Order Placement & Test Mode Incompatibility
-**Date:** November 1, 2026
-**Issue:** 
-Customers were unable to make online payments via Razorpay (UPI/cards failing), and orders were getting placed in the database without payment.
+## 7. Premature "Task Done" Reply Without End-to-End Visual QC Check (Hidden Fallback Overrides)
+**Error Signature:**
+Admin Panel me sabhi cakes ke `Bestseller` aur `2-Hr Express` flags de-select karke Save karne ke baad, database aur API me count `0 (Zero)` ho gaya tha. Agent ne API verify karke user ko reply de diya ki "Sab De-select ho gaya", lekin live website (`cakeconnection.in`) ke homepage par wahi purane cakes abhi bhi "2 Hours Delivery" aur "Bestselling Cakes" me display ho rahe the.
 
 **Root Cause:**
-1. Production environment had test credentials (`rzp_test_...`), which blocks real UPI (Google Pay, PhonePe, Paytm) and real debit/credit cards.
-2. Checkout architecture in `src/app/checkout/page.tsx` called `/api/orders` in Step 1 *before* launching the Razorpay modal. When customers cancelled the modal or payment failed, the order had already been inserted into the database with `payment_status: pending`.
+Frontend carousel components (`FastDeliveryCarousel.tsx` aur `BestsellerCarousel.tsx`) ke andar hardcoded fallback laga hua tha:
+1. `FastDeliveryCarousel`: `filteredProducts.length > 0 ? filteredProducts : mockProducts` (where `mockProducts = cakeProducts.slice(0, 8)`).
+2. `BestsellerCarousel`: `(bestsellers.length > 0 ? bestsellers : availableProducts).slice(0, 12)`.
+Jab Admin ne sabhi cakes de-select kiye aur count 0 hua, toh component ne 0 cakes dikhane ki bajaye chupke se fallback run karke catalog ke pehle 12 cakes zabardasti screen par render kar diye.
 
 **Resolution:**
-1. Upgraded to verified Razorpay Live credentials (`rzp_live_TusWhJuT6r5IPQ`) in `.env.production`, `.env.vps`, and live VPS.
-2. Refactored checkout flow: The frontend calls `/api/payments/create-order` first to open the Razorpay modal. Only after successful payment verification via `/api/payments/verify` is the confirmed order saved to the database. If the payment is dismissed or fails, no false order is generated and the user's cart remains preserved.
+1. Components se fake fallbacks (`mockProducts`, `availableProducts`) permanently delete kiye gaye.
+2. Agar Admin ne 0 cakes select kiye hain (`products.length === 0`), component strictly `return null;` karta hai taaki koi bhi fake ya unapproved cake display na ho.
 
-**Prevention:**
-Never commit orders to the database before receiving cryptographic payment verification signatures. Always ensure production environments run live payment gateway credentials.
+---
+
+## 8. STRICT PROTOCOL: Mandatory Double Verification QC Check (End-to-End Visual Layer Verification)
+**STRICT GLOBAL RULE FOR ANTIGRAVITY & ANY DEVELOPER:**
+Kabhi bhi kisi bhi task, bug-fix, ya feature ko "DONE / HO GAYA" bolne se pehle **DOUBLE VERIFICATION QC CHECK** mandatory hai:
+
+1. **Layer 1 — Data & Backend Verification:**
+   - Database / Store (`products-store.json`) check karein.
+   - API endpoints (`/api/...`) ke response codes aur exact payloads verify karein.
+
+2. **Layer 2 — Consumer UI & Visual Layer Verification (MANDATORY):**
+   - Sirf API response dekh kar reply dena SAKHT MANA HAI.
+   - Rendered frontend component code, active query params, fallback branches, aur live server HTML/DOM me verify karein ki customer ko screen par wahi dikh raha hai jo hona chahiye.
+   - Check karein ki koi hardcoded fallback (`mockData`, `fallbackProducts`, default ternary fallback) actual database selection ko override toh nahi kar raha.
+   - Jab tak dono layers (Backend + Frontend DOM) 100% physically match na karein, tab tak task ko "Done" report nahi karna hai.
