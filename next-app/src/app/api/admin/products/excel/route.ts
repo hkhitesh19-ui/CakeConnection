@@ -183,6 +183,13 @@ export async function POST(request: Request) {
           price1_5kg,
           price2kg,
           category,
+          isBestseller: row.isBestseller !== undefined ? row.isBestseller : (row['Bestseller'] === 'YES' || row['Bestseller'] === true),
+          isFeatured: row.isFeatured !== undefined ? row.isFeatured : (row['Featured'] === 'YES' || row['Featured'] === true),
+          deliveryOptions: Array.isArray(row.deliveryOptions)
+            ? row.deliveryOptions
+            : (typeof row.deliveryOptions === 'string' && row.deliveryOptions.trim()
+                ? row.deliveryOptions.split(',').map((d: string) => d.trim())
+                : (row['Delivery Options'] ? String(row['Delivery Options']).split(',').map((d: string) => d.trim()) : undefined)),
         });
 
         if (result.success) {

@@ -112,6 +112,10 @@ function syncMemoryAndRealCakes(productId: string, updatedOverride: ProductOverr
     if (updatedOverride.category) inAll.category = updatedOverride.category as any;
     if (updatedOverride.subcategory) inAll.subcategory = updatedOverride.subcategory;
     if (updatedOverride.flavour) inAll.flavour = updatedOverride.flavour;
+    if (updatedOverride.isBestseller !== undefined) inAll.isBestseller = updatedOverride.isBestseller;
+    if (updatedOverride.isFeatured !== undefined) inAll.isFeatured = updatedOverride.isFeatured;
+    if (updatedOverride.isNewArrival !== undefined) inAll.isNewArrival = updatedOverride.isNewArrival;
+    if (updatedOverride.deliveryOptions) inAll.deliveryOptions = updatedOverride.deliveryOptions;
     inAll.updatedAt = updatedOverride.updatedAt || new Date().toISOString();
   }
 
@@ -124,6 +128,10 @@ function syncMemoryAndRealCakes(productId: string, updatedOverride: ProductOverr
     if (updatedOverride.variants) inReal.variants = updatedOverride.variants as any;
     if (updatedOverride.subcategory) inReal.subcategory = updatedOverride.subcategory;
     if (updatedOverride.flavour) inReal.flavour = updatedOverride.flavour;
+    if (updatedOverride.isBestseller !== undefined) inReal.isBestseller = updatedOverride.isBestseller;
+    if (updatedOverride.isFeatured !== undefined) inReal.isFeatured = updatedOverride.isFeatured;
+    if (updatedOverride.isNewArrival !== undefined) inReal.isNewArrival = updatedOverride.isNewArrival;
+    if (updatedOverride.deliveryOptions) inReal.deliveryOptions = updatedOverride.deliveryOptions;
     inReal.updatedAt = updatedOverride.updatedAt || new Date().toISOString();
 
     try {
@@ -177,6 +185,10 @@ export function getMergedProductsList(): any[] {
       category: ov.category || p.category,
       subcategory: ov.subcategory || p.subcategory,
       flavour: ov.flavour || p.flavour,
+      isBestseller: ov.isBestseller !== undefined ? ov.isBestseller : (p.isBestseller ?? false),
+      isFeatured: ov.isFeatured !== undefined ? ov.isFeatured : (p.isFeatured ?? false),
+      isNewArrival: ov.isNewArrival !== undefined ? ov.isNewArrival : (p.isNewArrival ?? false),
+      deliveryOptions: ov.deliveryOptions && ov.deliveryOptions.length > 0 ? ov.deliveryOptions : (p.deliveryOptions || ['2hr', 'same-day']),
       updatedAt: ov.updatedAt || p.updatedAt,
     });
   });

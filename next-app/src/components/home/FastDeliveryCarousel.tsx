@@ -32,11 +32,11 @@ export default function FastDeliveryCarousel({
     if (!p.isAvailable) return false;
     
     const inDelivery = Array.isArray(p.deliveryOptions) 
-      ? p.deliveryOptions.some(d => d.includes('1 to 2 Hours SuperFast Delivery'))
+      ? p.deliveryOptions.some(d => /2\s*hr|2\s*hour|superfast|express/i.test(d))
       : false;
       
     const inSubcat = typeof p.subcategory === 'string' 
-      ? p.subcategory.includes('1 to 2 Hours SuperFast Delivery')
+      ? /2\s*hr|2\s*hour|superfast|express/i.test(p.subcategory)
       : false;
 
     return inDelivery || inSubcat;

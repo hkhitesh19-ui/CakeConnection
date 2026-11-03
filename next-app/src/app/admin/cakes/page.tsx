@@ -28,7 +28,9 @@ import {
   ChevronDown,
   Plus,
   Upload,
-  Camera
+  Camera,
+  Star,
+  Zap,
 } from 'lucide-react';
 
 interface ProductVariant {
@@ -50,6 +52,10 @@ interface Product {
   images?: Array<string | { url: string; alt?: string }>;
   is_available?: boolean;
   isAvailable?: boolean;
+  is_bestseller?: boolean;
+  isBestseller?: boolean;
+  delivery_options?: string[];
+  deliveryOptions?: string[];
   product_variations?: ProductVariant[];
   product_variants?: ProductVariant[];
   variants?: ProductVariant[];
@@ -67,6 +73,8 @@ interface EditState {
   price2kg: string | number;
   hasCustom250g?: boolean;
   photoUrl?: string;
+  isBestseller?: boolean;
+  is2hrDelivery?: boolean;
 }
 
 const FLAVOUR_CATEGORIES = [
@@ -219,6 +227,11 @@ export default function CakesQuickPricingPage() {
     if (edits[p.id]) return edits[p.id];
     const initial250 = getWeightPrice(p, '250g');
     const origPhoto = !p.images || !Array.isArray(p.images) || p.images.length === 0 ? '' : (typeof p.images[0] === 'string' ? p.images[0] : p.images[0]?.url || '');
+    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? (typeof p.subcategory === 'string' && p.subcategory.toLowerCase().includes('bestseller')));
+    const orig2hr = Array.isArray(p.delivery_options || p.deliveryOptions)
+      ? (p.delivery_options || p.deliveryOptions)!.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d))
+      : true;
+
     return {
       name: p.name || '',
       isAvailable: p.is_available ?? p.isAvailable ?? true,
@@ -229,6 +242,8 @@ export default function CakesQuickPricingPage() {
       price2kg: getWeightPrice(p, '2kg'),
       hasCustom250g: initial250 !== '',
       photoUrl: origPhoto,
+      isBestseller: origBestseller,
+      is2hrDelivery: orig2hr,
     };
   };
 
@@ -289,10 +304,16 @@ export default function CakesQuickPricingPage() {
     const orig2kg = getWeightPrice(p, '2kg');
     const origAvail = p.is_available ?? p.isAvailable ?? true;
     const origPhoto = !p.images || !Array.isArray(p.images) || p.images.length === 0 ? '' : (typeof p.images[0] === 'string' ? p.images[0] : p.images[0]?.url || '');
+    const origBestseller = !!(p.is_bestseller ?? p.isBestseller ?? (typeof p.subcategory === 'string' && p.subcategory.toLowerCase().includes('bestseller')));
+    const orig2hr = Array.isArray(p.delivery_options || p.deliveryOptions)
+      ? (p.delivery_options || p.deliveryOptions)!.some((d: string) => /2\s*hr|2\s*hour|superfast|express/i.test(d))
+      : true;
 
     return (
       current.name !== p.name ||
       current.isAvailable !== origAvail ||
+      current.isBestseller !== origBestseller ||
+      current.is2hrDelivery !== orig2hr ||
       (!!current.photoUrl && current.photoUrl !== origPhoto) ||
       String(current.price250g) !== String(orig250) ||
       String(current.price500g) !== String(orig500) ||
@@ -324,6 +345,8 @@ export default function CakesQuickPricingPage() {
         productId: p.id,
         name: payload.name.trim() || p.name,
         isAvailable: payload.isAvailable,
+        isBestseller: payload.isBestseller,
+        deliveryOptions: payload.is2hrDelivery ? ['2hr', 'same-day'] : ['same-day'],
         photoUrl: payload.photoUrl,
         price250g: payload.price250g !== '' ? payload.price250g : undefined,
         price500g: payload.price500g !== '' ? payload.price500g : undefined,
@@ -359,6 +382,10 @@ export default function CakesQuickPricingPage() {
               name: row.name,
               is_available: row.isAvailable,
               isAvailable: row.isAvailable,
+              is_bestseller: row.isBestseller,
+              isBestseller: row.isBestseller,
+              delivery_options: row.deliveryOptions,
+              deliveryOptions: row.deliveryOptions,
               images: row.photoUrl ? [{ url: row.photoUrl, alt: row.name }] : item.images,
               product_variations: (item.product_variations || []).map((v) => {
                 const w = (v.weight || '').toLowerCase();
@@ -401,6 +428,8 @@ export default function CakesQuickPricingPage() {
           productId: p.id,
           name: edit.name.trim() || p.name,
           isAvailable: edit.isAvailable,
+          isBestseller: edit.isBestseller,
+          deliveryOptions: edit.is2hrDelivery ? ['2hr', 'same-day'] : ['same-day'],
           photoUrl: edit.photoUrl,
           price250g: edit.price250g !== '' ? edit.price250g : undefined,
           price500g: edit.price500g !== '' ? edit.price500g : undefined,
@@ -958,6 +987,37 @@ export default function CakesQuickPricingPage() {
                         Original: {product.name}
                       </p>
                     )}
+                  </div>
+
+                  {/* Quick Badges: Bestseller & 2-Hour Express Toggle */}
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <button
+                      type="button"
+                      onClick={() => handleEditChange(product, 'isBestseller', !edit.isBestseller)}
+                      className={`flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold border transition-all cursor-pointer ${
+                        edit.isBestseller
+                          ? 'bg-amber-500/15 text-amber-700 border-amber-400 shadow-xs ring-1 ring-amber-400/40'
+                          : 'bg-gray-50 text-gray-400 border-gray-200 hover:border-gray-300 hover:text-gray-600'
+                      }`}
+                      title="Toggle Bestseller Badge (Shows in Homepage Bestsellers)"
+                    >
+                      <Star className={`w-3.5 h-3.5 ${edit.isBestseller ? 'fill-amber-500 text-amber-500' : 'text-gray-400'}`} />
+                      <span>{edit.isBestseller ? '⭐ Bestseller' : 'Bestseller'}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handleEditChange(product, 'is2hrDelivery', !edit.is2hrDelivery)}
+                      className={`flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold border transition-all cursor-pointer ${
+                        edit.is2hrDelivery
+                          ? 'bg-emerald-500/15 text-emerald-700 border-emerald-400 shadow-xs ring-1 ring-emerald-400/40'
+                          : 'bg-gray-50 text-gray-400 border-gray-200 hover:border-gray-300 hover:text-gray-600'
+                      }`}
+                      title="Toggle 2-Hour Express Delivery (Shows in 2-Hour Express section)"
+                    >
+                      <Zap className={`w-3.5 h-3.5 ${edit.is2hrDelivery ? 'fill-emerald-500 text-emerald-500' : 'text-gray-400'}`} />
+                      <span>{edit.is2hrDelivery ? '⚡ 2-Hr Express' : '2-Hr Express'}</span>
+                    </button>
                   </div>
 
                   {/* ── 4 Weights Pricing Matrix ─────────────── */}
